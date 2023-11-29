@@ -22,14 +22,13 @@ public class AssaultRifle : BaseAbility{
     // FixedUpdate called 50 times per second
     // (Every 0.02 seconds)
     void FixedUpdate(){
-        if(Input.GetMouseButton(0)){  //TODO: This line must be moved to an InputH7andler
-            UseAbility();
-        }
+        bool inputReceived = Input.GetMouseButton(0);//TODO: This line must be moved to an InputH7andler
+        UseAbility(inputReceived);
         cooldownTimer = cooldownTimer >= (cooldown-0.001f) ? cooldownTimer : cooldownTimer + Time.fixedDeltaTime;
     }
 
-    public override void UseAbility(){
-        if(cooldownTimer>=(cooldown-0.001f)){ 
+    public override void UseAbility(bool inputReceived){
+        if(cooldownTimer>=(cooldown-0.001f) && inputReceived){ 
             Debug.Log("Using ability " + this.abilityName);
             Rigidbody2D bulletRigidBody = Instantiate(bulletPrefab).GetComponent<Rigidbody2D>();
             bulletRigidBody.transform.parent = this.transform;

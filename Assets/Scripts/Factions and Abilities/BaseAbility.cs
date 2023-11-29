@@ -14,5 +14,5 @@ public abstract class BaseAbility : MonoBehaviour, IAbility{
     public float damage;
     public string abilityName;
     public AbilityType abilityType;
-    public abstract void UseAbility();
+    public abstract void UseAbility(bool inputReceived);
 }
