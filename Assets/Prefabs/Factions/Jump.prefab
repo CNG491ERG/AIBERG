@@ -56,8 +56,8 @@ MonoBehaviour:
   isGliding: 0
   isFalling: 0
   isOnPeakHeight: 0
-  isReceivingInput: 0
+  inputReceived: 0
   firstJumpComplete: 0
-  jumpSpeed: 7
-  glideGravityMultiplier: 0.2
-  fallGravityMultiplier: 2.5
+  jumpForce: 35
+  glideGravityMultiplier: 0.55
+  jumpTimer: 2

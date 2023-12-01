@@ -19,14 +19,6 @@ public class AssaultRifle : BaseAbility{
         cooldownTimer = 0.2f;
     }
 
-    // FixedUpdate called 50 times per second
-    // (Every 0.02 seconds)
-    void FixedUpdate(){
-        bool inputReceived = Input.GetMouseButton(0);//TODO: This line must be moved to an InputH7andler
-        UseAbility(inputReceived);
-        cooldownTimer = cooldownTimer >= (cooldown-0.001f) ? cooldownTimer : cooldownTimer + Time.fixedDeltaTime;
-    }
-
     public override void UseAbility(bool inputReceived){
         if(cooldownTimer>=(cooldown-0.001f) && inputReceived){ 
             Debug.Log("Using ability " + this.abilityName);
@@ -36,5 +28,6 @@ public class AssaultRifle : BaseAbility{
             bulletRigidBody.velocity = new Vector2(bulletVelocityX, 0);
             cooldownTimer = 0;
         }
+        cooldownTimer = cooldownTimer >= (cooldown-0.001f) ? cooldownTimer : cooldownTimer + Time.fixedDeltaTime;
     }
 }

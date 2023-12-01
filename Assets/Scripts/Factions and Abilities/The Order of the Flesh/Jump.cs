@@ -14,7 +14,7 @@ public class Jump : BaseAbility{
     [SerializeField] private bool firstJumpComplete = false;
     [SerializeField] private float jumpForce = 20;
     [SerializeField] private float glideGravityMultiplier = 0.3f;
-    [SerializeField] private float fallGravityMultiplier = 4.0f;
+    [SerializeField] private float jumpTimer = 2;
     // Start is called before the first frame update
     private void Start() {
         this.faction = GetComponentInParent<Faction>();
@@ -26,21 +26,17 @@ public class Jump : BaseAbility{
         this.duration = 0;
     }
 
-    private void FixedUpdate() {
+
+    public override void UseAbility(bool inputReceived){
         RaycastHit2D hitBelow = Physics2D.Raycast(transform.position, -transform.up, raycastDistance, LayerMask.GetMask("ForegroundEnvironment"));
         RaycastHit2D hitAbove = Physics2D.Raycast(transform.position, transform.up, raycastDistance, LayerMask.GetMask("ForegroundEnvironment"));
         Debug.DrawLine(transform.position, transform.position-(transform.up*raycastDistance), Color.red); //Hit below visualization
         Debug.DrawLine(transform.position, transform.position+(transform.up*raycastDistance), Color.red); //Hit above visualization
         isOnGround = hitBelow.collider != null;
         isOnPeakHeight = hitAbove.collider != null;
-        inputReceived = Input.GetKey(KeyCode.Space);
         isGliding = !isOnGround & inputReceived;
         isFalling = !isOnGround & !inputReceived;
-        UseAbility(inputReceived);
-    }
 
-    [SerializeField] private float jumpTimer = 2;
-    public override void UseAbility(bool inputReceived){
         if(isOnGround){
             firstJumpComplete = false;
             jumpTimer = 2;
@@ -56,12 +52,8 @@ public class Jump : BaseAbility{
             firstJumpComplete = true;
         }
         
-        if(firstJumpComplete && this.inputReceived){ //Glide
-            faction.player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            faction.player.GetComponent<Rigidbody2D>().gravityScale = glideGravityMultiplier;
-        }
-        else if(!inputReceived){ //Falling or on ground
-            faction.player.GetComponent<Rigidbody2D>().gravityScale = fallGravityMultiplier;
+        if(firstJumpComplete && inputReceived && faction.player.GetComponent<Rigidbody2D>().velocity.y < 0){ //Glide
+            faction.player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, glideGravityMultiplier * jumpForce));
         }
     }
 }
