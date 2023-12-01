@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour, IDamageable
+public class Boss : MonoBehaviour, IDamageable
 {
     public void TakeDamage(float damageToTake)
     {
-        throw new System.NotImplementedException();
+        Debug.Log("I got hit! (boss)");
     }
 
     // Start is called before the first frame update
