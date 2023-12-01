@@ -12,7 +12,9 @@ public class DamagingProjectile : MonoBehaviour{
         IDamageable objectToDamage = other.gameObject.GetComponent<IDamageable>();
         if(objectToDamage != null){
             Debug.Log("Projectile hit damageable object " + other.gameObject.name);
+            objectToDamage.TakeDamage(damage);
+            Destroy(this.gameObject);
         }
-        objectToDamage?.TakeDamage(damage);
+        
     }
 }

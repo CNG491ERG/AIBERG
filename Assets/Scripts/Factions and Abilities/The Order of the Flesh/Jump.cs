@@ -26,7 +26,7 @@ public class Jump : BaseAbility{
         this.duration = 0;
     }
 
-
+    private Vector2 previousFrameVelocity = Vector2.zero;
     public override void UseAbility(bool inputReceived){
         RaycastHit2D hitBelow = Physics2D.Raycast(transform.position, -transform.up, raycastDistance, LayerMask.GetMask("ForegroundEnvironment"));
         RaycastHit2D hitAbove = Physics2D.Raycast(transform.position, transform.up, raycastDistance, LayerMask.GetMask("ForegroundEnvironment"));
@@ -37,11 +37,22 @@ public class Jump : BaseAbility{
         isGliding = !isOnGround & inputReceived;
         isFalling = !isOnGround & !inputReceived;
 
+        /*
+         * If below is for the case when the player keeps providing input
+         * while the character is gliding and the moment it touches the ground
+         * it jumps again without waiting. If statement below makes it so that
+         * the player has to let go of the input and provide it again.
+         */
+        if(previousFrameVelocity.y < 0 && inputReceived && isOnGround) {
+            faction.player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            return;
+        }
+
         if(isOnGround){
             firstJumpComplete = false;
             jumpTimer = 2;
         }
-        if(inputReceived && !firstJumpComplete){
+        if(inputReceived && !firstJumpComplete){ //Jump
             jumpTimer = jumpTimer >= 0 ? jumpTimer*0.95f : 0;
             faction.player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce*jumpTimer));
         }
@@ -55,5 +66,6 @@ public class Jump : BaseAbility{
         if(firstJumpComplete && inputReceived && faction.player.GetComponent<Rigidbody2D>().velocity.y < 0){ //Glide
             faction.player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, glideGravityMultiplier * jumpForce));
         }
+        previousFrameVelocity = faction.player.GetComponent<Rigidbody2D>().velocity;  
     }
 }
