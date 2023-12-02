@@ -21,12 +21,12 @@ public class AssaultRifle : BaseAbility{
     }
 
     public override void UseAbility(bool inputReceived){
-        if(cooldownTimer>=(cooldown-0.001f) && inputReceived){ 
+        if(cooldownTimer>=(cooldown-0.0001f) && inputReceived){ 
             Debug.Log("Using ability " + this.abilityName);
             Rigidbody2D bulletRigidBody = Instantiate(bulletPrefab).GetComponent<Rigidbody2D>();
             bulletRigidBody.transform.parent = this.transform;
             bulletRigidBody.transform.localPosition = Vector3.zero;
-            bulletRigidBody.velocity = new Vector2(bulletVelocityX, 0);
+            bulletRigidBody.gameObject.GetComponent<DamagingProjectile>().projectileVelocity = new Vector2(bulletVelocityX, 0);
             cooldownTimer = 0;
         }
         cooldownTimer = cooldownTimer >= (cooldown-0.001f) ? cooldownTimer : cooldownTimer + Time.fixedDeltaTime;
