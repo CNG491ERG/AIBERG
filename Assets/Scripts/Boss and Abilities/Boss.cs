@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour, IDamageable
 {
-    [SerializeField] private float health;
-    [SerializeField] private float defense;
+    [SerializeField] private float health = 100;
+    [SerializeField] private float defense = 0;
+    [SerializeField] private int enragement = 1;
+    [SerializeField] public float speed = 10;
+    [SerializeField] private float cooldownMultiplier;
+    [SerializeField] private float damageMultiplier;
     public float Health { 
         get{
             return health;
