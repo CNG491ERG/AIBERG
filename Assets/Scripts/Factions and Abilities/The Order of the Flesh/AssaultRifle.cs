@@ -16,7 +16,8 @@ public class AssaultRifle : BaseAbility{
         this.cooldown = 0.2f;
         this.damage = 0.25f;
         this.duration = 0;
-        cooldownTimer = 0.2f;
+        this.cooldownTimer = 0.2f;
+        this.bulletPrefab.GetComponent<DamagingProjectile>().damage = this.damage;
     }
 
     public override void UseAbility(bool inputReceived){

@@ -16,6 +16,7 @@ public class Faction : MonoBehaviour{
     public BaseAbility passiveAbility;
     public BaseAbility jumpAbility;
     public float health;
+    public float defense; //defense between 0-1
     public string factionName;
     private void Awake() {
         player = GetComponentInParent<Player>();
