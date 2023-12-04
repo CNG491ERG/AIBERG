@@ -77,7 +77,7 @@ public class Boss : Agent, IDamageable
     void Update()
     {
         if(StepCount == MaxStep)
-            EndEpisode();
+            EpisodeInterrupted();
         if((StepCount/3000f) - (StepCount / 3000) == 0)
             AddReward(-0.05f * (StepCount / MaxStep));
 
