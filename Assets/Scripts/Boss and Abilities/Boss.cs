@@ -11,12 +11,28 @@ using UnityEngine.Serialization;
 
 public class Boss : Agent, IDamageable
 {
-    [SerializeField] private float health = 100;
-    [SerializeField] private float defense = 0;
-    [SerializeField] private int enragement = 1;
-    [SerializeField] public float speed = 10;
+    [SerializeField] private float health;
+    [SerializeField] private float defense;
+    [SerializeField] private int enragement;
+    [SerializeField] public float speed;
     [SerializeField] private float cooldownMultiplier;
     [SerializeField] private float damageMultiplier;
+    [SerializeField] private float goal;
+
+
+    public override void Initialize()
+    {
+        //if agent is not in training, no step limit
+        if (!Academy.Instance.IsCommunicatorOn){
+            this.MaxStep = 0;
+        }
+        //if agent is in training, 30k step limit
+        else
+            this.MaxStep = 30000;
+        goal = 0;
+    }
+
+
 
     public float Health { 
         get{
@@ -39,12 +55,22 @@ public class Boss : Agent, IDamageable
         Debug.Log("I got hit! (boss)");
         float totalDamage = damageToTake * (1 - Defense);
         Health = Health - totalDamage <= 0 ? 0 : Health - totalDamage;
+        if (Health == 0){
+            AddReward(-1f);
+            EndEpisode();
+        }
+        else
+            AddReward(-(0.02f* totalDamage/this.health));
+
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        health = 100;
+        defense = 0;
+        speed = 10;
+        enragement = 1;
     }
 
     // Update is called once per frame
