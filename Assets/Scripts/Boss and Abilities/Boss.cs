@@ -76,6 +76,8 @@ public class Boss : Agent, IDamageable
     // Update is called once per frame
     void Update()
     {
+        if(StepCount == MaxStep)
+            EndEpisode();
         if((StepCount/3000f) - (StepCount / 3000) == 0)
             AddReward(-0.05f * (StepCount / MaxStep));
 
