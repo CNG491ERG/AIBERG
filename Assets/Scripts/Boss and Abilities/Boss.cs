@@ -1,8 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using System.Linq;
+using Unity.MLAgents;
+using Unity.MLAgents.Sensors;
+using Unity.MLAgents.Actuators;
+using UnityEngine.Rendering;
+using UnityEngine.Serialization;
 
-public class Boss : MonoBehaviour, IDamageable
+public class Boss : Agent, IDamageable
 {
     [SerializeField] private float health = 100;
     [SerializeField] private float defense = 0;
@@ -10,6 +17,7 @@ public class Boss : MonoBehaviour, IDamageable
     [SerializeField] public float speed = 10;
     [SerializeField] private float cooldownMultiplier;
     [SerializeField] private float damageMultiplier;
+
     public float Health { 
         get{
             return health;
