@@ -6,17 +6,17 @@ public class AssaultRifle : BaseAbility{
     [SerializeField] private Faction faction;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private float bulletVelocityX;
-    [SerializeField] private float cooldownTimer = 0; 
+    [SerializeField] private float cooldownTimer; 
     
     private void Start() {
         this.faction = GetComponentInParent<Faction>();
         this.abilityName = "AssaultRifle";
         this.abilityOwner = faction.player.gameObject;
         this.abilityType = AbilityType.BASIC;
-        this.cooldown = 0.2f;
+        this.cooldown = 0.20f;
         this.damage = 0.25f;
-        this.duration = 0;
-        this.cooldownTimer = 0.2f;
+        this.duration = 0.0f;
+        this.cooldownTimer = 0.20f;
         this.bulletPrefab.GetComponent<DamagingProjectile>().damage = this.damage;
     }
 

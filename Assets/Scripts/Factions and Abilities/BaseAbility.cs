@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 public enum AbilityType{
         BASIC,
-        ACTIVE,
+        ACTIVE1,
+        ACTIVE2,
         PASSIVE,
         JUMP
     }
