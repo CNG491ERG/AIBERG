@@ -25,6 +25,7 @@ public class Faction : MonoBehaviour{
         BaseAbility[] abilities = GetComponentsInChildren<BaseAbility>();
         basicAttack = abilities.Where(ability => ability.abilityType == AbilityType.BASIC).First();
         activeAbility1 = abilities.Where(ability => ability.abilityType == AbilityType.ACTIVE1).First();
+        activeAbility2 = abilities.Where(ability => ability.abilityType == AbilityType.ACTIVE2).First();
         jumpAbility = abilities.Where(ability => ability.abilityType == AbilityType.JUMP).First();
     }
 }

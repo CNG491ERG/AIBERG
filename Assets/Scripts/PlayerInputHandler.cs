@@ -15,6 +15,7 @@ public class PlayerInputHandler : MonoBehaviour{
         bool basicAbilityInput = Input.GetMouseButton(0);
         bool jumpInput = Input.GetKey(KeyCode.Space);
         bool activeAbility1Input = Input.GetKey(KeyCode.Q);
+        bool activeAbility2Input = Input.GetKey(KeyCode.E);
 
         if(basicAbilityInput){
             eventViewer.eventsBeingPerformed.Add(faction.basicAttack.abilityName);
@@ -25,10 +26,14 @@ public class PlayerInputHandler : MonoBehaviour{
         if(activeAbility1Input){
             eventViewer.eventsBeingPerformed.Add(faction.activeAbility1.abilityName);
         }
+        if(activeAbility2Input){
+            eventViewer.eventsBeingPerformed.Add(faction.activeAbility2.abilityName);
+        }
         
         faction.basicAttack.UseAbility(basicAbilityInput);
         faction.jumpAbility.UseAbility(jumpInput);
         faction.activeAbility1.UseAbility(activeAbility1Input);
+        faction.activeAbility2.UseAbility(activeAbility2Input);
         
     }
 }
