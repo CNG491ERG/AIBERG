@@ -29,7 +29,8 @@ public class DamagingProjectile : MonoBehaviour{
         }
         
     }
+    /* Causes build error
     private void OnDrawGizmos() {
         UnityEditor.Handles.Label(transform.position, "Velocity: " + rb.velocity.ToString());
-    }
+    }*/
 }

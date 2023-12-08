@@ -6,7 +6,7 @@ public class PlayerInputHandler : MonoBehaviour{
     [SerializeField] private Faction faction;
     [SerializeField] private EventViewer eventViewer;
 
-    private void Awake() {
+    private void Start() {
         eventViewer = GetComponent<EventViewer>();
         faction = transform.parent.GetComponentInChildren<Faction>();
     }
