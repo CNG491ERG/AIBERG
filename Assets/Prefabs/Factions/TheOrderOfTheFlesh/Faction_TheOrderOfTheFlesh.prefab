@@ -49,11 +49,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  basicAttack: {fileID: 0}
-  activeAbility1: {fileID: 0}
-  activeAbility2: {fileID: 0}
+  basicAttack: {fileID: 6895678938447113723}
+  activeAbility1: {fileID: 8639064641561730492}
+  activeAbility2: {fileID: 1660969029425967876}
   passiveAbility: {fileID: 0}
-  jumpAbility: {fileID: 0}
+  jumpAbility: {fileID: 3945656162035329927}
   health: 100
   defense: 0
   factionName: The Order of the Flesh
@@ -123,6 +123,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 926201294906970750, guid: a40ba649d61398f4091b063bd6fef82a, type: 3}
   m_PrefabInstance: {fileID: 1253460418131007847}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6895678938447113723 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5681133623965545628, guid: a40ba649d61398f4091b063bd6fef82a, type: 3}
+  m_PrefabInstance: {fileID: 1253460418131007847}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7cb49cf6101bb43a7892b67f3a3c93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3085625262539746208
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -189,6 +200,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 926201294906970750, guid: 767170612387c4b428b7dc23c71f0da6, type: 3}
   m_PrefabInstance: {fileID: 3085625262539746208}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8639064641561730492 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6716635432706881052, guid: 767170612387c4b428b7dc23c71f0da6, type: 3}
+  m_PrefabInstance: {fileID: 3085625262539746208}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e2e0995e69e04c479304b535ad1544d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3750924749653795423
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -255,6 +277,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2114487010382727143, guid: a2287f4d981a22549ad60e7aa6ee79a0, type: 3}
   m_PrefabInstance: {fileID: 3750924749653795423}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3945656162035329927 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 201605833957018072, guid: a2287f4d981a22549ad60e7aa6ee79a0, type: 3}
+  m_PrefabInstance: {fileID: 3750924749653795423}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50f90c060ae41a842aa95ca2a72708b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3942210325211650774
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -316,6 +349,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffcb6b3eb63b60747a25564d0621455a, type: 3}
+--- !u!114 &1660969029425967876 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2430107542517590482, guid: ffcb6b3eb63b60747a25564d0621455a, type: 3}
+  m_PrefabInstance: {fileID: 3942210325211650774}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 988511652c16b9a4fb478512bee490ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4210597700752754856 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 926201294906970750, guid: ffcb6b3eb63b60747a25564d0621455a, type: 3}
