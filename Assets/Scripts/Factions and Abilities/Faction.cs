@@ -10,22 +10,20 @@ using UnityEngine;
 */
 public class Faction : MonoBehaviour{
     public Player player;
-    public BaseAbility basicAttack;
-    public BaseAbility activeAbility1;
-    public BaseAbility activeAbility2;
-    public BaseAbility passiveAbility;
-    public BaseAbility jumpAbility;
+    [SerializeField] private MonoBehaviour basicAttack;
+    [SerializeField] private MonoBehaviour activeAbility1;
+    [SerializeField] private MonoBehaviour activeAbility2;
+    [SerializeField] private MonoBehaviour passiveAbility;
+    [SerializeField] private MonoBehaviour jumpAbility;
+    public IPlayerAbility BasicAttack => basicAttack.GetComponent<IPlayerAbility>();
+    public IPlayerAbility ActiveAbility1 => activeAbility1.GetComponent<IPlayerAbility>();
+    public IPlayerAbility ActiveAbility2 => activeAbility2.GetComponent<IPlayerAbility>();
+    public IPlayerAbility PassiveAbility => passiveAbility.GetComponent<IPlayerAbility>();
+    public IPlayerAbility JumpAbility => jumpAbility.GetComponent<IPlayerAbility>();
     public float health;
     public float defense; //defense between 0-1
     public string factionName;
     private void Awake() {
         player = GetComponentInParent<Player>();
-    }
-    void Start(){
-        BaseAbility[] abilities = GetComponentsInChildren<BaseAbility>();
-        basicAttack = abilities.Where(ability => ability.abilityType == AbilityType.BASIC).First();
-        activeAbility1 = abilities.Where(ability => ability.abilityType == AbilityType.ACTIVE1).First();
-        activeAbility2 = abilities.Where(ability => ability.abilityType == AbilityType.ACTIVE2).First();
-        jumpAbility = abilities.Where(ability => ability.abilityType == AbilityType.JUMP).First();
     }
 }

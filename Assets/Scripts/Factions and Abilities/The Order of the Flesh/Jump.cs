@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
-public class Jump : BaseAbility{
+public class Jump : MonoBehaviour, IPlayerAbility{
     [SerializeField] private Faction faction;
     [SerializeField] private float raycastDistance = 0.55f;
     [SerializeField] private bool isOnGround;
@@ -18,16 +18,21 @@ public class Jump : BaseAbility{
     // Start is called before the first frame update
     private void Start() {
         this.faction = GetComponentInParent<Faction>();
-        this.abilityName = "Jump";
-        this.abilityOwner = faction.player.gameObject;
-        this.abilityType = AbilityType.JUMP;
-        this.cooldown = 0;
-        this.damage = 0;
-        this.duration = 0;
     }
 
     private Vector2 previousFrameVelocity = Vector2.zero;
-    public override void UseAbility(bool inputReceived){
+
+    public Faction PlayerFaction => faction;
+
+    public string AbilityName => "TheOrderOfTheFleshJump";
+
+    public GameObject AbilityOwner => faction.player.gameObject;
+
+    public float Cooldown => 0;
+
+    public float AbilityDuration => 0;
+
+    public void UseAbility(bool inputReceived){
         RaycastHit2D hitBelow = Physics2D.Raycast(transform.position, -transform.up, raycastDistance, LayerMask.GetMask("ForegroundEnvironment"));
         RaycastHit2D hitAbove = Physics2D.Raycast(transform.position, transform.up, raycastDistance, LayerMask.GetMask("ForegroundEnvironment"));
         Debug.DrawLine(transform.position, transform.position-(transform.up*raycastDistance), Color.red); //Hit below visualization

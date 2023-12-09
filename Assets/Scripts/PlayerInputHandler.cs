@@ -18,22 +18,22 @@ public class PlayerInputHandler : MonoBehaviour{
         bool activeAbility2Input = Input.GetKey(KeyCode.E);
 
         if(basicAbilityInput){
-            eventViewer.eventsBeingPerformed.Add(faction.basicAttack.abilityName);
+            eventViewer.eventsBeingPerformed.Add(faction.BasicAttack.AbilityName);
         }
         if(jumpInput){
-            eventViewer.eventsBeingPerformed.Add(faction.jumpAbility.abilityName);
+            eventViewer.eventsBeingPerformed.Add(faction.JumpAbility.AbilityName);
         }
         if(activeAbility1Input){
-            eventViewer.eventsBeingPerformed.Add(faction.activeAbility1.abilityName);
+            eventViewer.eventsBeingPerformed.Add(faction.ActiveAbility1.AbilityName);
         }
         if(activeAbility2Input){
-            eventViewer.eventsBeingPerformed.Add(faction.activeAbility2.abilityName);
+            eventViewer.eventsBeingPerformed.Add(faction.ActiveAbility2.AbilityName);
         }
         
-        faction.basicAttack.UseAbility(basicAbilityInput);
-        faction.jumpAbility.UseAbility(jumpInput);
-        faction.activeAbility1.UseAbility(activeAbility1Input);
-        faction.activeAbility2.UseAbility(activeAbility2Input);
+        faction.BasicAttack.UseAbility(basicAbilityInput);
+        faction.JumpAbility.UseAbility(jumpInput);
+        faction.ActiveAbility1.UseAbility(activeAbility1Input);
+        faction.ActiveAbility2.UseAbility(activeAbility2Input);
         
     }
 }

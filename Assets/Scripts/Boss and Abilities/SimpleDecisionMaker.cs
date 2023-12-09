@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class SimpleDecisionMaker : MonoBehaviour{
@@ -7,9 +8,9 @@ public class SimpleDecisionMaker : MonoBehaviour{
     [SerializeField] private bool moveDownInput;
     [SerializeField] private bool basicAttackInput;
 
-    [SerializeField] private BaseAbility moveUpAbility;
-    [SerializeField] private BaseAbility moveDownAbility;
-    [SerializeField] private BaseAbility basicAttackAbility;
+    [SerializeField] private IBossAbility moveUpAbility;
+    [SerializeField] private IBossAbility moveDownAbility;
+    [SerializeField] private IBossAbility basicAttackAbility;
 
     [SerializeField] private float raycastDistance = 1f;
 
@@ -21,6 +22,9 @@ public class SimpleDecisionMaker : MonoBehaviour{
         eventViewer = GetComponent<EventViewer>();
         bossRb = GetComponent<Rigidbody2D>();
         bossRb.velocity = new Vector2(0, 0.1f); //Must have an initial velocity for input booleans to work correctly.
+        moveUpAbility = GetComponents<IBossAbility>().Where(ability => ability.AbilityName == "MoveUp").First();
+        moveDownAbility = GetComponents<IBossAbility>().Where(ability => ability.AbilityName == "MoveDown").First();
+        basicAttackAbility = GetComponents<IBossAbility>().Where(ability => ability.AbilityName == "BasicAttack").First();
     }
     void FixedUpdate(){
         RaycastHit2D hitBelow = Physics2D.Raycast(transform.position, -transform.up, raycastDistance, LayerMask.GetMask("ForegroundEnvironment"));
