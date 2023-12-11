@@ -18,7 +18,7 @@ public class SimpleDecisionMaker : MonoBehaviour{
     [SerializeField] private Rigidbody2D bossRb;
 
     [SerializeField] private EventViewer eventViewer;
-    private void Start() {
+    /*private void Start() {
         eventViewer = GetComponent<EventViewer>();
         bossRb = GetComponent<Rigidbody2D>();
         bossRb.velocity = new Vector2(0, 0.1f); //Must have an initial velocity for input booleans to work correctly.
@@ -49,5 +49,5 @@ public class SimpleDecisionMaker : MonoBehaviour{
         moveUpAbility.UseAbility(moveUpInput);
         moveDownAbility.UseAbility(moveDownInput);
         basicAttackAbility.UseAbility(basicAttackInput);
-    }
+    }*/
 }

@@ -1368,7 +1368,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1414383560}
   - component: {fileID: 1414383559}
-  - component: {fileID: 1414383558}
   - component: {fileID: 1414383561}
   - component: {fileID: 1414383563}
   - component: {fileID: 1414383562}
@@ -1384,51 +1383,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!61 &1414383558
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1414383557}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2, y: 2}
-  m_EdgeRadius: 0
 --- !u!50 &1414383559
 Rigidbody2D:
   serializedVersion: 4
@@ -1496,6 +1450,7 @@ MonoBehaviour:
   cooldownMultiplier: 0
   damageMultiplier: 0
   targetTransform: {fileID: 0}
+  maxDistance: 20
 --- !u!114 &1414383562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1616,18 +1571,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SensorName: RayPerceptionSensor
-  m_DetectableTags:
-  - 
-  m_RaysPerDirection: 7
-  m_MaxRayDegrees: 70
-  m_SphereCastRadius: 0.5
-  m_RayLength: 20
+  m_DetectableTags: []
+  m_RaysPerDirection: 10
+  m_MaxRayDegrees: 90
+  m_SphereCastRadius: 0
+  m_RayLength: 17.6
   m_RayLayerMask:
     serializedVersion: 2
     m_Bits: 4294967291
-  m_ObservationStacks: 1
+  m_ObservationStacks: 2
   rayHitColor: {r: 1, g: 0, b: 0, a: 1}
-  rayMissColor: {r: 0, g: 0.3048423, b: 0.8207547, a: 1}
+  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1539600093
 GameObject:
   m_ObjectHideFlags: 0
@@ -2459,7 +2413,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258925871650471702, guid: b9a2a0db3135b304caee05348df11778, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 1258925871650471702, guid: b9a2a0db3135b304caee05348df11778, type: 3}
       propertyPath: m_LocalPosition.z

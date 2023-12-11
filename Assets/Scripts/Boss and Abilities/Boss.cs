@@ -16,11 +16,11 @@ public class Boss : Agent, IDamageable
     [SerializeField] private float damageMultiplier;
     [SerializeField] private Transform targetTransform;
     public int maxDistance = 20;
-    //RaycastHit2D hit;
-    RaycastHit[] hits;
+    MoveUp up;
+    MoveDown down;
+    BasicAttack attack;
 
     Player player;
-    DamagingProjectile projectile;
     public float Health { 
         get{
             return health;
@@ -47,7 +47,6 @@ public class Boss : Agent, IDamageable
         speed = 10;
         enragement = 1;
         speed = 10;
-        ray = new Ray(transform.position, transform.forward);
     }
 
     public void TakeDamage(float damageToTake){
@@ -62,14 +61,32 @@ public class Boss : Agent, IDamageable
         }
     }
 
-    public override void OnActionReceived(ActionBuffers actions)//TO BE COMPLETED... TO BE COMPLETED...
+    /*public override void OnActionReceived(ActionBuffers actions)//TO BE COMPLETED... TO BE COMPLETED...
     {
         float moveY = actions.ContinuousActions[0];
 
         transform.position += new Vector3(0,moveY,0)*Time.deltaTime*speed;
 
         //Add attacks here
+    }*/
+    public override void OnActionReceived(ActionBuffers actions){
+        //ContinuousActions[0] is "Do Nothing"
+        float moveDown = actions.ContinuousActions[1];
+        float moveUp = actions.ContinuousActions[2];
+        float basicAttack = actions.ContinuousActions[3];
+
+        if (moveUp == 1){
+            //transform.position = new Vector2(0,moveUp) * Time.deltaTime*2f;
+            up.UseAbility(true);
+        }
+        else if (moveDown == 1) {
+            down.UseAbility(true);
+        }
+        if(basicAttack == 1) {
+            attack.UseAbility(true);
+        }
     }
+
 
     public override void CollectObservations(VectorSensor sensor)
     {
@@ -86,14 +103,16 @@ public class Boss : Agent, IDamageable
 
     public override void Heuristic(in ActionBuffers actionsOut)
     {
-        ActionSegment<float> continuousActions = actionsOut.ContinuousActions;
-        continuousActions[0] = Input.GetAxisRaw("Vertical");
+        /*ActionSegment<float> continuousActions = actionsOut.ContinuousActions;
+        if (Input.GetKey(KeyCode.UpArrow) == true)
+            continuousActions[0] = 1;*/
+
+        /*var continuousActionsOut = actionsOut.ContinuousActions;
+        continuousActionsOut[1] = Input.GetAxis("Horizontal");
+        continuousActionsOut[2] = Input.GetKey(KeyCode.Space) ? 1.0f : 0.0f;
+        continuousActionsOut[3] = Input.GetAxis("Vertical");*/
     }
 
-    void CheckForColliders()
-    {
-        hits = Physics.RaycastAll(transform.position,);
-    }
 
     // Update is called once per frame
     void Update()
@@ -105,7 +124,5 @@ public class Boss : Agent, IDamageable
         else if((StepCount / 3000f) - (StepCount / 3000) == 0){
             AddReward(-0.05f * (StepCount / MaxStep));
         }
-        CheckForColliders();
-        //hit = Physics2D.Raycast(transform.position, transform.right, distance);
     }
 }
