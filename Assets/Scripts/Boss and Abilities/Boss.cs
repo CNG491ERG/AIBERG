@@ -4,6 +4,7 @@ using UnityEngine;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
+using System;
 
 public class Boss : Agent, IDamageable
 {
@@ -14,6 +15,10 @@ public class Boss : Agent, IDamageable
     [SerializeField] private float cooldownMultiplier;
     [SerializeField] private float damageMultiplier;
     [SerializeField] private Transform targetTransform;
+    public int maxDistance = 20;
+    //RaycastHit2D hit;
+    RaycastHit[] hits;
+
     Player player;
     DamagingProjectile projectile;
     public float Health { 
@@ -35,13 +40,14 @@ public class Boss : Agent, IDamageable
 
     public override void OnEpisodeBegin()
     {
-        transform.position = new Vector2(10,0);
-        targetTransform.position = new Vector2(-10,0);
+        transform.position = new Vector2(8,0);
+        targetTransform.position = new Vector2(-8.4f,0);
         health = 0;
         defense = 0;
         speed = 10;
         enragement = 1;
         speed = 10;
+        ray = new Ray(transform.position, transform.forward);
     }
 
     public void TakeDamage(float damageToTake){
@@ -50,7 +56,7 @@ public class Boss : Agent, IDamageable
         AddReward(-0.02f * (totalDamage / 100f));
         Health = Health - totalDamage <= 0 ? 0 : Health - totalDamage;
         AddReward(-(0.02f * totalDamage / this.health));
-        if(Health < 0){
+        if(Health <= 0){
             AddReward(-1f);
             EndEpisode();
         }
@@ -84,6 +90,10 @@ public class Boss : Agent, IDamageable
         continuousActions[0] = Input.GetAxisRaw("Vertical");
     }
 
+    void CheckForColliders()
+    {
+        hits = Physics.RaycastAll(transform.position,);
+    }
 
     // Update is called once per frame
     void Update()
@@ -95,5 +105,7 @@ public class Boss : Agent, IDamageable
         else if((StepCount / 3000f) - (StepCount / 3000) == 0){
             AddReward(-0.05f * (StepCount / MaxStep));
         }
+        CheckForColliders();
+        //hit = Physics2D.Raycast(transform.position, transform.right, distance);
     }
 }
