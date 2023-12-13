@@ -19,8 +19,9 @@ public class Boss : Agent, IDamageable
     MoveUp up;
     MoveDown down;
     BasicAttack attack;
+    Rigidbody2D theBoss;
 
-    Player player;
+    [SerializeField] private Player player;
     public float Health { 
         get{
             return health;
@@ -38,21 +39,25 @@ public class Boss : Agent, IDamageable
         }
     }
 
-    public override void OnEpisodeBegin()
-    {
+    public override void Initialize() {
+        player = GetComponent<Player>();
+        theBoss = this.GetComponent<Rigidbody2D>();
+    }
+
+
+
+    public override void OnEpisodeBegin() {
         transform.position = new Vector2(8,0);
         targetTransform.position = new Vector2(-8.4f,0);
-        health = 0;
+        health = 100;
         defense = 0;
         speed = 10;
         enragement = 1;
-        speed = 10;
     }
 
-    public void TakeDamage(float damageToTake){
+    public void TakeDamage(float damageToTake) {
         Debug.Log("I got hit! (boss)");
         float totalDamage = damageToTake * (1 - Defense);
-        AddReward(-0.02f * (totalDamage / 100f));
         Health = Health - totalDamage <= 0 ? 0 : Health - totalDamage;
         AddReward(-(0.02f * totalDamage / this.health));
         if(Health <= 0){
@@ -69,15 +74,23 @@ public class Boss : Agent, IDamageable
 
         //Add attacks here
     }*/
+
+    private void UpForce(){
+        theBoss.AddForce(new Vector2(0, speed));
+    }
     public override void OnActionReceived(ActionBuffers actions){
+        //UpForce();
         //ContinuousActions[0] is "Do Nothing"
-        float moveDown = actions.ContinuousActions[1];
-        float moveUp = actions.ContinuousActions[2];
-        float basicAttack = actions.ContinuousActions[3];
+        int moveDown = actions.DiscreteActions[1];
+        int moveUp = actions.DiscreteActions[2];
+        int basicAttack = actions.DiscreteActions[3];
+
+
 
         if (moveUp == 1){
             //transform.position = new Vector2(0,moveUp) * Time.deltaTime*2f;
-            up.UseAbility(true);
+            //up.UseAbility(true);
+
         }
         else if (moveDown == 1) {
             down.UseAbility(true);
@@ -90,39 +103,57 @@ public class Boss : Agent, IDamageable
 
     public override void CollectObservations(VectorSensor sensor)
     {
+        //Location of the Player and the Boss is Branch 0
         sensor.AddObservation(transform.localPosition);
         sensor.AddObservation(targetTransform.localPosition);
 
+        //Health bars of Player and Boss
         sensor.AddObservation(health);
+        Debug.Log("PLAYER HEALTH:" + player.Health);
         sensor.AddObservation(player.Health);
-
-        /*Location of the Player and the Boss is Branch 0
-         Health bars of Player and Boss
-         Raycast Sensors will return positions of attacks, no need to add them to here, neither to components*/
+        //Raycast Sensors will return positions of attacks, no need to add them to here, neither to components*/
     }
 
-    public override void Heuristic(in ActionBuffers actionsOut)
-    {
+    public override void Heuristic(in ActionBuffers actionsOut) {
+        Debug.Log("HEURISTIC");
+        // Check if the UpArrow key is pressed
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            Debug.Log("Up Arrow Pressed");
+            // Move the object up by moveDistance units
+            transform.position += new Vector3(0f, speed, 0f);
+        }
+
+        // Check if the DownArrow key is pressed
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            Debug.Log("DownArrow Pressed");
+            // Move the object down by moveDistance units
+            transform.position -= new Vector3(0f, speed, 0f);
+            
+        }
         /*ActionSegment<float> continuousActions = actionsOut.ContinuousActions;
-        if (Input.GetKey(KeyCode.UpArrow) == true)
-            continuousActions[0] = 1;*/
+            if (Input.GetKey(KeyCode.UpArrow) == true)
+                continuousActions[0] = 1;
 
-        /*var continuousActionsOut = actionsOut.ContinuousActions;
-        continuousActionsOut[1] = Input.GetAxis("Horizontal");
-        continuousActionsOut[2] = Input.GetKey(KeyCode.Space) ? 1.0f : 0.0f;
-        continuousActionsOut[3] = Input.GetAxis("Vertical");*/
+            var discreteActionsOut = actionsOut.DiscreteActions;
+            //discreteActionsOut[1] = Input.GetAxisRaw("Horizontal");
+            discreteActionsOut[1] = Input.GetKeyDown(KeyCode.DownArrow).CompareTo(true);
+            discreteActionsOut[2] = (Input.GetKeyUp(KeyCode.UpArrow) ? 1 : 0);
+            //discreteActionsOut[3] = Input.GetAxis("Vertical");*/
     }
 
-
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if(StepCount >= MaxStep){// MUST DO MORE SCALABLE MAX HEALTHS
-            AddReward(-1f+(player.Health/100));
+        if (StepCount == MaxStep)
+        {// MUST DO MORE SCALABLE MAX HEALTHS
+            AddReward(-1f + (player.Health / 100));
             EndEpisode();
         }
-        else if((StepCount / 3000f) - (StepCount / 3000) == 0){
+        else if ((StepCount / 3000f) - (StepCount / 3000) == 0)
+        {
             AddReward(-0.05f * (StepCount / MaxStep));
         }
     }
+
 }
