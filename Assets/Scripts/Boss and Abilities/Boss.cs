@@ -79,7 +79,7 @@ public class Boss : Agent, IDamageable
         theBoss.AddForce(new Vector2(0, speed));
     }
     public override void OnActionReceived(ActionBuffers actions){
-        //UpForce();
+        UpForce();
         //ContinuousActions[0] is "Do Nothing"
         int moveDown = actions.DiscreteActions[1];
         int moveUp = actions.DiscreteActions[2];

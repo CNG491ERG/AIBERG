@@ -1478,7 +1478,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1414383557}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.8, y: 0.5, z: 0}
+  m_LocalPosition: {x: 8, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1512,6 +1512,7 @@ MonoBehaviour:
   damageMultiplier: 0
   targetTransform: {fileID: 2037208591}
   maxDistance: 20
+  player: {fileID: 2037208592}
 --- !u!114 &1414383562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2271,6 +2272,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1258925871650471702, guid: b9a2a0db3135b304caee05348df11778, type: 3}
   m_PrefabInstance: {fileID: 8986819994533355717}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2037208592 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7652950528693462139, guid: b9a2a0db3135b304caee05348df11778, type: 3}
+  m_PrefabInstance: {fileID: 8986819994533355717}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037208587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d109fbf52103db042ad2ed5563162587, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2038853057
 GameObject:
   m_ObjectHideFlags: 0
