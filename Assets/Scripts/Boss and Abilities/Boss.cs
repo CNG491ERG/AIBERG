@@ -28,7 +28,6 @@ public class Boss : MonoBehaviour, IDamageable
     }
 
     public void TakeDamage(float damageToTake){
-        Debug.Log("I got hit! (boss)");
         float totalDamage = damageToTake * (1 - Defense);
         Health = Health - totalDamage <= 0 ? 0 : Health - totalDamage;
     }

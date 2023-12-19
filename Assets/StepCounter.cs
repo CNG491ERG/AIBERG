@@ -5,10 +5,8 @@ using TMPro;
 using UnityEngine;
 
 public class StepCounter : MonoBehaviour{
-    private Int64 steps = 0;
     [SerializeField] private TextMeshProUGUI stepCounterText;
-    private void FixedUpdate() {
-        stepCounterText.SetText("Step #" + steps.ToString("0000000"));
-        steps++;
+    private void Update() {
+        stepCounterText.SetText("Step #" + GameManager.Instance.StepCount.ToString("0000000"));
     }
 }

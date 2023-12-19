@@ -14,7 +14,6 @@ public class EventViewer : MonoBehaviour{
         foreach(string s in eventsBeingPerformed){
             stringBuilder.Append(s + " ");
         }
-        Debug.Log(stringBuilder.ToString());
         text.SetText(stringBuilder.ToString());
         stringBuilder.Clear();
         eventsBeingPerformed.Clear();

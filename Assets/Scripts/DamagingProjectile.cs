@@ -23,7 +23,6 @@ public class DamagingProjectile : MonoBehaviour{
         //spawning inside another collider registers as collision.
         if(objectToDamage != null && other.CompareTag(tagToDamage))
         { 
-            Debug.Log("Projectile hit damageable object " + other.gameObject.name);
             objectToDamage.TakeDamage(damage);
             Destroy(this.gameObject);
         }
