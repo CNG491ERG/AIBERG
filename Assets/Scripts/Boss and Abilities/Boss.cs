@@ -44,8 +44,6 @@ public class Boss : Agent, IDamageable
         theBoss = this.GetComponent<Rigidbody2D>();
     }
 
-
-
     public override void OnEpisodeBegin() {
         transform.position = new Vector2(8,0);
         targetTransform.position = new Vector2(-8.4f,0);
@@ -53,6 +51,10 @@ public class Boss : Agent, IDamageable
         defense = 0;
         speed = 10;
         enragement = 1;
+    }
+
+    public void RequestDecision(){
+    
     }
 
     public void TakeDamage(float damageToTake) {
@@ -79,18 +81,14 @@ public class Boss : Agent, IDamageable
         theBoss.AddForce(new Vector2(0, speed));
     }
     public override void OnActionReceived(ActionBuffers actions){
-        UpForce();
         //ContinuousActions[0] is "Do Nothing"
         int moveDown = actions.DiscreteActions[1];
         int moveUp = actions.DiscreteActions[2];
         int basicAttack = actions.DiscreteActions[3];
 
-
-
         if (moveUp == 1){
             //transform.position = new Vector2(0,moveUp) * Time.deltaTime*2f;
-            //up.UseAbility(true);
-
+            up.UseAbility(true);
         }
         else if (moveDown == 1) {
             down.UseAbility(true);
@@ -157,3 +155,4 @@ public class Boss : Agent, IDamageable
     }
 
 }
+    
