@@ -57,10 +57,6 @@ public class Boss : Agent, IDamageable
         enragement = 1;
     }
 
-    public void RequestDecision(){
-    
-    }
-
     public void TakeDamage(float damageToTake) {
         Debug.Log("I got hit! (boss)");
         float totalDamage = damageToTake * (1 - Defense);
@@ -75,19 +71,6 @@ public class Boss : Agent, IDamageable
         }
     }
 
-    /*public override void OnActionReceived(ActionBuffers actions)//TO BE COMPLETED... TO BE COMPLETED...
-    {
-        float moveY = actions.ContinuousActions[0];
-
-        transform.position += new Vector3(0,moveY,0)*Time.deltaTime*speed;
-
-        //Add attacks here
-    }*/
-
-/*
-    private void UpForce(){
-        bossRb.AddForce(new Vector2(0, speed));
-    }*/
     public override void OnActionReceived(ActionBuffers actions){
         int moveDown = actions.DiscreteActions[2];
         int moveUp = actions.DiscreteActions[1];
@@ -102,8 +85,13 @@ public class Boss : Agent, IDamageable
     public override void CollectObservations(VectorSensor sensor)
     {
         //Location of the Player and the Boss is Branch 0
-        sensor.AddObservation(transform.localPosition);
-        sensor.AddObservation(targetTransform.localPosition);
+        sensor.AddObservation(transform.localPosition.x);
+        sensor.AddObservation(transform.localPosition.y);
+        sensor.AddObservation(transform.localPosition.z);
+
+        sensor.AddObservation(targetTransform.localPosition.x);
+        sensor.AddObservation(targetTransform.localPosition.y);
+        sensor.AddObservation(targetTransform.localPosition.z);
 
         //Health bars of Player and Boss
         sensor.AddObservation(health);
@@ -112,11 +100,7 @@ public class Boss : Agent, IDamageable
         //Raycast Sensors will return positions of attacks, no need to add them to here, neither to components*/
     }
 
-
-
-    [SerializeField] private float raycastDistance = 1f;
     public override void Heuristic(in ActionBuffers actionsOut) {
-        Debug.Log("HEURISTIC");
         bool moveUpInput = Input.GetKey(KeyCode.UpArrow);
         bool moveDownInput = Input.GetKey(KeyCode.DownArrow);
         bool basicAttackInput = Input.GetKey(KeyCode.X);
@@ -125,16 +109,6 @@ public class Boss : Agent, IDamageable
         discreteActionsOut[0] = basicAttackInput ? 1 : 0;
         discreteActionsOut[1] = moveUpInput ? 1 : 0;
         discreteActionsOut[2] = moveDownInput ? 1 : 0;
-
-        /*ActionSegment<float> continuousActions = actionsOut.ContinuousActions;
-            if (Input.GetKey(KeyCode.UpArrow) == true)
-                continuousActions[0] = 1;
-
-            var discreteActionsOut = actionsOut.DiscreteActions;
-            //discreteActionsOut[1] = Input.GetAxisRaw("Horizontal");
-            discreteActionsOut[1] = Input.GetKeyDown(KeyCode.DownArrow).CompareTo(true);
-            discreteActionsOut[2] = (Input.GetKeyUp(KeyCode.UpArrow) ? 1 : 0);
-            //discreteActionsOut[3] = Input.GetAxis("Vertical");*/
     }
 
     void FixedUpdate()
