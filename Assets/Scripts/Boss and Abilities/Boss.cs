@@ -65,10 +65,13 @@ public class Boss : Agent, IDamageable
         Debug.Log("I got hit! (boss)");
         float totalDamage = damageToTake * (1 - Defense);
         Health = Health - totalDamage <= 0 ? 0 : Health - totalDamage;
-        AddReward(-(0.02f * totalDamage / this.health));
+        
         if(Health <= 0){
             AddReward(-1f);
             EndEpisode();
+        }
+        else{
+            AddReward(-(0.02f * totalDamage / this.health));
         }
     }
 

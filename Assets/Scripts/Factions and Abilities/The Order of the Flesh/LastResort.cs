@@ -19,10 +19,13 @@ public class LastResort : MonoBehaviour, IPlayerAbility, IAttackAbility
 
     public GameObject AbilityOwner => faction.player.gameObject;
 
-    public float Cooldown => 0.20f; //Change it
+    public float Cooldown => 15f; //Change it
 
     public float AbilityDuration => 2.0f;
     public float Damage => 10f;
+
+    public bool CanBeUsed => cooldownTimer >= Cooldown-0.0001f;
+
     void Start(){
         this.faction = GetComponentInParent<Faction>();
         this.cooldownTimer = Cooldown;

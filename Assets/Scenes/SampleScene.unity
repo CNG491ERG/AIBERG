@@ -561,6 +561,21 @@ MonoBehaviour:
   eventPerformer: User
   eventsBeingPerformed: []
   text: {fileID: 777998992}
+--- !u!114 &487724899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487724894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cb8173ff4eeada47864bb14ef54e675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faction: {fileID: 0}
+  eventViewer: {fileID: 0}
+  boss: {fileID: 1414383561}
 --- !u!1 &496221547
 GameObject:
   m_ObjectHideFlags: 0
@@ -1171,10 +1186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SensorName: RayPerceptionSensor
-  m_DetectableTags:
-  - BasicAttack_AssaultRifle
-  - ActiveAbility1_MachineGun
-  - ActiveAbility2_LastResort
+  m_DetectableTags: []
   m_RaysPerDirection: 5
   m_MaxRayDegrees: 125
   m_SphereCastRadius: 0.26
@@ -1431,8 +1443,6 @@ GameObject:
   - component: {fileID: 1414383563}
   - component: {fileID: 1414383562}
   - component: {fileID: 1414383565}
-  - component: {fileID: 1414383564}
-  - component: {fileID: 1414383566}
   - component: {fileID: 1414383567}
   - component: {fileID: 1414383569}
   - component: {fileID: 1414383570}
@@ -1511,8 +1521,10 @@ MonoBehaviour:
   cooldownMultiplier: 0
   damageMultiplier: 0
   targetTransform: {fileID: 2037208591}
+  bossRb: {fileID: 0}
   maxDistance: 20
   player: {fileID: 2037208592}
+  raycastDistance: 1
 --- !u!114 &1414383562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1541,24 +1553,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boss: {fileID: 0}
   bossRb: {fileID: 0}
---- !u!114 &1414383564
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1414383557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 356ec98c00bafa14e857d5ce2b810b2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveUpInput: 0
-  moveDownInput: 0
-  basicAttackInput: 0
-  raycastDistance: 1.1
-  bossRb: {fileID: 0}
-  eventViewer: {fileID: 0}
 --- !u!114 &1414383565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1575,21 +1569,6 @@ MonoBehaviour:
   projectileVelocityX: 10
   boss: {fileID: 0}
   cooldownTimer: 0
---- !u!114 &1414383566
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1414383557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4ecae64d203c884c8db708618e17569, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventPerformer: Boss
-  eventsBeingPerformed: []
-  text: {fileID: 496221549}
 --- !u!114 &1414383567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1614,7 +1593,7 @@ MonoBehaviour:
     hasUpgradedBrainParametersWithActionSpec: 1
   m_Model: {fileID: 0}
   m_InferenceDevice: 0
-  m_BehaviorType: 0
+  m_BehaviorType: 1
   m_BehaviorName: Boss
   TeamId: 0
   m_UseChildSensors: 1
@@ -2511,6 +2490,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 391252037201111043, guid: b9a2a0db3135b304caee05348df11778, type: 3}
+      propertyPath: misilleVelocityX
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1258925871650471702, guid: b9a2a0db3135b304caee05348df11778, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2571,7 +2554,8 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5471700128241759819, guid: b9a2a0db3135b304caee05348df11778, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1258925871650471702, guid: b9a2a0db3135b304caee05348df11778, type: 3}
@@ -2581,4 +2565,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2545640576544453952, guid: b9a2a0db3135b304caee05348df11778, type: 3}
       insertIndex: -1
       addedObject: {fileID: 487724896}
+    - targetCorrespondingSourceObject: {fileID: 2545640576544453952, guid: b9a2a0db3135b304caee05348df11778, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 487724899}
   m_SourcePrefab: {fileID: 100100000, guid: b9a2a0db3135b304caee05348df11778, type: 3}

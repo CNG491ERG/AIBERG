@@ -17,11 +17,13 @@ public class MachineGun : MonoBehaviour, IPlayerAbility, IAttackAbility
 
     public GameObject AbilityOwner => faction.player.gameObject;
 
-    public float Cooldown => 0.20f; //MUST CHANGE!
+    public float Cooldown => 20f; //MUST CHANGE!
 
     public float Damage => 0.20f;
 
     public float AbilityDuration => 4.0f;
+
+    public bool CanBeUsed => cooldownTimer >= Cooldown-0.0001f;
 
     void Start(){
         this.faction = GetComponentInParent<Faction>();
