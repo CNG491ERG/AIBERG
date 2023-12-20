@@ -15,11 +15,13 @@ public class Boss : Agent, IDamageable
     [SerializeField] private float cooldownMultiplier;
     [SerializeField] private float damageMultiplier;
     [SerializeField] private Transform targetTransform;
+    [SerializeField] private Rigidbody2D bossRb;
+
+    
     public int maxDistance = 20;
     MoveUp up;
     MoveDown down;
     BasicAttack attack;
-    Rigidbody2D theBoss;
 
     [SerializeField] private Player player;
     public float Health { 
@@ -40,8 +42,10 @@ public class Boss : Agent, IDamageable
     }
 
     public override void Initialize() {
-        player = GetComponent<Player>();
-        theBoss = this.GetComponent<Rigidbody2D>();
+        bossRb = this.GetComponent<Rigidbody2D>();
+        up = GetComponent<MoveUp>();
+        down = GetComponent<MoveDown>();
+        attack = GetComponent<BasicAttack>();
     }
 
     public override void OnEpisodeBegin() {
@@ -77,25 +81,18 @@ public class Boss : Agent, IDamageable
         //Add attacks here
     }*/
 
+/*
     private void UpForce(){
-        theBoss.AddForce(new Vector2(0, speed));
-    }
+        bossRb.AddForce(new Vector2(0, speed));
+    }*/
     public override void OnActionReceived(ActionBuffers actions){
-        //ContinuousActions[0] is "Do Nothing"
-        int moveDown = actions.DiscreteActions[1];
-        int moveUp = actions.DiscreteActions[2];
-        int basicAttack = actions.DiscreteActions[3];
+        int moveDown = actions.DiscreteActions[2];
+        int moveUp = actions.DiscreteActions[1];
+        int basicAttack = actions.DiscreteActions[0];
 
-        if (moveUp == 1){
-            //transform.position = new Vector2(0,moveUp) * Time.deltaTime*2f;
-            up.UseAbility(true);
-        }
-        else if (moveDown == 1) {
-            down.UseAbility(true);
-        }
-        if(basicAttack == 1) {
-            attack.UseAbility(true);
-        }
+        up.UseAbility(moveUp == 1);
+        down.UseAbility(moveDown == 1);
+        attack.UseAbility(basicAttack == 1);
     }
 
 
@@ -112,24 +109,20 @@ public class Boss : Agent, IDamageable
         //Raycast Sensors will return positions of attacks, no need to add them to here, neither to components*/
     }
 
+
+
+    [SerializeField] private float raycastDistance = 1f;
     public override void Heuristic(in ActionBuffers actionsOut) {
         Debug.Log("HEURISTIC");
-        // Check if the UpArrow key is pressed
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            Debug.Log("Up Arrow Pressed");
-            // Move the object up by moveDistance units
-            transform.position += new Vector3(0f, speed, 0f);
-        }
+        bool moveUpInput = Input.GetKey(KeyCode.UpArrow);
+        bool moveDownInput = Input.GetKey(KeyCode.DownArrow);
+        bool basicAttackInput = Input.GetKey(KeyCode.X);
+        var discreteActionsOut = actionsOut.DiscreteActions;
+        
+        discreteActionsOut[0] = basicAttackInput ? 1 : 0;
+        discreteActionsOut[1] = moveUpInput ? 1 : 0;
+        discreteActionsOut[2] = moveDownInput ? 1 : 0;
 
-        // Check if the DownArrow key is pressed
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            Debug.Log("DownArrow Pressed");
-            // Move the object down by moveDistance units
-            transform.position -= new Vector3(0f, speed, 0f);
-            
-        }
         /*ActionSegment<float> continuousActions = actionsOut.ContinuousActions;
             if (Input.GetKey(KeyCode.UpArrow) == true)
                 continuousActions[0] = 1;
