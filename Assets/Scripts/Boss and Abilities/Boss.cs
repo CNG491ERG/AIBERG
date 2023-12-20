@@ -57,10 +57,6 @@ public class Boss : Agent, IDamageable
         enragement = 1;
     }
 
-    public void RequestDecision(){
-    
-    }
-
     public void TakeDamage(float damageToTake) {
         Debug.Log("I got hit! (boss)");
         float totalDamage = damageToTake * (1 - Defense);
@@ -72,19 +68,6 @@ public class Boss : Agent, IDamageable
         }
     }
 
-    /*public override void OnActionReceived(ActionBuffers actions)//TO BE COMPLETED... TO BE COMPLETED...
-    {
-        float moveY = actions.ContinuousActions[0];
-
-        transform.position += new Vector3(0,moveY,0)*Time.deltaTime*speed;
-
-        //Add attacks here
-    }*/
-
-/*
-    private void UpForce(){
-        bossRb.AddForce(new Vector2(0, speed));
-    }*/
     public override void OnActionReceived(ActionBuffers actions){
         int moveDown = actions.DiscreteActions[2];
         int moveUp = actions.DiscreteActions[1];
@@ -115,7 +98,6 @@ public class Boss : Agent, IDamageable
     }
 
     public override void Heuristic(in ActionBuffers actionsOut) {
-        Debug.Log("HEURISTIC");
         bool moveUpInput = Input.GetKey(KeyCode.UpArrow);
         bool moveDownInput = Input.GetKey(KeyCode.DownArrow);
         bool basicAttackInput = Input.GetKey(KeyCode.X);
