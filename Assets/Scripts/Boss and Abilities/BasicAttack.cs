@@ -7,11 +7,8 @@ public class BasicAttack : MonoBehaviour, IBossAbility, IAttackAbility{
     [SerializeField] private float projectileVelocityX;
     [SerializeField] private Boss boss;
     [SerializeField] private float cooldownTimer;
-    public bool CanBeUsed{
-        get{
-            return cooldownTimer >= Cooldown-0.0001f;
-        }
-    }
+    public bool CanBeUsed => cooldownTimer >= Cooldown-0.0001f;
+
     public string AbilityName => "BasicAttack";
 
     public GameObject AbilityOwner => boss.gameObject;
@@ -35,6 +32,7 @@ public class BasicAttack : MonoBehaviour, IBossAbility, IAttackAbility{
             projectileRb.transform.localPosition = Vector3.zero;
             projectileRb.gameObject.GetComponent<DamagingProjectile>().projectileVelocity = new Vector2(-projectileVelocityX, 0);
             cooldownTimer = 0;
+            Debug.Log("Projectile velocity: " + projectileRb.velocity);
         }
         cooldownTimer = cooldownTimer >= (Cooldown-0.0001f) ? cooldownTimer : cooldownTimer + Time.fixedDeltaTime;
     }

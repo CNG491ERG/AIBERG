@@ -15,10 +15,11 @@ public class BossAgent : Agent{
     private IBossAbility moveDown;
     private IBossAbility basicAttack;
     [SerializeField] private Player player;
+    [SerializeField] private Transform playerSpawnPosition;
+    [SerializeField] private Transform bossSpawnPosition; 
     public override void Initialize() {
         bossRb = GetComponent<Rigidbody2D>();
         boss = GetComponent<Boss>();
-        player = FindAnyObjectByType<Player>();
         moveUp = GetComponent<MoveUp>();
         moveDown = GetComponent<MoveDown>();
         basicAttack = GetComponent<BasicAttack>();
@@ -31,8 +32,8 @@ public class BossAgent : Agent{
     }
 
     public override void OnEpisodeBegin() {
-        transform.localPosition = new Vector3(5.7797966f, 0.806096554f, -2.32154632f);
-        player.transform.localPosition = new Vector3(-9.99020386f, 0.806096554f, -2.32154632f);
+        transform.localPosition = bossSpawnPosition.transform.localPosition;
+        player.transform.localPosition = playerSpawnPosition.transform.localPosition;
         player.Health = 100;
         boss.Health = 100;
         boss.Defense = 0;
@@ -42,7 +43,7 @@ public class BossAgent : Agent{
 
     private void Boss_OnDamageableDeath(object sender, EventArgs e)
     {
-        AddReward(-5f);
+        AddReward(-2f);
         EndEpisode();
     }
 
