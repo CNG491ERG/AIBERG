@@ -33,6 +33,7 @@ public class BossAgent : Agent{
     public override void OnEpisodeBegin() {
         transform.localPosition = new Vector3(5.7797966f, 0.806096554f, -2.32154632f);
         player.transform.localPosition = new Vector3(-9.99020386f, 0.806096554f, -2.32154632f);
+        player.Health = 100;
         boss.Health = 100;
         boss.Defense = 0;
         boss.speed = 10;
@@ -65,6 +66,8 @@ public class BossAgent : Agent{
         int moveAction = actions.DiscreteActions[0];
         int attackAction = actions.DiscreteActions[1];
 
+        Debug.Log("Discrete actions [0] = " + actions.DiscreteActions[0]);
+        Debug.Log("Discrete actions [1] = " + actions.DiscreteActions[1]);
         moveDown.UseAbility(moveAction == 1);
         moveUp.UseAbility(moveAction == 2);
         basicAttack.UseAbility(attackAction == 1);

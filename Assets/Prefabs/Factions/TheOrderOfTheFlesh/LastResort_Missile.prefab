@@ -300,7 +300,7 @@ GameObject:
   - component: {fileID: 3638068416293148722}
   m_Layer: 0
   m_Name: LastResort_Missile
-  m_TagString: Untagged
+  m_TagString: PlayerDamageProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -360,7 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 971e533b424c5e5449daf437a6ad4efe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 10
   tagToDamage: Boss
   projectileVelocity: {x: 0, y: 0}
 --- !u!70 &3638068416293148722
