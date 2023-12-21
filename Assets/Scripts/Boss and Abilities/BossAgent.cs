@@ -94,16 +94,4 @@ public class BossAgent : Agent{
         discreteActionsOut[1] = 0; //No attack
         discreteActionsOut[1] = basicAttackInput ? 1 : discreteActionsOut[1];
     }
-
-    private void FixedUpdate() {
-        if (StepCount == MaxStep)
-        {// MUST DO MORE SCALABLE MAX HEALTHS
-            AddReward(-1f + (player.Health / 100));
-            EndEpisode();
-        }
-        else if ((StepCount / 3000f) - (StepCount / 3000) == 0)
-        {
-            AddReward(-0.05f * (StepCount / MaxStep));
-        }
-    }
 }

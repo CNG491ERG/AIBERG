@@ -1,0 +1,29 @@
+{
+    "Boss": {
+        "checkpoints": [
+            {
+                "steps": 0,
+                "file_path": "results\\serhan2BossRun\\Boss\\Boss-0.onnx",
+                "reward": null,
+                "creation_time": 1703172479.9151604,
+                "auxillary_file_paths": [
+                    "results\\serhan2BossRun\\Boss\\Boss-0.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 0,
+            "file_path": "results\\serhan2BossRun\\Boss.onnx",
+            "reward": null,
+            "creation_time": 1703172479.9151604,
+            "auxillary_file_paths": [
+                "results\\serhan2BossRun\\Boss\\Boss-0.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.0.0",
+        "torch_version": "1.13.1+cu117"
+    }
+}
