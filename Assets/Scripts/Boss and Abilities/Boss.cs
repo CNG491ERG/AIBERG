@@ -6,7 +6,7 @@ using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using System;
 
-public class Boss : Agent, IDamageable
+public class Boss : MonoBehaviour, IDamageable
 {
     [SerializeField] private float health;
     [SerializeField] private float defense;
@@ -17,11 +17,6 @@ public class Boss : Agent, IDamageable
     [SerializeField] private Transform targetTransform;
     [SerializeField] private Rigidbody2D bossRb;
 
-    
-    public int maxDistance = 20;
-    MoveUp up;
-    MoveDown down;
-    BasicAttack attack;
 
     [SerializeField] private Player player;
     public float Health { 
@@ -41,81 +36,9 @@ public class Boss : Agent, IDamageable
         }
     }
 
-    public override void Initialize() {
-        bossRb = this.GetComponent<Rigidbody2D>();
-        up = GetComponent<MoveUp>();
-        down = GetComponent<MoveDown>();
-        attack = GetComponent<BasicAttack>();
-    }
-
-    public override void OnEpisodeBegin() {
-        transform.position = new Vector2(8,0);
-        targetTransform.position = new Vector2(-8.4f,0);
-        health = 100;
-        defense = 0;
-        speed = 10;
-        enragement = 1;
-        GameManager.Instance.ResetStepCounter();
-    }
-
     public void TakeDamage(float damageToTake) {
         float totalDamage = damageToTake * (1 - Defense);
         Health = Health - totalDamage <= 0 ? 0 : Health - totalDamage;
-        
-        if(Health <= 0){
-            AddReward(-1f);
-            EndEpisode();
-        }
-        else{
-            AddReward(-(0.02f * totalDamage / this.health));
-        }
     }
-
-    public override void OnActionReceived(ActionBuffers actions){
-        int moveDown = actions.DiscreteActions[2];
-        int moveUp = actions.DiscreteActions[1];
-        int basicAttack = actions.DiscreteActions[0];
-
-        up.UseAbility(moveUp == 1);
-        down.UseAbility(moveDown == 1);
-        attack.UseAbility(basicAttack == 1);
-    }
-
-
-    public override void CollectObservations(VectorSensor sensor)
-    {
-        sensor.AddObservation(bossRb.transform.position.x);
-        sensor.AddObservation(bossRb.transform.position.y);
-        sensor.AddObservation(health);
-
-        sensor.AddObservation(player.transform.position.x);
-        sensor.AddObservation(player.transform.position.y);
-        sensor.AddObservation(player.Health);
-    }
-
-    public override void Heuristic(in ActionBuffers actionsOut) {
-        bool moveUpInput = Input.GetKey(KeyCode.UpArrow);
-        bool moveDownInput = Input.GetKey(KeyCode.DownArrow);
-        bool basicAttackInput = Input.GetKey(KeyCode.X);
-        var discreteActionsOut = actionsOut.DiscreteActions;
-        
-        discreteActionsOut[0] = basicAttackInput ? 1 : 0;
-        discreteActionsOut[1] = moveUpInput ? 1 : 0;
-        discreteActionsOut[2] = moveDownInput ? 1 : 0;
-    }
-
-    void FixedUpdate()
-    {
-        if (StepCount == MaxStep)
-        {// MUST DO MORE SCALABLE MAX HEALTHS
-            AddReward(-1f + (player.Health / 100));
-            EndEpisode();
-        }
-        else if ((StepCount / 3000f) - (StepCount / 3000) == 0)
-        {
-            AddReward(-0.05f * (StepCount / MaxStep));
-        }
-    }
-
 }
     
