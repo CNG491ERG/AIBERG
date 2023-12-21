@@ -20,6 +20,8 @@ public class AssaultRifle : MonoBehaviour, IPlayerAbility, IAttackAbility{
 
     public float Damage => 0.25f;
 
+    public bool CanBeUsed => true;
+
     private void Start() {
         this.faction = GetComponentInParent<Faction>();
         this.cooldownTimer = Cooldown;

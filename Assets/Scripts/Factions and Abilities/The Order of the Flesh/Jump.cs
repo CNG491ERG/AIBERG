@@ -32,6 +32,8 @@ public class Jump : MonoBehaviour, IPlayerAbility{
 
     public float AbilityDuration => 0;
 
+    public bool CanBeUsed => true;
+
     public void UseAbility(bool inputReceived){
         RaycastHit2D hitBelow = Physics2D.Raycast(transform.position, -transform.up, raycastDistance, LayerMask.GetMask("ForegroundEnvironment"));
         RaycastHit2D hitAbove = Physics2D.Raycast(transform.position, transform.up, raycastDistance, LayerMask.GetMask("ForegroundEnvironment"));
