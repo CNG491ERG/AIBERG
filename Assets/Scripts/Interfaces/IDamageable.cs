@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,4 +14,7 @@ public interface IDamageable{
         set;
     }
     void TakeDamage(float damageToTake);
+
+    event EventHandler OnDamageableDeath;
+    event EventHandler OnDamageableHurt;
 }

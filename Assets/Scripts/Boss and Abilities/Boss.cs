@@ -19,6 +19,10 @@ public class Boss : MonoBehaviour, IDamageable
 
 
     [SerializeField] private Player player;
+
+    public event EventHandler OnDamageableDeath;
+    public event EventHandler OnDamageableHurt;
+
     public float Health { 
         get{
             return health;
@@ -39,6 +43,10 @@ public class Boss : MonoBehaviour, IDamageable
     public void TakeDamage(float damageToTake) {
         float totalDamage = damageToTake * (1 - Defense);
         Health = Health - totalDamage <= 0 ? 0 : Health - totalDamage;
+        OnDamageableHurt?.Invoke(this, EventArgs.Empty);
+        if(Health == 0){
+            OnDamageableDeath?.Invoke(this, EventArgs.Empty);
+        }
     }
 }
     
