@@ -41,7 +41,7 @@ public class BossAgent : Agent{
 
     private void Boss_OnDamageableDeath(object sender, EventArgs e)
     {
-        AddReward(-10f);
+        AddReward(-5f);
         EndEpisode();
     }
 
@@ -58,7 +58,7 @@ public class BossAgent : Agent{
 
     private void Player_OnDamageableHurt(object sender, EventArgs e)
     {
-        AddReward(0.05f);
+        AddReward(0.5f);
     }
 
     public override void OnActionReceived(ActionBuffers actions){
