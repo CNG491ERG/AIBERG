@@ -44,17 +44,6 @@ public class Jump : MonoBehaviour, IPlayerAbility{
         isGliding = !isOnGround & inputReceived;
         isFalling = !isOnGround & !inputReceived;
 
-        /*
-         * If below is for the case when the player keeps providing input
-         * while the character is gliding and the moment it touches the ground
-         * it jumps again without waiting. If statement below makes it so that
-         * the player has to let go of the input and provide it again.
-         */
-        if(previousFrameVelocity.y < 0 && inputReceived && isOnGround) {
-            faction.player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            return;
-        }
-
         if(isOnGround){
             firstJumpComplete = false;
             jumpTimer = 2;

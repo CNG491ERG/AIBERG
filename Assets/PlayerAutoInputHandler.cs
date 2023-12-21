@@ -16,17 +16,19 @@ public class PlayerAutoInputHandler : MonoBehaviour{
         bool basicAbilityInput = true; //Always use basic input as it has no cooldown
         RaycastHit2D hit = Physics2D.CircleCast(transform.position, radius: 10f, transform.right);
         bool jumpInput = false;
+        
         if(hit.collider != null){
             if(hit.collider.GetComponent<DamagingProjectile>() != null){
                 if(hit.collider.GetComponent<Rigidbody2D>().velocity.x < 0){
                     jumpInput = true;
                 }
-                else{
-                    jumpInput = false;
-                }
             }
         }
-    
+        
+        if (!jumpInput) {
+            jumpInput = boss.transform.position.y > faction.player.transform.position.y;
+        }
+
         bool activeAbility1Input = faction.ActiveAbility1.CanBeUsed;
         bool activeAbility2Input = faction.ActiveAbility2.CanBeUsed;
         faction.BasicAttack.UseAbility(basicAbilityInput);
