@@ -4,6 +4,7 @@ using Unity.Collections;
 using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
+using UnityEditor.Timeline.Actions;
 using UnityEngine;
 
 public class BossAgent : Agent{
@@ -32,9 +33,9 @@ public class BossAgent : Agent{
     }
 
     public override void OnActionReceived(ActionBuffers actions){
-        int moveDownInput = actions.DiscreteActions[2];
+        int moveDownInput = actions.DiscreteActions[0];
         int moveUpInput = actions.DiscreteActions[1];
-        int basicAttackInput = actions.DiscreteActions[0];
+        int basicAttackInput = actions.DiscreteActions[2];
 
         moveUp.UseAbility(moveUpInput == 1);
         moveDown.UseAbility(moveDownInput == 1);
@@ -42,8 +43,7 @@ public class BossAgent : Agent{
     }
 
 
-    public override void CollectObservations(VectorSensor sensor)
-    {
+    public override void CollectObservations(VectorSensor sensor){
         sensor.AddObservation(bossRb.transform.position.x);
         sensor.AddObservation(bossRb.transform.position.y);
         sensor.AddObservation(boss.Health);
@@ -59,9 +59,9 @@ public class BossAgent : Agent{
         bool basicAttackInput = Input.GetKey(KeyCode.X);
         var discreteActionsOut = actionsOut.DiscreteActions;
         
-        discreteActionsOut[0] = basicAttackInput ? 1 : 0;
-        discreteActionsOut[1] = moveUpInput ? 1 : 0;
-        discreteActionsOut[2] = moveDownInput ? 1 : 0;
+        discreteActionsOut[0] = moveUpInput ? 1 : 0;
+        discreteActionsOut[1] = moveDownInput ? 1 : 0;
+        discreteActionsOut[2] = basicAttackInput ? 1 : 0;
     }
 
     private void FixedUpdate() {
