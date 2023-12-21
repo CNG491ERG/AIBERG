@@ -1,0 +1,29 @@
+{
+    "Boss": {
+        "checkpoints": [
+            {
+                "steps": 9116,
+                "file_path": "results\\secondBossRun\\Boss\\Boss-9116.onnx",
+                "reward": -1.0908658200254042,
+                "creation_time": 1703165989.5609982,
+                "auxillary_file_paths": [
+                    "results\\secondBossRun\\Boss\\Boss-9116.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 9116,
+            "file_path": "results\\secondBossRun\\Boss.onnx",
+            "reward": -1.0908658200254042,
+            "creation_time": 1703165989.5609982,
+            "auxillary_file_paths": [
+                "results\\secondBossRun\\Boss\\Boss-9116.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.0.0",
+        "torch_version": "1.13.1+cu117"
+    }
+}

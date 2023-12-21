@@ -1373,8 +1373,8 @@ GameObject:
   - component: {fileID: 1414383563}
   - component: {fileID: 1414383562}
   - component: {fileID: 1414383565}
-  - component: {fileID: 1414383564}
   - component: {fileID: 1414383566}
+  - component: {fileID: 1414383567}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Boss
@@ -1483,12 +1483,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51f2531dff4287a4aa4a1a330c8b30a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agentParameters:
+    maxStep: 0
+  hasUpgradedFromAgentParameters: 1
+  MaxStep: 0
   health: 100
   defense: 0
   enragement: 1
   speed: 2
   cooldownMultiplier: 0
   damageMultiplier: 0
+  targetTransform: {fileID: 2037208591}
+  bossRb: {fileID: 0}
+  maxDistance: 20
+  player: {fileID: 8986819994533355718}
 --- !u!114 &1414383562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1517,24 +1525,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boss: {fileID: 0}
   bossRb: {fileID: 0}
---- !u!114 &1414383564
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1414383557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 356ec98c00bafa14e857d5ce2b810b2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveUpInput: 0
-  moveDownInput: 0
-  basicAttackInput: 0
-  raycastDistance: 1.1
-  bossRb: {fileID: 0}
-  eventViewer: {fileID: 0}
 --- !u!114 &1414383565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1566,6 +1556,36 @@ MonoBehaviour:
   eventPerformer: Boss
   eventsBeingPerformed: []
   text: {fileID: 496221549}
+--- !u!114 &1414383567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1414383557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1c4e0b1822b495aa52bc52839ecb30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BrainParameters:
+    VectorObservationSize: 1
+    NumStackedVectorObservations: 1
+    m_ActionSpec:
+      m_NumContinuousActions: 0
+      BranchSizes: 01000000
+    VectorActionSize: 01000000
+    VectorActionDescriptions: []
+    VectorActionSpaceType: 0
+    hasUpgradedBrainParametersWithActionSpec: 1
+  m_Model: {fileID: 5022602860645237092, guid: f07dfe7b44517984e940f33d7c93eba1, type: 3}
+  m_InferenceDevice: 0
+  m_BehaviorType: 0
+  m_BehaviorName: My Behavior
+  TeamId: 0
+  m_UseChildSensors: 1
+  m_UseChildActuators: 1
+  m_ObservableAttributeHandling: 0
 --- !u!1 &1539600093
 GameObject:
   m_ObjectHideFlags: 0
@@ -2502,3 +2522,14 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 487724896}
   m_SourcePrefab: {fileID: 100100000, guid: b9a2a0db3135b304caee05348df11778, type: 3}
+--- !u!114 &8986819994533355718 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7652950528693462139, guid: b9a2a0db3135b304caee05348df11778, type: 3}
+  m_PrefabInstance: {fileID: 8986819994533355717}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037208587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d109fbf52103db042ad2ed5563162587, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

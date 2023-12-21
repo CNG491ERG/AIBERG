@@ -55,6 +55,7 @@ public class Boss : Agent, IDamageable
         defense = 0;
         speed = 10;
         enragement = 1;
+        GameManager.Instance.ResetStepCounter();
     }
 
     public void TakeDamage(float damageToTake) {

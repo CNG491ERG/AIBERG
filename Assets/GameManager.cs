@@ -51,4 +51,8 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0; //Pauses the game completely
         Debug.Log("Game Ended");
     }
+
+    public void ResetStepCounter(){
+        stepCounter = 0;
+    }
 }
