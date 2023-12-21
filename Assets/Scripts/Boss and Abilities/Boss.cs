@@ -58,7 +58,6 @@ public class Boss : Agent, IDamageable
     }
 
     public void TakeDamage(float damageToTake) {
-        Debug.Log("I got hit! (boss)");
         float totalDamage = damageToTake * (1 - Defense);
         Health = Health - totalDamage <= 0 ? 0 : Health - totalDamage;
         
@@ -84,20 +83,13 @@ public class Boss : Agent, IDamageable
 
     public override void CollectObservations(VectorSensor sensor)
     {
-        //Location of the Player and the Boss is Branch 0
-        sensor.AddObservation(transform.localPosition.x);
-        sensor.AddObservation(transform.localPosition.y);
-        sensor.AddObservation(transform.localPosition.z);
-
-        sensor.AddObservation(targetTransform.localPosition.x);
-        sensor.AddObservation(targetTransform.localPosition.y);
-        sensor.AddObservation(targetTransform.localPosition.z);
-
-        //Health bars of Player and Boss
+        sensor.AddObservation(bossRb.transform.position.x);
+        sensor.AddObservation(bossRb.transform.position.y);
         sensor.AddObservation(health);
-        Debug.Log("PLAYER HEALTH:" + player.Health);
+
+        sensor.AddObservation(player.transform.position.x);
+        sensor.AddObservation(player.transform.position.y);
         sensor.AddObservation(player.Health);
-        //Raycast Sensors will return positions of attacks, no need to add them to here, neither to components*/
     }
 
     public override void Heuristic(in ActionBuffers actionsOut) {
