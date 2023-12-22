@@ -49,7 +49,7 @@ public class BossAgent : Agent{
 
     private void Boss_OnDamageableHurt(object sender, EventArgs e)
     {
-        AddReward(-0.05f);
+        AddReward(-0.1f);
     }
 
     private void Player_OnDamageableDeath(object sender, EventArgs e)
@@ -95,5 +95,11 @@ public class BossAgent : Agent{
         discreteActionsOut[0] = moveUpInput ? 2 : discreteActionsOut[0];
         discreteActionsOut[1] = 0; //No attack
         discreteActionsOut[1] = basicAttackInput ? 1 : discreteActionsOut[1];
+    }
+    
+    private void FixedUpdate() {
+        if(StepCount%50 == 0){
+            AddReward(-0.10f); //To make kill in less time
+        }
     }
 }

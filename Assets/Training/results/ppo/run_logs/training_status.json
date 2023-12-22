@@ -2,31 +2,31 @@
     "Boss": {
         "checkpoints": [
             {
-                "steps": 499955,
-                "file_path": "results\\ppo\\Boss\\Boss-499955.onnx",
-                "reward": 14.153124682605267,
-                "creation_time": 1703227579.4801714,
+                "steps": 499960,
+                "file_path": "results\\ppo\\Boss\\Boss-499960.onnx",
+                "reward": 9.024999960325658,
+                "creation_time": 1703228901.204219,
                 "auxillary_file_paths": [
-                    "results\\ppo\\Boss\\Boss-499955.pt"
+                    "results\\ppo\\Boss\\Boss-499960.pt"
                 ]
             },
             {
-                "steps": 500013,
-                "file_path": "results\\ppo\\Boss\\Boss-500013.onnx",
-                "reward": 13.329411464140696,
-                "creation_time": 1703227579.6030052,
+                "steps": 750094,
+                "file_path": "results\\ppo\\Boss\\Boss-750094.onnx",
+                "reward": 6.0727271634069355,
+                "creation_time": 1703229218.4452417,
                 "auxillary_file_paths": [
-                    "results\\ppo\\Boss\\Boss-500013.pt"
+                    "results\\ppo\\Boss\\Boss-750094.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 500013,
+            "steps": 750094,
             "file_path": "results\\ppo\\Boss.onnx",
-            "reward": 13.329411464140696,
-            "creation_time": 1703227579.6030052,
+            "reward": 6.0727271634069355,
+            "creation_time": 1703229218.4452417,
             "auxillary_file_paths": [
-                "results\\ppo\\Boss\\Boss-500013.pt"
+                "results\\ppo\\Boss\\Boss-750094.pt"
             ]
         }
     },
