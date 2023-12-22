@@ -53,5 +53,9 @@ public class LastResort : MonoBehaviour, IPlayerAbility, IAttackAbility
             yield return new WaitForSeconds(1f/misillesPerSecond);
         }
     }
+
+    public void ResetCooldown(){
+        cooldownTimer = 0;
+    }
 }
 

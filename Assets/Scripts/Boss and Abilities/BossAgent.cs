@@ -5,7 +5,6 @@ using Unity.Collections;
 using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
-using UnityEditor.Timeline.Actions;
 using UnityEngine;
 
 public class BossAgent : Agent{
@@ -39,6 +38,7 @@ public class BossAgent : Agent{
         boss.Defense = 0;
         boss.speed = 10;
         GameManager.Instance.ResetStepCounter();
+        player.ResetAllCooldowns();
     }
 
     private void Boss_OnDamageableDeath(object sender, EventArgs e)
@@ -67,8 +67,6 @@ public class BossAgent : Agent{
         int moveAction = actions.DiscreteActions[0];
         int attackAction = actions.DiscreteActions[1];
 
-        Debug.Log("Discrete actions [0] = " + actions.DiscreteActions[0]);
-        Debug.Log("Discrete actions [1] = " + actions.DiscreteActions[1]);
         moveDown.UseAbility(moveAction == 1);
         moveUp.UseAbility(moveAction == 2);
         basicAttack.UseAbility(attackAction == 1);

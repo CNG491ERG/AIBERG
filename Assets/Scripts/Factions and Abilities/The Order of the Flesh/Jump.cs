@@ -64,4 +64,8 @@ public class Jump : MonoBehaviour, IPlayerAbility{
         }
         previousFrameVelocity = faction.player.GetComponent<Rigidbody2D>().velocity;  
     }
+
+    public void ResetCooldown(){
+        return;
+    }
 }

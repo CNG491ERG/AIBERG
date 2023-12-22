@@ -19,4 +19,5 @@ public interface IAbility{
         get;
     }
     public void UseAbility(bool inputReceived);
+    public void ResetCooldown();
 }

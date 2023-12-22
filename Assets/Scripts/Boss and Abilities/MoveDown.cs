@@ -28,4 +28,8 @@ public class MoveDown : MonoBehaviour, IBossAbility{
             }
         }
     }
+
+    public void ResetCooldown(){
+        return;
+    }
 }

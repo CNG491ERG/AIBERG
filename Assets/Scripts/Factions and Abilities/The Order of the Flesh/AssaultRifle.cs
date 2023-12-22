@@ -20,7 +20,7 @@ public class AssaultRifle : MonoBehaviour, IPlayerAbility, IAttackAbility{
 
     public float Damage => 0.25f;
 
-    public bool CanBeUsed => true;
+    public bool CanBeUsed => cooldownTimer >= (Cooldown-0.001f);
 
     private void Start() {
         this.faction = GetComponentInParent<Faction>();
@@ -37,5 +37,9 @@ public class AssaultRifle : MonoBehaviour, IPlayerAbility, IAttackAbility{
             cooldownTimer = 0;
         }
         cooldownTimer = cooldownTimer >= (Cooldown-0.001f) ? cooldownTimer : cooldownTimer + Time.fixedDeltaTime;
+    }
+
+    public void ResetCooldown(){
+        cooldownTimer = 0;
     }
 }

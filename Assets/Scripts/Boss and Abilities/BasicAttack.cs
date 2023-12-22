@@ -36,5 +36,8 @@ public class BasicAttack : MonoBehaviour, IBossAbility, IAttackAbility{
         }
         cooldownTimer = cooldownTimer >= (Cooldown-0.0001f) ? cooldownTimer : cooldownTimer + Time.fixedDeltaTime;
     }
+    public void ResetCooldown(){
+        cooldownTimer = 0;
+    }
 
 }

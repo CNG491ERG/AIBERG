@@ -30,4 +30,7 @@ public class MoveUp : MonoBehaviour, IBossAbility{
         }
     }
 
+    public void ResetCooldown(){
+        return;
+    }
 }

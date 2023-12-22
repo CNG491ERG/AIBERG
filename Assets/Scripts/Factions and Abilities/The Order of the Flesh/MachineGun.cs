@@ -51,4 +51,8 @@ public class MachineGun : MonoBehaviour, IPlayerAbility, IAttackAbility
             yield return new WaitForSeconds(1f/bulletsPerSecond);   
         }
     }
+
+    public void ResetCooldown(){
+        cooldownTimer = 0;
+    }
 }

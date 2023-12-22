@@ -20,12 +20,6 @@ public class Player : MonoBehaviour, IDamageable{
         defense = playerFaction.defense;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
      public float Health{
         get{
             return health;
@@ -53,4 +47,9 @@ public class Player : MonoBehaviour, IDamageable{
         }
     }
 
+    public void ResetAllCooldowns(){
+        playerFaction.ActiveAbility1.ResetCooldown();
+        playerFaction.ActiveAbility2.ResetCooldown();
+        playerFaction.BasicAttack.ResetCooldown();
+    }
 }
