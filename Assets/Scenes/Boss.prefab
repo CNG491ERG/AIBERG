@@ -254,6 +254,8 @@ MonoBehaviour:
   hasUpgradedFromAgentParameters: 1
   MaxStep: 0
   player: {fileID: 0}
+  playerSpawnPosition: {fileID: 0}
+  bossSpawnPosition: {fileID: 0}
 --- !u!114 &622455597375510363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,7 +298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DecisionPeriod: 2
+  DecisionPeriod: 1
   TakeActionsBetweenDecisions: 1
 --- !u!1 &2361935044784293425
 GameObject:
