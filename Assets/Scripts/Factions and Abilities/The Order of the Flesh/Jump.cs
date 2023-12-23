@@ -48,21 +48,9 @@ public class Jump : MonoBehaviour, IPlayerAbility{
             firstJumpComplete = false;
             jumpTimer = 2;
         }
-        if(inputReceived && !firstJumpComplete){ //Jump
-            jumpTimer = jumpTimer >= 0 ? jumpTimer*0.95f : 0;
+        if(inputReceived){ //Jump
             faction.player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce*jumpTimer));
-        }
-        else if((!inputReceived && !isOnGround) || isOnPeakHeight){ 
-            firstJumpComplete = true;
-        }
-        if(isOnPeakHeight){
-            firstJumpComplete = true;
-        }
-        
-        if(firstJumpComplete && inputReceived && faction.player.GetComponent<Rigidbody2D>().velocity.y < 0){ //Glide
-            faction.player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, glideGravityMultiplier * jumpForce));
-        }
-        previousFrameVelocity = faction.player.GetComponent<Rigidbody2D>().velocity;  
+        } 
     }
 
     public void ResetCooldown(){
