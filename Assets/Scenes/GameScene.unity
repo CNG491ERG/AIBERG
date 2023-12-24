@@ -1391,10 +1391,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1140560171211084560, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
-      propertyPath: jumpForce
-      value: 70
-      objectReference: {fileID: 0}
     - target: {fileID: 1927532982322892202, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
       propertyPath: healthBar
       value: 
@@ -1445,6 +1441,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5165881283092141749, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5688542982507078955, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
+      propertyPath: cooldownTimer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5966591846664512544, guid: c7d157d5e5245b848b00de7471d22450, type: 3}

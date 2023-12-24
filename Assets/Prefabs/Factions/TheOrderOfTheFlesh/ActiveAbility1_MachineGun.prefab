@@ -44,12 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e2e0995e69e04c479304b535ad1544d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityOwner: {fileID: 0}
-  cooldown: 0
-  duration: 0
-  damage: 0
-  abilityName: 
-  abilityType: 0
   faction: {fileID: 0}
   bulletPrefab: {fileID: 9216531737267913027, guid: abd72793a8102524099debfed2f231ca, type: 3}
   bulletVelocityX: 25

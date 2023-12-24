@@ -11,7 +11,7 @@ public class MachineGun : MonoBehaviour, IPlayerAbility, IAttackAbility
     [SerializeField] private float durationTimer;
     [SerializeField] private float bulletsPerSecond;
 
-    public Faction PlayerFaction => throw new System.NotImplementedException();
+    public Faction PlayerFaction => faction;
 
     public string AbilityName => "MachineGun";
 
@@ -26,33 +26,34 @@ public class MachineGun : MonoBehaviour, IPlayerAbility, IAttackAbility
     public bool CanBeUsed => cooldownTimer >= Cooldown-0.0001f;
 
     void Start(){
-        this.faction = GetComponentInParent<Faction>();
-        this.cooldownTimer = this.Cooldown;
-        this.durationTimer = 0;
-        this.bulletPrefab.GetComponent<DamagingProjectile>().damage = Damage;
+        faction = GetComponentInParent<Faction>();
+        cooldownTimer = Cooldown;
+        bulletPrefab.GetComponent<DamagingProjectile>().damage = Damage;
     }
 
-    public  void UseAbility(bool inputReceived){
-        if(cooldownTimer >=(Cooldown-0.0001f) && inputReceived){
-            StartCoroutine(MachineGunCoroutine(bulletsPerSecond, AbilityDuration));
+    public void UseAbility(bool inputReceived){
+        if(CanBeUsed && inputReceived){
+            StartCoroutine(MachineGunCoroutine(bulletsPerSecond));
         }
-        cooldownTimer = cooldownTimer >= (Cooldown-0.001f) ? cooldownTimer : cooldownTimer + Time.fixedDeltaTime;
+        cooldownTimer = CanBeUsed ? cooldownTimer : cooldownTimer + Time.fixedDeltaTime;
     }
 
-    IEnumerator MachineGunCoroutine(float bulletsPerSecond, float duration){
+    IEnumerator MachineGunCoroutine(float bulletsPerSecond){
         durationTimer = 0;
-        while(this.durationTimer < AbilityDuration){
-            Rigidbody2D bulletRigidBody = Instantiate(bulletPrefab).GetComponent<Rigidbody2D>();
-            bulletRigidBody.transform.parent = this.transform;
-            bulletRigidBody.transform.localPosition = Vector3.zero;
-            bulletRigidBody.gameObject.GetComponent<DamagingProjectile>().projectileVelocity = new Vector2(bulletVelocityX, 0);
+        while(durationTimer < AbilityDuration){
+            ShootBullet();
+            durationTimer += 1f/bulletsPerSecond;
             cooldownTimer = 0;
-            this.durationTimer += 1f/bulletsPerSecond;
             yield return new WaitForSeconds(1f/bulletsPerSecond);   
         }
     }
-
+    private void ShootBullet(){
+        Rigidbody2D bulletRigidBody = Instantiate(bulletPrefab).GetComponent<Rigidbody2D>();
+        bulletRigidBody.transform.parent = this.transform;
+        bulletRigidBody.transform.localPosition = Vector3.zero;
+        bulletRigidBody.gameObject.GetComponent<DamagingProjectile>().projectileVelocity = new Vector2(bulletVelocityX, 0);
+    }
     public void ResetCooldown(){
-        cooldownTimer = 0;
+        cooldownTimer = Cooldown;
     }
 }
