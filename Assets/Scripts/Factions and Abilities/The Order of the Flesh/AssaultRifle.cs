@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AssaultRifle : MonoBehaviour, IPlayerAbility, IAttackAbility{
@@ -23,23 +21,27 @@ public class AssaultRifle : MonoBehaviour, IPlayerAbility, IAttackAbility{
     public bool CanBeUsed => cooldownTimer >= (Cooldown-0.001f);
 
     private void Start() {
-        this.faction = GetComponentInParent<Faction>();
-        this.cooldownTimer = Cooldown;
-        this.bulletPrefab.GetComponent<DamagingProjectile>().damage = Damage;
+        faction = GetComponentInParent<Faction>();
+        cooldownTimer = Cooldown;
+        bulletPrefab.GetComponent<DamagingProjectile>().damage = Damage;
     }
 
     public void UseAbility(bool inputReceived){
         if(cooldownTimer>=(Cooldown-0.0001f) && inputReceived){ 
-            Rigidbody2D bulletRigidBody = Instantiate(bulletPrefab).GetComponent<Rigidbody2D>();
-            bulletRigidBody.transform.parent = this.transform;
-            bulletRigidBody.transform.localPosition = Vector3.zero;
-            bulletRigidBody.gameObject.GetComponent<DamagingProjectile>().projectileVelocity = new Vector2(bulletVelocityX, 0);
+            ShootBullet();
             cooldownTimer = 0;
         }
-        cooldownTimer = cooldownTimer >= (Cooldown-0.001f) ? cooldownTimer : cooldownTimer + Time.fixedDeltaTime;
+        cooldownTimer = CanBeUsed ? cooldownTimer : cooldownTimer + Time.fixedDeltaTime;
+    }
+
+    private void ShootBullet(){
+        Rigidbody2D bulletRigidBody = Instantiate(bulletPrefab).GetComponent<Rigidbody2D>();
+        bulletRigidBody.transform.parent = this.transform;
+        bulletRigidBody.transform.localPosition = Vector3.zero;
+        bulletRigidBody.gameObject.GetComponent<DamagingProjectile>().projectileVelocity = new Vector2(bulletVelocityX, 0);
     }
 
     public void ResetCooldown(){
-        cooldownTimer = 0;
+        cooldownTimer = Cooldown;
     }
 }
