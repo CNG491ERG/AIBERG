@@ -62,13 +62,7 @@ public class PlayerAutoInputHandler : MonoBehaviour{
 
         }
 
-
         Debug.DrawLine(new Vector2(5.7f + point.localPosition.x, 0.48f + point.localPosition.y), new Vector2(5.7f + point.localPosition.x, 0.48f + point.localPosition.y) + new Vector2(10f, 2), Color.black);
-
-
-
-
-
 
         int x, y;
 
@@ -255,18 +249,14 @@ public class PlayerAutoInputHandler : MonoBehaviour{
                     faction.JumpAbility.UseAbility(true);
                 break;
         }
-       
 
+    }
+    private void OnDrawGizmos() {
 
-        /*bool activeAbility1Input = faction.ActiveAbility1.CanBeUsed;
-        bool activeAbility2Input = faction.ActiveAbility2.CanBeUsed;
-        faction.BasicAttack.UseAbility(basicAbilityInput);
-        faction.ActiveAbility1.UseAbility(activeAbility1Input);
-        faction.ActiveAbility2.UseAbility(activeAbility2Input);*/
+        RaycastHit2D raycastBelow = Physics2D.Raycast(point.transform.position, -point.transform.up, Mathf.Infinity, LayerMask.GetMask("ForegroundEnvironment"));
+        RaycastHit2D raycastAbove = Physics2D.Raycast(point.transform.position, point.transform.up, Mathf.Infinity, LayerMask.GetMask("ForegroundEnvironment"));
 
-
-
-
-
+        Vector2 middlePoint = (raycastAbove.point + raycastBelow.point)/2;
+        Gizmos.DrawLine(middlePoint, new Vector2(middlePoint.x*2, middlePoint.y));
     }
 }
