@@ -44,20 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50f90c060ae41a842aa95ca2a72708b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityOwner: {fileID: 0}
-  cooldown: 0
-  duration: 0
-  damage: 0
-  abilityName: 
-  abilityType: 3
   faction: {fileID: 0}
-  raycastDistance: 0.6
-  isOnGround: 0
-  isGliding: 0
-  isFalling: 0
-  isOnPeakHeight: 0
-  inputReceived: 0
-  firstJumpComplete: 0
-  jumpForce: 35
-  glideGravityMultiplier: 0.55
-  jumpTimer: 2
+  jumpForce: 50

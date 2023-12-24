@@ -1443,6 +1443,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5688542982507078955, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
+      propertyPath: cooldownTimer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5966591846664512544, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
       propertyPath: healthBar
       value: 

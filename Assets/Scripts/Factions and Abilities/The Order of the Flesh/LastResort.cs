@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Android;
 
 public class LastResort : MonoBehaviour, IPlayerAbility, IAttackAbility
 {
@@ -27,35 +25,39 @@ public class LastResort : MonoBehaviour, IPlayerAbility, IAttackAbility
     public bool CanBeUsed => cooldownTimer >= Cooldown-0.0001f;
 
     void Start(){
-        this.faction = GetComponentInParent<Faction>();
-        this.cooldownTimer = Cooldown;
-        this.durationTimer = 0;
-        this.misillePrefab.GetComponent<DamagingProjectile>().damage = this.Damage;
-        this.boss = FindFirstObjectByType<Boss>().gameObject;
+        faction = GetComponentInParent<Faction>();
+        cooldownTimer = Cooldown;
+        durationTimer = 0;
+        misillePrefab.GetComponent<DamagingProjectile>().damage = Damage;
+        boss = transform.parent.parent.parent.Find("Boss").gameObject; //Temporary solution
     }
 
     public  void UseAbility(bool inputReceived){
         if(cooldownTimer >=(Cooldown-0.0001f) && inputReceived){
-            StartCoroutine(LastResortCoroutine(misillesPerSecond, AbilityDuration));
+            StartCoroutine(LastResortCoroutine(misillesPerSecond));
         }
-        cooldownTimer = cooldownTimer >= (Cooldown-0.001f) ? cooldownTimer : cooldownTimer + Time.fixedDeltaTime;
+        cooldownTimer = CanBeUsed ? cooldownTimer : cooldownTimer + Time.fixedDeltaTime;
     }
     
-    IEnumerator LastResortCoroutine(float misillesPerSecond, float duration){
+    IEnumerator LastResortCoroutine(float misillesPerSecond){
         durationTimer = 0;
         while(durationTimer < AbilityDuration){
-            Rigidbody2D bulletRigidBody = Instantiate(misillePrefab).GetComponent<Rigidbody2D>();
-            bulletRigidBody.transform.parent = this.transform;
-            bulletRigidBody.transform.position = new Vector3(faction.player.transform.position.x - 5, boss.transform.position.y);
-            bulletRigidBody.gameObject.GetComponent<DamagingProjectile>().projectileVelocity = new Vector2(misilleVelocityX, 0);
+            ShootBullet();
             cooldownTimer = 0;
             durationTimer += 1f/misillesPerSecond;
             yield return new WaitForSeconds(1f/misillesPerSecond);
         }
     }
 
+    private void ShootBullet(){
+        Rigidbody2D bulletRigidBody = Instantiate(misillePrefab).GetComponent<Rigidbody2D>();
+        bulletRigidBody.transform.parent = this.transform;
+        bulletRigidBody.transform.position = new Vector3(faction.player.transform.position.x - 5, boss.transform.position.y);
+        bulletRigidBody.gameObject.GetComponent<DamagingProjectile>().projectileVelocity = new Vector2(misilleVelocityX, 0);
+    }
+
     public void ResetCooldown(){
-        cooldownTimer = 0;
+        cooldownTimer = Cooldown;
     }
 }
 

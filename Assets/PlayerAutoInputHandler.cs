@@ -1,22 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Drawing;
-using Unity.Burst.CompilerServices;
 using UnityEngine;
 using Color = UnityEngine.Color;
 
 public class PlayerAutoInputHandler : MonoBehaviour{
     [SerializeField] private Faction faction;
-    [SerializeField] private EventViewer eventViewer;
     [SerializeField] private Boss boss;
     [SerializeField] private Player player;
     [SerializeField] private Transform point;
 
     private void Start() {
-        eventViewer = GetComponent<EventViewer>();
         faction = transform.parent.GetComponentInChildren<Faction>();
+        boss = transform.parent.parent.Find("Boss").GetComponent<Boss>(); //Temporary solution
     }
-
 
     private void FixedUpdate() {
         bool basicAbilityInput = true; //Always use basic input as it has no cooldown
