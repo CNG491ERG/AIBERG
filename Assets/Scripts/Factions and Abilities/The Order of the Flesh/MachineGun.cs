@@ -17,7 +17,7 @@ public class MachineGun : MonoBehaviour, IPlayerAbility, IAttackAbility
 
     public GameObject AbilityOwner => faction.player.gameObject;
 
-    public float Cooldown => 20f; //MUST CHANGE!
+    public float Cooldown => 10f; //MUST CHANGE!
 
     public float Damage => 0.20f;
 
