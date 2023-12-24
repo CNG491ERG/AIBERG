@@ -26,31 +26,44 @@ public class PlayerAutoInputHandler : MonoBehaviour{
         faction.BasicAttack.UseAbility(basicAbilityInput);
         faction.ActiveAbility2.UseAbility(ActiveAbility2Input);
        // faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
-        LayerMask mask = LayerMask.GetMask("Faction_TheOrderOfTheFlesh");
+        //LayerMask mask = LayerMask.GetMask("Faction_TheOrderOfTheFlesh");
         RaycastHit2D LeftAttackDetector3 = Physics2D.BoxCast(new Vector2(5.7f + point.localPosition.x, 0.48f + point.localPosition.y), size: new Vector2(10f, 2), 0f, direction: transform.right);
         RaycastHit2D LeftAttackDetector2 = Physics2D.BoxCast(new Vector2(5.7f + point.localPosition.x, -1.528f + point.localPosition.y), size: new Vector2(10f, 2), 0f, direction: transform.right);
         RaycastHit2D LeftAttackDetector1 = Physics2D.BoxCast(new Vector2(5.7f + point.localPosition.x, -3.534f + point.localPosition.y), size: new Vector2(10f, 1.965f), 0f, direction: transform.right);
 
         bool p1 = false, p2 = false, p3 = false;
 
-        if (LeftAttackDetector1 != null) {
-            if (LeftAttackDetector1.collider.GetComponent<Rigidbody2D>().velocity.x < 0)
+
+
+        if (LeftAttackDetector1.collider != null) {
+            if (LeftAttackDetector1.collider.GetComponent<DamagingProjectile>() != null)
             {
-                p1 = true;
+                if (LeftAttackDetector1.collider.GetComponent<Rigidbody2D>().velocity.x < 0)
+                {
+                    p1 = true;
+                }
             }
 
         }
-        if (LeftAttackDetector2 != null) {
-            if (LeftAttackDetector2.collider.GetComponent<Rigidbody2D>().velocity.x < 0)
+        if (LeftAttackDetector2.collider != null) {
+            if (LeftAttackDetector2.collider.GetComponent<DamagingProjectile>() != null)
             {
-                p2 = true;
+                if (LeftAttackDetector2.collider.GetComponent<Rigidbody2D>().velocity.x < 0)
+                {
+                    p2 = true;
+                }
+                //if(faction.ActiveAbility1.AbilityDuration > 0)
+                    
             }
 
         }
-        if (LeftAttackDetector3 != null) {
-            if (LeftAttackDetector3.collider.GetComponent<Rigidbody2D>().velocity.x < 0)
+        if (LeftAttackDetector3.collider != null) {
+            if (LeftAttackDetector3.collider.GetComponent<DamagingProjectile>() != null)
             {
-                p3 = true;
+                if (LeftAttackDetector3.collider.GetComponent<Rigidbody2D>().velocity.x < 0)
+                {
+                    p3 = true;
+                }
             }
 
         }
@@ -88,7 +101,8 @@ public class PlayerAutoInputHandler : MonoBehaviour{
         else
             x = 1;
 
-
+        Debug.Log(x+" and "+y);
+        Debug.Log(p1+" "+p2+" "+p3);
         switch (x, y)
         {
             case (0, 0):
@@ -166,7 +180,7 @@ public class PlayerAutoInputHandler : MonoBehaviour{
                     faction.JumpAbility.UseAbility(true);
                 break;
             case (1, 3):
-                //faction.JumpAbility.UseAbility(true);
+                faction.JumpAbility.UseAbility(true);
                 break;
             case (1, 6):
                 faction.JumpAbility.UseAbility(true);
