@@ -29,7 +29,7 @@ public class LastResort : MonoBehaviour, IPlayerAbility, IAttackAbility
         cooldownTimer = Cooldown;
         durationTimer = 0;
         misillePrefab.GetComponent<DamagingProjectile>().damage = Damage;
-        boss = transform.parent.Find("Boss").gameObject;
+        boss = transform.parent.parent.parent.Find("Boss").gameObject; //Temporary solution
     }
 
     public  void UseAbility(bool inputReceived){
