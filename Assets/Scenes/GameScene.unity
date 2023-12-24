@@ -1391,6 +1391,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1140560171211084560, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
+      propertyPath: jumpForce
+      value: 70
+      objectReference: {fileID: 0}
     - target: {fileID: 1927532982322892202, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
       propertyPath: healthBar
       value: 
