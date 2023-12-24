@@ -89,8 +89,8 @@ public class PlayerAutoInputHandler : MonoBehaviour{
         else
             x = 1;
 
-        Debug.Log(x+" and "+y);
-        Debug.Log(p1+" "+p2+" "+p3);
+       // Debug.Log(x+" and "+y);
+        Debug.Log(p1+" is p1, "+p2+"is p2 and p3: "+p3);
         switch (x, y)
         {
             case (0, 0):
