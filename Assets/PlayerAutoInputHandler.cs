@@ -16,7 +16,9 @@ public class PlayerAutoInputHandler : MonoBehaviour{
 
         RaycastHit2D raycastBelow = Physics2D.Raycast(point.transform.position, -point.transform.up, Mathf.Infinity, LayerMask.GetMask("ForegroundEnvironment"));
         RaycastHit2D raycastAbove = Physics2D.Raycast(point.transform.position, point.transform.up, Mathf.Infinity, LayerMask.GetMask("ForegroundEnvironment"));
-
+        Gizmos.DrawCube(new Vector2(5.7f + point.localPosition.x, point.localPosition.y), size: new Vector2(10f,2f));
+        Gizmos.DrawCube(new Vector2(5.7f + point.localPosition.x, point.localPosition.y + point.localPosition.y/2f), size: new Vector2(10f,2f));
+        Gizmos.DrawCube(new Vector2(5.7f + point.localPosition.x, point.localPosition.y - point.localPosition.y/2f), size: new Vector2(10f, 2f));
         Vector2 middlePoint = (raycastAbove.point + raycastBelow.point) / 2;
         Gizmos.DrawLine(middlePoint, new Vector2(middlePoint.x * 2, middlePoint.y));
     }
@@ -34,7 +36,7 @@ public class PlayerAutoInputHandler : MonoBehaviour{
         }
         return val;
     }
-
+    
     private int Search(float position1, float position2, float position3, float position4, float coordinate) {
         if (coordinate > position2) {
             if (coordinate > position3) {
@@ -47,10 +49,10 @@ public class PlayerAutoInputHandler : MonoBehaviour{
                 return (2);
         }
         else {
-            if (coordinate < position1)
-                return (1);
-            else
+            if (coordinate > position1)
                 return (0);
+            else
+                return (1);
         }
 
     }
@@ -73,14 +75,15 @@ public class PlayerAutoInputHandler : MonoBehaviour{
         bool p3 = Attackdetector(LeftAttackDetector3);
         bool p0 = p1 && p2; 
         bool p6 = p2 && p3;
+        bool empty =  p0 && p6;
         int x, y;
         float bossY = boss.transform.localPosition.y;
         float playerY = player.transform.localPosition.y;
 
-        y = Search(-2.74f,0.0f,1.3f,2.0f, bossY);
+        y = Search(-2.70f,0.0f,1.3f,2.0f, bossY);
         x = Search(-1.28f, -0.76f, 1.34f, 1.87f, playerY);
 
-        Debug.Log(x+" and "+y);
+        Debug.Log("player: "+x+" Boss: "+y);
         Debug.Log(p1+" is p1, "+p2+"is p2 and p3: "+p3);
 
         switch (x, y)
@@ -99,7 +102,8 @@ public class PlayerAutoInputHandler : MonoBehaviour{
                 }
                 break;
             case (0, 2):
-                JumpAbilityInput = true;
+                if(ActiveAbility1Input)
+                    JumpAbilityInput = true;
                 break;
             case (0, 3):
                 if(ActiveAbility1Input)
