@@ -160,10 +160,6 @@ public class PlayerAutoInputHandler : MonoBehaviour{
                     JumpAbilityInput = true;
                 break;
 
-            case (3, 0):
-                break;
-            case (3, 1):
-                break;
             case (3, 2):
                 if (p1 && !p2 && p3 && !ActiveAbility1Input)
                     JumpAbilityInput = true;
