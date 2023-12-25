@@ -12,7 +12,7 @@ public class PlayerAutoInputHandler : MonoBehaviour{
         faction = transform.parent.GetComponentInChildren<Faction>();
         boss = transform.parent.parent.Find("Boss").GetComponent<Boss>(); //Temporary solution
     }
-    private void OnDrawGizmos()  {
+    private void OnDrawGizmos() {
 
         RaycastHit2D raycastBelow = Physics2D.Raycast(point.transform.position, -point.transform.up, Mathf.Infinity, LayerMask.GetMask("ForegroundEnvironment"));
         RaycastHit2D raycastAbove = Physics2D.Raycast(point.transform.position, point.transform.up, Mathf.Infinity, LayerMask.GetMask("ForegroundEnvironment"));
@@ -113,6 +113,8 @@ public class PlayerAutoInputHandler : MonoBehaviour{
                     JumpAbilityInput = true;
                 }
                 break;
+
+
             case (1, 0):
                 if ((p0 ||(p1 && !p2)) && ActiveAbility1Input) {
                     JumpAbilityInput = true;
@@ -134,6 +136,7 @@ public class PlayerAutoInputHandler : MonoBehaviour{
             case (1, 6):
                 JumpAbilityInput = true;
                 break;
+
 
             case (2, 0):
                 if (!p2 && !ActiveAbility1Input) {
@@ -160,6 +163,7 @@ public class PlayerAutoInputHandler : MonoBehaviour{
                     JumpAbilityInput = true;
                 break;
 
+
             case (3, 2):
                 if (p1 && !p2 && p3 && !ActiveAbility1Input)
                     JumpAbilityInput = true;
@@ -173,6 +177,7 @@ public class PlayerAutoInputHandler : MonoBehaviour{
                 if (p2 && !p3)
                     JumpAbilityInput = true;
                 break;
+
 
             case (6, 0):
                 if (p2 && !p1)

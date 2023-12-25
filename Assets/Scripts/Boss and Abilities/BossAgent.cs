@@ -63,7 +63,7 @@ public class BossAgent : Agent{
         AddReward(0.5f);
     }
 
-    public override void OnActionReceived(ActionBuffers actions){
+    public override void OnActionReceived(ActionBuffers actions) {
         int moveAction = actions.DiscreteActions[0];
         int attackAction = actions.DiscreteActions[1];
 
@@ -73,7 +73,7 @@ public class BossAgent : Agent{
     }
 
 
-    public override void CollectObservations(VectorSensor sensor){
+    public override void CollectObservations(VectorSensor sensor) {
         //Localposition because everything is under a parent gameobject called "env"
         sensor.AddObservation(bossRb.transform.localPosition.x);
         sensor.AddObservation(bossRb.transform.localPosition.y);
