@@ -59,6 +59,7 @@ public class PlayerAutoInputHandler : MonoBehaviour{
         bool basicAbilityInput = true; //Always use basic input as it has no cooldown
         bool ActiveAbility2Input = faction.ActiveAbility2.CanBeUsed;
         bool ActiveAbility1Input = faction.ActiveAbility1.CanBeUsed;
+        bool JumpAbilityInput = false;
 
         faction.BasicAttack.UseAbility(basicAbilityInput);
         faction.ActiveAbility2.UseAbility(ActiveAbility2Input);
@@ -85,102 +86,78 @@ public class PlayerAutoInputHandler : MonoBehaviour{
         switch (x, y)
         {
             case (0, 0):
-                if (p2 && !p1)
-                {
-                    faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
+                if (p0 && ActiveAbility1Input) {
+                    JumpAbilityInput = true;
                 }
-                else if (p0 && ActiveAbility1Input) {
-                    faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
-                    faction.JumpAbility.UseAbility(true);
-                }
-                else if (p2! && p1)
-                {
-                    faction.JumpAbility.UseAbility(true);
-                    faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
+                else if (p2! && p1) {
+                    JumpAbilityInput = true;
                 }
                 break;
             case (0, 1):
-                if (p0) {
-                    faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
-                }
-                else if (p1 && !p2) {
-                    faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
-                    faction.JumpAbility.UseAbility(true);
+                if (p1 && !p2) {
+                    JumpAbilityInput = true;
                 }
                 break;
             case (0, 2):
-                faction.JumpAbility.UseAbility(true);
+                JumpAbilityInput = true;
                 break;
             case (0, 3):
                 if(ActiveAbility1Input)
-                    faction.JumpAbility.UseAbility(true);
+                    JumpAbilityInput = true;
                 break;
             case (0, 6):
                 if (p6) {
-                    faction.JumpAbility.UseAbility(true);
+                    JumpAbilityInput = true;
                 }
                 else if (!p2 && p3 && ActiveAbility1Input) {
-                    faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
-                    faction.JumpAbility.UseAbility(true);
+                    JumpAbilityInput = true;
                 }
                 break;
             case (1, 0):
-                if (p0 && ActiveAbility1Input) {
-                    faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
-                    faction.JumpAbility.UseAbility(true);
-                }
-                else if (p1 && !p2 && ActiveAbility1Input)  {
-                    faction.JumpAbility.UseAbility(true);
-                    faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
+                if ((p0 ||(p1 && !p2)) && ActiveAbility1Input) {
+                    JumpAbilityInput = true;
                 }
                 break;
             case (1, 1):   
                 if (p1 && !ActiveAbility1Input) {
-                    faction.JumpAbility.UseAbility(true);
+                    JumpAbilityInput = true;
                 }
-                faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
                 break;
             case (1, 2):
                 if ((!p1 && p2) || (p0)) {
-                    faction.JumpAbility.UseAbility(true);
+                    JumpAbilityInput = true;
                 }
                 break;
             case (1, 3):
-                faction.JumpAbility.UseAbility(true);
+                JumpAbilityInput = true;
                 break;
             case (1, 6):
-                faction.JumpAbility.UseAbility(true);
+                JumpAbilityInput = true;
                 break;
 
             case (2, 0):
-                if (!p2) {
-                    if (ActiveAbility1Input) {
-                        faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
-                    }
-                    else
-                        faction.JumpAbility.UseAbility(true);
+                if (!p2 && !ActiveAbility1Input) {
+                    JumpAbilityInput = true;        
                 }
-                else if (p0) {
-                    if (!ActiveAbility1Input)
-                        faction.JumpAbility.UseAbility(true);
+                else if (p0 && !ActiveAbility1Input) {
+                    JumpAbilityInput = true;
                 }
                 break;
             case (2, 1):
                 if (!ActiveAbility1Input)
-                    faction.JumpAbility.UseAbility(true);
+                    JumpAbilityInput = true;
                 break;
             case (2, 2):
-                faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
                 if (p1)
-                    faction.JumpAbility.UseAbility(true);
+                    JumpAbilityInput = true;
                 break;
             case (2, 3):
                 if ((p2 && ActiveAbility1Input))
-                    faction.JumpAbility.UseAbility(true);
+                    JumpAbilityInput = true;
                 break;
             case (2, 6):
                 if ((p2 && ActiveAbility1Input) || (!p2))
-                    faction.JumpAbility.UseAbility(true);
+                    JumpAbilityInput = true;
                 break;
 
             case (3, 0):
@@ -188,47 +165,40 @@ public class PlayerAutoInputHandler : MonoBehaviour{
             case (3, 1):
                 break;
             case (3, 2):
-                if (!p1 && p2 && !p3 && ActiveAbility1Input)
-                    faction.JumpAbility.UseAbility(false);
-                else
-                    faction.JumpAbility.UseAbility(true);
+                if (p1 && !p2 && p3 && !ActiveAbility1Input)
+                    JumpAbilityInput = true;
                 break;
             case (3, 3):
-                if ((!p2 && ActiveAbility1Input))
-                {
-                    faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
-                    faction.JumpAbility.UseAbility(true);
+                if ((!p2 && ActiveAbility1Input)) {
+                    JumpAbilityInput = true;
                 }
-                else
-                    faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
                 break;
             case (3, 6):
                 if (p2 && !p3)
-                    faction.JumpAbility.UseAbility(true);
+                    JumpAbilityInput = true;
                 break;
 
             case (6, 0):
                 if (p2 && !p1)
-                    faction.JumpAbility.UseAbility(true);
+                    JumpAbilityInput = true;
                 break;
             case (6, 1):
                 break;
             case (6, 2):
                 if (p1 || (!p3 && !ActiveAbility1Input))
-                    faction.JumpAbility.UseAbility(true);
+                    JumpAbilityInput = true;
                 break;
             case (6, 3):
                 if (ActiveAbility1Input)
-                    faction.JumpAbility.UseAbility(true);
+                    JumpAbilityInput = true;
                 break;
             case (6, 6):
-                faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
                 if (p2)
-                    faction.JumpAbility.UseAbility(true);
+                    JumpAbilityInput = true;
                 break;
         }
         faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
-
+        faction.JumpAbility.UseAbility(JumpAbilityInput);
     }
     
 }
