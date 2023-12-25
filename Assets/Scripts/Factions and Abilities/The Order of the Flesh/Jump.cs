@@ -10,12 +10,14 @@ public class Jump : MonoBehaviour, IPlayerAbility{
     public float AbilityDuration => 0;
     public bool CanBeUsed => true;
 
+    //get faction component
     private void Start() {
         this.faction = GetComponentInParent<Faction>();
     }
 
+    //when ability is called, check if input is given
     public void UseAbility(bool inputReceived){
-        if(inputReceived){
+        if(inputReceived){//add force to the player to make it jump
             faction.player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce));
         } 
     }
