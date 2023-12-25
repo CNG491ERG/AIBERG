@@ -11,18 +11,7 @@ using UnityEngine;
         faction = transform.parent.GetComponentInChildren<Faction>();
         boss = transform.parent.parent.Find("Boss").GetComponent<Boss>();
     }
-
-    //locations of the BoxCasts visualized for ease of use
-    private void OnDrawGizmos() {
-        RaycastHit2D raycastBelow = Physics2D.Raycast(point.transform.position, -point.transform.up, Mathf.Infinity, LayerMask.GetMask("ForegroundEnvironment"));
-        RaycastHit2D raycastAbove = Physics2D.Raycast(point.transform.position, point.transform.up, Mathf.Infinity, LayerMask.GetMask("ForegroundEnvironment"));
-        RaycastHit2D LeftAttackDetector = Physics2D.BoxCast(origin: new Vector2(5.7f + raycastAbove.point.x, raycastAbove.point.y - 1.36f), size: new Vector2(10f, 2.7f), angle: 0f, direction: Vector2.right, distance: 10);
-
-        Gizmos.DrawCube(new Vector2(5.7f + raycastAbove.point.x, raycastAbove.point.y - 1.36f), size: new Vector2(10f,2.7f));
-        Gizmos.DrawCube(new Vector2(5.7f + raycastAbove.point.x, raycastAbove.point.y - 4.068f), size: new Vector2(10f,2.7f));
-        Gizmos.DrawCube(new Vector2(5.7f + raycastAbove.point.x, raycastAbove.point.y - 6.72f), size: new Vector2(10f, 2.59f));
-    }
-
+   
     //Detects any attacks coming to the collider
     private bool Attackdetector(RaycastHit2D hit) {
         bool val = false;
@@ -33,7 +22,6 @@ using UnityEngine;
                     val = true;
                 }
             }
-
         }
         return val;
     }
@@ -90,12 +78,18 @@ using UnityEngine;
         //ActiveAbility2 directly aims at the boss, so no need to put logic
         faction.BasicAttack.UseAbility(basicAbilityInput);
         faction.ActiveAbility2.UseAbility(ActiveAbility2Input);
-       
-        
-        RaycastHit2D LeftAttackDetector3 = Physics2D.BoxCast(new Vector2(5.7f + point.localPosition.x, 0.48f + point.localPosition.y), size: new Vector2(10f, 2), 0f, direction: transform.right);
-        RaycastHit2D LeftAttackDetector2 = Physics2D.BoxCast(new Vector2(5.7f + point.localPosition.x, -1.528f + point.localPosition.y), size: new Vector2(10f, 2), 0f, direction: transform.right);
-        RaycastHit2D LeftAttackDetector1 = Physics2D.BoxCast(new Vector2(5.7f + point.localPosition.x, -3.534f + point.localPosition.y), size: new Vector2(10f, 1.965f), 0f, direction: transform.right);
-        
+
+        RaycastHit2D raycastBelow = Physics2D.Raycast(point.transform.position, -point.transform.up, Mathf.Infinity, LayerMask.GetMask("ForegroundEnvironment"));
+        RaycastHit2D raycastAbove = Physics2D.Raycast(point.transform.position, point.transform.up, Mathf.Infinity, LayerMask.GetMask("ForegroundEnvironment"));
+        //distance between the up and down limits is 8.02f
+        //divide it by 3 parts and create Box Casts accordingly
+
+        RaycastHit2D LeftAttackDetector3 = Physics2D.BoxCast(origin: new Vector2(5.7f + raycastAbove.point.x, raycastAbove.point.y - 1.36f), 
+            size: new Vector2(10f, 2.7f), angle: 0f, direction: Vector2.right, distance: 10);
+        RaycastHit2D LeftAttackDetector2 = Physics2D.BoxCast(origin: new Vector2(5.7f + raycastAbove.point.x, raycastAbove.point.y - 4.068f),
+            size: new Vector2(10f, 2.7f), angle: 0f, direction: Vector2.right, distance: 10);
+        RaycastHit2D LeftAttackDetector1 = Physics2D.BoxCast(origin: new Vector2(5.7f + raycastAbove.point.x, raycastAbove.point.y - 6.72f),
+            size: new Vector2(10f, 2.59f), angle: 0f, direction: Vector2.right, distance: 10);
         //detects if collision happens in any of the fields, logic is shaped using these sensors
         bool p1 = Attackdetector(LeftAttackDetector1);
         bool p2 = Attackdetector(LeftAttackDetector2);
@@ -240,5 +234,4 @@ using UnityEngine;
         }
         faction.JumpAbility.UseAbility(JumpAbilityInput);
     }
-    
 }
