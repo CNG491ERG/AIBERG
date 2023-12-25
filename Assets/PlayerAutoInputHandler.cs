@@ -1,3 +1,4 @@
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 using Color = UnityEngine.Color;
 
@@ -11,6 +12,48 @@ public class PlayerAutoInputHandler : MonoBehaviour{
         faction = transform.parent.GetComponentInChildren<Faction>();
         boss = transform.parent.parent.Find("Boss").GetComponent<Boss>(); //Temporary solution
     }
+    private void OnDrawGizmos()  {
+
+        RaycastHit2D raycastBelow = Physics2D.Raycast(point.transform.position, -point.transform.up, Mathf.Infinity, LayerMask.GetMask("ForegroundEnvironment"));
+        RaycastHit2D raycastAbove = Physics2D.Raycast(point.transform.position, point.transform.up, Mathf.Infinity, LayerMask.GetMask("ForegroundEnvironment"));
+
+        Vector2 middlePoint = (raycastAbove.point + raycastBelow.point) / 2;
+        Gizmos.DrawLine(middlePoint, new Vector2(middlePoint.x * 2, middlePoint.y));
+    }
+
+    private bool Attackdetector(RaycastHit2D hit) {
+        bool val = false;
+
+        if (hit.collider != null) {
+            if (hit.collider.GetComponent<DamagingProjectile>() != null) {
+                if (hit.collider.GetComponent<Rigidbody2D>().velocity.x < 0) {
+                    val = true;
+                }
+            }
+
+        }
+        return val;
+    }
+
+    private int Search(float position1, float position2, float position3, float position4, float coordinate) {
+        if (coordinate > position2) {
+            if (coordinate > position3) {
+                if (coordinate > position4)
+                    return (3);
+                else
+                    return (6);
+            }
+            else
+                return (2);
+        }
+        else {
+            if (coordinate < position1)
+                return (1);
+            else
+                return (0);
+        }
+
+    }
 
     private void FixedUpdate() {
         bool basicAbilityInput = true; //Always use basic input as it has no cooldown
@@ -19,78 +62,26 @@ public class PlayerAutoInputHandler : MonoBehaviour{
 
         faction.BasicAttack.UseAbility(basicAbilityInput);
         faction.ActiveAbility2.UseAbility(ActiveAbility2Input);
-       // faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
-        //LayerMask mask = LayerMask.GetMask("Faction_TheOrderOfTheFlesh");
+       
         RaycastHit2D LeftAttackDetector3 = Physics2D.BoxCast(new Vector2(5.7f + point.localPosition.x, 0.48f + point.localPosition.y), size: new Vector2(10f, 2), 0f, direction: transform.right);
         RaycastHit2D LeftAttackDetector2 = Physics2D.BoxCast(new Vector2(5.7f + point.localPosition.x, -1.528f + point.localPosition.y), size: new Vector2(10f, 2), 0f, direction: transform.right);
         RaycastHit2D LeftAttackDetector1 = Physics2D.BoxCast(new Vector2(5.7f + point.localPosition.x, -3.534f + point.localPosition.y), size: new Vector2(10f, 1.965f), 0f, direction: transform.right);
-
-        bool p1 = false, p2 = false, p3 = false;
-
-
-
-        if (LeftAttackDetector1.collider != null) {
-            if (LeftAttackDetector1.collider.GetComponent<DamagingProjectile>() != null)
-            {
-                if (LeftAttackDetector1.collider.GetComponent<Rigidbody2D>().velocity.x < 0)
-                {
-                    p1 = true;
-                }
-            }
-
-        }
-        if (LeftAttackDetector2.collider != null) {
-            if (LeftAttackDetector2.collider.GetComponent<DamagingProjectile>() != null)
-            {
-                if (LeftAttackDetector2.collider.GetComponent<Rigidbody2D>().velocity.x < 0)
-                {
-                    p2 = true;
-                }
-                //if(faction.ActiveAbility1.AbilityDuration > 0)
-                    
-            }
-
-        }
-        if (LeftAttackDetector3.collider != null) {
-            if (LeftAttackDetector3.collider.GetComponent<DamagingProjectile>() != null)
-            {
-                if (LeftAttackDetector3.collider.GetComponent<Rigidbody2D>().velocity.x < 0)
-                {
-                    p3 = true;
-                }
-            }
-
-        }
-
-        Debug.DrawLine(new Vector2(5.7f + point.localPosition.x, 0.48f + point.localPosition.y), new Vector2(5.7f + point.localPosition.x, 0.48f + point.localPosition.y) + new Vector2(10f, 2), Color.black);
-
+        
+        bool p1 = Attackdetector(LeftAttackDetector1);
+        bool p2 = Attackdetector(LeftAttackDetector2);
+        bool p3 = Attackdetector(LeftAttackDetector3);
+        bool p0 = p1 && p2; 
+        bool p6 = p2 && p3;
         int x, y;
+        float bossY = boss.transform.localPosition.y;
+        float playerY = player.transform.localPosition.y;
 
-        if (boss.transform.localPosition.y > 2f)
-            y = 3;
-        else if (boss.transform.localPosition.y > 1.3f)
-            y = 6;
-        else if (boss.transform.localPosition.y > 0.0f)
-            y = 2;
-        else if (boss.transform.localPosition.y> -1.3f)
-            y = 0;
-        else
-            y = 1;
+        y = Search(-2.74f,0.0f,1.3f,2.0f, bossY);
+        x = Search(-1.28f, -0.76f, 1.34f, 1.87f, playerY);
 
-
-        if (player.transform.localPosition.y > 1.87f)
-            x = 3;
-        else if (player.transform.localPosition.y > 1.34f)
-            x = 6;
-        else if (player.transform.localPosition.y > -0.76f)
-            x = 2;
-        else if (player.transform.localPosition.y > -1.28f)
-            x = 0;
-        else
-            x = 1;
-
-       // Debug.Log(x+" and "+y);
+        Debug.Log(x+" and "+y);
         Debug.Log(p1+" is p1, "+p2+"is p2 and p3: "+p3);
+
         switch (x, y)
         {
             case (0, 0):
@@ -98,8 +89,7 @@ public class PlayerAutoInputHandler : MonoBehaviour{
                 {
                     faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
                 }
-                else if (p2 && p1 && ActiveAbility1Input)
-                {
+                else if (p0 && ActiveAbility1Input) {
                     faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
                     faction.JumpAbility.UseAbility(true);
                 }
@@ -110,14 +100,11 @@ public class PlayerAutoInputHandler : MonoBehaviour{
                 }
                 break;
             case (0, 1):
-                if (p2 && p1)
-                {
+                if (p0) {
                     faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
                 }
-                else if (p1 && !p2)
-                {
-                    if (ActiveAbility1Input)
-                        faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
+                else if (p1 && !p2) {
+                    faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
                     faction.JumpAbility.UseAbility(true);
                 }
                 break;
@@ -129,43 +116,34 @@ public class PlayerAutoInputHandler : MonoBehaviour{
                     faction.JumpAbility.UseAbility(true);
                 break;
             case (0, 6):
-                if (p3 && p2)
-                {
+                if (p6) {
                     faction.JumpAbility.UseAbility(true);
                 }
-                else if (!p2 && p3 && ActiveAbility1Input)
-                {
+                else if (!p2 && p3 && ActiveAbility1Input) {
                     faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
                     faction.JumpAbility.UseAbility(true);
                 }
                 break;
             case (1, 0):
-                if (p1 && p2 && ActiveAbility1Input)
-                {
+                if (p0 && ActiveAbility1Input) {
                     faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
                     faction.JumpAbility.UseAbility(true);
                 }
-                else if (p1 && !p2 && ActiveAbility1Input)
-                {
+                else if (p1 && !p2 && ActiveAbility1Input)  {
                     faction.JumpAbility.UseAbility(true);
                     faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
                 }
                 break;
-            case (1, 1):
-                
+            case (1, 1):   
                 if (p1 && !ActiveAbility1Input) {
                     faction.JumpAbility.UseAbility(true);
                 }
                 faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
                 break;
             case (1, 2):
-                if ((!p1 && p2) || (p1 && p2))
-                {
-                    if (ActiveAbility1Input)
-                        faction.JumpAbility.UseAbility(true);
-                }
-                else
+                if ((!p1 && p2) || (p0)) {
                     faction.JumpAbility.UseAbility(true);
+                }
                 break;
             case (1, 3):
                 faction.JumpAbility.UseAbility(true);
@@ -182,7 +160,7 @@ public class PlayerAutoInputHandler : MonoBehaviour{
                     else
                         faction.JumpAbility.UseAbility(true);
                 }
-                else if (p1 && p2) {
+                else if (p0) {
                     if (!ActiveAbility1Input)
                         faction.JumpAbility.UseAbility(true);
                 }
@@ -249,14 +227,8 @@ public class PlayerAutoInputHandler : MonoBehaviour{
                     faction.JumpAbility.UseAbility(true);
                 break;
         }
+        faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
 
     }
-    private void OnDrawGizmos() {
-
-        RaycastHit2D raycastBelow = Physics2D.Raycast(point.transform.position, -point.transform.up, Mathf.Infinity, LayerMask.GetMask("ForegroundEnvironment"));
-        RaycastHit2D raycastAbove = Physics2D.Raycast(point.transform.position, point.transform.up, Mathf.Infinity, LayerMask.GetMask("ForegroundEnvironment"));
-
-        Vector2 middlePoint = (raycastAbove.point + raycastBelow.point)/2;
-        Gizmos.DrawLine(middlePoint, new Vector2(middlePoint.x*2, middlePoint.y));
-    }
+    
 }
