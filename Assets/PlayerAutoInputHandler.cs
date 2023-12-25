@@ -90,6 +90,7 @@ public class PlayerAutoInputHandler : MonoBehaviour{
         {
             case (0, 0):
                 if (p0 && ActiveAbility1Input) {
+                    faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
                     JumpAbilityInput = true;
                 }
                 else if (p2! && p1) {
@@ -125,9 +126,8 @@ public class PlayerAutoInputHandler : MonoBehaviour{
                 }
                 break;
             case (1, 1):   
-                if (p1 && !ActiveAbility1Input) {
-                    JumpAbilityInput = true;
-                }
+                faction.ActiveAbility1.UseAbility(ActiveAbility1Input); 
+                JumpAbilityInput = true;
                 break;
             case (1, 2):
                 if ((!p1 && p2) || (p0)) {
@@ -157,9 +157,10 @@ public class PlayerAutoInputHandler : MonoBehaviour{
             case (2, 2):
                 if (p1)
                     JumpAbilityInput = true;
+                faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
                 break;
             case (2, 3):
-                if ((p2 && ActiveAbility1Input))
+                if ((p2 || ActiveAbility1Input))
                     JumpAbilityInput = true;
                 break;
             case (2, 6):
@@ -176,9 +177,10 @@ public class PlayerAutoInputHandler : MonoBehaviour{
                 if ((!p2 && ActiveAbility1Input)) {
                     JumpAbilityInput = true;
                 }
+                faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
                 break;
             case (3, 6):
-                if (p2 && !p3)
+                if ((p2 && !p3) || ActiveAbility1Input)
                     JumpAbilityInput = true;
                 break;
 
@@ -198,11 +200,11 @@ public class PlayerAutoInputHandler : MonoBehaviour{
                     JumpAbilityInput = true;
                 break;
             case (6, 6):
-                if (p2)
+                if (p2 || JumpAbilityInput)
                     JumpAbilityInput = true;
+                faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
                 break;
         }
-        faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
         faction.JumpAbility.UseAbility(JumpAbilityInput);
     }
     
