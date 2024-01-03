@@ -9,7 +9,15 @@ public class Jump : MonoBehaviour, IPlayerAbility{
     public float Cooldown => 0;
     public float AbilityDuration => 0;
     public bool CanBeUsed => true;
-
+    public IAbility AbilityLock { 
+        get => abilityLock;
+        set{
+            if((Object)value == (Object)this || value == null){
+                abilityLock = value;
+            }
+        }
+    }
+    private IAbility abilityLock;
     //get faction component
     private void Start() {
         this.faction = GetComponentInParent<Faction>();

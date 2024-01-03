@@ -18,6 +18,15 @@ public class BasicAttack : MonoBehaviour, IBossAbility, IAttackAbility{
     public float Damage => 5f;
 
     public float AbilityDuration => 0;
+    public IAbility AbilityLock { 
+        get => abilityLock;
+        set{
+            if((Object)value == (Object)this || value == null){
+                abilityLock = value;
+            }
+        }
+    }
+    private IAbility abilityLock;
 
     private void Start() {
         boss = GetComponent<Boss>();

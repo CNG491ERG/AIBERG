@@ -16,6 +16,16 @@ public class MoveDown : MonoBehaviour, IBossAbility{
 
     public bool CanBeUsed => true;
 
+    public IAbility AbilityLock { 
+        get => abilityLock;
+        set{
+            if((Object)value == (Object)this || value == null){
+                abilityLock = value;
+            }
+        }
+    }
+    private IAbility abilityLock;
+
     private void Start() {
         boss = GetComponent<Boss>();
         bossRb = GetComponent<Rigidbody2D>();

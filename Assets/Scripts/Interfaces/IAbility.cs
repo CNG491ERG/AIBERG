@@ -18,6 +18,12 @@ public interface IAbility{
     public float AbilityDuration{
         get;
     }
+
+    public IAbility AbilityLock{
+        get;
+        set;
+    }
+    
     public void UseAbility(bool inputReceived);
     public void ResetCooldown();
 }

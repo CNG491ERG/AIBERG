@@ -23,6 +23,15 @@ public class MachineGun : MonoBehaviour, IPlayerAbility, IAttackAbility
     public float AbilityDuration => 4.0f;
 
     public bool CanBeUsed => cooldownTimer >= Cooldown-0.0001f;
+    public IAbility AbilityLock { 
+        get => abilityLock;
+        set{
+            if((Object)value == (Object)this || value == null){
+                abilityLock = value;
+            }
+        }
+    }
+    private IAbility abilityLock;
 
     void Start(){
         faction = GetComponentInParent<Faction>();

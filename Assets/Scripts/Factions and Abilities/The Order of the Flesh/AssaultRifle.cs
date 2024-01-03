@@ -19,6 +19,15 @@ public class AssaultRifle : MonoBehaviour, IPlayerAbility, IAttackAbility{
     public float Damage => 0.25f;
 
     public bool CanBeUsed => cooldownTimer >= (Cooldown-0.001f);
+    public IAbility AbilityLock { 
+        get => abilityLock;
+        set{
+            if((Object)value == (Object)this || value == null){
+                abilityLock = value;
+            }
+        }
+    }
+    private IAbility abilityLock;
 
     private void Start() {
         faction = GetComponentInParent<Faction>();
