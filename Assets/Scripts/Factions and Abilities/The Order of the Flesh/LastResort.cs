@@ -23,6 +23,15 @@ public class LastResort : MonoBehaviour, IPlayerAbility, IAttackAbility
     public float Damage => 10f;
 
     public bool CanBeUsed => cooldownTimer >= Cooldown-0.0001f;
+    public IAbility AbilityLock { 
+        get => abilityLock;
+        set{
+            if((Object)value == (Object)this || value == null){
+                abilityLock = value;
+            }
+        }
+    }
+    private IAbility abilityLock;
 
     void Start(){
         faction = GetComponentInParent<Faction>();
@@ -30,6 +39,7 @@ public class LastResort : MonoBehaviour, IPlayerAbility, IAttackAbility
         durationTimer = 0;
         misillePrefab.GetComponent<DamagingProjectile>().damage = Damage;
         boss = transform.parent.parent.parent.Find("Boss").gameObject; //Temporary solution
+        AbilityLock = this;
     }
 
     public  void UseAbility(bool inputReceived){

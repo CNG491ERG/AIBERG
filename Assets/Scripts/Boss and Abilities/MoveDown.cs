@@ -29,6 +29,7 @@ public class MoveDown : MonoBehaviour, IBossAbility{
     private void Start() {
         boss = GetComponent<Boss>();
         bossRb = GetComponent<Rigidbody2D>();
+        AbilityLock = this;
     }
 
     public void UseAbility(bool inputReceived){

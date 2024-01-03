@@ -37,6 +37,7 @@ public class MachineGun : MonoBehaviour, IPlayerAbility, IAttackAbility
         faction = GetComponentInParent<Faction>();
         cooldownTimer = Cooldown;
         bulletPrefab.GetComponent<DamagingProjectile>().damage = Damage;
+        AbilityLock = this;
     }
 
     public void UseAbility(bool inputReceived){
@@ -47,6 +48,7 @@ public class MachineGun : MonoBehaviour, IPlayerAbility, IAttackAbility
     }
 
     IEnumerator MachineGunCoroutine(float bulletsPerSecond){
+        faction.BasicAttack.AbilityLock = null; //get lock of basic attack
         durationTimer = 0;
         while(durationTimer < AbilityDuration){
             ShootBullet();
@@ -54,6 +56,7 @@ public class MachineGun : MonoBehaviour, IPlayerAbility, IAttackAbility
             cooldownTimer = 0;
             yield return new WaitForSeconds(1f/bulletsPerSecond);   
         }
+        faction.BasicAttack.AbilityLock = faction.BasicAttack; //release lock after this ability is done
     }
     private void ShootBullet(){
         Rigidbody2D bulletRigidBody = Instantiate(bulletPrefab).GetComponent<Rigidbody2D>();

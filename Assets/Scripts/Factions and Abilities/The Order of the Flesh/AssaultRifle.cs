@@ -33,10 +33,11 @@ public class AssaultRifle : MonoBehaviour, IPlayerAbility, IAttackAbility{
         faction = GetComponentInParent<Faction>();
         cooldownTimer = Cooldown;
         bulletPrefab.GetComponent<DamagingProjectile>().damage = Damage;
+        AbilityLock = this;
     }
 
     public void UseAbility(bool inputReceived){
-        if(cooldownTimer>=(Cooldown-0.0001f) && inputReceived){ 
+        if(cooldownTimer>=(Cooldown-0.0001f) && inputReceived && AbilityLock != null){ 
             ShootBullet();
             cooldownTimer = 0;
         }

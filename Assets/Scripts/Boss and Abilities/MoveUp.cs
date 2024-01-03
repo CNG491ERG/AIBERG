@@ -28,6 +28,7 @@ public class MoveUp : MonoBehaviour, IBossAbility{
     private void Start() {
         boss = GetComponent<Boss>();
         bossRb = GetComponent<Rigidbody2D>();
+        AbilityLock = this;
     }
 
 

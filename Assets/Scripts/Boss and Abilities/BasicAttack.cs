@@ -31,6 +31,7 @@ public class BasicAttack : MonoBehaviour, IBossAbility, IAttackAbility{
     private void Start() {
         boss = GetComponent<Boss>();
         this.projectilePrefab.GetComponent<DamagingProjectile>().damage = Damage;
+        AbilityLock = this;
     }
 
     public void UseAbility(bool inputReceived)

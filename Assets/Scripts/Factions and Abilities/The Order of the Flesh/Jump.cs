@@ -21,6 +21,7 @@ public class Jump : MonoBehaviour, IPlayerAbility{
     //get faction component
     private void Start() {
         this.faction = GetComponentInParent<Faction>();
+        AbilityLock = this;
     }
 
     //when ability is called, check if input is given

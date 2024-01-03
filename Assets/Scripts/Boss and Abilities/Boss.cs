@@ -16,8 +16,9 @@ public class Boss : MonoBehaviour, IDamageable
     [SerializeField] private float damageMultiplier;
     [SerializeField] private Transform targetTransform;
     [SerializeField] private Rigidbody2D bossRb;
-
-
+    private IBossAbility moveUp;
+    private IBossAbility moveDown;
+    private IBossAbility basicAttack;
     [SerializeField] private Player player;
 
     public event EventHandler OnDamageableDeath;
@@ -40,6 +41,12 @@ public class Boss : MonoBehaviour, IDamageable
         }
     }
 
+    private void Start() {
+        moveUp = GetComponent<MoveUp>();
+        moveDown = GetComponent<MoveDown>();
+        basicAttack = GetComponent<BasicAttack>();
+    }
+    
     public void TakeDamage(float damageToTake) {
         float totalDamage = damageToTake * (1 - Defense);
         Health = Health - totalDamage <= 0 ? 0 : Health - totalDamage;
