@@ -47,6 +47,7 @@ public class MachineGun : MonoBehaviour, IPlayerAbility, IAttackAbility
         cooldownTimer = CanBeUsed ? cooldownTimer : cooldownTimer + Time.fixedDeltaTime;
     }
 
+    //Machine gun overrules assault rifle
     IEnumerator MachineGunCoroutine(float bulletsPerSecond){
         faction.BasicAttack.AbilityLock = null; //get lock of basic attack
         durationTimer = 0;
