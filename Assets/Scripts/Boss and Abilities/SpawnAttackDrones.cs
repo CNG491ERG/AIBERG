@@ -58,8 +58,8 @@ public class SpawnAttackDrones : MonoBehaviour, IBossAbility, IAttackAbility
     IEnumerator SpawnAttackDronesCoroutine(){
         //spawn drones (3)
         foreach(Transform droneSpawnPosition in droneSpawnPositions){
-            AttackDrone drone = Instantiate(attackDronePrefab, boss.transform).GetComponent<AttackDrone>();
-            drone.transform.localPosition = Vector3.zero;
+            AttackDrone drone = Instantiate(attackDronePrefab).GetComponent<AttackDrone>();
+            drone.transform.position = boss.transform.position;
             drone.targetPosition = droneSpawnPosition;
             drone.boss = boss;
             drone.damage = Damage;

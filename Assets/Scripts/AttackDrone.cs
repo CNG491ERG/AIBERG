@@ -20,10 +20,13 @@ public class AttackDrone : MonoBehaviour, IDamageable{
     public float Defense { get => defense; set => defense = value;}
     public float MaxHealth { get => maxHealth; set => maxHealth = value; }
 
-    void Start()
-    {
-        MoveToTarget();
+    public float forceStrength = 1f; // Strength of the force
+    public float maxDistance = 5f;
+    private Rigidbody2D rb; // Reference to the Rigidbody2D component
+
+    void Start(){
         health = maxHealth;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private float shootTimer = 0f;
@@ -33,6 +36,18 @@ public class AttackDrone : MonoBehaviour, IDamageable{
             shootTimer = 0f;
         }
         shootTimer += Time.fixedDeltaTime;
+
+        Vector2 direction = (targetPosition.position - transform.position).normalized;
+
+         // Limit distance from the target
+        if (direction.magnitude > maxDistance)
+        {
+            direction = direction.normalized * maxDistance;
+        }
+
+        // Apply force towards the limited target position
+        rb.AddForce(direction.normalized * forceStrength);
+
     }
 
     private void ShootBullet(){
@@ -53,21 +68,4 @@ public class AttackDrone : MonoBehaviour, IDamageable{
         }
     }
 
-    private Tween moveTween;
-    void MoveToTarget(){
-         float distanceToTarget = Vector3.Distance(transform.position, targetPosition.position);
-
-        // Recalculate the duration based on the distance
-        float adjustedDuration = distanceToTarget / 3.5f; 
-
-        moveTween = transform.DOMove(targetPosition.position, adjustedDuration)
-                             .SetEase(Ease.Linear)
-                             .OnComplete(() =>{
-                                if(this != null) MoveToTarget();
-                            });
-    }
-
-    private void OnDestroy(){
-        moveTween?.Kill();
-    }
 }
