@@ -8,6 +8,7 @@ public class Player : MonoBehaviour, IDamageable{
     private float health;
     private float defense;
     private Faction playerFaction;
+    private float maxHealth = 100;
 
     public event EventHandler OnDamageableDeath;
     public event EventHandler OnDamageableHurt;
@@ -37,6 +38,8 @@ public class Player : MonoBehaviour, IDamageable{
             defense = value;
         }
     }
+
+    public float MaxHealth { get => maxHealth; set => maxHealth = value; }
 
     public void TakeDamage(float damageToTake){
         float totalDamage = damageToTake * (1 - Defense);

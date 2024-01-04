@@ -13,6 +13,10 @@ public interface IDamageable{
         get;
         set;
     }
+    float MaxHealth{
+        get;
+        set;
+    }
     void TakeDamage(float damageToTake);
 
     event EventHandler OnDamageableDeath;

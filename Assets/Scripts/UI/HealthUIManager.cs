@@ -11,6 +11,6 @@ public class HealthUIManager : MonoBehaviour
         healthOwnerComponent = healthOwner.GetComponent<IDamageable>();
     }
     private void Update() {
-        healthBar.fillAmount = healthOwnerComponent.Health/100;
+        healthBar.fillAmount = healthOwnerComponent.Health/healthOwnerComponent.MaxHealth;
     }
 }

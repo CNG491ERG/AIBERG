@@ -9,6 +9,7 @@ using System;
 public class Boss : MonoBehaviour, IDamageable
 {
     [SerializeField] private float health;
+    [SerializeField] private float maxHealth = 100;
     [SerializeField] private float defense;
     [SerializeField] private int enragement;
     [SerializeField] public float speed;
@@ -40,6 +41,8 @@ public class Boss : MonoBehaviour, IDamageable
             defense = value;
         }
     }
+
+    public float MaxHealth { get => maxHealth; set => maxHealth = value; }
 
     private void Start() {
         moveUp = GetComponent<MoveUp>();

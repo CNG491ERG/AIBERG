@@ -12,15 +12,18 @@ public class AttackDrone : MonoBehaviour, IDamageable{
     private float bulletSpeed = 10f;
     public event EventHandler OnDamageableDeath;
     public event EventHandler OnDamageableHurt;
+    private float maxHealth = 7.5f;
 
-    private float health = 5f;
+    private float health;
     private float defense = 0f;
     public float Health { get => health; set => health = value;}
     public float Defense { get => defense; set => defense = value;}
+    public float MaxHealth { get => maxHealth; set => maxHealth = value; }
 
     void Start()
     {
         MoveToTarget();
+        health = maxHealth;
     }
 
     private float shootTimer = 0f;
@@ -46,16 +49,25 @@ public class AttackDrone : MonoBehaviour, IDamageable{
         OnDamageableHurt?.Invoke(this, EventArgs.Empty);
         if(Health == 0){
             OnDamageableDeath?.Invoke(this, EventArgs.Empty);
+            Destroy(this.gameObject);
         }
     }
+
+    private Tween moveTween;
     void MoveToTarget(){
          float distanceToTarget = Vector3.Distance(transform.position, targetPosition.position);
 
         // Recalculate the duration based on the distance
         float adjustedDuration = distanceToTarget / 3.5f; 
 
-        this.transform.DOMove(targetPosition.position, adjustedDuration)
-            .SetEase(Ease.Linear)
-            .OnComplete(() => MoveToTarget());
+        moveTween = transform.DOMove(targetPosition.position, adjustedDuration)
+                             .SetEase(Ease.Linear)
+                             .OnComplete(() =>{
+                                if(this != null) MoveToTarget();
+                            });
+    }
+
+    private void OnDestroy(){
+        moveTween?.Kill();
     }
 }
