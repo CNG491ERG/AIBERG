@@ -13,6 +13,7 @@ public class BossAgent : Agent{
     private IBossAbility moveUp;
     private IBossAbility moveDown;
     private IBossAbility basicAttack;
+    private IBossAbility spawnAttackDrones;
     [SerializeField] private Player player;
     [SerializeField] private Transform playerSpawnPosition;
     [SerializeField] private Transform bossSpawnPosition; 
@@ -22,6 +23,7 @@ public class BossAgent : Agent{
         moveUp = GetComponent<MoveUp>();
         moveDown = GetComponent<MoveDown>();
         basicAttack = GetComponent<BasicAttack>();
+        spawnAttackDrones = GetComponent<SpawnAttackDrones>();
         bossRb.gravityScale = 0;
 
         player.OnDamageableHurt += Player_OnDamageableHurt;
@@ -70,6 +72,7 @@ public class BossAgent : Agent{
         moveDown.UseAbility(moveAction == 1);
         moveUp.UseAbility(moveAction == 2);
         basicAttack.UseAbility(attackAction == 1);
+        spawnAttackDrones.UseAbility(attackAction == 2);
     }
 
 
@@ -88,6 +91,8 @@ public class BossAgent : Agent{
         bool moveDownInput = Input.GetKey(KeyCode.DownArrow);
         bool moveUpInput = Input.GetKey(KeyCode.UpArrow);
         bool basicAttackInput = Input.GetKey(KeyCode.X);
+        bool spawnAttackDronesInput = Input.GetKey(KeyCode.C);
+
         var discreteActionsOut = actionsOut.DiscreteActions;
         
         discreteActionsOut[0] = 0; //No movement
@@ -95,6 +100,7 @@ public class BossAgent : Agent{
         discreteActionsOut[0] = moveUpInput ? 2 : discreteActionsOut[0];
         discreteActionsOut[1] = 0; //No attack
         discreteActionsOut[1] = basicAttackInput ? 1 : discreteActionsOut[1];
+        discreteActionsOut[1] = spawnAttackDronesInput ? 2 : discreteActionsOut[1];
     }
     
     private void FixedUpdate() {

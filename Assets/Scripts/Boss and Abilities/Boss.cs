@@ -19,7 +19,7 @@ public class Boss : MonoBehaviour, IDamageable
     private IBossAbility moveUp;
     private IBossAbility moveDown;
     private IBossAbility basicAttack;
-    [SerializeField] private Player player;
+    public Player player;
 
     public event EventHandler OnDamageableDeath;
     public event EventHandler OnDamageableHurt;
