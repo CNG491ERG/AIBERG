@@ -6,11 +6,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    private const int maxSteps = 9000;
     private Int64 stepCounter;
     private Int64 score;
     public static GameManager Instance;
 
     public Int64 StepCount => stepCounter;
+    public Int64 MaxSteps => maxSteps;
     public Int64 Score{
         get => score;
         set => score = value;
@@ -30,13 +32,14 @@ public class GameManager : MonoBehaviour
     }
 
     private void Start() {
+        score = 0;
         OnGameStarted += GameManager_OnGameStarted;
         OnGameEnded += GameManager_OnGameEnded;
         OnGameStarted?.Invoke(this, EventArgs.Empty);
     }
 
     private void FixedUpdate() {
-        if(stepCounter == 9000){ //Game will end at 3 minute mark *exactly*
+        if(stepCounter == maxSteps){ //Game will end at 3 minute mark *exactly*
             OnGameEnded?.Invoke(this, EventArgs.Empty);
         }
         stepCounter++;
