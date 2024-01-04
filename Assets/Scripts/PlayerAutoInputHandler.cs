@@ -162,7 +162,8 @@ using UnityEngine;
                 }
                 break;
             case (1, 3):
-                JumpAbilityInput = true;
+                if(ActiveAbility1Input)
+                    JumpAbilityInput = true;
                 break;
             case (1, 6):
                 JumpAbilityInput = true;
@@ -201,7 +202,7 @@ using UnityEngine;
                     JumpAbilityInput = true;
                 break;
             case (3, 3):
-                if ((!p2 && ActiveAbility1Input)) {
+                if ((ActiveAbility1Input)) {
                     JumpAbilityInput = true;
                 }
                 faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
