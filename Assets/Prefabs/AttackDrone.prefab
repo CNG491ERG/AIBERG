@@ -152,7 +152,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -183,7 +183,7 @@ MonoBehaviour:
   boss: {fileID: 0}
   attackDroneBulletPrefab: {fileID: 3324519851683650514, guid: b9155f10165162f4986c4d2af251947d, type: 3}
   forceStrength: 0.5
-  maxDistance: 5
+  maxVelocity: 5
 --- !u!61 &5813819900313802998
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -203,17 +203,17 @@ BoxCollider2D:
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 8
   m_ContactCaptureLayers:
     serializedVersion: 2
     m_Bits: 4294967295
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

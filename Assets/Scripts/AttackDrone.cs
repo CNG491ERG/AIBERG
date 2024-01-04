@@ -20,12 +20,12 @@ public class AttackDrone : MonoBehaviour, IDamageable{
     public float Defense { get => defense; set => defense = value;}
     public float MaxHealth { get => maxHealth; set => maxHealth = value; }
 
-    public float forceStrength = 1f; // Strength of the force
-    public float maxDistance = 5f;
+    public float forceStrength; // Strength of the force
     private Rigidbody2D rb; // Reference to the Rigidbody2D component
-
+    public float maxVelocity = 7.5f; // Maximum velocity limit
     void Start(){
         health = maxHealth;
+        forceStrength = 10f;
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -38,15 +38,9 @@ public class AttackDrone : MonoBehaviour, IDamageable{
         shootTimer += Time.fixedDeltaTime;
 
         Vector2 direction = (targetPosition.position - transform.position).normalized;
-
-         // Limit distance from the target
-        if (direction.magnitude > maxDistance)
-        {
-            direction = direction.normalized * maxDistance;
-        }
-
-        // Apply force towards the limited target position
-        rb.AddForce(direction.normalized * forceStrength);
+        rb.AddForce(direction * forceStrength);
+        // Limit the velocity magnitude
+        rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxVelocity);
 
     }
 
