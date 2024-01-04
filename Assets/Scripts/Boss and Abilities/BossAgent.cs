@@ -78,8 +78,9 @@ public class BossAgent : Agent{
         
         basicAttack.UseAbility(attackAction == 1);
         if(attackAction == 1){
-            AddReward(-0.05f); //So that don't constantly spam 
+            AddReward(-0.1f); //So that don't constantly spam 
         }
+
         spawnAttackDrones.UseAbility(attackAction == 2);
     }
 
@@ -116,8 +117,8 @@ public class BossAgent : Agent{
             AddReward(-0.10f); //To make kill in less time
         }
         Debug.Log(bossRb.velocity.y);
-        if(bossRb.velocity.y < 0.5f && bossRb.velocity.y > -0.5f){
-            AddReward(-0.01f); //if the boss is too stationary
+        if(bossRb.velocity.y < 2.5f && bossRb.velocity.y > -2.5f){
+            AddReward(-0.1f); //if the boss is too stationary
         }
 
     }
