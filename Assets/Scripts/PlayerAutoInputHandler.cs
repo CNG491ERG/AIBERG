@@ -4,7 +4,7 @@ using UnityEngine;
     [SerializeField] private Faction faction;//faction of the player
     [SerializeField] private Boss boss;//the boss
     [SerializeField] private Player player;//the player
-    [SerializeField] private Transform point;//player spawn point as a reference
+    [SerializeField] private Transform playerSpawnPoint;//player spawn point as a reference
 
     //at start, gets the needed objects
     private void Start() {
@@ -79,8 +79,8 @@ using UnityEngine;
         faction.BasicAttack.UseAbility(basicAbilityInput);
         faction.ActiveAbility2.UseAbility(ActiveAbility2Input);
 
-        RaycastHit2D raycastBelow = Physics2D.Raycast(point.transform.position, -point.transform.up, Mathf.Infinity, LayerMask.GetMask("ForegroundEnvironment"));
-        RaycastHit2D raycastAbove = Physics2D.Raycast(point.transform.position, point.transform.up, Mathf.Infinity, LayerMask.GetMask("ForegroundEnvironment"));
+        RaycastHit2D raycastBelow = Physics2D.Raycast(playerSpawnPoint.transform.position, -playerSpawnPoint.transform.up, Mathf.Infinity, LayerMask.GetMask("ForegroundEnvironment"));
+        RaycastHit2D raycastAbove = Physics2D.Raycast(playerSpawnPoint.transform.position, playerSpawnPoint.transform.up, Mathf.Infinity, LayerMask.GetMask("ForegroundEnvironment"));
         //distance between the up and down limits is 8.02f
         //divide it by 3 parts and create Box Casts accordingly
 

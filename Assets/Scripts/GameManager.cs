@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
         else{
             Instance = this;
         }
+        
     }
 
     private void Start() {

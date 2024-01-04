@@ -9,6 +9,7 @@ public class Player : MonoBehaviour, IDamageable{
     private float defense;
     private Faction playerFaction;
     private float maxHealth = 100;
+    [SerializeField] public Boss boss;
 
     public event EventHandler OnDamageableDeath;
     public event EventHandler OnDamageableHurt;

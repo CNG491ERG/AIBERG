@@ -59,12 +59,15 @@ public class SpawnAttackDrones : MonoBehaviour, IBossAbility, IAttackAbility
         //spawn drones (3)
         foreach(Transform droneSpawnPosition in droneSpawnPositions){
             AttackDrone drone = Instantiate(attackDronePrefab).GetComponent<AttackDrone>();
-            drone.transform.position = boss.transform.position;
-            drone.targetPosition = droneSpawnPosition;
-            drone.boss = boss;
-            drone.damage = Damage;
-            cooldownTimer = 0;
-            yield return new WaitForSeconds(0.2f);
+            boss.GetComponent<BossAgent>().env.AddObject(drone.gameObject);
+            if(drone != null){
+                drone.transform.position = boss.transform.position;
+                drone.targetPosition = droneSpawnPosition;
+                drone.boss = boss;
+                drone.damage = Damage;
+                cooldownTimer = 0;
+                yield return new WaitForSeconds(0.2f);
+            }
         }
         cooldownTimer = 0;
     }

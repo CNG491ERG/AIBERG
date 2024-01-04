@@ -17,6 +17,7 @@ public class BossAgent : Agent{
     [SerializeField] private Player player;
     [SerializeField] private Transform playerSpawnPosition;
     [SerializeField] private Transform bossSpawnPosition; 
+    [SerializeField] public MLAgentEnvironment env;
     public override void Initialize() {
         bossRb = GetComponent<Rigidbody2D>();
         boss = GetComponent<Boss>();
@@ -41,6 +42,8 @@ public class BossAgent : Agent{
         boss.speed = 10;
         GameManager.Instance.ResetStepCounter();
         player.ResetAllCooldowns();
+        env.RemoveSpawnedObjects();
+        //Everything on the screen should be deleted, except for the boss and the player
     }
 
     private void Boss_OnDamageableDeath(object sender, EventArgs e)
@@ -71,7 +74,12 @@ public class BossAgent : Agent{
 
         moveDown.UseAbility(moveAction == 1);
         moveUp.UseAbility(moveAction == 2);
+
+        
         basicAttack.UseAbility(attackAction == 1);
+        if(attackAction == 1){
+            AddReward(-0.05f); //So that don't constantly spam 
+        }
         spawnAttackDrones.UseAbility(attackAction == 2);
     }
 
@@ -107,5 +115,10 @@ public class BossAgent : Agent{
         if(StepCount%50 == 0){
             AddReward(-0.10f); //To make kill in less time
         }
+        Debug.Log(bossRb.velocity.y);
+        if(bossRb.velocity.y < 0.5f && bossRb.velocity.y > -0.5f){
+            AddReward(-0.01f); //if the boss is too stationary
+        }
+
     }
 }

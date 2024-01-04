@@ -46,9 +46,12 @@ public class AssaultRifle : MonoBehaviour, IPlayerAbility, IAttackAbility{
 
     private void ShootBullet(){
         Rigidbody2D bulletRigidBody = Instantiate(bulletPrefab).GetComponent<Rigidbody2D>();
-        bulletRigidBody.transform.parent = this.transform;
-        bulletRigidBody.transform.localPosition = Vector3.zero;
-        bulletRigidBody.gameObject.GetComponent<DamagingProjectile>().projectileVelocity = new Vector2(bulletVelocityX, 0);
+        faction.player.boss.GetComponent<BossAgent>().env.AddObject(bulletRigidBody.gameObject);
+        if(bulletRigidBody != null){
+            bulletRigidBody.transform.parent = this.transform;
+            bulletRigidBody.transform.localPosition = Vector3.zero;
+            bulletRigidBody.gameObject.GetComponent<DamagingProjectile>().projectileVelocity = new Vector2(bulletVelocityX, 0);
+        }
     }
 
     public void ResetCooldown(){

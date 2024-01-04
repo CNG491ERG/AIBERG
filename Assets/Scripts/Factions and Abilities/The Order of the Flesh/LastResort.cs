@@ -61,9 +61,12 @@ public class LastResort : MonoBehaviour, IPlayerAbility, IAttackAbility
 
     private void ShootBullet(){
         Rigidbody2D bulletRigidBody = Instantiate(misillePrefab).GetComponent<Rigidbody2D>();
-        bulletRigidBody.transform.parent = this.transform;
-        bulletRigidBody.transform.position = new Vector3(faction.player.transform.position.x - 5, boss.transform.position.y);
-        bulletRigidBody.gameObject.GetComponent<DamagingProjectile>().projectileVelocity = new Vector2(misilleVelocityX, 0);
+        faction.player.boss.GetComponent<BossAgent>().env.AddObject(bulletRigidBody.gameObject);
+        if(bulletRigidBody != null){
+            bulletRigidBody.transform.parent = this.transform;
+            bulletRigidBody.transform.position = new Vector3(faction.player.transform.position.x - 5, boss.transform.position.y);
+            bulletRigidBody.gameObject.GetComponent<DamagingProjectile>().projectileVelocity = new Vector2(misilleVelocityX, 0);
+        }
     }
 
     public void ResetCooldown(){

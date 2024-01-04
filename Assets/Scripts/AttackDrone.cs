@@ -9,7 +9,7 @@ public class AttackDrone : MonoBehaviour, IDamageable{
     public float damage;
     public Boss boss;
     public GameObject attackDroneBulletPrefab;
-    private float bulletSpeed = 10f;
+    private float bulletSpeed = 5f;
     public event EventHandler OnDamageableDeath;
     public event EventHandler OnDamageableHurt;
     private float maxHealth = 7.5f;
@@ -31,7 +31,7 @@ public class AttackDrone : MonoBehaviour, IDamageable{
 
     private float shootTimer = 0f;
     void FixedUpdate(){
-        if(shootTimer >= 0.2f){
+        if(shootTimer >= 0.5f){
             ShootBullet();
             shootTimer = 0f;
         }
@@ -46,10 +46,13 @@ public class AttackDrone : MonoBehaviour, IDamageable{
 
     private void ShootBullet(){
         Rigidbody2D bulletRigidBody = Instantiate(attackDroneBulletPrefab).GetComponent<Rigidbody2D>();
-        bulletRigidBody.transform.position = transform.position;
-        Vector3 bulletShootDirection = (boss.player.transform.position - transform.position).normalized;
-        bulletRigidBody.gameObject.GetComponent<DamagingProjectile>().projectileVelocity = bulletShootDirection * bulletSpeed;
-        bulletRigidBody.gameObject.GetComponent<DamagingProjectile>().damage = damage;
+        boss.GetComponent<BossAgent>().env.AddObject(bulletRigidBody.gameObject);
+        if(bulletRigidBody != null){
+            bulletRigidBody.transform.position = transform.position;
+            Vector3 bulletShootDirection = (boss.player.transform.position - transform.position).normalized;
+            bulletRigidBody.gameObject.GetComponent<DamagingProjectile>().projectileVelocity = bulletShootDirection * bulletSpeed;
+            bulletRigidBody.gameObject.GetComponent<DamagingProjectile>().damage = damage;
+        }
     }
 
     public void TakeDamage(float damageToTake){

@@ -38,9 +38,12 @@ public class BasicAttack : MonoBehaviour, IBossAbility, IAttackAbility{
     {
         if(cooldownTimer >= Cooldown-0.0001f && inputReceived){
             Rigidbody2D projectileRb = Instantiate(projectilePrefab).GetComponent<Rigidbody2D>();
-            projectileRb.transform.parent = this.transform;
-            projectileRb.transform.localPosition = Vector3.zero;
-            projectileRb.gameObject.GetComponent<DamagingProjectile>().projectileVelocity = new Vector2(-projectileVelocityX, 0);
+            boss.GetComponent<BossAgent>().env.AddObject(projectileRb.gameObject);
+            if(projectileRb != null){
+                projectileRb.transform.parent = this.transform;
+                projectileRb.transform.localPosition = Vector3.zero;
+                projectileRb.gameObject.GetComponent<DamagingProjectile>().projectileVelocity = new Vector2(-projectileVelocityX, 0);
+            }
             cooldownTimer = 0;
             Debug.Log("Projectile velocity: " + projectileRb.velocity);
         }
