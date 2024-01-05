@@ -9,7 +9,7 @@ public class AttackDrone : MonoBehaviour, IDamageable{
     public float damage;
     public Boss boss;
     public GameObject attackDroneBulletPrefab;
-    private float bulletSpeed = 7.5f;
+    private float bulletSpeed = 8f;
     public event EventHandler OnDamageableDeath;
     public event EventHandler OnDamageableHurt;
     private float maxHealth = 5f;
@@ -31,7 +31,7 @@ public class AttackDrone : MonoBehaviour, IDamageable{
 
     private float shootTimer = 0f;
     void FixedUpdate(){
-        if(shootTimer >= 1f){
+        if(shootTimer >= 0.8f){
             ShootBullet();
             shootTimer = 0f;
         }

@@ -17,10 +17,10 @@ public class LastResort : MonoBehaviour, IPlayerAbility, IAttackAbility
 
     public GameObject AbilityOwner => faction.player.gameObject;
 
-    public float Cooldown => 15f; //Change it
+    public float Cooldown => 17.5f; //Change it
 
-    public float AbilityDuration => 2.0f;
-    public float Damage => 10f;
+    public float AbilityDuration => 2f;
+    public float Damage => 9f;
 
     public bool CanBeUsed => cooldownTimer >= Cooldown-0.0001f;
     public IAbility AbilityLock { 
@@ -54,8 +54,8 @@ public class LastResort : MonoBehaviour, IPlayerAbility, IAttackAbility
         while(durationTimer < AbilityDuration){
             ShootBullet();
             cooldownTimer = 0;
-            durationTimer += 0.7f/misillesPerSecond;
-            yield return new WaitForSeconds(0.7f/misillesPerSecond);
+            durationTimer += 2f/misillesPerSecond;
+            yield return new WaitForSeconds(2f/misillesPerSecond);
         }
     }
 

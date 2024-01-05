@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Training (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4765911354344212840, guid: 20b018dbbf464b74aa856b28979f39bd, type: 3}
+      propertyPath: speed
+      value: 3.5
+      objectReference: {fileID: 0}
     - target: {fileID: 9063158090061633628, guid: 20b018dbbf464b74aa856b28979f39bd, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -195,6 +199,10 @@ PrefabInstance:
     - target: {fileID: 3662814496117959959, guid: 20b018dbbf464b74aa856b28979f39bd, type: 3}
       propertyPath: m_Name
       value: Env_Training (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765911354344212840, guid: 20b018dbbf464b74aa856b28979f39bd, type: 3}
+      propertyPath: speed
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 9063158090061633628, guid: 20b018dbbf464b74aa856b28979f39bd, type: 3}
       propertyPath: m_RootOrder
@@ -257,6 +265,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Training (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 4765911354344212840, guid: 20b018dbbf464b74aa856b28979f39bd, type: 3}
+      propertyPath: speed
+      value: 3.5
+      objectReference: {fileID: 0}
     - target: {fileID: 9063158090061633628, guid: 20b018dbbf464b74aa856b28979f39bd, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -317,6 +329,10 @@ PrefabInstance:
     - target: {fileID: 3662814496117959959, guid: 20b018dbbf464b74aa856b28979f39bd, type: 3}
       propertyPath: m_Name
       value: Env_Training (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765911354344212840, guid: 20b018dbbf464b74aa856b28979f39bd, type: 3}
+      propertyPath: speed
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 9063158090061633628, guid: 20b018dbbf464b74aa856b28979f39bd, type: 3}
       propertyPath: m_RootOrder
@@ -379,6 +395,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Training (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4765911354344212840, guid: 20b018dbbf464b74aa856b28979f39bd, type: 3}
+      propertyPath: speed
+      value: 3.5
+      objectReference: {fileID: 0}
     - target: {fileID: 9063158090061633628, guid: 20b018dbbf464b74aa856b28979f39bd, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -439,6 +459,10 @@ PrefabInstance:
     - target: {fileID: 3662814496117959959, guid: 20b018dbbf464b74aa856b28979f39bd, type: 3}
       propertyPath: m_Name
       value: Env_Training (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765911354344212840, guid: 20b018dbbf464b74aa856b28979f39bd, type: 3}
+      propertyPath: speed
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 9063158090061633628, guid: 20b018dbbf464b74aa856b28979f39bd, type: 3}
       propertyPath: m_RootOrder
@@ -545,6 +569,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Training (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4765911354344212840, guid: 20b018dbbf464b74aa856b28979f39bd, type: 3}
+      propertyPath: speed
+      value: 3.5
+      objectReference: {fileID: 0}
     - target: {fileID: 9063158090061633628, guid: 20b018dbbf464b74aa856b28979f39bd, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -605,6 +633,10 @@ PrefabInstance:
     - target: {fileID: 3662814496117959959, guid: 20b018dbbf464b74aa856b28979f39bd, type: 3}
       propertyPath: m_Name
       value: Env_Training (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765911354344212840, guid: 20b018dbbf464b74aa856b28979f39bd, type: 3}
+      propertyPath: speed
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 9063158090061633628, guid: 20b018dbbf464b74aa856b28979f39bd, type: 3}
       propertyPath: m_RootOrder
@@ -667,6 +699,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Training (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 4765911354344212840, guid: 20b018dbbf464b74aa856b28979f39bd, type: 3}
+      propertyPath: speed
+      value: 3.5
+      objectReference: {fileID: 0}
     - target: {fileID: 9063158090061633628, guid: 20b018dbbf464b74aa856b28979f39bd, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -727,6 +763,10 @@ PrefabInstance:
     - target: {fileID: 3662814496117959959, guid: 20b018dbbf464b74aa856b28979f39bd, type: 3}
       propertyPath: m_Name
       value: Env_Training
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765911354344212840, guid: 20b018dbbf464b74aa856b28979f39bd, type: 3}
+      propertyPath: speed
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 9063158090061633628, guid: 20b018dbbf464b74aa856b28979f39bd, type: 3}
       propertyPath: m_RootOrder
