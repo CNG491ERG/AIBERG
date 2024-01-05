@@ -2,44 +2,44 @@
     "name": "root",
     "metadata": {
         "timer_format_version": "0.1.0",
-        "start_time_seconds": "1704437766",
+        "start_time_seconds": "1704438326",
         "python_version": "3.10.12 | packaged by Anaconda, Inc. | (main, Jul  5 2023, 19:01:18) [MSC v.1916 64 bit (AMD64)]",
         "command_line_arguments": "C:\\Users\\yurek\\anaconda3\\envs\\mlagents\\Scripts\\mlagents-learn Boss.yaml --env C:\\Users\\yurek\\OneDrive\\Desktop\\boks\\EndlessRunnerGame.exe --force --width 1024 --height 720",
         "mlagents_version": "1.1.0.dev0",
         "mlagents_envs_version": "1.1.0.dev0",
         "communication_protocol_version": "1.5.0",
-        "pytorch_version": "2.1.1+cpu",
+        "pytorch_version": "2.1.2+cpu",
         "numpy_version": "1.23.5",
-        "end_time_seconds": "1704437772"
+        "end_time_seconds": "1704438332"
     },
-    "total": 6.853604699950665,
+    "total": 6.839347600005567,
     "count": 1,
-    "self": 0.310475799953565,
+    "self": 0.3042929999064654,
     "children": {
         "run_training.setup": {
-            "total": 0.0818463999312371,
+            "total": 0.07441539992578328,
             "count": 1,
-            "self": 0.0818463999312371
+            "self": 0.07441539992578328
         },
         "TrainerController.start_learning": {
-            "total": 6.461282500065863,
+            "total": 6.460639200173318,
             "count": 1,
-            "self": 8.400017395615578e-05,
+            "self": 9.099999442696571e-05,
             "children": {
                 "TrainerController._reset_env": {
-                    "total": 6.3655303998384625,
+                    "total": 6.3731925000902265,
                     "count": 1,
-                    "self": 6.3655303998384625
+                    "self": 6.3731925000902265
                 },
                 "TrainerController._save_models": {
-                    "total": 0.0956681000534445,
+                    "total": 0.08735570008866489,
                     "count": 1,
-                    "self": 0.0011915999930351973,
+                    "self": 0.0009822999127209187,
                     "children": {
                         "RLTrainer._checkpoint": {
-                            "total": 0.09447650006040931,
+                            "total": 0.08637340017594397,
                             "count": 1,
-                            "self": 0.09447650006040931
+                            "self": 0.08637340017594397
                         }
                     }
                 }

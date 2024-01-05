@@ -13,6 +13,7 @@ public class Player : MonoBehaviour, IDamageable{
 
     public event EventHandler OnDamageableDeath;
     public event EventHandler OnDamageableHurt;
+    public event EventHandler OnDamageableHurtBasic;
 
 
     // Start is called before the first frame update
@@ -45,7 +46,10 @@ public class Player : MonoBehaviour, IDamageable{
     public void TakeDamage(float damageToTake){
         float totalDamage = damageToTake * (1 - Defense);
         Health = Health - totalDamage <= 0 ? 0 : Health - totalDamage;
-        OnDamageableHurt?.Invoke(this, EventArgs.Empty);
+        if(totalDamage>7)
+            OnDamageableHurtBasic.Invoke(this, EventArgs.Empty);
+        else
+            OnDamageableHurt?.Invoke(this, EventArgs.Empty);
         if(Health == 0){
             OnDamageableDeath?.Invoke(this, EventArgs.Empty);
         }

@@ -5,7 +5,7 @@
                 "steps": 0,
                 "file_path": "results\\ppo\\Boss\\Boss-0.onnx",
                 "reward": null,
-                "creation_time": 1704437772.6452022,
+                "creation_time": 1704438332.6014488,
                 "auxillary_file_paths": [
                     "results\\ppo\\Boss\\Boss-0.pt"
                 ]
@@ -15,7 +15,7 @@
             "steps": 0,
             "file_path": "results\\ppo\\Boss.onnx",
             "reward": null,
-            "creation_time": 1704437772.6452022,
+            "creation_time": 1704438332.6014488,
             "auxillary_file_paths": [
                 "results\\ppo\\Boss\\Boss-0.pt"
             ]
@@ -24,6 +24,6 @@
     "metadata": {
         "stats_format_version": "0.3.0",
         "mlagents_version": "1.1.0.dev0",
-        "torch_version": "2.1.1+cpu"
+        "torch_version": "2.1.2+cpu"
     }
 }
