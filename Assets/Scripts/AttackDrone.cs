@@ -31,7 +31,7 @@ public class AttackDrone : MonoBehaviour, IDamageable{
 
     private float shootTimer = 0f;
     void FixedUpdate(){
-        if(shootTimer >= 0.8f){
+        if(shootTimer >= 1.5f){
             ShootBullet();
             shootTimer = 0f;
         }

@@ -34,7 +34,7 @@ public class SpawnAttackDrones : MonoBehaviour, IBossAbility, IAttackAbility
     private IAbility abilityLock;
 
     //Damage in this case is how much damage a bullet of a drone causes
-    public float Damage => 1f;
+    public float Damage => 0.8f;
 
     void Start()
     {
