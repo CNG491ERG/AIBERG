@@ -60,7 +60,6 @@ public class AttackDrone : MonoBehaviour, IDamageable{
         Health = Health - totalDamage <= 0 ? 0 : Health - totalDamage;
         OnDamageableHurt?.Invoke(this, EventArgs.Empty);
         if(Health == 0){
-            OnDamageableDeath?.Invoke(this, EventArgs.Empty);
             Destroy(this.gameObject);
         }
     }
