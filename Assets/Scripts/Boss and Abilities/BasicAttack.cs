@@ -15,7 +15,7 @@ public class BasicAttack : MonoBehaviour, IBossAbility, IAttackAbility{
 
     public float Cooldown => 0.5f;
 
-    public float Damage => 9f;
+    public float Damage => 7.5f;
 
     public float AbilityDuration => 0;
     public IAbility AbilityLock { 
