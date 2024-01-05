@@ -945,6 +945,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad9ccdc6b9ce92a4a9d540bebd2cfca0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  boss: {fileID: 0}
+  isTraining: 1
 --- !u!4 &1546123363
 Transform:
   m_ObjectHideFlags: 0

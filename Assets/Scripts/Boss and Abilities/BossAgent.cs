@@ -115,8 +115,7 @@ public class BossAgent : Agent{
     private void FixedUpdate() {
         if(StepCount%50 == 0){
             AddReward(-0.10f); //To make kill in less time
-        }
-        Debug.Log(bossRb.velocity.y);
+        }   
         if(bossRb.velocity.y < 2.5f && bossRb.velocity.y > -2.5f){
             AddReward(-0.1f); //if the boss is too stationary
         }
