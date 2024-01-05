@@ -9,10 +9,10 @@ using UnityEngine;
 public class InputReplayer : MonoBehaviour
 {
     
-    private Int64 currentStep = 0;
+    private int currentStep = 0;
     [SerializeField] private Faction faction;
     [SerializeField] private EventViewer eventViewer;
-    [SerializeField] private Dictionary<Int64, string> inputs = new Dictionary<Int64, string>();
+    [SerializeField] private Dictionary<int, string> inputs = new Dictionary<int, string>();
     [SerializeField] private int playerId;
     private NpgsqlConnection conn;
     private string connString;
@@ -31,7 +31,7 @@ public class InputReplayer : MonoBehaviour
                 if (result != null)
                 {
                     string inputsRetrieved = result.ToString();
-                    Int64 step = 1;
+                    int step = 1;
                     string[] substrings = inputsRetrieved.Split('\n');
 
                     foreach (string substring in substrings){
@@ -57,9 +57,10 @@ public class InputReplayer : MonoBehaviour
 
     // Regularly checks and processes input replay during each fixed frame rate update
     void FixedUpdate(){  
-        ApplyInput(inputs[currentStep]);
-        Debug.Log(inputs[currentStep]);
-        currentStep++;
+        if(inputs.TryGetValue(++currentStep, out string input)){
+            ApplyInput(input);
+            Debug.Log(input);
+        }
     }
 
     private void ApplyInput(string input){
