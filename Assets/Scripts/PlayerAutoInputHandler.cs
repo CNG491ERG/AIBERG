@@ -107,9 +107,6 @@ using UnityEngine;
         y = Search(-2.70f,0.0f,1.3f,2.0f, bossY);
         x = Search(-1.28f, -0.76f, 1.34f, 1.87f, playerY);
 
-        //Debug.Log("player: "+x+" Boss: "+y);
-        Debug.Log(p1+" is p1, "+p2+"is p2 and p3: "+p3);
-
         //main logic is applied here
         //according to the boss&player field and if there are any incoming attacks
         switch (x, y)
@@ -125,7 +122,7 @@ using UnityEngine;
                 }
                 break;
             case (0, 1):
-                if (p1 && !p2) {
+                if ((p1 && !p2) || (!ActiveAbility1Input)) {
                     JumpAbilityInput = true;
                 }
                 break;

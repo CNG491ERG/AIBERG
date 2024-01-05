@@ -54,8 +54,8 @@ public class LastResort : MonoBehaviour, IPlayerAbility, IAttackAbility
         while(durationTimer < AbilityDuration){
             ShootBullet();
             cooldownTimer = 0;
-            durationTimer += 1f/misillesPerSecond;
-            yield return new WaitForSeconds(1f/misillesPerSecond);
+            durationTimer += 0.7f/misillesPerSecond;
+            yield return new WaitForSeconds(0.7f/misillesPerSecond);
         }
     }
 
