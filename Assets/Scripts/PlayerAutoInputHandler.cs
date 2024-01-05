@@ -107,9 +107,6 @@ using UnityEngine;
         y = Search(-2.70f,0.0f,1.3f,2.0f, bossY);
         x = Search(-1.28f, -0.76f, 1.34f, 1.87f, playerY);
 
-        //Debug.Log("player: "+x+" Boss: "+y);
-        Debug.Log(p1+" is p1, "+p2+"is p2 and p3: "+p3);
-
         //main logic is applied here
         //according to the boss&player field and if there are any incoming attacks
         switch (x, y)
@@ -120,25 +117,25 @@ using UnityEngine;
                     faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
                     JumpAbilityInput = true;
                 }
-                else if (p2! && p1) {
+                else if (p2! || p1) {
                     JumpAbilityInput = true;
                 }
                 break;
             case (0, 1):
-                if (p1 && !p2) {
+                if ((p1 && !p2) || (!ActiveAbility1Input)) {
                     JumpAbilityInput = true;
                 }
                 break;
             case (0, 2):
-                if(ActiveAbility1Input)
+                if(ActiveAbility1Input || p0)
                     JumpAbilityInput = true;
                 break;
             case (0, 3):
-                if(ActiveAbility1Input)
+                if(ActiveAbility1Input ||p0 ||p1)
                     JumpAbilityInput = true;
                 break;
             case (0, 6):
-                if (p6) {
+                if (p6 || p0) {
                     JumpAbilityInput = true;
                 }
                 else if (!p2 && p3 && ActiveAbility1Input) {
@@ -148,13 +145,16 @@ using UnityEngine;
 
             //field 1
             case (1, 0):
-                if ((p0 ||(p1 && !p2)) && ActiveAbility1Input) {
+                if ((p0 ||(p1)) || ActiveAbility1Input) {
                     JumpAbilityInput = true;
                 }
                 break;
             case (1, 1):   
-                faction.ActiveAbility1.UseAbility(ActiveAbility1Input); 
-                JumpAbilityInput = true;
+                if(ActiveAbility1Input) {
+                    faction.ActiveAbility1.UseAbility(ActiveAbility1Input); 
+                }
+                 else
+                    JumpAbilityInput = true;
                 break;
             case (1, 2):
                 if ((!p1 && p2) || (p0)) {

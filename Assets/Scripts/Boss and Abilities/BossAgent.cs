@@ -31,6 +31,7 @@ public class BossAgent : Agent{
         player.OnDamageableDeath += Player_OnDamageableDeath;
         boss.OnDamageableHurt += Boss_OnDamageableHurt;
         boss.OnDamageableDeath += Boss_OnDamageableDeath;
+        player.OnDamageableHurtBasic += Player_OnDamageableHurtBasic;
     }
 
     public override void OnEpisodeBegin() {
@@ -46,26 +47,30 @@ public class BossAgent : Agent{
         //Everything on the screen should be deleted, except for the boss and the player
     }
 
+    private void Player_OnDamageableHurtBasic(object sender, EventArgs e)
+    {
+        AddReward(+1f);
+    }
     private void Boss_OnDamageableDeath(object sender, EventArgs e)
     {
-        AddReward(-2f);
+        AddReward(-5f);
         EndEpisode();
     }
 
     private void Boss_OnDamageableHurt(object sender, EventArgs e)
     {
-        AddReward(-0.1f);
+        AddReward(-0.0008f);
     }
 
     private void Player_OnDamageableDeath(object sender, EventArgs e)
     {
-        AddReward(10f);
+        AddReward(20f);
         EndEpisode();
     }
 
     private void Player_OnDamageableHurt(object sender, EventArgs e)
     {
-        AddReward(0.5f);
+        AddReward(0.005f);
     }
 
     public override void OnActionReceived(ActionBuffers actions) {
@@ -74,13 +79,7 @@ public class BossAgent : Agent{
 
         moveDown.UseAbility(moveAction == 1);
         moveUp.UseAbility(moveAction == 2);
-
-        
         basicAttack.UseAbility(attackAction == 1);
-        if(attackAction == 1){
-            AddReward(-0.1f); //So that don't constantly spam 
-        }
-
         spawnAttackDrones.UseAbility(attackAction == 2);
     }
 
@@ -114,10 +113,11 @@ public class BossAgent : Agent{
     
     private void FixedUpdate() {
         if(StepCount%50 == 0){
-            AddReward(-0.10f); //To make kill in less time
-        }   
+            AddReward(-0.001f); //To make kill in less time
+        }
+        Debug.Log(bossRb.velocity.y);
         if(bossRb.velocity.y < 2.5f && bossRb.velocity.y > -2.5f){
-            AddReward(-0.1f); //if the boss is too stationary
+            AddReward(-0.15f); //if the boss is too stationary
         }
 
     }
