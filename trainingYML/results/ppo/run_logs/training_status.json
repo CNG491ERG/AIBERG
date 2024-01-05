@@ -2,40 +2,40 @@
     "Boss": {
         "checkpoints": [
             {
-                "steps": 99979,
-                "file_path": "results\\ppo\\Boss\\Boss-99979.onnx",
-                "reward": -15.101358314014616,
-                "creation_time": 1704440235.3514805,
+                "steps": 99999,
+                "file_path": "results\\ppo\\Boss\\Boss-99999.onnx",
+                "reward": -194.7802338477443,
+                "creation_time": 1704441330.5888994,
                 "auxillary_file_paths": [
-                    "results\\ppo\\Boss\\Boss-99979.pt"
+                    "results\\ppo\\Boss\\Boss-99999.pt"
                 ]
             },
             {
-                "steps": 199906,
-                "file_path": "results\\ppo\\Boss\\Boss-199906.onnx",
-                "reward": -16.43573382973548,
-                "creation_time": 1704440325.0094335,
+                "steps": 199890,
+                "file_path": "results\\ppo\\Boss\\Boss-199890.onnx",
+                "reward": -203.60837047394008,
+                "creation_time": 1704441405.964284,
                 "auxillary_file_paths": [
-                    "results\\ppo\\Boss\\Boss-199906.pt"
+                    "results\\ppo\\Boss\\Boss-199890.pt"
                 ]
             },
             {
-                "steps": 260331,
-                "file_path": "results\\ppo\\Boss\\Boss-260331.onnx",
-                "reward": -23.994585912674665,
-                "creation_time": 1704440509.0526524,
+                "steps": 238478,
+                "file_path": "results\\ppo\\Boss\\Boss-238478.onnx",
+                "reward": -204.56512414799496,
+                "creation_time": 1704441435.330615,
                 "auxillary_file_paths": [
-                    "results\\ppo\\Boss\\Boss-260331.pt"
+                    "results\\ppo\\Boss\\Boss-238478.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 260331,
+            "steps": 238478,
             "file_path": "results\\ppo\\Boss.onnx",
-            "reward": -23.994585912674665,
-            "creation_time": 1704440509.0526524,
+            "reward": -204.56512414799496,
+            "creation_time": 1704441435.330615,
             "auxillary_file_paths": [
-                "results\\ppo\\Boss\\Boss-260331.pt"
+                "results\\ppo\\Boss\\Boss-238478.pt"
             ]
         }
     },
