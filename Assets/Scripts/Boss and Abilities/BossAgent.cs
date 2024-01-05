@@ -49,11 +49,11 @@ public class BossAgent : Agent{
 
     private void Player_OnDamageableHurtBasic(object sender, EventArgs e)
     {
-        AddReward(+0.15f);
+        AddReward(+1f);
     }
     private void Boss_OnDamageableDeath(object sender, EventArgs e)
     {
-        AddReward(-1f);
+        AddReward(-5f);
         EndEpisode();
     }
 
@@ -64,7 +64,7 @@ public class BossAgent : Agent{
 
     private void Player_OnDamageableDeath(object sender, EventArgs e)
     {
-        AddReward(1f);
+        AddReward(20f);
         EndEpisode();
     }
 
@@ -117,7 +117,7 @@ public class BossAgent : Agent{
         }
         Debug.Log(bossRb.velocity.y);
         if(bossRb.velocity.y < 2.5f && bossRb.velocity.y > -2.5f){
-            AddReward(-0.08f); //if the boss is too stationary
+            AddReward(-0.15f); //if the boss is too stationary
         }
 
     }

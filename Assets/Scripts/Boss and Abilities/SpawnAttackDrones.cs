@@ -14,7 +14,7 @@ public class SpawnAttackDrones : MonoBehaviour, IBossAbility, IAttackAbility
 
     public GameObject AbilityOwner => boss.gameObject;
 
-    public float Cooldown => 35f;
+    public float Cooldown => 75f;
 
     public bool CanBeUsed => cooldownTimer >= Cooldown - 0.0001f;
 
