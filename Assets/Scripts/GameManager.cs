@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 
 public class GameManager : MonoBehaviour{
-    private const int maxSteps = 9000;
+    private const int maxSteps = 6000;
     private Int64 stepCounter;
     private Int64 score;
     public static GameManager Instance;
