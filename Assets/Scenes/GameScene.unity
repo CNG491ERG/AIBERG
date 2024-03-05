@@ -684,6 +684,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5508331876834232124, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
+      propertyPath: m_RayLength
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5508331876834232124, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
+      propertyPath: m_MaxRayDegrees
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5508331876834232124, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
+      propertyPath: m_RaysPerDirection
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5508331876834232124, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
+      propertyPath: m_SphereCastRadius
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5508331876834232124, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
+      propertyPath: m_ObservationStacks
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7465988789212817951, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
       propertyPath: env
       value: 
