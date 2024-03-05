@@ -15,8 +15,8 @@ TagManager:
   - ForegroundEnvironment
   - Water
   - UI
-  - 
-  - 
+  - PlayerLayer
+  - BossLayer
   - 
   - 
   - 
