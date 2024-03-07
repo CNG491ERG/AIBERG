@@ -8,6 +8,9 @@ TagManager:
   - PlayerDamageProjectile
   - PlayerAttacks
   - BossAttacks
+  - Assault
+  - Machine
+  - Last
   layers:
   - Default
   - TransparentFX
@@ -15,12 +18,12 @@ TagManager:
   - ForegroundEnvironment
   - Water
   - UI
-  - PlayerLayer
-  - BossLayer
-  - 
-  - 
-  - 
-  - 
+  - PlayerAssault
+  - PlayerMachine
+  - PlayerLast
+  - BossDrone
+  - BossBullet
+  - BossBasic
   - 
   - 
   - 

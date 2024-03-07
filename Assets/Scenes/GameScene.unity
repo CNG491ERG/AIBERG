@@ -646,7 +646,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4377123820516016971, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
       propertyPath: m_TagString
-      value: PlayerAttacks
+      value: Assault
       objectReference: {fileID: 0}
     - target: {fileID: 5289710580946391324, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
       propertyPath: m_RootOrder
@@ -714,7 +714,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5508331876834232124, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
       propertyPath: m_RayLayerMask.m_Bits
-      value: 72
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 5508331876834232124, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
       propertyPath: m_DetectableTags.Array.size
@@ -722,7 +722,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5508331876834232124, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
       propertyPath: m_DetectableTags.Array.data[0]
-      value: PlayerAttacks
+      value: Assault
       objectReference: {fileID: 0}
     - target: {fileID: 5508331876834232124, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
       propertyPath: m_DetectableTags.Array.data[1]
@@ -734,11 +734,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6569306484709029987, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6569306484709029987, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
       propertyPath: m_TagString
-      value: PlayerAttacks
+      value: Machine
       objectReference: {fileID: 0}
     - target: {fileID: 7465988789212817951, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
       propertyPath: env
@@ -746,11 +746,11 @@ PrefabInstance:
       objectReference: {fileID: 858551277}
     - target: {fileID: 8046305623246282888, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8046305623246282888, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
       propertyPath: m_TagString
-      value: PlayerAttacks
+      value: Last
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
