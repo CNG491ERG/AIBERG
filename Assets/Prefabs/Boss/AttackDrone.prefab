@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9068193306528591471}
   - component: {fileID: 6268369781737818759}
   - component: {fileID: 5271555697824913894}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 624211079247563599}
   - component: {fileID: 6082074997482764627}
   - component: {fileID: 5813819900313802998}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AttackDrone
   m_TagString: Boss
   m_Icon: {fileID: 0}
@@ -239,7 +239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5359118126068895314}
   - component: {fileID: 5645178158482271836}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,6 +324,14 @@ PrefabInstance:
     - target: {fileID: 1886248149575501542, guid: ffc00879245e9b54eaa6b9edf39461f1, type: 3}
       propertyPath: m_Name
       value: HealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886248149575501542, guid: ffc00879245e9b54eaa6b9edf39461f1, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4424227128796820653, guid: ffc00879245e9b54eaa6b9edf39461f1, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8257838508954880465, guid: ffc00879245e9b54eaa6b9edf39461f1, type: 3}
       propertyPath: m_Pivot.x

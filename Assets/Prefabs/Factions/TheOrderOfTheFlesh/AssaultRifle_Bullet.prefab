@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1098353145939182039}
   - component: {fileID: 5928544165053284202}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BulletVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 8640798421454719521}
   - component: {fileID: 8483955856221425588}
   - component: {fileID: 1514981125335683834}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AssaultRifle_Bullet
   m_TagString: PlayerDamageProjectile
   m_Icon: {fileID: 0}
