@@ -220,6 +220,133 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreCounterText: {fileID: 1328331119}
+--- !u!1 &255738100 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8113205412000314567, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
+  m_PrefabInstance: {fileID: 3114505557679200979}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &255738103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255738100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67c7e722ba14acd9153bb4488bff6e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SensorName: RayPerceptionSensor2
+  m_DetectableTags:
+  - Machine
+  m_RaysPerDirection: 10
+  m_MaxRayDegrees: 90
+  m_SphereCastRadius: 0.2
+  m_RayLength: 15
+  m_RayLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  m_ObservationStacks: 3
+  rayHitColor: {r: 0, g: 0.15439701, b: 1, a: 1}
+  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &255738104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255738100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67c7e722ba14acd9153bb4488bff6e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SensorName: RayPerceptionSensor3
+  m_DetectableTags:
+  - Last
+  m_RaysPerDirection: 10
+  m_MaxRayDegrees: 90
+  m_SphereCastRadius: 0.2
+  m_RayLength: 15
+  m_RayLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  m_ObservationStacks: 3
+  rayHitColor: {r: 1, g: 0, b: 0.9487114, a: 1}
+  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &255738105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255738100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67c7e722ba14acd9153bb4488bff6e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SensorName: RayPerceptionSensor4
+  m_DetectableTags: []
+  m_RaysPerDirection: 10
+  m_MaxRayDegrees: 90
+  m_SphereCastRadius: 0.2
+  m_RayLength: 15
+  m_RayLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
+  m_ObservationStacks: 3
+  rayHitColor: {r: 0, g: 1, b: 0.92824674, a: 1}
+  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &255738106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255738100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67c7e722ba14acd9153bb4488bff6e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SensorName: RayPerceptionSensor
+  m_DetectableTags: []
+  m_RaysPerDirection: 10
+  m_MaxRayDegrees: 90
+  m_SphereCastRadius: 0.2
+  m_RayLength: 15
+  m_RayLayerMask:
+    serializedVersion: 2
+    m_Bits: 2048
+  m_ObservationStacks: 3
+  rayHitColor: {r: 0, g: 1, b: 0.26390958, a: 1}
+  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &255738107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255738100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67c7e722ba14acd9153bb4488bff6e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SensorName: RayPerceptionSensor
+  m_DetectableTags: []
+  m_RaysPerDirection: 10
+  m_MaxRayDegrees: 90
+  m_SphereCastRadius: 0.2
+  m_RayLength: 15
+  m_RayLayerMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  m_ObservationStacks: 3
+  rayHitColor: {r: 1, g: 0.49731973, b: 0, a: 1}
+  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &501224397
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,7 +841,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5508331876834232124, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
       propertyPath: m_RayLayerMask.m_Bits
-      value: 65
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 5508331876834232124, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
       propertyPath: m_DetectableTags.Array.size
@@ -762,4 +889,19 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 466953364336845911, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
       insertIndex: -1
       addedObject: {fileID: 858551277}
+    - targetCorrespondingSourceObject: {fileID: 8113205412000314567, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 255738103}
+    - targetCorrespondingSourceObject: {fileID: 8113205412000314567, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 255738104}
+    - targetCorrespondingSourceObject: {fileID: 8113205412000314567, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 255738105}
+    - targetCorrespondingSourceObject: {fileID: 8113205412000314567, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 255738107}
+    - targetCorrespondingSourceObject: {fileID: 8113205412000314567, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 255738106}
   m_SourcePrefab: {fileID: 100100000, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
