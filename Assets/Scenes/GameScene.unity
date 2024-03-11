@@ -767,6 +767,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env
       objectReference: {fileID: 0}
+    - target: {fileID: 2112682697329060782, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
+      propertyPath: m_BehaviorType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4377123820516016971, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
       propertyPath: m_Layer
       value: 6
