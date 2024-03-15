@@ -299,7 +299,7 @@ GameObject:
   - component: {fileID: 8483955856221425588}
   - component: {fileID: 3638068416293148722}
   m_Layer: 8
-  m_Name: LastResort_Missile
+  m_Name: ActiveAbility2_LastResort_Projectile
   m_TagString: PlayerDamageProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

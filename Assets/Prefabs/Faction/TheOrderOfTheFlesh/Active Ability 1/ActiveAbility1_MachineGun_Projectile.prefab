@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1098353145939182039}
   - component: {fileID: 5928544165053284202}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: BulletVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 6869076925744720693}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6078829920255221365}
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.4490608, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -96,8 +96,8 @@ GameObject:
   - component: {fileID: 8640798421454719521}
   - component: {fileID: 8483955856221425588}
   - component: {fileID: 1514981125335683834}
-  m_Layer: 6
-  m_Name: AssaultRifle_Bullet
+  m_Layer: 7
+  m_Name: ActiveAbility1_MachineGun_Projectile
   m_TagString: PlayerDamageProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 971e533b424c5e5449daf437a6ad4efe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0.25
+  damage: 0.2
   tagToDamage: Boss
   projectileVelocity: {x: 0, y: 0}
 --- !u!58 &1514981125335683834
@@ -195,4 +195,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.25

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1033450460895304424}
   - component: {fileID: 5810692838231897381}
   m_Layer: 10
-  m_Name: AttackDrone_Bullet
+  m_Name: AttackDrone_Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
