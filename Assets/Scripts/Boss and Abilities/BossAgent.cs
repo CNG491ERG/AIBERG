@@ -14,10 +14,12 @@ public class BossAgent : Agent{
     private IBossAbility moveDown;
     private IBossAbility basicAttack;
     private IBossAbility spawnAttackDrones;
+    private GameManager gameManager;
     [SerializeField] private Player player;
     [SerializeField] private Transform playerSpawnPosition;
     [SerializeField] private Transform bossSpawnPosition; 
     [SerializeField] public MLAgentEnvironment env;
+
     public override void Initialize() {
         bossRb = GetComponent<Rigidbody2D>();
         boss = GetComponent<Boss>();
@@ -27,9 +29,7 @@ public class BossAgent : Agent{
         spawnAttackDrones = GetComponent<SpawnAttackDrones>();
         bossRb.gravityScale = 0;
 
-        player.OnDamageableHurt += Player_OnDamageableHurt;
         player.OnDamageableDeath += Player_OnDamageableDeath;
-        boss.OnDamageableHurt += Boss_OnDamageableHurt;
         boss.OnDamageableDeath += Boss_OnDamageableDeath;
     }
 
@@ -48,25 +48,18 @@ public class BossAgent : Agent{
 
     private void Boss_OnDamageableDeath(object sender, EventArgs e)
     {
-        AddReward(-2f);
+        float reward = (float)(-0.5 - (player.Health/player.MaxHealth) * 0.5);
+        AddReward(reward);
         EndEpisode();
-    }
-
-    private void Boss_OnDamageableHurt(object sender, EventArgs e)
-    {
-        AddReward(-0.1f);
     }
 
     private void Player_OnDamageableDeath(object sender, EventArgs e)
     {
-        AddReward(10f);
+        float reward = (float)(0.5 + (boss.Health/boss.MaxHealth) * 0.5);
+        AddReward(reward);
         EndEpisode();
     }
 
-    private void Player_OnDamageableHurt(object sender, EventArgs e)
-    {
-        AddReward(0.5f);
-    }
 
     public override void OnActionReceived(ActionBuffers actions) {
         int moveAction = actions.DiscreteActions[0];
@@ -74,13 +67,7 @@ public class BossAgent : Agent{
 
         moveDown.UseAbility(moveAction == 1);
         moveUp.UseAbility(moveAction == 2);
-
-        
         basicAttack.UseAbility(attackAction == 1);
-        if(attackAction == 1){
-            AddReward(-0.1f); //So that don't constantly spam 
-        }
-
         spawnAttackDrones.UseAbility(attackAction == 2);
     }
 
@@ -94,6 +81,8 @@ public class BossAgent : Agent{
         sensor.AddObservation(player.transform.localPosition.x);
         sensor.AddObservation(player.transform.localPosition.y);
         sensor.AddObservation(player.Health);
+
+        sensor.AddObservation(gameManager.StepCount);
     }
 
     public override void Heuristic(in ActionBuffers actionsOut) {
@@ -111,15 +100,5 @@ public class BossAgent : Agent{
         discreteActionsOut[1] = basicAttackInput ? 1 : discreteActionsOut[1];
         discreteActionsOut[1] = spawnAttackDronesInput ? 2 : discreteActionsOut[1];
     }
-    
-    private void FixedUpdate() {
-        if(StepCount%50 == 0){
-            AddReward(-0.10f); //To make kill in less time
-        }
-        Debug.Log(bossRb.velocity.y);
-        if(bossRb.velocity.y < 2.5f && bossRb.velocity.y > -2.5f){
-            AddReward(-0.1f); //if the boss is too stationary
-        }
 
-    }
 }

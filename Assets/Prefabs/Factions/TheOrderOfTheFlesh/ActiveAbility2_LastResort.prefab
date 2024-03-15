@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 926201294906970750}
   - component: {fileID: 2430107542517590482}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ActiveAbility2_LastResort
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,12 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 988511652c16b9a4fb478512bee490ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityOwner: {fileID: 0}
-  cooldown: 0
-  duration: 0
-  damage: 0
-  abilityName: 
-  abilityType: 0
   faction: {fileID: 0}
   misillePrefab: {fileID: 9216531737267913027, guid: ded2dad941c7ea544a26ce5878ab6527, type: 3}
   misilleVelocityX: 30

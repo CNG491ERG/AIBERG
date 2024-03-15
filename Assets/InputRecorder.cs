@@ -2,73 +2,53 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Npgsql;
+using System.Text;
 
 public class InputRecorder : MonoBehaviour
 {
-    private Dictionary<int, string> inputList = new Dictionary<int, string>();
-    private int stepCounter = 0;
-    private int playerId = 1; // Replace with the actual player's ID
-
+    private StringBuilder inputsRecorded = new StringBuilder();
+    [SerializeField] private bool startRecording;
+    [SerializeField] private int playerId = 1; // Replace with the actual player's ID
     private NpgsqlConnection conn; // Npgsql connection variable
+    private string connString;
+
     // Start is called before the first frame update
-    void Start()
+    void Start(){
+        Debug.Log("connecteed");
+        connString = "Host=34.42.114.162;Port=5432;Username=postgres;Password=postgres;Database=db";
+        conn = new NpgsqlConnection(connString);
+        GameManager.Instance.OnGameStarted += GameManager_OnGameStarted;
+        GameManager.Instance.OnGameEnded += GameManager_OnGameEnded;
+
+    }
+
+    private void GameManager_OnGameEnded(object sender, EventArgs e)
     {
-        string connString = "Host=34.42.114.162;Port=5432;Username=postgres;Password=postgres;Database=db";
+        startRecording = false;
+        Debug.Log("Record complete, sending to db");
+        SendDataToDB(playerId, inputsRecorded.ToString());
+    }
 
-        using var conn = new NpgsqlConnection(connString);
-        conn.Open();
+    private void GameManager_OnGameStarted(object sender, EventArgs e)
+    {
+        startRecording = true;
+        Debug.Log("Started recording");
+    }
 
-        using var cmd = new NpgsqlCommand("SELECT * FROM \"Player\"", conn);
-
-        using NpgsqlDataReader reader = cmd.ExecuteReader();
+    void FixedUpdate(){
+        if(startRecording){
+            // Capture player movements
+            char jumpInput = Input.GetKey(KeyCode.Space) ? '1' : '0';
+            char basicAttackInput = Input.GetMouseButton(0) ? '1' : '0';
+            char specialAttack1Input = Input.GetKey(KeyCode.Q) ? '1' : '0';
+            char specialAttack2Input = Input.GetKey(KeyCode.E) ? '1' : '0';
+            string input = $"{jumpInput}{basicAttackInput}{specialAttack1Input}{specialAttack2Input}\n";
+            inputsRecorded.Append(input);
+        }
         
-        while (reader.Read())
-        {
-            for (int i = 0; i < reader.FieldCount; i++)
-            {
-                Debug.Log(reader[i].ToString());
-            }
-
-        }
     }
 
-    void FixedUpdate()
-    {
-        // Capture player movements
-        char jumpInput = Input.GetKey(KeyCode.Space) ? '1' : '0';
-        char basicAttackInput = Input.GetMouseButton(0) ? '1' : '0';
-        char specialAttack1Input = Input.GetKey(KeyCode.Q) ? '1' : '0';
-        char specialAttack2Input = Input.GetKey(KeyCode.E) ? '1' : '0';
-        string input = $"{jumpInput}{basicAttackInput}{specialAttack1Input}{specialAttack2Input}";
-        inputList.Add(stepCounter, input);
-        stepCounter++;
-
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            StoreMovementsInDatabase(inputList);
-        }
-    }
-
-    private void StoreMovementsInDatabase(Dictionary<int, string> dict)
-    {
-        try
-        {
-            string serializedData = SerializeDictionaryToJson(dict);
-            InsertMovementData(playerId, serializedData);
-            Debug.Log("Player movements stored in the database.");
-        }
-        catch (Exception e)
-        {
-            Debug.LogError("Failed to store movements: " + e.Message);
-        }
-    }
-
-    private string SerializeDictionaryToJson(Dictionary<int, string> dict)
-    {
-        return JsonUtility.ToJson(new Serialization<Dictionary<int, string>>(dict));
-    }
-
-    private void InsertMovementData(int playerId, string serializedData)
+    private void SendDataToDB(int playerId, string inputsRecorded)
     {
         try
         {
@@ -76,9 +56,9 @@ public class InputRecorder : MonoBehaviour
             using (var cmd = new NpgsqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = "INSERT INTO Movements (player_id, input_data, timestamp) VALUES (@playerId, @movementData, @timeStamp)";
+                cmd.CommandText = "INSERT INTO movements (player_id, input_data, timestamp) VALUES (@playerId, @movementData, @timeStamp)";
                 cmd.Parameters.AddWithValue("playerId", playerId);
-                cmd.Parameters.AddWithValue("movementData", serializedData);
+                cmd.Parameters.AddWithValue("movementData", inputsRecorded);
                 cmd.Parameters.AddWithValue("timeStamp", DateTime.Now);
                 cmd.ExecuteNonQuery();
             }
@@ -98,16 +78,5 @@ public class InputRecorder : MonoBehaviour
             conn.Close();
             Debug.Log("Disconnected from database.");
         }
-    }
-
-    [Serializable]
-    private class Serialization<T>
-    {
-        public Serialization(T data)
-        {
-            this.data = data;
-        }
-
-        public T data;
     }
 }

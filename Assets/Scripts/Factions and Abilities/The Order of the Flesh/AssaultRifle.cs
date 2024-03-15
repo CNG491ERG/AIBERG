@@ -12,11 +12,11 @@ public class AssaultRifle : MonoBehaviour, IPlayerAbility, IAttackAbility{
 
     public GameObject AbilityOwner => faction.player.gameObject;
 
-    public float Cooldown => 0.20f;
+    public float Cooldown => 0.30f;
 
     public float AbilityDuration => 0;
 
-    public float Damage => 0.25f;
+    public float Damage => 0.20f;
 
     public bool CanBeUsed => cooldownTimer >= (Cooldown-0.001f);
     public IAbility AbilityLock { 
