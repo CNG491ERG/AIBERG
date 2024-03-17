@@ -1,14 +1,29 @@
 using UnityEngine;
 
 public class AssaultRifle : MonoBehaviour, IAttackAbility{
+    [Header("Player Reference")]
     [SerializeField] private Player player;
-    [SerializeField] private GameObject bulletPrefab;
+    
+    [Header("Ability Properties")]
+    [SerializeField] private const float abilityCooldown = 0.30f;
+    [SerializeField] private float cooldownTimer = 0f;
+    [SerializeField] private const float abilityDuration = 0f;
+    [SerializeField] private bool canBeUsed;
+
+    [Header("Projectile Used by the Ability")]
+    [SerializeField] private GameObject projectilePrefab;
+    //Add object pool here
+
+    [Header("Projectile properties")]
     [SerializeField] private float bulletVelocityX;
-    [SerializeField] private float cooldownTimer;
-    public float Cooldown => 0.30f;
-    public float AbilityDuration => 0;
-    public float Damage => 0.20f;
-    public bool CanBeUsed => cooldownTimer >= (Cooldown-0.001f);
+    [SerializeField] private float bulletDamage = 0.20f;
+
+    #region interface properties
+    public float Cooldown => abilityCooldown;
+    public float AbilityDuration => abilityDuration;
+    public float Damage => bulletDamage;
+    public bool CanBeUsed => canBeUsed;
+    private IAbility abilityLock;
     public IAbility AbilityLock { 
         get => abilityLock;
         set{
@@ -17,28 +32,30 @@ public class AssaultRifle : MonoBehaviour, IAttackAbility{
             }
         }
     }
-
     public GameObject AbilityOwner => player.gameObject;
-
-    private IAbility abilityLock;
+    #endregion
 
     private void Start() {
         player = Utility.ComponentFinder.FindComponentInParents<Player>(this.transform);
-        cooldownTimer = Cooldown;
-        bulletPrefab.GetComponent<DamagingProjectile>().damage = Damage;
-        AbilityLock = (IAbility)this;
+        ResetCooldown();
+        projectilePrefab.GetComponent<DamagingProjectile>().damage = Damage;
+        AbilityLock = this;
     }
 
+    private void FixedUpdate() {
+        canBeUsed = cooldownTimer >= (Cooldown-0.001f);
+        cooldownTimer = CanBeUsed ? cooldownTimer : cooldownTimer + Time.fixedDeltaTime;
+    }
+    
     public void UseAbility(bool inputReceived){
-        if(cooldownTimer>=(Cooldown-0.0001f) && inputReceived && AbilityLock != null){ 
+        if(canBeUsed && inputReceived && AbilityLock != null){ 
             ShootBullet();
             cooldownTimer = 0;
         }
-        cooldownTimer = CanBeUsed ? cooldownTimer : cooldownTimer + Time.fixedDeltaTime;
     }
 
     private void ShootBullet(){
-        Rigidbody2D bulletRigidBody = Instantiate(bulletPrefab).GetComponent<Rigidbody2D>();
+        Rigidbody2D bulletRigidBody = Instantiate(projectilePrefab).GetComponent<Rigidbody2D>();
         if(bulletRigidBody != null){
             bulletRigidBody.transform.parent = this.transform;
             bulletRigidBody.transform.localPosition = Vector3.zero;

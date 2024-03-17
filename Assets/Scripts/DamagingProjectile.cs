@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DamagingProjectile : MonoBehaviour{
@@ -28,8 +26,4 @@ public class DamagingProjectile : MonoBehaviour{
         }
         
     }
-    /* Causes build error
-    private void OnDrawGizmos() {
-        UnityEditor.Handles.Label(transform.position, "Velocity: " + rb.velocity.ToString());
-    }*/
 }
