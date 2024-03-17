@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicAttack : MonoBehaviour, IBossAbility, IAttackAbility{
+public class BasicAttack : MonoBehaviour, IAttackAbility{
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private float projectileVelocityX;
     [SerializeField] private Boss boss;

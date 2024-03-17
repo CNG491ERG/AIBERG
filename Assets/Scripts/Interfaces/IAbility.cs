@@ -1,6 +1,5 @@
 using UnityEngine;
 
-//This is common for all abilites, do not directly inherit this.
 public interface IAbility{
     public GameObject AbilityOwner{
         get;

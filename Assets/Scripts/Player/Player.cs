@@ -33,9 +33,10 @@ public class Player : MonoBehaviour, IDamageable{
     [SerializeField] private Boss boss;
     public event EventHandler OnDamageableDeath;
     public event EventHandler OnDamageableHurt;
-    public event EventHandler OnDamageableHurtBasic;
 
     void Start(){
+        inputHandler = GetComponent<InputHandler>();
+
         if(faction.BasicAbility != null){
             basicAbilityObject = Instantiate(faction.BasicAbility, this.transform);
             basicAbility = basicAbilityObject.GetComponent<IAbility>();
@@ -76,11 +77,5 @@ public class Player : MonoBehaviour, IDamageable{
         if(Health == 0){
             OnDamageableDeath?.Invoke(this, EventArgs.Empty);
         }
-    }
-
-    public void ResetAllCooldowns(){
-        //playerFaction.ActiveAbility1.ResetCooldown();
-        //playerFaction.ActiveAbility2.ResetCooldown();
-        //playerFaction.BasicAttack.ResetCooldown();
     }
 }

@@ -10,10 +10,10 @@ using UnityEngine;
 public class BossAgent : Agent{
     private Boss boss;
     private Rigidbody2D bossRb;
-    private IBossAbility moveUp;
-    private IBossAbility moveDown;
-    private IBossAbility basicAttack;
-    private IBossAbility spawnAttackDrones;
+    private IAbility moveUp;
+    private IAbility moveDown;
+    private IAbility basicAttack;
+    private IAbility spawnAttackDrones;
     private GameManager gameManager;
     [SerializeField] private Player player;
     [SerializeField] private Transform playerSpawnPosition;
@@ -23,8 +23,8 @@ public class BossAgent : Agent{
     public override void Initialize() {
         bossRb = GetComponent<Rigidbody2D>();
         boss = GetComponent<Boss>();
-        moveUp = GetComponent<MoveUp>();
-        moveDown = GetComponent<MoveDown>();
+        //moveUp = GetComponent<MoveUp>();
+        //moveDown = GetComponent<MoveDown>();
         basicAttack = GetComponent<BasicAttack>();
         spawnAttackDrones = GetComponent<SpawnAttackDrones>();
         bossRb.gravityScale = 0;
@@ -34,6 +34,9 @@ public class BossAgent : Agent{
     }
 
     public override void OnEpisodeBegin() {
+        /*
+        ** MOVE EVERYTHING BELOW TO AN ENVIRONMENT CONTROLLER!
+        */
         transform.localPosition = bossSpawnPosition.transform.localPosition;
         player.transform.localPosition = playerSpawnPosition.transform.localPosition;
         player.Health = 100;
@@ -41,8 +44,8 @@ public class BossAgent : Agent{
         boss.Defense = 0;
         boss.speed = 10;
         GameManager.Instance.ResetStepCounter();
-        player.ResetAllCooldowns();
-        env.RemoveSpawnedObjects();
+        //player.ResetAllCooldowns();
+        //env.RemoveSpawnedObjects();
         //Everything on the screen should be deleted, except for the boss and the player
     }
 

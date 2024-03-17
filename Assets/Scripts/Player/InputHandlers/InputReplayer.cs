@@ -1,13 +1,9 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.IO;
-using System.Threading.Tasks;
 using Npgsql;
 using UnityEngine;
 
-public class InputReplayer : MonoBehaviour
-{
+public class InputReplayer : InputHandler{
     
     private int currentStep = 0;
     //[SerializeField] private Faction faction;

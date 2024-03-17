@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveUp : MonoBehaviour, IBossAbility{
+public class MoveUp : MonoBehaviour, IAbility{
     [SerializeField] private Boss boss;
     [SerializeField] private Rigidbody2D bossRb;
 

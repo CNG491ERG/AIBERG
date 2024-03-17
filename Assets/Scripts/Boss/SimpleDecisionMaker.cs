@@ -8,9 +8,9 @@ public class SimpleDecisionMaker : MonoBehaviour{
     [SerializeField] private bool moveDownInput;
     [SerializeField] private bool basicAttackInput;
 
-    [SerializeField] private IBossAbility moveUpAbility;
-    [SerializeField] private IBossAbility moveDownAbility;
-    [SerializeField] private IBossAbility basicAttackAbility;
+    [SerializeField] private IAbility moveUpAbility;
+    [SerializeField] private IAbility moveDownAbility;
+    [SerializeField] private IAbility basicAttackAbility;
 
     [SerializeField] private float raycastDistance = 1f;
 

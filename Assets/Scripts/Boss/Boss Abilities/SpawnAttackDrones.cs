@@ -4,7 +4,7 @@ using DG.Tweening;
 using UnityEngine;
 
 
-public class SpawnAttackDrones : MonoBehaviour, IBossAbility, IAttackAbility
+public class SpawnAttackDrones : MonoBehaviour, IAttackAbility
 {
     [SerializeField] private GameObject attackDronePrefab;
     [SerializeField] private Transform[] droneSpawnPositions;

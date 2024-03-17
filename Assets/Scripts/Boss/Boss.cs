@@ -17,9 +17,9 @@ public class Boss : MonoBehaviour, IDamageable
     [SerializeField] private float damageMultiplier;
     [SerializeField] private Transform targetTransform;
     [SerializeField] private Rigidbody2D bossRb;
-    private IBossAbility moveUp;
-    private IBossAbility moveDown;
-    private IBossAbility basicAttack;
+    private IAbility moveUp;
+    private IAbility moveDown;
+    private IAbility basicAttack;
     public Player player;
 
     public event EventHandler OnDamageableDeath;
@@ -45,8 +45,8 @@ public class Boss : MonoBehaviour, IDamageable
     public float MaxHealth { get => maxHealth; set => maxHealth = value; }
 
     private void Start() {
-        moveUp = GetComponent<MoveUp>();
-        moveDown = GetComponent<MoveDown>();
+        //moveUp = GetComponent<MoveUp>();
+        //moveDown = GetComponent<MoveDown>();
         basicAttack = GetComponent<BasicAttack>();
     }
     
