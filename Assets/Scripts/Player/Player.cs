@@ -14,11 +14,11 @@ public class Player : MonoBehaviour, IDamageable{
     [SerializeField] private GameObject activeAbility2Object;
     [SerializeField] private GameObject passiveAbilityObject;
     [SerializeField] private GameObject jumpObject;
-    private IAbility basicAbility;
-    private IAbility activeAbility1;
-    private IAbility activeAbility2;
-    private IAbility passiveAbility;
-    private IAbility jump;
+    public IAbility basicAbility;
+    public IAbility activeAbility1;
+    public IAbility activeAbility2;
+    public IAbility passiveAbility;
+    public IAbility jump;
 
     [Header("IDamageable Values")]
     [SerializeField] private float maxHealth;
@@ -77,5 +77,13 @@ public class Player : MonoBehaviour, IDamageable{
         if(Health == 0){
             OnDamageableDeath?.Invoke(this, EventArgs.Empty);
         }
+    }
+
+    public void ResetAllCooldowns(){
+        basicAbility?.ResetCooldown();
+        activeAbility1?.ResetCooldown();
+        activeAbility2?.ResetCooldown();
+        jump?.ResetCooldown();
+        passiveAbility?.ResetCooldown();
     }
 }

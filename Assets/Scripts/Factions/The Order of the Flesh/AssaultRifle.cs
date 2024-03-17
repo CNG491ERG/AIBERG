@@ -5,9 +5,9 @@ public class AssaultRifle : MonoBehaviour, IAttackAbility{
     [SerializeField] private Player player;
     
     [Header("Ability Properties")]
-    [SerializeField] private const float abilityCooldown = 0.30f;
+    [SerializeField] private float abilityCooldown = 0.30f;
     [SerializeField] private float cooldownTimer = 0f;
-    [SerializeField] private const float abilityDuration = 0f;
+    [SerializeField] private float abilityDuration = 0f;
     [SerializeField] private bool canBeUsed;
 
     [Header("Projectile Used by the Ability")]
@@ -44,9 +44,9 @@ public class AssaultRifle : MonoBehaviour, IAttackAbility{
 
     private void FixedUpdate() {
         canBeUsed = cooldownTimer >= (Cooldown-0.001f);
-        cooldownTimer = CanBeUsed ? cooldownTimer : cooldownTimer + Time.fixedDeltaTime;
+        cooldownTimer = canBeUsed ? cooldownTimer : cooldownTimer + Time.fixedDeltaTime;
     }
-    
+
     public void UseAbility(bool inputReceived){
         if(canBeUsed && inputReceived && AbilityLock != null){ 
             ShootBullet();

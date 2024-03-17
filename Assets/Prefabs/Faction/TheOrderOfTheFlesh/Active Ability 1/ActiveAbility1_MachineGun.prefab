@@ -44,9 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e2e0995e69e04c479304b535ad1544d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  faction: {fileID: 0}
-  bulletPrefab: {fileID: 9216531737267913027, guid: abd72793a8102524099debfed2f231ca, type: 3}
-  bulletVelocityX: 25
+  player: {fileID: 0}
+  abilityCooldown: 10
   cooldownTimer: 0
+  abilityDuration: 4
   durationTimer: 0
-  bulletsPerSecond: 20
+  canBeUsed: 0
+  projectilePrefab: {fileID: 9216531737267913027, guid: abd72793a8102524099debfed2f231ca, type: 3}
+  projectilesPerSecond: 10
+  projectileVelocityX: 20
+  projectileDamage: 0.2
