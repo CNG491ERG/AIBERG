@@ -1,20 +1,20 @@
 using System.Collections;
 using UnityEngine;
 
-public class MachineGun : MonoBehaviour, IPlayerAbility, IAttackAbility
+public class MachineGun : MonoBehaviour, IAttackAbility
 {
-    [SerializeField] private Faction faction;
+    //[SerializeField] private Faction faction;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private float bulletVelocityX;
     [SerializeField] private float cooldownTimer; 
     [SerializeField] private float durationTimer;
     [SerializeField] private float bulletsPerSecond;
 
-    public Faction PlayerFaction => faction;
+    //public Faction PlayerFaction => faction;
 
     public string AbilityName => "MachineGun";
 
-    public GameObject AbilityOwner => faction.player.gameObject;
+    //public GameObject AbilityOwner => faction.player.gameObject;
 
     public float Cooldown => 10f; //MUST CHANGE!
 
@@ -34,10 +34,10 @@ public class MachineGun : MonoBehaviour, IPlayerAbility, IAttackAbility
     private IAbility abilityLock;
 
     void Start(){
-        faction = GetComponentInParent<Faction>();
+        //faction = GetComponentInParent<Faction>();
         cooldownTimer = Cooldown;
         bulletPrefab.GetComponent<DamagingProjectile>().damage = Damage;
-        AbilityLock = this;
+        //AbilityLock = this;
     }
 
     public void UseAbility(bool inputReceived){
@@ -49,7 +49,7 @@ public class MachineGun : MonoBehaviour, IPlayerAbility, IAttackAbility
 
     //Machine gun overrules assault rifle
     IEnumerator MachineGunCoroutine(float bulletsPerSecond){
-        faction.BasicAttack.AbilityLock = null; //get lock of basic attack
+        //faction.BasicAttack.AbilityLock = null; //get lock of basic attack
         durationTimer = 0;
         while(durationTimer < AbilityDuration){
             ShootBullet();
@@ -57,11 +57,11 @@ public class MachineGun : MonoBehaviour, IPlayerAbility, IAttackAbility
             cooldownTimer = 0;
             yield return new WaitForSeconds(1f/bulletsPerSecond);   
         }
-        faction.BasicAttack.AbilityLock = faction.BasicAttack; //release lock after this ability is done
+        //faction.BasicAttack.AbilityLock = faction.BasicAttack; //release lock after this ability is done
     }
     private void ShootBullet(){
         Rigidbody2D bulletRigidBody = Instantiate(bulletPrefab).GetComponent<Rigidbody2D>();
-        faction.player.boss.GetComponent<BossAgent>().env.AddObject(bulletRigidBody.gameObject);
+        //faction.player.boss.GetComponent<BossAgent>().env.AddObject(bulletRigidBody.gameObject);
         if(bulletRigidBody != null){
             bulletRigidBody.transform.parent = this.transform;
             bulletRigidBody.transform.localPosition = Vector3.zero;

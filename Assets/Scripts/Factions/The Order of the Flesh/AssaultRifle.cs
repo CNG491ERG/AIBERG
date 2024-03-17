@@ -1,16 +1,16 @@
 using UnityEngine;
 
-public class AssaultRifle : MonoBehaviour, IPlayerAbility, IAttackAbility{
-    [SerializeField] private Faction faction;
+public class AssaultRifle : MonoBehaviour, IAttackAbility{
+    //[SerializeField] private Faction faction;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private float bulletVelocityX;
     [SerializeField] private float cooldownTimer;
 
-    public Faction PlayerFaction => faction;
+    //public Faction PlayerFaction => faction;
 
     public string AbilityName => "AssaultRifle";
 
-    public GameObject AbilityOwner => faction.player.gameObject;
+    //public GameObject AbilityOwner => faction.player.gameObject;
 
     public float Cooldown => 0.30f;
 
@@ -30,10 +30,9 @@ public class AssaultRifle : MonoBehaviour, IPlayerAbility, IAttackAbility{
     private IAbility abilityLock;
 
     private void Start() {
-        faction = GetComponentInParent<Faction>();
         cooldownTimer = Cooldown;
         bulletPrefab.GetComponent<DamagingProjectile>().damage = Damage;
-        AbilityLock = this;
+        //AbilityLock = this;
     }
 
     public void UseAbility(bool inputReceived){
@@ -46,7 +45,7 @@ public class AssaultRifle : MonoBehaviour, IPlayerAbility, IAttackAbility{
 
     private void ShootBullet(){
         Rigidbody2D bulletRigidBody = Instantiate(bulletPrefab).GetComponent<Rigidbody2D>();
-        faction.player.boss.GetComponent<BossAgent>().env.AddObject(bulletRigidBody.gameObject);
+        //faction.player.boss.GetComponent<BossAgent>().env.AddObject(bulletRigidBody.gameObject);
         if(bulletRigidBody != null){
             bulletRigidBody.transform.parent = this.transform;
             bulletRigidBody.transform.localPosition = Vector3.zero;

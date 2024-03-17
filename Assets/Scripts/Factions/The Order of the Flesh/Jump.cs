@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class Jump : MonoBehaviour, IPlayerAbility{
-    [SerializeField] private Faction faction;
+public class Jump : MonoBehaviour{
+    //[SerializeField] private Faction faction;
     [SerializeField] private float jumpForce;
-    public Faction PlayerFaction => faction;
+    //public Faction PlayerFaction => faction;
     public string AbilityName => "TheOrderOfTheFleshJump";
-    public GameObject AbilityOwner => faction.player.gameObject;
+    //public GameObject AbilityOwner => faction.player.gameObject;
     public float Cooldown => 0;
     public float AbilityDuration => 0;
     public bool CanBeUsed => true;
@@ -20,14 +20,14 @@ public class Jump : MonoBehaviour, IPlayerAbility{
     private IAbility abilityLock;
     //get faction component
     private void Start() {
-        this.faction = GetComponentInParent<Faction>();
-        AbilityLock = this;
+        //this.faction = GetComponentInParent<Faction>();
+        //AbilityLock = this;
     }
 
     //when ability is called, check if input is given
     public void UseAbility(bool inputReceived){
         if(inputReceived){//add force to the player to make it jump
-            faction.player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce));
+            //faction.player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce));
         } 
     }
 

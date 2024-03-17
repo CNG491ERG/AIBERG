@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerInputHandler : MonoBehaviour{
-    [SerializeField] private Faction faction;
+    //[SerializeField] private Faction faction;
     [SerializeField] private EventViewer eventViewer;
 
     private void Start() {
         eventViewer = GetComponent<EventViewer>();
-        faction = transform.parent.GetComponentInChildren<Faction>();
+        //faction = transform.parent.GetComponentInChildren<Faction>();
     }
 
     private void FixedUpdate() {
@@ -19,24 +19,24 @@ public class PlayerInputHandler : MonoBehaviour{
 
         if(eventViewer != null){
             if(basicAbilityInput){
-            eventViewer.eventsBeingPerformed.Add(faction.BasicAttack.AbilityName);
+            //eventViewer.eventsBeingPerformed.Add(faction.BasicAttack.AbilityName);
             }
             if(jumpInput){
-                eventViewer.eventsBeingPerformed.Add(faction.JumpAbility.AbilityName);
+                //eventViewer.eventsBeingPerformed.Add(faction.JumpAbility.AbilityName);
             }
             if(activeAbility1Input){
-                eventViewer.eventsBeingPerformed.Add(faction.ActiveAbility1.AbilityName);
+                //eventViewer.eventsBeingPerformed.Add(faction.ActiveAbility1.AbilityName);
             }
             if(activeAbility2Input){
-                eventViewer.eventsBeingPerformed.Add(faction.ActiveAbility2.AbilityName);
+                //eventViewer.eventsBeingPerformed.Add(faction.ActiveAbility2.AbilityName);
             }
         }
         
         
-        faction.BasicAttack.UseAbility(basicAbilityInput);
-        faction.JumpAbility.UseAbility(jumpInput);
-        faction.ActiveAbility1.UseAbility(activeAbility1Input);
-        faction.ActiveAbility2.UseAbility(activeAbility2Input);
+        //faction.BasicAttack.UseAbility(basicAbilityInput);
+        //faction.JumpAbility.UseAbility(jumpInput);
+        //faction.ActiveAbility1.UseAbility(activeAbility1Input);
+        //faction.ActiveAbility2.UseAbility(activeAbility2Input);
         
     }
 }

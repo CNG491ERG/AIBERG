@@ -1,9 +1,9 @@
 using System.Collections;
 using UnityEngine;
 
-public class LastResort : MonoBehaviour, IPlayerAbility, IAttackAbility
+public class LastResort : MonoBehaviour, IAttackAbility
 {
-    [SerializeField] private Faction faction;
+    //[SerializeField] private Faction faction;
     [SerializeField] private GameObject misillePrefab;
     [SerializeField] private float misilleVelocityX;
     [SerializeField] private float cooldownTimer; 
@@ -11,11 +11,11 @@ public class LastResort : MonoBehaviour, IPlayerAbility, IAttackAbility
     [SerializeField] private float misillesPerSecond;
 
     [SerializeField] private GameObject boss; //RISKY LINE, TRY TO SOLVE SOME OTHER WAY!
-    public Faction PlayerFaction => faction;
+    //public Faction PlayerFaction => faction;
 
     public string AbilityName => "LastResort";
 
-    public GameObject AbilityOwner => faction.player.gameObject;
+    //public GameObject AbilityOwner => faction.player.gameObject;
 
     public float Cooldown => 17.5f; //Change it
 
@@ -34,12 +34,12 @@ public class LastResort : MonoBehaviour, IPlayerAbility, IAttackAbility
     private IAbility abilityLock;
 
     void Start(){
-        faction = GetComponentInParent<Faction>();
+        //faction = GetComponentInParent<Faction>();
         cooldownTimer = Cooldown;
         durationTimer = 0;
         misillePrefab.GetComponent<DamagingProjectile>().damage = Damage;
         boss = transform.parent.parent.parent.Find("Boss").gameObject; //Temporary solution
-        AbilityLock = this;
+        //AbilityLock = this;
     }
 
     public  void UseAbility(bool inputReceived){
@@ -61,10 +61,10 @@ public class LastResort : MonoBehaviour, IPlayerAbility, IAttackAbility
 
     private void ShootBullet(){
         Rigidbody2D bulletRigidBody = Instantiate(misillePrefab).GetComponent<Rigidbody2D>();
-        faction.player.boss.GetComponent<BossAgent>().env.AddObject(bulletRigidBody.gameObject);
+        //faction.player.boss.GetComponent<BossAgent>().env.AddObject(bulletRigidBody.gameObject);
         if(bulletRigidBody != null){
             bulletRigidBody.transform.parent = this.transform;
-            bulletRigidBody.transform.position = new Vector3(faction.player.transform.position.x - 5, boss.transform.position.y);
+            //bulletRigidBody.transform.position = new Vector3(faction.player.transform.position.x - 5, boss.transform.position.y);
             bulletRigidBody.gameObject.GetComponent<DamagingProjectile>().projectileVelocity = new Vector2(misilleVelocityX, 0);
         }
     }

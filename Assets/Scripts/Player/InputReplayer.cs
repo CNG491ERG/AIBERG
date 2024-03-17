@@ -10,7 +10,7 @@ public class InputReplayer : MonoBehaviour
 {
     
     private int currentStep = 0;
-    [SerializeField] private Faction faction;
+    //[SerializeField] private Faction faction;
     [SerializeField] private EventViewer eventViewer;
     [SerializeField] private Dictionary<int, string> inputs = new Dictionary<int, string>();
     [SerializeField] private int playerId;
@@ -52,7 +52,7 @@ public class InputReplayer : MonoBehaviour
     }
     void Start(){
         eventViewer = GetComponent<EventViewer>();
-        faction = transform.parent.GetComponentInChildren<Faction>();
+        //faction = transform.parent.GetComponentInChildren<Faction>();
     }
 
     // Regularly checks and processes input replay during each fixed frame rate update
@@ -64,9 +64,9 @@ public class InputReplayer : MonoBehaviour
     }
 
     private void ApplyInput(string input){
-        faction.BasicAttack.UseAbility(input[1] == '1');
-        faction.JumpAbility.UseAbility(input[0] == '1');
-        faction.ActiveAbility1.UseAbility(input[2] == '1');
-        faction.ActiveAbility2.UseAbility(input[3] == '1');
+        //faction.BasicAttack.UseAbility(input[1] == '1');
+        //faction.JumpAbility.UseAbility(input[0] == '1');
+        //faction.ActiveAbility1.UseAbility(input[2] == '1');
+        //faction.ActiveAbility2.UseAbility(input[3] == '1');
     }
 }

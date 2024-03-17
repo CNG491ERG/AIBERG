@@ -1,14 +1,14 @@
 using UnityEngine;
 
     public class PlayerAutoInputHandler : MonoBehaviour{
-    [SerializeField] private Faction faction;//faction of the player
+    /*//[SerializeField] private Faction faction;//faction of the player
     [SerializeField] private Boss boss;//the boss
     [SerializeField] private Player player;//the player
     [SerializeField] private Transform playerSpawnPoint;//player spawn point as a reference
 
     //at start, gets the needed objects
     private void Start() {
-        faction = transform.parent.GetComponentInChildren<Faction>();
+        //faction = transform.parent.GetComponentInChildren<Faction>();
         boss = transform.parent.parent.Find("Boss").GetComponent<Boss>();
     }
    
@@ -71,13 +71,13 @@ using UnityEngine;
     private void FixedUpdate() {
         bool basicAbilityInput = true; //Always use basic input as it has no cooldown
         //checking cooldown on abilities
-        bool ActiveAbility2Input = faction.ActiveAbility2.CanBeUsed;
-        bool ActiveAbility1Input = faction.ActiveAbility1.CanBeUsed;
+        //bool ActiveAbility2Input = faction.ActiveAbility2.CanBeUsed;
+        //bool ActiveAbility1Input = faction.ActiveAbility1.CanBeUsed;
         bool JumpAbilityInput = false;
 
         //ActiveAbility2 directly aims at the boss, so no need to put logic
-        faction.BasicAttack.UseAbility(basicAbilityInput);
-        faction.ActiveAbility2.UseAbility(ActiveAbility2Input);
+        //faction.BasicAttack.UseAbility(basicAbilityInput);
+        //faction.ActiveAbility2.UseAbility(ActiveAbility2Input);
 
         RaycastHit2D raycastBelow = Physics2D.Raycast(playerSpawnPoint.transform.position, -playerSpawnPoint.transform.up, Mathf.Infinity, LayerMask.GetMask("ForegroundEnvironment"));
         RaycastHit2D raycastAbove = Physics2D.Raycast(playerSpawnPoint.transform.position, playerSpawnPoint.transform.up, Mathf.Infinity, LayerMask.GetMask("ForegroundEnvironment"));
@@ -234,5 +234,5 @@ using UnityEngine;
                 break;
         }
         faction.JumpAbility.UseAbility(JumpAbilityInput);
-    }
+    }*/
 }
