@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Jump : MonoBehaviour{
+public class Jump : MonoBehaviour, IAbility{
     //[SerializeField] private Faction faction;
     [SerializeField] private float jumpForce;
     //public Faction PlayerFaction => faction;
@@ -17,6 +17,9 @@ public class Jump : MonoBehaviour{
             }
         }
     }
+
+    public GameObject AbilityOwner => throw new System.NotImplementedException();
+
     private IAbility abilityLock;
     //get faction component
     private void Start() {

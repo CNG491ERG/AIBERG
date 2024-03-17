@@ -1,4 +1,4 @@
-public interface IAttackAbility{
+public interface IAttackAbility : IAbility{
     public float Damage{
         get;
     }

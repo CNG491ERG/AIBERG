@@ -31,6 +31,9 @@ public class LastResort : MonoBehaviour, IAttackAbility
             }
         }
     }
+
+    public GameObject AbilityOwner => throw new System.NotImplementedException();
+
     private IAbility abilityLock;
 
     void Start(){

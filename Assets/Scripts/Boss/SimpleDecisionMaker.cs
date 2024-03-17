@@ -19,12 +19,13 @@ public class SimpleDecisionMaker : MonoBehaviour{
 
     [SerializeField] private EventViewer eventViewer;
     private void Start() {
+        /*
         eventViewer = GetComponent<EventViewer>();
         bossRb = GetComponent<Rigidbody2D>();
         bossRb.velocity = new Vector2(0, 0.1f); //Must have an initial velocity for input booleans to work correctly.
         moveUpAbility = GetComponents<IBossAbility>().Where(ability => ability.AbilityName == "MoveUp").First();
         moveDownAbility = GetComponents<IBossAbility>().Where(ability => ability.AbilityName == "MoveDown").First();
-        basicAttackAbility = GetComponents<IBossAbility>().Where(ability => ability.AbilityName == "BasicAttack").First();
+        basicAttackAbility = GetComponents<IBossAbility>().Where(ability => ability.AbilityName == "BasicAttack").First();*/
     }
     void FixedUpdate(){
         RaycastHit2D hitBelow = Physics2D.Raycast(transform.position, -transform.up, raycastDistance, LayerMask.GetMask("ForegroundEnvironment"));

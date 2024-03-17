@@ -1,27 +1,16 @@
 using System.Collections;
 using UnityEngine;
 
-public class MachineGun : MonoBehaviour, IAttackAbility
-{
-    //[SerializeField] private Faction faction;
+public class MachineGun : MonoBehaviour, IAttackAbility{
+    [SerializeField] private Player player;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private float bulletVelocityX;
     [SerializeField] private float cooldownTimer; 
     [SerializeField] private float durationTimer;
     [SerializeField] private float bulletsPerSecond;
-
-    //public Faction PlayerFaction => faction;
-
-    public string AbilityName => "MachineGun";
-
-    //public GameObject AbilityOwner => faction.player.gameObject;
-
     public float Cooldown => 10f; //MUST CHANGE!
-
     public float Damage => 0.20f;
-
     public float AbilityDuration => 4.0f;
-
     public bool CanBeUsed => cooldownTimer >= Cooldown-0.0001f;
     public IAbility AbilityLock { 
         get => abilityLock;
@@ -31,13 +20,16 @@ public class MachineGun : MonoBehaviour, IAttackAbility
             }
         }
     }
+
+    public GameObject AbilityOwner => player.gameObject;
+
     private IAbility abilityLock;
 
     void Start(){
-        //faction = GetComponentInParent<Faction>();
+        player = Utility.ComponentFinder.FindComponentInParents<Player>(this.transform);
         cooldownTimer = Cooldown;
         bulletPrefab.GetComponent<DamagingProjectile>().damage = Damage;
-        //AbilityLock = this;
+        AbilityLock = (IAbility)this;
     }
 
     public void UseAbility(bool inputReceived){
@@ -46,10 +38,8 @@ public class MachineGun : MonoBehaviour, IAttackAbility
         }
         cooldownTimer = CanBeUsed ? cooldownTimer : cooldownTimer + Time.fixedDeltaTime;
     }
-
-    //Machine gun overrules assault rifle
     IEnumerator MachineGunCoroutine(float bulletsPerSecond){
-        //faction.BasicAttack.AbilityLock = null; //get lock of basic attack
+        //GET LOCK
         durationTimer = 0;
         while(durationTimer < AbilityDuration){
             ShootBullet();
@@ -57,11 +47,10 @@ public class MachineGun : MonoBehaviour, IAttackAbility
             cooldownTimer = 0;
             yield return new WaitForSeconds(1f/bulletsPerSecond);   
         }
-        //faction.BasicAttack.AbilityLock = faction.BasicAttack; //release lock after this ability is done
+        //RELEASE LOCK
     }
     private void ShootBullet(){
         Rigidbody2D bulletRigidBody = Instantiate(bulletPrefab).GetComponent<Rigidbody2D>();
-        //faction.player.boss.GetComponent<BossAgent>().env.AddObject(bulletRigidBody.gameObject);
         if(bulletRigidBody != null){
             bulletRigidBody.transform.parent = this.transform;
             bulletRigidBody.transform.localPosition = Vector3.zero;

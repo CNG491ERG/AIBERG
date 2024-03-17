@@ -84,67 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1859414503721436947
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7363221019684822529}
-  - component: {fileID: 6225514398184454172}
-  - component: {fileID: 4366583918500925135}
-  m_Layer: 0
-  m_Name: PlayerInputHandler
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7363221019684822529
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1859414503721436947}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3937757196682215542}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6225514398184454172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1859414503721436947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77ed8778e827b764fb7020ce9f8c280a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventViewer: {fileID: 0}
---- !u!114 &4366583918500925135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1859414503721436947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4ecae64d203c884c8db708618e17569, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventPerformer: 
-  eventsBeingPerformed: []
-  text: {fileID: 0}
 --- !u!1 &4636321899913051202
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,7 +162,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7573878974465141984}
-  - {fileID: 7363221019684822529}
   - {fileID: 4084101613804939923}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -312,4 +250,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d109fbf52103db042ad2ed5563162587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputHandler: {fileID: 0}
+  faction: {fileID: 0}
+  basicAbilityObject: {fileID: 0}
+  activeAbility1Object: {fileID: 0}
+  activeAbility2Object: {fileID: 0}
+  jumpObject: {fileID: 0}
+  maxHealth: 0
+  health: 0
+  defense: 0
   boss: {fileID: 0}
