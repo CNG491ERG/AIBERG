@@ -15,7 +15,7 @@ MonoBehaviour:
   FactionName: The Order of the Flesh
   BasicAbility: {fileID: 3120878816907860160, guid: a40ba649d61398f4091b063bd6fef82a, type: 3}
   ActiveAbility1: {fileID: 3120878816907860160, guid: 767170612387c4b428b7dc23c71f0da6, type: 3}
-  ActiveAbility2: {fileID: 3120878816907860160, guid: ffcb6b3eb63b60747a25564d0621455a, type: 3}
+  ActiveAbility2: {fileID: 0}
   PassiveAbility: {fileID: 0}
   Jump: {fileID: 4915410173491938480, guid: a2287f4d981a22549ad60e7aa6ee79a0, type: 3}
   BasicAbilityName: Assault Rifle
