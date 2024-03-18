@@ -1,11 +1,12 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour, IDamageable{
     [Header("Player's Input Handler")]
     public InputHandler inputHandler;
+
+    [Header("Environment")]
+    [SerializeField] private Environment environment;
 
     [Header("Faction Data of the Player")]
     [SerializeField] private FactionSO faction;
@@ -25,9 +26,11 @@ public class Player : MonoBehaviour, IDamageable{
     [SerializeField] private float health;
     [SerializeField] private float defense;
 
+    public Environment Environment{get=>environment; private set => environment = value;}
     public float Health{ get => health; set => health = value;}
     public float Defense { get => defense; set => defense = value;}
     public float MaxHealth { get => maxHealth; set => maxHealth = value; }
+    
 
     [Header("Other")]
     [SerializeField] private Boss boss;
@@ -35,8 +38,8 @@ public class Player : MonoBehaviour, IDamageable{
     public event EventHandler OnDamageableHurt;
 
     void Start(){
+        environment = Utility.ComponentFinder.FindComponentInParents<Environment>(this.transform);
         inputHandler = GetComponent<InputHandler>();
-
         if(faction.BasicAbility != null){
             basicAbilityObject = Instantiate(faction.BasicAbility, this.transform);
             basicAbility = basicAbilityObject.GetComponent<IAbility>();

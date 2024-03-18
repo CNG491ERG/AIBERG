@@ -1,0 +1,185 @@
+Date : 2024-03-18 10:12:48
+Directory : d:\CNG491ERG\EndlessRunnerGame
+Total : 113 files,  537942 codes, 920 comments, 2214 blanks, all 541076 lines
+
+Languages
++-------------+------------+------------+------------+------------+------------+
+| language    | files      | code       | comment    | blank      | total      |
++-------------+------------+------------+------------+------------+------------+
+| Log         |          1 |    278,630 |          0 |          4 |    278,634 |
+| XML         |         35 |    252,691 |          0 |      1,101 |    253,792 |
+| C#          |         43 |      2,566 |        838 |        456 |      3,860 |
+| UnityShader |         17 |      2,338 |         82 |        644 |      3,064 |
+| JSON        |         11 |      1,478 |          0 |          5 |      1,483 |
+| YAML        |          5 |        237 |          0 |          3 |        240 |
+| Markdown    |          1 |          2 |          0 |          1 |          3 |
++-------------+------------+------------+------------+------------+------------+
+
+Directories
++------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                 | files      | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                    |        113 |    537,942 |        920 |      2,214 |    541,076 |
+| . (Files)                                                                                            |          1 |          2 |          0 |          1 |          3 |
+| Assets                                                                                               |         73 |     50,512 |        920 |      1,296 |     52,728 |
+| Assets\ML-Agents                                                                                     |          4 |          4 |          0 |          1 |          5 |
+| Assets\ML-Agents\Timers                                                                              |          4 |          4 |          0 |          1 |          5 |
+| Assets\Plugins                                                                                       |          8 |      1,295 |        555 |        222 |      2,072 |
+| Assets\Plugins\Demigiant                                                                             |          8 |      1,295 |        555 |        222 |      2,072 |
+| Assets\Plugins\Demigiant\DOTween                                                                     |          8 |      1,295 |        555 |        222 |      2,072 |
+| Assets\Plugins\Demigiant\DOTween\Modules                                                             |          8 |      1,295 |        555 |        222 |      2,072 |
+| Assets\Scripts                                                                                       |         35 |      1,271 |        283 |        234 |      1,788 |
+| Assets\Scripts (Files)                                                                               |          1 |         22 |          4 |          4 |         30 |
+| Assets\Scripts\Boss                                                                                  |          8 |        451 |         18 |         90 |        559 |
+| Assets\Scripts\Boss (Files)                                                                          |          4 |        238 |         17 |         53 |        308 |
+| Assets\Scripts\Boss\Boss Abilities                                                                   |          4 |        213 |          1 |         37 |        251 |
+| Assets\Scripts\Environment                                                                           |          2 |         32 |          2 |          6 |         40 |
+| Assets\Scripts\Factions                                                                              |          4 |        234 |          6 |         39 |        279 |
+| Assets\Scripts\Factions\The Order of the Flesh                                                       |          4 |        234 |          6 |         39 |        279 |
+| Assets\Scripts\Game                                                                                  |          2 |        113 |          2 |         23 |        138 |
+| Assets\Scripts\Interfaces                                                                            |          3 |         44 |          1 |          8 |         53 |
+| Assets\Scripts\Player                                                                                |          6 |        239 |        243 |         36 |        518 |
+| Assets\Scripts\Player (Files)                                                                        |          2 |        148 |          2 |         23 |        173 |
+| Assets\Scripts\Player\InputHandlers                                                                  |          4 |         91 |        241 |         13 |        345 |
+| Assets\Scripts\ScriptableObjects                                                                     |          2 |         31 |          0 |          8 |         39 |
+| Assets\Scripts\UI                                                                                    |          6 |         88 |          1 |         15 |        104 |
+| Assets\Scripts\Utilities                                                                             |          1 |         17 |          6 |          5 |         28 |
+| Assets\TextMesh Pro                                                                                  |         18 |      2,493 |         82 |        646 |      3,221 |
+| Assets\TextMesh Pro\Shaders                                                                          |         17 |      2,338 |         82 |        644 |      3,064 |
+| Assets\TextMesh Pro\Sprites                                                                          |          1 |        155 |          0 |          2 |        157 |
+| Assets\Training                                                                                      |          8 |     45,449 |          0 |        193 |     45,642 |
+| Assets\Training (Files)                                                                              |          2 |         51 |          0 |          1 |         52 |
+| Assets\Training\results                                                                              |          6 |     45,398 |          0 |        192 |     45,590 |
+| Assets\Training\results\ppo                                                                          |          6 |     45,398 |          0 |        192 |     45,590 |
+| Assets\Training\results\ppo (Files)                                                                  |          1 |         78 |          0 |          1 |         79 |
+| Assets\Training\results\ppo\Boss                                                                     |          3 |     44,947 |          0 |        191 |     45,138 |
+| Assets\Training\results\ppo\run_logs                                                                 |          2 |        373 |          0 |          0 |        373 |
+| Packages                                                                                             |          2 |        546 |          0 |          2 |        548 |
+| trainingYML                                                                                          |         37 |    486,882 |          0 |        915 |    487,797 |
+| trainingYML (Files)                                                                                  |          1 |         29 |          0 |          0 |         29 |
+| trainingYML\results                                                                                  |         36 |    486,853 |          0 |        915 |    487,768 |
+| trainingYML\results\ppo                                                                              |         36 |    486,853 |          0 |        915 |    487,768 |
+| trainingYML\results\ppo (Files)                                                                      |          1 |         79 |          0 |          1 |         80 |
+| trainingYML\results\ppo\Boss                                                                         |         32 |    207,744 |          0 |        910 |    208,654 |
+| trainingYML\results\ppo\run_logs                                                                     |          3 |    279,030 |          0 |          4 |    279,034 |
++------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++------------------------------------------------------------------------------------------------------+-------------+------------+------------+------------+------------+
+| filename                                                                                             | language    | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------------+-------------+------------+------------+------------+------------+
+| d:\CNG491ERG\EndlessRunnerGame\Assets\ML-Agents\Timers\GameScene_timers.json                         | JSON        |          1 |          0 |          0 |          1 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\ML-Agents\Timers\ReplayScene_timers.json                       | JSON        |          1 |          0 |          0 |          1 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\ML-Agents\Timers\SampleScene_timers.json                       | JSON        |          1 |          0 |          0 |          1 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\ML-Agents\Timers\TrainingScene_timers.json                     | JSON        |          1 |          0 |          1 |          2 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs        | C#          |         94 |         80 |         25 |        199 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleEPOOutline.cs   | C#          |        109 |         18 |         20 |        147 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs      | C#          |        137 |         60 |         20 |        217 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs    | C#          |        125 |         51 |         18 |        194 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs       | C#          |         63 |         17 |         14 |         94 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs           | C#          |        390 |        203 |         70 |        663 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs | C#          |        254 |         99 |         37 |        390 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs        | C#          |        123 |         27 |         18 |        168 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Boss\AttackDrone.cs                                    | C#          |         53 |          1 |         14 |         68 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Boss\Boss Abilities\BasicAttack.cs                     | C#          |         59 |          1 |         10 |         70 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Boss\Boss Abilities\MoveDown.cs                        | C#          |         40 |          0 |          7 |         47 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Boss\Boss Abilities\MoveUp.cs                          | C#          |         42 |          0 |          7 |         49 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Boss\Boss Abilities\SpawnAttackDrones.cs               | C#          |         72 |          0 |         13 |         85 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Boss\Boss.cs                                           | C#          |         69 |          0 |         11 |         80 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Boss\BossAgent.cs                                      | C#          |         78 |          9 |         18 |        105 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Boss\SimpleDecisionMaker.cs                            | C#          |         38 |          7 |         10 |         55 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\DamagingProjectile.cs                                  | C#          |         22 |          4 |          4 |         30 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Environment\Despawner.cs                               | C#          |         14 |          2 |          2 |         18 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Environment\MLAgentEnvironment.cs                      | C#          |         18 |          0 |          4 |         22 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Factions\The Order of the Flesh\AssaultRifle.cs        | C#          |         59 |          1 |         11 |         71 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Factions\The Order of the Flesh\Jump.cs                | C#          |         35 |          0 |          7 |         42 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Factions\The Order of the Flesh\LastResort.cs          | C#          |         68 |          4 |         12 |         84 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Factions\The Order of the Flesh\MachineGun.cs          | C#          |         72 |          1 |          9 |         82 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Game\GameManager.cs                                    | C#          |         72 |          2 |         15 |         89 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Game\ScoreManager.cs                                   | C#          |         41 |          0 |          8 |         49 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Interfaces\IAbility.cs                                 | C#          |         21 |          0 |          4 |         25 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Interfaces\IAttackAbility.cs                           | C#          |          5 |          1 |          1 |          7 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Interfaces\IDamageable.cs                              | C#          |         18 |          0 |          3 |         21 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Player\InputHandlers\InputHandler.cs                   | C#          |         21 |          0 |          3 |         24 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Player\InputHandlers\InputReplayer.cs                  | C#          |         56 |          7 |          6 |         69 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Player\InputHandlers\PlayerAutoInputHandler.cs         | C#          |          3 |        234 |          2 |        239 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Player\InputHandlers\PlayerInputHandler.cs             | C#          |         11 |          0 |          2 |         13 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Player\InputRecorder.cs                                | C#          |         71 |          2 |         10 |         83 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Player\Player.cs                                       | C#          |         77 |          0 |         13 |         90 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\ScriptableObjects\BossAbilitiesSO.cs                   | C#          |         12 |          0 |          2 |         14 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\ScriptableObjects\FactionSO.cs                         | C#          |         19 |          0 |          6 |         25 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\UI\EventViewer.cs                                      | C#          |         20 |          0 |          3 |         23 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\UI\GameTimer.cs                                        | C#          |         16 |          1 |          4 |         21 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\UI\HealthUIManager.cs                                  | C#          |         16 |          0 |          1 |         17 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\UI\MenuManager.cs                                      | C#          |         12 |          0 |          3 |         15 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\UI\ScoreCounter.cs                                     | C#          |         13 |          0 |          2 |         15 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\UI\StepCounter.cs                                      | C#          |         11 |          0 |          2 |         13 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Utilities\ComponentFinder.cs                           | C#          |         17 |          6 |          5 |         28 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader            | UnityShader |        109 |          2 |         33 |        144 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader                  | UnityShader |        112 |          3 |         31 |        146 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader                         | UnityShader |        109 |          2 |         33 |        144 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader                    | UnityShader |        243 |          4 |         71 |        318 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader                        | UnityShader |        241 |          4 |         66 |        311 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader             | UnityShader |        188 |         10 |         50 |        248 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader             | UnityShader |        183 |          8 |         50 |        241 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader                 | UnityShader |         82 |          4 |         21 |        107 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader                     | UnityShader |        183 |          8 |         50 |        241 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader             | UnityShader |        103 |          8 |         28 |        139 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader                    | UnityShader |        122 |          4 |         33 |        159 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\TextMesh Pro\Shaders\TMP_SDF.shader                            | UnityShader |        243 |          4 |         71 |        318 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\TextMesh Pro\Shaders\TMP_Sprite.shader                         | UnityShader |         97 |          0 |         20 |        117 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\TextMesh Pro\Shaders\TMPro.cginc                               | UnityShader |         63 |          2 |         20 |         85 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc                        | UnityShader |        122 |          2 |         34 |        158 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc                    | UnityShader |         62 |         10 |         14 |         86 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc                       | UnityShader |         76 |          7 |         19 |        102 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\TextMesh Pro\Sprites\EmojiOne.json                             | JSON        |        155 |          0 |          2 |        157 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Training\Boss.yaml                                             | YAML        |         26 |          0 |          0 |         26 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Training\default.yaml                                          | YAML        |         25 |          0 |          1 |         26 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Training\results\ppo\Boss\Boss-499960.pt                       | XML         |     15,032 |          0 |         63 |     15,095 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Training\results\ppo\Boss\Boss-750094.pt                       | XML         |     14,957 |          0 |         64 |     15,021 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Training\results\ppo\Boss\checkpoint.pt                        | XML         |     14,958 |          0 |         64 |     15,022 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Training\results\ppo\configuration.yaml                        | YAML        |         78 |          0 |          1 |         79 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Training\results\ppo\run_logs\timers.json                      | JSON        |        335 |          0 |          0 |        335 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Training\results\ppo\run_logs\training_status.json             | JSON        |         38 |          0 |          0 |         38 |
+| d:\CNG491ERG\EndlessRunnerGame\Packages\manifest.json                                                | JSON        |         45 |          0 |          1 |         46 |
+| d:\CNG491ERG\EndlessRunnerGame\Packages\packages-lock.json                                           | JSON        |        501 |          0 |          1 |        502 |
+| d:\CNG491ERG\EndlessRunnerGame\README.md                                                             | Markdown    |          2 |          0 |          1 |          3 |
+| d:\CNG491ERG\EndlessRunnerGame\trainingYML\Boss.yaml                                                 | YAML        |         29 |          0 |          0 |         29 |
+| d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-0.pt                                | XML         |      5,235 |          0 |         17 |      5,252 |
+| d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-132259.pt                           | XML         |      4,899 |          0 |         25 |      4,924 |
+| d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-199699.pt                           | XML         |      5,019 |          0 |         24 |      5,043 |
+| d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-199859.pt                           | XML         |      5,009 |          0 |         13 |      5,022 |
+| d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-199890.pt                           | XML         |      5,174 |          0 |         22 |      5,196 |
+| d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-199906.pt                           | XML         |      5,153 |          0 |         31 |      5,184 |
+| d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-199992.pt                           | XML         |      5,048 |          0 |         18 |      5,066 |
+| d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-21446.pt                            | XML         |      5,000 |          0 |         28 |      5,028 |
+| d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-238478.pt                           | XML         |      5,174 |          0 |         22 |      5,196 |
+| d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-260154.pt                           | XML         |     15,385 |          0 |         59 |     15,444 |
+| d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-260331.pt                           | XML         |     14,877 |          0 |         63 |     14,940 |
+| d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-27685.pt                            | XML         |      5,032 |          0 |         24 |      5,056 |
+| d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-299904.pt                           | XML         |     14,807 |          0 |         79 |     14,886 |
+| d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-31388.pt                            | XML         |      4,967 |          0 |         22 |      4,989 |
+| d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-399790.pt                           | XML         |     14,805 |          0 |         79 |     14,884 |
+| d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-41033.pt                            | XML         |      5,039 |          0 |         19 |      5,058 |
+| d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-469520.pt                           | XML         |     14,805 |          0 |         79 |     14,884 |
+| d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-499970.pt                           | XML         |      4,980 |          0 |         13 |      4,993 |
+| d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-500034.pt                           | XML         |      4,980 |          0 |         13 |      4,993 |
+| d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-5760.pt                             | XML         |      1,759 |          0 |          5 |      1,764 |
+| d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-61928.pt                            | XML         |      5,060 |          0 |         24 |      5,084 |
+| d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-67853.pt                            | XML         |      5,112 |          0 |         19 |      5,131 |
+| d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-68189.pt                            | XML         |      4,957 |          0 |         22 |      4,979 |
+| d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-79239.pt                            | XML         |      5,076 |          0 |         18 |      5,094 |
+| d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-88417.pt                            | XML         |      5,087 |          0 |         26 |      5,113 |
+| d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-99775.pt                            | XML         |      4,900 |          0 |         25 |      4,925 |
+| d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-99919.pt                            | XML         |      5,008 |          0 |         13 |      5,021 |
+| d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-99964.pt                            | XML         |      5,046 |          0 |         18 |      5,064 |
+| d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-99972.pt                            | XML         |      5,018 |          0 |         24 |      5,042 |
+| d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-99979.pt                            | XML         |      5,152 |          0 |         31 |      5,183 |
+| d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-99999.pt                            | XML         |      5,173 |          0 |         22 |      5,195 |
+| d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\checkpoint.pt                            | XML         |      5,008 |          0 |         13 |      5,021 |
+| d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\configuration.yaml                            | YAML        |         79 |          0 |          1 |         80 |
+| d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\run_logs\Player-0.log                         | Log         |    278,630 |          0 |          4 |    278,634 |
+| d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\run_logs\timers.json                          | JSON        |        335 |          0 |          0 |        335 |
+| d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\run_logs\training_status.json                 | JSON        |         65 |          0 |          0 |         65 |
+| Total                                                                                                |             |    537,942 |        920 |      2,214 |    541,076 |
++------------------------------------------------------------------------------------------------------+-------------+------------+------------+------------+------------+

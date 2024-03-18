@@ -46,7 +46,6 @@ public class LastResort : MonoBehaviour, IAttackAbility
         durationTimer = 0;
         projectilePrefab.GetComponent<DamagingProjectile>().damage = Damage;
         projectilePrefab.GetComponent<DamagingProjectile>().tagToDamage = "Boss";
-        //boss = transform.parent.parent.parent.Find("Boss").gameObject;
         AbilityLock = this;
     }
 
@@ -68,11 +67,11 @@ public class LastResort : MonoBehaviour, IAttackAbility
     }
 
     private void ShootBullet(){
-        Rigidbody2D bulletRigidBody = Instantiate(projectilePrefab).GetComponent<Rigidbody2D>();
-        if(bulletRigidBody != null){
-            bulletRigidBody.transform.parent = this.transform;
-            //bulletRigidBody.transform.position = new Vector3(faction.player.transform.position.x - 5, boss.transform.position.y);
-            bulletRigidBody.gameObject.GetComponent<DamagingProjectile>().projectileVelocity = new Vector2(projectileVelocityX, 0);
+        Rigidbody2D projectileRb = Instantiate(projectilePrefab, player.Environment.transform).GetComponent<Rigidbody2D>();
+        player.Environment.AddObjectToEnvironmentList(projectileRb.gameObject);
+        if(projectileRb != null){
+            projectileRb.transform.position = new Vector3(player.transform.position.x - 5, player.Environment.Boss.transform.position.y);
+            projectileRb.gameObject.GetComponent<DamagingProjectile>().projectileVelocity = new Vector2(projectileVelocityX, 0);
         }
     }
 

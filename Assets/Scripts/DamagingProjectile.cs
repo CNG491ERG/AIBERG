@@ -19,8 +19,7 @@ public class DamagingProjectile : MonoBehaviour{
         IDamageable objectToDamage = other.gameObject.GetComponent<IDamageable>();
         //Not too good but needed for solving the problem where collider
         //spawning inside another collider registers as collision.
-        if(objectToDamage != null && other.CompareTag(tagToDamage))
-        { 
+        if(objectToDamage != null && other.CompareTag(tagToDamage)){ 
             objectToDamage.TakeDamage(damage);
             Destroy(this.gameObject);
         }

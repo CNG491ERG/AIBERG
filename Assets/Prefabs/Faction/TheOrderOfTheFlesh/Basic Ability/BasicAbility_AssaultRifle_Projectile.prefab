@@ -158,8 +158,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 971e533b424c5e5449daf437a6ad4efe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0.25
-  tagToDamage: Boss
+  damage: 0.2
+  tagToDamage: 
   projectileVelocity: {x: 0, y: 0}
 --- !u!58 &1514981125335683834
 CircleCollider2D:

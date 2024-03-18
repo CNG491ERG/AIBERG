@@ -12,13 +12,12 @@ public class BasicAttack : MonoBehaviour, IAttackAbility{
     [SerializeField] private float abilityDuration = 0f;
     [SerializeField] private bool canBeUsed;
 
-    [Header("Projectile Used by the Ability")]
+    [Header("Projectile properties")]
     [SerializeField] private GameObject projectilePrefab;
     //Add object pool here
-
-    [Header("Projectile properties")]
     [SerializeField] private float projectileVelocityX;
     [SerializeField] private float projectileDamage = 7.5f;
+    [SerializeField] private string tagToDamage = "Player";
 
     #region interface properties
     public float Cooldown => abilityCooldown;
@@ -39,8 +38,8 @@ public class BasicAttack : MonoBehaviour, IAttackAbility{
  
     private void Start() {
         boss = Utility.ComponentFinder.FindComponentInParents<Boss>(this.transform);
-        projectilePrefab.GetComponent<DamagingProjectile>().damage = Damage;
-        projectilePrefab.GetComponent<DamagingProjectile>().tagToDamage = "Player";
+        projectilePrefab.GetComponent<DamagingProjectile>().damage = projectileDamage;
+        projectilePrefab.GetComponent<DamagingProjectile>().tagToDamage = tagToDamage;
         AbilityLock = this;
     }
 
@@ -51,16 +50,15 @@ public class BasicAttack : MonoBehaviour, IAttackAbility{
 
     public void UseAbility(bool inputReceived){
         if(canBeUsed && inputReceived){
-            Rigidbody2D projectileRb = Instantiate(projectilePrefab).GetComponent<Rigidbody2D>();
+            Rigidbody2D projectileRb = Instantiate(projectilePrefab, boss.Environment.transform).GetComponent<Rigidbody2D>();
+            boss.Environment.AddObjectToEnvironmentList(projectileRb.gameObject);
             if(projectileRb != null){
-                projectileRb.transform.parent = this.transform;
-                projectileRb.transform.localPosition = Vector3.zero;
+                projectileRb.transform.position = boss.transform.position;
                 projectileRb.gameObject.GetComponent<DamagingProjectile>().projectileVelocity = new Vector2(-projectileVelocityX, 0);
             }
             cooldownTimer = 0;
             Debug.Log("Projectile velocity: " + projectileRb.velocity);
         }
-        cooldownTimer = cooldownTimer >= (Cooldown-0.0001f) ? cooldownTimer : cooldownTimer + Time.fixedDeltaTime;
     }
 
     public void ResetCooldown(){

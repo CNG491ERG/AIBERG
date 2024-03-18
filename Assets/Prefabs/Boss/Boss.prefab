@@ -12,13 +12,6 @@ GameObject:
   - component: {fileID: 3103068248609763531}
   - component: {fileID: 1587961089551456920}
   - component: {fileID: 5173028492357529025}
-  - component: {fileID: 1542809958540516870}
-  - component: {fileID: 8612929867729967376}
-  - component: {fileID: 4988997999787961773}
-  - component: {fileID: 7110492008014213288}
-  - component: {fileID: 6258659750522537974}
-  - component: {fileID: 3176864460179752519}
-  - component: {fileID: 6448918236421554059}
   m_Layer: 2
   m_Name: Boss
   m_TagString: Boss
@@ -45,7 +38,7 @@ Transform:
   - {fileID: 6467741132957040109}
   - {fileID: 5445944892872662058}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &3103068248609763531
 Rigidbody2D:
@@ -62,7 +55,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 1
   m_AngularDrag: 0.05
-  m_GravityScale: -1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -138,135 +131,16 @@ MonoBehaviour:
   speed: 2
   cooldownMultiplier: 0
   damageMultiplier: 0
-  targetTransform: {fileID: 0}
-  bossRb: {fileID: 0}
-  player: {fileID: 0}
---- !u!114 &1542809958540516870
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1180348067399829270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9e06a6386b277b4dbe86a1722e27a71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boss: {fileID: 0}
-  bossRb: {fileID: 0}
---- !u!114 &8612929867729967376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1180348067399829270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c424b09bc809de949908700406ba7e99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boss: {fileID: 0}
-  bossRb: {fileID: 0}
---- !u!114 &4988997999787961773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1180348067399829270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88a8c9914a77da74cae99943577722f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 9216531737267913027, guid: cf5ebb141a0fbd64cba60982b997d77e, type: 3}
-  projectileVelocityX: 10
-  boss: {fileID: 0}
-  cooldownTimer: 0
---- !u!114 &7110492008014213288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1180348067399829270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a0585b9b44fd344a8aa4f4003d9e786, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackDronePrefab: {fileID: 3872242157519897278, guid: 47df06e90fa9c364ebd3f7c5ba1bdd17, type: 3}
   droneSpawnPositions:
   - {fileID: 7182859435599759692}
   - {fileID: 6467741132957040109}
   - {fileID: 5445944892872662058}
-  boss: {fileID: 5173028492357529025}
-  cooldownTimer: 0
---- !u!114 &6258659750522537974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1180348067399829270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c2456471c835d94dbb595372ac42f56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agentParameters:
-    maxStep: 0
-  hasUpgradedFromAgentParameters: 1
-  MaxStep: 0
+  bossAbilities: {fileID: 11400000, guid: 66c5987cbffb4c84b99a123125224283, type: 2}
+  moveUpAbilityObject: {fileID: 0}
+  moveDownAbilityObject: {fileID: 0}
+  basicAbilityObject: {fileID: 0}
+  attackDroneAbilityObject: {fileID: 0}
   player: {fileID: 0}
-  playerSpawnPosition: {fileID: 0}
-  bossSpawnPosition: {fileID: 0}
---- !u!114 &3176864460179752519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1180348067399829270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d1c4e0b1822b495aa52bc52839ecb30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_BrainParameters:
-    VectorObservationSize: 6
-    NumStackedVectorObservations: 10
-    m_ActionSpec:
-      m_NumContinuousActions: 0
-      BranchSizes: 0300000003000000
-    VectorActionSize: 0300000003000000
-    VectorActionDescriptions: []
-    VectorActionSpaceType: 0
-    hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 0}
-  m_InferenceDevice: 0
-  m_BehaviorType: 1
-  m_BehaviorName: Boss
-  TeamId: 0
-  m_UseChildSensors: 1
-  m_UseChildActuators: 1
-  m_ObservableAttributeHandling: 0
---- !u!114 &6448918236421554059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1180348067399829270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DecisionPeriod: 1
-  TakeActionsBetweenDecisions: 1
 --- !u!1 &1447417023933152939
 GameObject:
   m_ObjectHideFlags: 0

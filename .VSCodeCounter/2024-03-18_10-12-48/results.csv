@@ -1,0 +1,115 @@
+"filename", "language", "C#", "JSON", "Markdown", "UnityShader", "YAML", "XML", "Log", "comment", "blank", "total"
+"d:\CNG491ERG\EndlessRunnerGame\Assets\ML-Agents\Timers\GameScene_timers.json", "JSON", 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
+"d:\CNG491ERG\EndlessRunnerGame\Assets\ML-Agents\Timers\ReplayScene_timers.json", "JSON", 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
+"d:\CNG491ERG\EndlessRunnerGame\Assets\ML-Agents\Timers\SampleScene_timers.json", "JSON", 0, 1, 0, 0, 0, 0, 0, 0, 0, 1
+"d:\CNG491ERG\EndlessRunnerGame\Assets\ML-Agents\Timers\TrainingScene_timers.json", "JSON", 0, 1, 0, 0, 0, 0, 0, 0, 1, 2
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs", "C#", 94, 0, 0, 0, 0, 0, 0, 80, 25, 199
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleEPOOutline.cs", "C#", 109, 0, 0, 0, 0, 0, 0, 18, 20, 147
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs", "C#", 137, 0, 0, 0, 0, 0, 0, 60, 20, 217
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs", "C#", 125, 0, 0, 0, 0, 0, 0, 51, 18, 194
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs", "C#", 63, 0, 0, 0, 0, 0, 0, 17, 14, 94
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs", "C#", 390, 0, 0, 0, 0, 0, 0, 203, 70, 663
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs", "C#", 254, 0, 0, 0, 0, 0, 0, 99, 37, 390
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs", "C#", 123, 0, 0, 0, 0, 0, 0, 27, 18, 168
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Boss\AttackDrone.cs", "C#", 53, 0, 0, 0, 0, 0, 0, 1, 14, 68
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Boss\Boss Abilities\BasicAttack.cs", "C#", 59, 0, 0, 0, 0, 0, 0, 1, 10, 70
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Boss\Boss Abilities\MoveDown.cs", "C#", 40, 0, 0, 0, 0, 0, 0, 0, 7, 47
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Boss\Boss Abilities\MoveUp.cs", "C#", 42, 0, 0, 0, 0, 0, 0, 0, 7, 49
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Boss\Boss Abilities\SpawnAttackDrones.cs", "C#", 72, 0, 0, 0, 0, 0, 0, 0, 13, 85
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Boss\Boss.cs", "C#", 69, 0, 0, 0, 0, 0, 0, 0, 11, 80
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Boss\BossAgent.cs", "C#", 78, 0, 0, 0, 0, 0, 0, 9, 18, 105
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Boss\SimpleDecisionMaker.cs", "C#", 38, 0, 0, 0, 0, 0, 0, 7, 10, 55
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\DamagingProjectile.cs", "C#", 22, 0, 0, 0, 0, 0, 0, 4, 4, 30
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Environment\Despawner.cs", "C#", 14, 0, 0, 0, 0, 0, 0, 2, 2, 18
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Environment\MLAgentEnvironment.cs", "C#", 18, 0, 0, 0, 0, 0, 0, 0, 4, 22
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Factions\The Order of the Flesh\AssaultRifle.cs", "C#", 59, 0, 0, 0, 0, 0, 0, 1, 11, 71
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Factions\The Order of the Flesh\Jump.cs", "C#", 35, 0, 0, 0, 0, 0, 0, 0, 7, 42
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Factions\The Order of the Flesh\LastResort.cs", "C#", 68, 0, 0, 0, 0, 0, 0, 4, 12, 84
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Factions\The Order of the Flesh\MachineGun.cs", "C#", 72, 0, 0, 0, 0, 0, 0, 1, 9, 82
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Game\GameManager.cs", "C#", 72, 0, 0, 0, 0, 0, 0, 2, 15, 89
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Game\ScoreManager.cs", "C#", 41, 0, 0, 0, 0, 0, 0, 0, 8, 49
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Interfaces\IAbility.cs", "C#", 21, 0, 0, 0, 0, 0, 0, 0, 4, 25
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Interfaces\IAttackAbility.cs", "C#", 5, 0, 0, 0, 0, 0, 0, 1, 1, 7
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Interfaces\IDamageable.cs", "C#", 18, 0, 0, 0, 0, 0, 0, 0, 3, 21
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Player\InputHandlers\InputHandler.cs", "C#", 21, 0, 0, 0, 0, 0, 0, 0, 3, 24
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Player\InputHandlers\InputReplayer.cs", "C#", 56, 0, 0, 0, 0, 0, 0, 7, 6, 69
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Player\InputHandlers\PlayerAutoInputHandler.cs", "C#", 3, 0, 0, 0, 0, 0, 0, 234, 2, 239
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Player\InputHandlers\PlayerInputHandler.cs", "C#", 11, 0, 0, 0, 0, 0, 0, 0, 2, 13
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Player\InputRecorder.cs", "C#", 71, 0, 0, 0, 0, 0, 0, 2, 10, 83
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Player\Player.cs", "C#", 77, 0, 0, 0, 0, 0, 0, 0, 13, 90
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\ScriptableObjects\BossAbilitiesSO.cs", "C#", 12, 0, 0, 0, 0, 0, 0, 0, 2, 14
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\ScriptableObjects\FactionSO.cs", "C#", 19, 0, 0, 0, 0, 0, 0, 0, 6, 25
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\UI\EventViewer.cs", "C#", 20, 0, 0, 0, 0, 0, 0, 0, 3, 23
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\UI\GameTimer.cs", "C#", 16, 0, 0, 0, 0, 0, 0, 1, 4, 21
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\UI\HealthUIManager.cs", "C#", 16, 0, 0, 0, 0, 0, 0, 0, 1, 17
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\UI\MenuManager.cs", "C#", 12, 0, 0, 0, 0, 0, 0, 0, 3, 15
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\UI\ScoreCounter.cs", "C#", 13, 0, 0, 0, 0, 0, 0, 0, 2, 15
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\UI\StepCounter.cs", "C#", 11, 0, 0, 0, 0, 0, 0, 0, 2, 13
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Utilities\ComponentFinder.cs", "C#", 17, 0, 0, 0, 0, 0, 0, 6, 5, 28
+"d:\CNG491ERG\EndlessRunnerGame\Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader", "UnityShader", 0, 0, 0, 109, 0, 0, 0, 2, 33, 144
+"d:\CNG491ERG\EndlessRunnerGame\Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader", "UnityShader", 0, 0, 0, 112, 0, 0, 0, 3, 31, 146
+"d:\CNG491ERG\EndlessRunnerGame\Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader", "UnityShader", 0, 0, 0, 109, 0, 0, 0, 2, 33, 144
+"d:\CNG491ERG\EndlessRunnerGame\Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader", "UnityShader", 0, 0, 0, 243, 0, 0, 0, 4, 71, 318
+"d:\CNG491ERG\EndlessRunnerGame\Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader", "UnityShader", 0, 0, 0, 241, 0, 0, 0, 4, 66, 311
+"d:\CNG491ERG\EndlessRunnerGame\Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader", "UnityShader", 0, 0, 0, 188, 0, 0, 0, 10, 50, 248
+"d:\CNG491ERG\EndlessRunnerGame\Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader", "UnityShader", 0, 0, 0, 183, 0, 0, 0, 8, 50, 241
+"d:\CNG491ERG\EndlessRunnerGame\Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader", "UnityShader", 0, 0, 0, 82, 0, 0, 0, 4, 21, 107
+"d:\CNG491ERG\EndlessRunnerGame\Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader", "UnityShader", 0, 0, 0, 183, 0, 0, 0, 8, 50, 241
+"d:\CNG491ERG\EndlessRunnerGame\Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader", "UnityShader", 0, 0, 0, 103, 0, 0, 0, 8, 28, 139
+"d:\CNG491ERG\EndlessRunnerGame\Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader", "UnityShader", 0, 0, 0, 122, 0, 0, 0, 4, 33, 159
+"d:\CNG491ERG\EndlessRunnerGame\Assets\TextMesh Pro\Shaders\TMP_SDF.shader", "UnityShader", 0, 0, 0, 243, 0, 0, 0, 4, 71, 318
+"d:\CNG491ERG\EndlessRunnerGame\Assets\TextMesh Pro\Shaders\TMP_Sprite.shader", "UnityShader", 0, 0, 0, 97, 0, 0, 0, 0, 20, 117
+"d:\CNG491ERG\EndlessRunnerGame\Assets\TextMesh Pro\Shaders\TMPro.cginc", "UnityShader", 0, 0, 0, 63, 0, 0, 0, 2, 20, 85
+"d:\CNG491ERG\EndlessRunnerGame\Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc", "UnityShader", 0, 0, 0, 122, 0, 0, 0, 2, 34, 158
+"d:\CNG491ERG\EndlessRunnerGame\Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc", "UnityShader", 0, 0, 0, 62, 0, 0, 0, 10, 14, 86
+"d:\CNG491ERG\EndlessRunnerGame\Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc", "UnityShader", 0, 0, 0, 76, 0, 0, 0, 7, 19, 102
+"d:\CNG491ERG\EndlessRunnerGame\Assets\TextMesh Pro\Sprites\EmojiOne.json", "JSON", 0, 155, 0, 0, 0, 0, 0, 0, 2, 157
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Training\Boss.yaml", "YAML", 0, 0, 0, 0, 26, 0, 0, 0, 0, 26
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Training\default.yaml", "YAML", 0, 0, 0, 0, 25, 0, 0, 0, 1, 26
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Training\results\ppo\Boss\Boss-499960.pt", "XML", 0, 0, 0, 0, 0, 15032, 0, 0, 63, 15095
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Training\results\ppo\Boss\Boss-750094.pt", "XML", 0, 0, 0, 0, 0, 14957, 0, 0, 64, 15021
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Training\results\ppo\Boss\checkpoint.pt", "XML", 0, 0, 0, 0, 0, 14958, 0, 0, 64, 15022
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Training\results\ppo\configuration.yaml", "YAML", 0, 0, 0, 0, 78, 0, 0, 0, 1, 79
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Training\results\ppo\run_logs\timers.json", "JSON", 0, 335, 0, 0, 0, 0, 0, 0, 0, 335
+"d:\CNG491ERG\EndlessRunnerGame\Assets\Training\results\ppo\run_logs\training_status.json", "JSON", 0, 38, 0, 0, 0, 0, 0, 0, 0, 38
+"d:\CNG491ERG\EndlessRunnerGame\Packages\manifest.json", "JSON", 0, 45, 0, 0, 0, 0, 0, 0, 1, 46
+"d:\CNG491ERG\EndlessRunnerGame\Packages\packages-lock.json", "JSON", 0, 501, 0, 0, 0, 0, 0, 0, 1, 502
+"d:\CNG491ERG\EndlessRunnerGame\README.md", "Markdown", 0, 0, 2, 0, 0, 0, 0, 0, 1, 3
+"d:\CNG491ERG\EndlessRunnerGame\trainingYML\Boss.yaml", "YAML", 0, 0, 0, 0, 29, 0, 0, 0, 0, 29
+"d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-0.pt", "XML", 0, 0, 0, 0, 0, 5235, 0, 0, 17, 5252
+"d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-132259.pt", "XML", 0, 0, 0, 0, 0, 4899, 0, 0, 25, 4924
+"d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-199699.pt", "XML", 0, 0, 0, 0, 0, 5019, 0, 0, 24, 5043
+"d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-199859.pt", "XML", 0, 0, 0, 0, 0, 5009, 0, 0, 13, 5022
+"d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-199890.pt", "XML", 0, 0, 0, 0, 0, 5174, 0, 0, 22, 5196
+"d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-199906.pt", "XML", 0, 0, 0, 0, 0, 5153, 0, 0, 31, 5184
+"d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-199992.pt", "XML", 0, 0, 0, 0, 0, 5048, 0, 0, 18, 5066
+"d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-21446.pt", "XML", 0, 0, 0, 0, 0, 5000, 0, 0, 28, 5028
+"d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-238478.pt", "XML", 0, 0, 0, 0, 0, 5174, 0, 0, 22, 5196
+"d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-260154.pt", "XML", 0, 0, 0, 0, 0, 15385, 0, 0, 59, 15444
+"d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-260331.pt", "XML", 0, 0, 0, 0, 0, 14877, 0, 0, 63, 14940
+"d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-27685.pt", "XML", 0, 0, 0, 0, 0, 5032, 0, 0, 24, 5056
+"d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-299904.pt", "XML", 0, 0, 0, 0, 0, 14807, 0, 0, 79, 14886
+"d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-31388.pt", "XML", 0, 0, 0, 0, 0, 4967, 0, 0, 22, 4989
+"d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-399790.pt", "XML", 0, 0, 0, 0, 0, 14805, 0, 0, 79, 14884
+"d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-41033.pt", "XML", 0, 0, 0, 0, 0, 5039, 0, 0, 19, 5058
+"d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-469520.pt", "XML", 0, 0, 0, 0, 0, 14805, 0, 0, 79, 14884
+"d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-499970.pt", "XML", 0, 0, 0, 0, 0, 4980, 0, 0, 13, 4993
+"d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-500034.pt", "XML", 0, 0, 0, 0, 0, 4980, 0, 0, 13, 4993
+"d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-5760.pt", "XML", 0, 0, 0, 0, 0, 1759, 0, 0, 5, 1764
+"d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-61928.pt", "XML", 0, 0, 0, 0, 0, 5060, 0, 0, 24, 5084
+"d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-67853.pt", "XML", 0, 0, 0, 0, 0, 5112, 0, 0, 19, 5131
+"d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-68189.pt", "XML", 0, 0, 0, 0, 0, 4957, 0, 0, 22, 4979
+"d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-79239.pt", "XML", 0, 0, 0, 0, 0, 5076, 0, 0, 18, 5094
+"d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-88417.pt", "XML", 0, 0, 0, 0, 0, 5087, 0, 0, 26, 5113
+"d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-99775.pt", "XML", 0, 0, 0, 0, 0, 4900, 0, 0, 25, 4925
+"d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-99919.pt", "XML", 0, 0, 0, 0, 0, 5008, 0, 0, 13, 5021
+"d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-99964.pt", "XML", 0, 0, 0, 0, 0, 5046, 0, 0, 18, 5064
+"d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-99972.pt", "XML", 0, 0, 0, 0, 0, 5018, 0, 0, 24, 5042
+"d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-99979.pt", "XML", 0, 0, 0, 0, 0, 5152, 0, 0, 31, 5183
+"d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\Boss-99999.pt", "XML", 0, 0, 0, 0, 0, 5173, 0, 0, 22, 5195
+"d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\Boss\checkpoint.pt", "XML", 0, 0, 0, 0, 0, 5008, 0, 0, 13, 5021
+"d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\configuration.yaml", "YAML", 0, 0, 0, 0, 79, 0, 0, 0, 1, 80
+"d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\run_logs\Player-0.log", "Log", 0, 0, 0, 0, 0, 0, 278630, 0, 4, 278634
+"d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\run_logs\timers.json", "JSON", 0, 335, 0, 0, 0, 0, 0, 0, 0, 335
+"d:\CNG491ERG\EndlessRunnerGame\trainingYML\results\ppo\run_logs\training_status.json", "JSON", 0, 65, 0, 0, 0, 0, 0, 0, 0, 65
+"Total", "-", 2566, 1478, 2, 2338, 237, 252691, 278630, 920, 2214, 541076

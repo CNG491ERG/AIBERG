@@ -1,17 +1,18 @@
 using UnityEngine;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 public class Boss : MonoBehaviour, IDamageable{
-    [Header("IDamageable Values")]
-    [SerializeField] private float health;
-    [SerializeField] private float maxHealth;
-    [SerializeField] private float defense;
+    [Header("Environment")]
+    [SerializeField] private Environment environment;
 
     [Header("Boss Attributes")]
     [SerializeField] private int enragement;
     [SerializeField] private float speed;
     [SerializeField] private float cooldownMultiplier;
     [SerializeField] private float damageMultiplier;
+    [SerializeField] private List<Transform> droneTargetPositions = new(); 
 
     [Header("Boss Abilities")]
     [SerializeField] private BossAbilitiesSO bossAbilities;
@@ -21,14 +22,18 @@ public class Boss : MonoBehaviour, IDamageable{
     [SerializeField] private GameObject attackDroneAbilityObject;
     public IAbility moveUpAbility;
     public IAbility moveDownAbility;
-    public IAbility basicAbility;
+    public IAbility basicAttackAbility;
     public IAbility attackDroneAbility;
-
-    [Header("Other")]
-    public Player player;
+    
+    [Header("IDamageable Values")]
+    [SerializeField] private float health;
+    [SerializeField] private float maxHealth;
+    [SerializeField] private float defense;
+    
     public event EventHandler OnDamageableDeath;
     public event EventHandler OnDamageableHurt;
-
+    
+    public Environment Environment{get=>environment; private set => environment = value;}
     public float Health { get => health; set => health = value;}
     public float Defense { get => defense; set => defense = value;}
     public float MaxHealth { get => maxHealth; set => maxHealth = value; }
@@ -36,11 +41,13 @@ public class Boss : MonoBehaviour, IDamageable{
     public float Speed { get => speed; set => speed = value;}
     public float CooldownMultiplier { get => cooldownMultiplier; set => cooldownMultiplier = value;}
     public float DamageMultiplier { get => damageMultiplier; set => damageMultiplier = value;}
-
+    public List<Transform> DroneTargetPositions{get => droneTargetPositions;}
     private void Start() {
-        if(bossAbilities.BasicAbility != null){
-            basicAbilityObject = Instantiate(bossAbilities.BasicAbility, this.transform);
-            basicAbility = basicAbilityObject.GetComponent<IAbility>();
+        environment = Utility.ComponentFinder.FindComponentInParents<Environment>(this.transform);
+        droneTargetPositions = Utility.ComponentFinder.FindGameObjectsWithTagInChildren("DroneTarget",this.transform).ConvertAll(obj=>obj.transform);
+        if(bossAbilities.BasicAttackAbility != null){
+            basicAbilityObject = Instantiate(bossAbilities.BasicAttackAbility, this.transform);
+            basicAttackAbility = basicAbilityObject.GetComponent<IAbility>();
         }
         if(bossAbilities.MoveUpAbility != null){
             moveUpAbilityObject = Instantiate(bossAbilities.MoveUpAbility, this.transform);
@@ -60,6 +67,12 @@ public class Boss : MonoBehaviour, IDamageable{
         speed = bossAbilities.Speed;
     }
     
+    private void FixedUpdate() {
+        moveUpAbility?.UseAbility(Input.GetKey(KeyCode.UpArrow));
+        moveDownAbility?.UseAbility(Input.GetKey(KeyCode.DownArrow));
+        basicAttackAbility?.UseAbility(Input.GetKey(KeyCode.J));
+        attackDroneAbility?.UseAbility(Input.GetKey(KeyCode.K));
+    }
     public void TakeDamage(float damageToTake) {
         float totalDamage = damageToTake * (1 - Defense);
         Health = Health - totalDamage <= 0 ? 0 : Health - totalDamage;
@@ -71,7 +84,7 @@ public class Boss : MonoBehaviour, IDamageable{
     }
 
     public void ResetAllCooldowns(){
-        basicAbility?.ResetCooldown();
+        basicAttackAbility?.ResetCooldown();
         moveUpAbility?.ResetCooldown();
         moveDownAbility?.ResetCooldown();
         attackDroneAbility?.ResetCooldown();

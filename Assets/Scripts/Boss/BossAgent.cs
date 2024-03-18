@@ -1,7 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Collections;
 using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
@@ -18,7 +15,7 @@ public class BossAgent : Agent{
     [SerializeField] private Player player;
     [SerializeField] private Transform playerSpawnPosition;
     [SerializeField] private Transform bossSpawnPosition; 
-    [SerializeField] public MLAgentEnvironment env;
+    [SerializeField] public Environment env;
 
     public override void Initialize() {
         bossRb = GetComponent<Rigidbody2D>();
@@ -42,7 +39,7 @@ public class BossAgent : Agent{
         player.Health = 100;
         boss.Health = 100;
         boss.Defense = 0;
-        boss.speed = 10;
+        boss.Speed = 10;
         GameManager.Instance.ResetStepCounter();
         //player.ResetAllCooldowns();
         //env.RemoveSpawnedObjects();

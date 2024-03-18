@@ -6,16 +6,13 @@ TagManager:
   tags:
   - Boss
   - PlayerDamageProjectile
-  - PlayerAttacks
-  - BossAttacks
-  - Assault
-  - Machine
-  - Last
+  - ForegroundObject
+  - DroneTarget
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - ForegroundEnvironment
+  - 
   - Water
   - UI
   - 

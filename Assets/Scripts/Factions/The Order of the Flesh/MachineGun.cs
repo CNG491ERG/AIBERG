@@ -68,11 +68,11 @@ public class MachineGun : MonoBehaviour, IAttackAbility{
         player.basicAbility.AbilityLock = player.basicAbility;
     }
     private void ShootBullet(){
-        Rigidbody2D bulletRigidBody = Instantiate(projectilePrefab).GetComponent<Rigidbody2D>();
-        if(bulletRigidBody != null){
-            bulletRigidBody.transform.parent = this.transform;
-            bulletRigidBody.transform.localPosition = Vector3.zero;
-            bulletRigidBody.gameObject.GetComponent<DamagingProjectile>().projectileVelocity = new Vector2(projectileVelocityX, 0);
+        Rigidbody2D projectileRb = Instantiate(projectilePrefab, player.Environment.transform).GetComponent<Rigidbody2D>();
+        player.Environment.AddObjectToEnvironmentList(projectileRb.gameObject);
+        if(projectileRb != null){
+            projectileRb.transform.position = player.transform.position;
+            projectileRb.gameObject.GetComponent<DamagingProjectile>().projectileVelocity = new Vector2(projectileVelocityX, 0);
         }
     }
     public void ResetCooldown(){

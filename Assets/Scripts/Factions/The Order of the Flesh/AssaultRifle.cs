@@ -33,6 +33,8 @@ public class AssaultRifle : MonoBehaviour, IAttackAbility{
         }
     }
     public GameObject AbilityOwner => player.gameObject;
+
+    public bool ownsLock;
     #endregion
 
     private void Start() {
@@ -44,6 +46,7 @@ public class AssaultRifle : MonoBehaviour, IAttackAbility{
     }
 
     private void FixedUpdate() {
+        ownsLock = AbilityLock == (IAbility)this;
         canBeUsed = cooldownTimer >= (Cooldown-0.001f);
         cooldownTimer = canBeUsed ? cooldownTimer : cooldownTimer + Time.fixedDeltaTime;
     }
@@ -56,11 +59,12 @@ public class AssaultRifle : MonoBehaviour, IAttackAbility{
     }
 
     private void ShootBullet(){
-        Rigidbody2D bulletRigidBody = Instantiate(projectilePrefab).GetComponent<Rigidbody2D>();
-        if(bulletRigidBody != null){
-            bulletRigidBody.transform.parent = this.transform;
-            bulletRigidBody.transform.localPosition = Vector3.zero;
-            bulletRigidBody.gameObject.GetComponent<DamagingProjectile>().projectileVelocity = new Vector2(projectileVelocityX, 0);
+        Rigidbody2D projectileRb = Instantiate(projectilePrefab, player.Environment.transform).GetComponent<Rigidbody2D>();
+        player.Environment.AddObjectToEnvironmentList(projectileRb.gameObject);
+        Debug.Log(projectileRb.transform.position);
+        if(projectileRb != null){
+            projectileRb.transform.position = player.transform.position;
+            projectileRb.gameObject.GetComponent<DamagingProjectile>().projectileVelocity = new Vector2(projectileVelocityX, 0);
         }
     }
 
