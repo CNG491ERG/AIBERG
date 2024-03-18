@@ -32,6 +32,10 @@ public class Boss : MonoBehaviour, IDamageable{
     public float Health { get => health; set => health = value;}
     public float Defense { get => defense; set => defense = value;}
     public float MaxHealth { get => maxHealth; set => maxHealth = value; }
+    public int Enragement { get => enragement; set => enragement = value;}
+    public float Speed { get => speed; set => speed = value;}
+    public float CooldownMultiplier { get => cooldownMultiplier; set => cooldownMultiplier = value;}
+    public float DamageMultiplier { get => damageMultiplier; set => damageMultiplier = value;}
 
     private void Start() {
         if(bossAbilities.BasicAbility != null){

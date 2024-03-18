@@ -1,21 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MoveDown : MonoBehaviour, IAbility{
+    [Header("Boss Reference")]
     [SerializeField] private Boss boss;
     [SerializeField] private Rigidbody2D bossRb;
 
-    public string AbilityName => "MoveDown";
+    [Header("Ability Properties")]
+    [SerializeField] private const bool canBeUsed=true;
+    [SerializeField] private float movementSpeed;
 
+    #region interface properties
     public GameObject AbilityOwner => boss.gameObject;
-    
     public float Cooldown => 0;
-
     public float AbilityDuration => 0;
-
-    public bool CanBeUsed => true;
-
+    public bool CanBeUsed => canBeUsed;
     public IAbility AbilityLock { 
         get => abilityLock;
         set{
@@ -25,17 +23,19 @@ public class MoveDown : MonoBehaviour, IAbility{
         }
     }
     private IAbility abilityLock;
+    #endregion
 
     private void Start() {
-        boss = GetComponent<Boss>();
-        bossRb = GetComponent<Rigidbody2D>();
+        boss = Utility.ComponentFinder.FindComponentInParents<Boss>(this.transform);
+        movementSpeed = boss.Speed;
+        bossRb = boss.GetComponent<Rigidbody2D>();
         AbilityLock = this;
     }
 
     public void UseAbility(bool inputReceived){
         if(inputReceived){
-            if(bossRb.velocity.y > -boss.speed){
-                bossRb.AddForce(new Vector2(0, -boss.speed));
+            if(bossRb.velocity.y > -movementSpeed){
+                bossRb.AddForce(new Vector2(0, -movementSpeed));
             }
         }
     }

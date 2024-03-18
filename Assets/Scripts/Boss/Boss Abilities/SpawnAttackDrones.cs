@@ -1,74 +1,69 @@
 using System.Collections;
-using System.Collections.Generic;
-using DG.Tweening;
 using UnityEngine;
 
 
-public class SpawnAttackDrones : MonoBehaviour, IAttackAbility
-{
+public class SpawnAttackDrones : MonoBehaviour, IAttackAbility{
+    [Header("Boss Reference")]
+    [SerializeField] private Boss boss;
+
+    [Header("Ability Properties")]
+    [SerializeField] private float abilityCooldown = 75f;
+    [SerializeField] private float cooldownTimer = 0f;
+    [SerializeField] private float abilityDuration = 4.0f;
+    [SerializeField] private float durationTimer = 0f;
+    [SerializeField] private bool canBeUsed;
+
+    [Header("Drone Properties")]
     [SerializeField] private GameObject attackDronePrefab;
     [SerializeField] private Transform[] droneSpawnPositions;
-    [SerializeField] private Boss boss;
-    [SerializeField] private float cooldownTimer;
-    public string AbilityName => "SpawnAttackDrones";
+    [SerializeField] private float attackDroneDamage = 0.6f;
 
-    public GameObject AbilityOwner => boss.gameObject;
-
-    public float Cooldown => 75f;
-
-    public bool CanBeUsed => cooldownTimer >= Cooldown - 0.0001f;
-
-    public float AbilityDuration => 0;
-
-    public IAbility AbilityLock
-    {
+    #region interface properties
+    public float Cooldown => abilityCooldown;
+    public float Damage => attackDroneDamage;
+    public float AbilityDuration => abilityDuration;
+    public bool CanBeUsed => canBeUsed;
+    public IAbility AbilityLock { 
         get => abilityLock;
-        set
-        {
-            if ((Object)value == (Object)this || value == null)
-            {
+        set{
+            if((Object)value == (Object)this || value == null){
                 abilityLock = value;
             }
         }
     }
+    public GameObject AbilityOwner => boss.gameObject;
     private IAbility abilityLock;
+    #endregion
 
-    //Damage in this case is how much damage a bullet of a drone causes
-    public float Damage => 0.6f;
 
-    void Start()
-    {
-        boss = GetComponent<Boss>();
-        cooldownTimer = Cooldown;
+    void Start(){
+        boss = Utility.ComponentFinder.FindComponentInParents<Boss>(this.transform);
+        ResetCooldown();
         AbilityLock = this;
     }
 
-    public void ResetCooldown()
-    {
-        cooldownTimer = 0;
-    }
-
-    public void UseAbility(bool inputReceived)
-    {
+    public void UseAbility(bool inputReceived){
         if(inputReceived && CanBeUsed){
             StartCoroutine(SpawnAttackDronesCoroutine());
         }
         cooldownTimer = CanBeUsed ? cooldownTimer : cooldownTimer + Time.fixedDeltaTime;
     }
     IEnumerator SpawnAttackDronesCoroutine(){
-        //spawn drones (3)
         foreach(Transform droneSpawnPosition in droneSpawnPositions){
-            AttackDrone drone = Instantiate(attackDronePrefab).GetComponent<AttackDrone>();
-            boss.GetComponent<BossAgent>().env.AddObject(drone.gameObject);
-            if(drone != null){
-                drone.transform.position = boss.transform.position;
-                drone.targetPosition = droneSpawnPosition;
-                drone.boss = boss;
-                drone.damage = Damage;
+            AttackDrone attackDrone = Instantiate(attackDronePrefab).GetComponent<AttackDrone>();
+            if(attackDrone != null){
+                attackDrone.transform.position = boss.transform.position;
+                attackDrone.targetPosition = droneSpawnPosition;
+                attackDrone.boss = boss;
+                attackDrone.damage = Damage;
                 cooldownTimer = 0;
                 yield return new WaitForSeconds(0.2f);
             }
         }
         cooldownTimer = 0;
+    }
+    
+    public void ResetCooldown(){
+        cooldownTimer = Cooldown;
     }
 }

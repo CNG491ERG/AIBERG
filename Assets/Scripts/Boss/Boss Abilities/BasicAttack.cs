@@ -3,21 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BasicAttack : MonoBehaviour, IAttackAbility{
-    [SerializeField] private GameObject projectilePrefab;
-    [SerializeField] private float projectileVelocityX;
+    [Header("Boss Reference")]
     [SerializeField] private Boss boss;
-    [SerializeField] private float cooldownTimer;
-    public bool CanBeUsed => cooldownTimer >= Cooldown-0.0001f;
+    
+    [Header("Ability Properties")]
+    [SerializeField] private float abilityCooldown = 0.50f;
+    [SerializeField] private float cooldownTimer = 0f;
+    [SerializeField] private float abilityDuration = 0f;
+    [SerializeField] private bool canBeUsed;
 
-    public string AbilityName => "BasicAttack";
+    [Header("Projectile Used by the Ability")]
+    [SerializeField] private GameObject projectilePrefab;
+    //Add object pool here
 
-    public GameObject AbilityOwner => boss.gameObject;
+    [Header("Projectile properties")]
+    [SerializeField] private float projectileVelocityX;
+    [SerializeField] private float projectileDamage = 7.5f;
 
-    public float Cooldown => 0.5f;
-
-    public float Damage => 7.5f;
-
-    public float AbilityDuration => 0;
+    #region interface properties
+    public float Cooldown => abilityCooldown;
+    public float AbilityDuration => abilityDuration;
+    public float Damage => projectileDamage;
+    public bool CanBeUsed => canBeUsed;
+    private IAbility abilityLock;
     public IAbility AbilityLock { 
         get => abilityLock;
         set{
@@ -26,19 +34,24 @@ public class BasicAttack : MonoBehaviour, IAttackAbility{
             }
         }
     }
-    private IAbility abilityLock;
-
+    public GameObject AbilityOwner => boss.gameObject;
+    #endregion
+ 
     private void Start() {
-        boss = GetComponent<Boss>();
-        this.projectilePrefab.GetComponent<DamagingProjectile>().damage = Damage;
+        boss = Utility.ComponentFinder.FindComponentInParents<Boss>(this.transform);
+        projectilePrefab.GetComponent<DamagingProjectile>().damage = Damage;
+        projectilePrefab.GetComponent<DamagingProjectile>().tagToDamage = "Player";
         AbilityLock = this;
     }
 
-    public void UseAbility(bool inputReceived)
-    {
-        if(cooldownTimer >= Cooldown-0.0001f && inputReceived){
+    private void FixedUpdate() {
+        canBeUsed = cooldownTimer >= (Cooldown-0.001f);
+        cooldownTimer = canBeUsed ? cooldownTimer : cooldownTimer + Time.fixedDeltaTime;
+    }
+
+    public void UseAbility(bool inputReceived){
+        if(canBeUsed && inputReceived){
             Rigidbody2D projectileRb = Instantiate(projectilePrefab).GetComponent<Rigidbody2D>();
-            boss.GetComponent<BossAgent>().env.AddObject(projectileRb.gameObject);
             if(projectileRb != null){
                 projectileRb.transform.parent = this.transform;
                 projectileRb.transform.localPosition = Vector3.zero;
@@ -49,8 +62,9 @@ public class BasicAttack : MonoBehaviour, IAttackAbility{
         }
         cooldownTimer = cooldownTimer >= (Cooldown-0.0001f) ? cooldownTimer : cooldownTimer + Time.fixedDeltaTime;
     }
+
     public void ResetCooldown(){
-        cooldownTimer = 0;
+        cooldownTimer = Cooldown;
     }
 
 }

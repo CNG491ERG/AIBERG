@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "BossAbilities", menuName = "ScriptableObjects/BossAbilitiesScriptableObject", order = 2)]
+[CreateAssetMenu(fileName = "BossAbilities", menuName = "ScriptableObjects/BossAbilitiesScriptableObject", order = 1)]
 public class BossAbilitiesSO : ScriptableObject{
     public GameObject MoveUpAbility;
     public GameObject MoveDownAbility;

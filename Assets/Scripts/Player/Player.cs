@@ -58,7 +58,7 @@ public class Player : MonoBehaviour, IDamageable{
             jump = jumpObject.GetComponent<IAbility>();
         }
 
-        maxHealth = health = faction.MaxHealth;
+        health = maxHealth = faction.MaxHealth;
         defense = faction.Defense;
     }
 
