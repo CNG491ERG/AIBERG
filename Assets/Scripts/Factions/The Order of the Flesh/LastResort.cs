@@ -1,28 +1,34 @@
 using System.Collections;
 using UnityEngine;
 
+//INCOMPLETE - NEEDS REFERENCE TO BOSS
 public class LastResort : MonoBehaviour, IAttackAbility
 {
-    //[SerializeField] private Faction faction;
-    [SerializeField] private GameObject misillePrefab;
-    [SerializeField] private float misilleVelocityX;
-    [SerializeField] private float cooldownTimer; 
-    [SerializeField] private float durationTimer;
-    [SerializeField] private float misillesPerSecond;
+    [Header("Player Reference")]
+    [SerializeField] private Player player;
+    
+    [Header("Ability Properties")]
+    [SerializeField] private float abilityCooldown = 17.5f;
+    [SerializeField] private float cooldownTimer = 0f;
+    [SerializeField] private float abilityDuration = 2f;
+    [SerializeField] private float durationTimer = 0f;
+    [SerializeField] private bool canBeUsed;
 
-    [SerializeField] private GameObject boss; //RISKY LINE, TRY TO SOLVE SOME OTHER WAY!
-    //public Faction PlayerFaction => faction;
+    [Header("Projectile Used by the Ability")]
+    [SerializeField] private GameObject projectilePrefab;
+    //Add object pool here
 
-    public string AbilityName => "LastResort";
+    [Header("Projectile properties")]
+    [SerializeField] private float projectilesPerSecond = 5; //arbitrary val
+    [SerializeField] private float projectileVelocityX = 5; //arbitrary val
+    [SerializeField] private float projectileDamage = 9f;
 
-    //public GameObject AbilityOwner => faction.player.gameObject;
-
-    public float Cooldown => 17.5f; //Change it
-
-    public float AbilityDuration => 2f;
-    public float Damage => 9f;
-
-    public bool CanBeUsed => cooldownTimer >= Cooldown-0.0001f;
+    #region interface properties
+    public float Cooldown => abilityCooldown;
+    public float AbilityDuration => abilityDuration;
+    public float Damage => projectileDamage;
+    public bool CanBeUsed => canBeUsed;
+    private IAbility abilityLock;
     public IAbility AbilityLock { 
         get => abilityLock;
         set{
@@ -31,23 +37,22 @@ public class LastResort : MonoBehaviour, IAttackAbility
             }
         }
     }
-
-    public GameObject AbilityOwner => throw new System.NotImplementedException();
-
-    private IAbility abilityLock;
-
+    public GameObject AbilityOwner => player.gameObject;
+    #endregion
+ 
     void Start(){
-        //faction = GetComponentInParent<Faction>();
-        cooldownTimer = Cooldown;
+        player = Utility.ComponentFinder.FindComponentInParents<Player>(this.transform);
+        ResetCooldown();
         durationTimer = 0;
-        misillePrefab.GetComponent<DamagingProjectile>().damage = Damage;
-        boss = transform.parent.parent.parent.Find("Boss").gameObject; //Temporary solution
-        //AbilityLock = this;
+        projectilePrefab.GetComponent<DamagingProjectile>().damage = Damage;
+        projectilePrefab.GetComponent<DamagingProjectile>().tagToDamage = "Boss";
+        //boss = transform.parent.parent.parent.Find("Boss").gameObject;
+        AbilityLock = this;
     }
 
     public  void UseAbility(bool inputReceived){
         if(cooldownTimer >=(Cooldown-0.0001f) && inputReceived){
-            StartCoroutine(LastResortCoroutine(misillesPerSecond));
+            StartCoroutine(LastResortCoroutine(projectilesPerSecond));
         }
         cooldownTimer = CanBeUsed ? cooldownTimer : cooldownTimer + Time.fixedDeltaTime;
     }
@@ -63,12 +68,11 @@ public class LastResort : MonoBehaviour, IAttackAbility
     }
 
     private void ShootBullet(){
-        Rigidbody2D bulletRigidBody = Instantiate(misillePrefab).GetComponent<Rigidbody2D>();
-        //faction.player.boss.GetComponent<BossAgent>().env.AddObject(bulletRigidBody.gameObject);
+        Rigidbody2D bulletRigidBody = Instantiate(projectilePrefab).GetComponent<Rigidbody2D>();
         if(bulletRigidBody != null){
             bulletRigidBody.transform.parent = this.transform;
             //bulletRigidBody.transform.position = new Vector3(faction.player.transform.position.x - 5, boss.transform.position.y);
-            bulletRigidBody.gameObject.GetComponent<DamagingProjectile>().projectileVelocity = new Vector2(misilleVelocityX, 0);
+            bulletRigidBody.gameObject.GetComponent<DamagingProjectile>().projectileVelocity = new Vector2(projectileVelocityX, 0);
         }
     }
 

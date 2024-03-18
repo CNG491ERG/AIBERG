@@ -15,13 +15,13 @@ public class AssaultRifle : MonoBehaviour, IAttackAbility{
     //Add object pool here
 
     [Header("Projectile properties")]
-    [SerializeField] private float bulletVelocityX;
-    [SerializeField] private float bulletDamage = 0.20f;
+    [SerializeField] private float projectileVelocityX;
+    [SerializeField] private float projectileDamage = 0.20f;
 
     #region interface properties
     public float Cooldown => abilityCooldown;
     public float AbilityDuration => abilityDuration;
-    public float Damage => bulletDamage;
+    public float Damage => projectileDamage;
     public bool CanBeUsed => canBeUsed;
     private IAbility abilityLock;
     public IAbility AbilityLock { 
@@ -39,6 +39,7 @@ public class AssaultRifle : MonoBehaviour, IAttackAbility{
         player = Utility.ComponentFinder.FindComponentInParents<Player>(this.transform);
         ResetCooldown();
         projectilePrefab.GetComponent<DamagingProjectile>().damage = Damage;
+        projectilePrefab.GetComponent<DamagingProjectile>().tagToDamage = "Boss";
         AbilityLock = this;
     }
 
@@ -59,7 +60,7 @@ public class AssaultRifle : MonoBehaviour, IAttackAbility{
         if(bulletRigidBody != null){
             bulletRigidBody.transform.parent = this.transform;
             bulletRigidBody.transform.localPosition = Vector3.zero;
-            bulletRigidBody.gameObject.GetComponent<DamagingProjectile>().projectileVelocity = new Vector2(bulletVelocityX, 0);
+            bulletRigidBody.gameObject.GetComponent<DamagingProjectile>().projectileVelocity = new Vector2(projectileVelocityX, 0);
         }
     }
 

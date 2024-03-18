@@ -9,7 +9,7 @@ public class MachineGun : MonoBehaviour, IAttackAbility{
     [SerializeField] private float abilityCooldown = 10f;
     [SerializeField] private float cooldownTimer = 0f;
     [SerializeField] private float abilityDuration = 4.0f;
-    [SerializeField] private float durationTimer;
+    [SerializeField] private float durationTimer = 0f;
     [SerializeField] private bool canBeUsed;
 
     [Header("Projectile Used by the Ability")]
@@ -42,6 +42,7 @@ public class MachineGun : MonoBehaviour, IAttackAbility{
         player = Utility.ComponentFinder.FindComponentInParents<Player>(this.transform);
         ResetCooldown();
         projectilePrefab.GetComponent<DamagingProjectile>().damage = Damage;
+        projectilePrefab.GetComponent<DamagingProjectile>().tagToDamage = "Boss";
         AbilityLock = this;
     }
 
