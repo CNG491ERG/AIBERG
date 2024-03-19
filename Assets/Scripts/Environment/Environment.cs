@@ -17,11 +17,6 @@ public class Environment : MonoBehaviour{
         foregroundObjects = Utility.ComponentFinder.FindGameObjectsWithTagInChildren("ForegroundObject", this.transform);
     }
 
-    private void FixedUpdate() {
-        if(Input.GetKey(KeyCode.Escape)){
-            RemoveSpawnedObjects();
-        }
-    }
     public void AddObjectToEnvironmentList(GameObject obj){
         if(!childObjects.Contains(obj)){
             childObjects.Add(obj);
