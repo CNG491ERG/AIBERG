@@ -41,7 +41,8 @@ public class AttackDrone : MonoBehaviour, IDamageable{
     public event EventHandler OnDamageableHurt;
 
     void Start(){
-        Environment e =Utility.ComponentFinder.FindComponentInParents<Environment>(this.transform);
+        Health = MaxHealth;
+        Environment e = Utility.ComponentFinder.FindComponentInParents<Environment>(this.transform);
         boss = e.Boss;
         attackDroneRb = GetComponent<Rigidbody2D>();
     }
@@ -60,7 +61,6 @@ public class AttackDrone : MonoBehaviour, IDamageable{
     }
 
     private void ShootBullet(){
-        Debug.Log(boss.Environment.transform);
         Rigidbody2D projectileRb = Instantiate(projectilePrefab, boss.Environment.transform).GetComponent<Rigidbody2D>();
         boss.Environment.AddObjectToEnvironmentList(projectileRb.gameObject);
         if(projectileRb != null){

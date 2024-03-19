@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9068193306528591471}
   - component: {fileID: 6268369781737818759}
   - component: {fileID: 5271555697824913894}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,9 +115,9 @@ GameObject:
   - component: {fileID: 624211079247563599}
   - component: {fileID: 6082074997482764627}
   - component: {fileID: 5813819900313802998}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: AttackDrone
-  m_TagString: Boss
+  m_TagString: AttackDrone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -178,12 +178,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1be2dbce7f1e5f488a5c84e523cd57e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boss: {fileID: 0}
+  player: {fileID: 0}
+  attackDroneRb: {fileID: 0}
+  maxVelocity: 7.5
+  movementForce: 20.81
+  health: 0
+  defense: 0
+  maxHealth: 5
   targetPosition: {fileID: 0}
   damage: 0
-  boss: {fileID: 0}
-  attackDroneBulletPrefab: {fileID: 3324519851683650514, guid: b9155f10165162f4986c4d2af251947d, type: 3}
-  forceStrength: 0.5
-  maxVelocity: 5
+  shootingSpeed: 8
+  projectilePrefab: {fileID: 3324519851683650514, guid: b9155f10165162f4986c4d2af251947d, type: 3}
 --- !u!61 &5813819900313802998
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -206,7 +212,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
   m_ContactCaptureLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -239,7 +245,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5359118126068895314}
   - component: {fileID: 5645178158482271836}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -327,11 +333,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1886248149575501542, guid: ffc00879245e9b54eaa6b9edf39461f1, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4424227128796820653, guid: ffc00879245e9b54eaa6b9edf39461f1, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8257838508954880465, guid: ffc00879245e9b54eaa6b9edf39461f1, type: 3}
       propertyPath: m_Pivot.x

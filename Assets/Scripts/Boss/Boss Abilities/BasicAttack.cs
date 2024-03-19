@@ -39,7 +39,7 @@ public class BasicAttack : MonoBehaviour, IAttackAbility{
     private void Start() {
         boss = Utility.ComponentFinder.FindComponentInParents<Boss>(this.transform);
         projectilePrefab.GetComponent<DamagingProjectile>().damage = projectileDamage;
-        projectilePrefab.GetComponent<DamagingProjectile>().tagToDamage = tagToDamage;
+        projectilePrefab.GetComponent<DamagingProjectile>().tagsToDamage.Add(tagToDamage);
         AbilityLock = this;
     }
 
@@ -57,7 +57,6 @@ public class BasicAttack : MonoBehaviour, IAttackAbility{
                 projectileRb.gameObject.GetComponent<DamagingProjectile>().projectileVelocity = new Vector2(-projectileVelocityX, 0);
             }
             cooldownTimer = 0;
-            Debug.Log("Projectile velocity: " + projectileRb.velocity);
         }
     }
 

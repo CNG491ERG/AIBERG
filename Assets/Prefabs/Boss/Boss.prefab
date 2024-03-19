@@ -1,5 +1,62 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &498657027236712538
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2986400624975806203}
+  - component: {fileID: 3485028019759688070}
+  m_Layer: 2
+  m_Name: BossProjectileSensor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2986400624975806203
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498657027236712538}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1075976921849669044}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &3485028019759688070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498657027236712538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67c7e722ba14acd9153bb4488bff6e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SensorName: BossProjectileSensor
+  m_DetectableTags:
+  - BossProjectile
+  m_RaysPerDirection: 15
+  m_MaxRayDegrees: 90
+  m_SphereCastRadius: 0.4
+  m_RayLength: 18
+  m_RayLayerMask:
+    serializedVersion: 2
+    m_Bits: 8
+  m_ObservationStacks: 1
+  rayHitColor: {r: 0, g: 1, b: 0, a: 1}
+  rayMissColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &1180348067399829270
 GameObject:
   m_ObjectHideFlags: 0
@@ -37,6 +94,9 @@ Transform:
   - {fileID: 7182859435599759692}
   - {fileID: 6467741132957040109}
   - {fileID: 5445944892872662058}
+  - {fileID: 4707899186866013793}
+  - {fileID: 3545177774175055098}
+  - {fileID: 2986400624975806203}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -124,23 +184,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51f2531dff4287a4aa4a1a330c8b30a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  maxHealth: 100
-  defense: 0
+  environment: {fileID: 0}
   enragement: 1
   speed: 2
   cooldownMultiplier: 0
   damageMultiplier: 0
-  droneSpawnPositions:
-  - {fileID: 7182859435599759692}
-  - {fileID: 6467741132957040109}
-  - {fileID: 5445944892872662058}
+  droneTargetPositions: []
   bossAbilities: {fileID: 11400000, guid: 66c5987cbffb4c84b99a123125224283, type: 2}
   moveUpAbilityObject: {fileID: 0}
   moveDownAbilityObject: {fileID: 0}
   basicAbilityObject: {fileID: 0}
-  attackDroneAbilityObject: {fileID: 0}
-  player: {fileID: 0}
+  spawnAttackDroneAbilityObject: {fileID: 0}
+  health: 100
+  maxHealth: 100
+  defense: 0
 --- !u!1 &1447417023933152939
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,6 +447,120 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &8144670803522539749
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4707899186866013793}
+  - component: {fileID: 7041505336538742250}
+  m_Layer: 2
+  m_Name: DroneDetectionRayPerceptionSensor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4707899186866013793
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8144670803522539749}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1075976921849669044}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &7041505336538742250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8144670803522539749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67c7e722ba14acd9153bb4488bff6e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SensorName: DroneSensor
+  m_DetectableTags:
+  - AttackDrone
+  m_RaysPerDirection: 7
+  m_MaxRayDegrees: 90
+  m_SphereCastRadius: 0.4
+  m_RayLength: 7
+  m_RayLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  m_ObservationStacks: 1
+  rayHitColor: {r: 1, g: 1, b: 1, a: 1}
+  rayMissColor: {r: 0, g: 0, b: 0, a: 1}
+--- !u!1 &8336186306846482369
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3545177774175055098}
+  - component: {fileID: 8297842057826305965}
+  m_Layer: 2
+  m_Name: PlayerProjectileSensor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3545177774175055098
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8336186306846482369}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1075976921849669044}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &8297842057826305965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8336186306846482369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67c7e722ba14acd9153bb4488bff6e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SensorName: PlayerProjectileSensor
+  m_DetectableTags:
+  - PlayerProjectile
+  m_RaysPerDirection: 15
+  m_MaxRayDegrees: 90
+  m_SphereCastRadius: 0.86
+  m_RayLength: 18
+  m_RayLayerMask:
+    serializedVersion: 2
+    m_Bits: 8
+  m_ObservationStacks: 1
+  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
+  rayMissColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &8765598544773047791
 GameObject:
   m_ObjectHideFlags: 0

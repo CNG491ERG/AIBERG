@@ -5,17 +5,19 @@ TagManager:
   serializedVersion: 2
   tags:
   - Boss
-  - PlayerDamageProjectile
   - ForegroundObject
   - DroneTarget
+  - AttackDrone
+  - BossProjectile
+  - PlayerProjectile
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Projectile
   - Water
   - UI
-  - 
+  - Drone
   - 
   - 
   - 

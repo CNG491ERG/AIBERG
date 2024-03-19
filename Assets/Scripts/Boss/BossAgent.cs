@@ -5,91 +5,42 @@ using Unity.MLAgents.Sensors;
 using UnityEngine;
 
 public class BossAgent : Agent{
-    private Boss boss;
-    private Rigidbody2D bossRb;
-    private IAbility moveUp;
-    private IAbility moveDown;
-    private IAbility basicAttack;
-    private IAbility spawnAttackDrones;
-    private GameManager gameManager;
+    [Header("References")]
+    [SerializeField] private Environment environment;
     [SerializeField] private Player player;
-    [SerializeField] private Transform playerSpawnPosition;
-    [SerializeField] private Transform bossSpawnPosition; 
-    [SerializeField] public Environment env;
+    [SerializeField] private Boss boss;
 
     public override void Initialize() {
-        bossRb = GetComponent<Rigidbody2D>();
-        boss = GetComponent<Boss>();
-        //moveUp = GetComponent<MoveUp>();
-        //moveDown = GetComponent<MoveDown>();
-        basicAttack = GetComponent<BasicAttack>();
-        spawnAttackDrones = GetComponent<SpawnAttackDrones>();
-        bossRb.gravityScale = 0;
-
-        player.OnDamageableDeath += Player_OnDamageableDeath;
+        boss = environment.Boss;
+        player = environment.Player;
+        environment.Player.OnDamageableDeath += Player_OnDamageableDeath;
         boss.OnDamageableDeath += Boss_OnDamageableDeath;
     }
 
     public override void OnEpisodeBegin() {
-        /*
-        ** MOVE EVERYTHING BELOW TO AN ENVIRONMENT CONTROLLER!
-        */
-        transform.localPosition = bossSpawnPosition.transform.localPosition;
-        player.transform.localPosition = playerSpawnPosition.transform.localPosition;
-        player.Health = 100;
-        boss.Health = 100;
-        boss.Defense = 0;
-        boss.Speed = 10;
-        GameManager.Instance.ResetStepCounter();
-        //player.ResetAllCooldowns();
-        //env.RemoveSpawnedObjects();
-        //Everything on the screen should be deleted, except for the boss and the player
+        environment.ResetEnvironment();
     }
 
-    private void Boss_OnDamageableDeath(object sender, EventArgs e)
-    {
-        float reward = (float)(-0.5 - (player.Health/player.MaxHealth) * 0.5);
-        AddReward(reward);
-        EndEpisode();
-    }
-
-    private void Player_OnDamageableDeath(object sender, EventArgs e)
-    {
-        float reward = (float)(0.5 + (boss.Health/boss.MaxHealth) * 0.5);
-        AddReward(reward);
-        EndEpisode();
-    }
-
-
-    public override void OnActionReceived(ActionBuffers actions) {
-        int moveAction = actions.DiscreteActions[0];
-        int attackAction = actions.DiscreteActions[1];
-
-        moveDown.UseAbility(moveAction == 1);
-        moveUp.UseAbility(moveAction == 2);
-        basicAttack.UseAbility(attackAction == 1);
-        spawnAttackDrones.UseAbility(attackAction == 2);
-    }
-
-
-    public override void CollectObservations(VectorSensor sensor) {
-        //Localposition because everything is under a parent gameobject called "env"
-        sensor.AddObservation(bossRb.transform.localPosition.x);
-        sensor.AddObservation(bossRb.transform.localPosition.y);
+        public override void CollectObservations(VectorSensor sensor) {
+        sensor.AddObservation(boss.transform.localPosition);
         sensor.AddObservation(boss.Health);
+        sensor.AddObservation(boss.basicAttackAbility.CanBeUsed);
+        sensor.AddObservation(boss.spawnAttackDroneAbility.CanBeUsed);
 
-        sensor.AddObservation(player.transform.localPosition.x);
-        sensor.AddObservation(player.transform.localPosition.y);
+        sensor.AddObservation(player.transform.localPosition);
         sensor.AddObservation(player.Health);
+        sensor.AddObservation(player.activeAbility1.CanBeUsed);
+        sensor.AddObservation(player.activeAbility2.CanBeUsed);
+        sensor.AddObservation(player.basicAbility.CanBeUsed);
 
-        sensor.AddObservation(gameManager.StepCount);
+        //sensor.AddObservation(gameManager.StepCount); //Haven't figured out gamemanager yet
     }
 
     public override void Heuristic(in ActionBuffers actionsOut) {
         bool moveDownInput = Input.GetKey(KeyCode.DownArrow);
         bool moveUpInput = Input.GetKey(KeyCode.UpArrow);
-        bool basicAttackInput = Input.GetKey(KeyCode.X);
-        bool spawnAttackDronesInput = Input.GetKey(KeyCode.C);
+        bool basicAttackInput = Input.GetKey(KeyCode.J);
+        bool spawnAttackDronesInput = Input.GetKey(KeyCode.K);
 
         var discreteActionsOut = actionsOut.DiscreteActions;
         
@@ -100,5 +51,31 @@ public class BossAgent : Agent{
         discreteActionsOut[1] = basicAttackInput ? 1 : discreteActionsOut[1];
         discreteActionsOut[1] = spawnAttackDronesInput ? 2 : discreteActionsOut[1];
     }
+
+
+    private void Boss_OnDamageableDeath(object sender, EventArgs e){
+        float reward = (float)(-0.5 - (player.Health/player.MaxHealth) * 0.5);
+        AddReward(reward);
+        EndEpisode();
+    }
+
+    private void Player_OnDamageableDeath(object sender, EventArgs e){
+        float reward = (float)(0.5 + (boss.Health/boss.MaxHealth) * 0.5);
+        AddReward(reward);
+        EndEpisode();
+    }
+
+
+    public override void OnActionReceived(ActionBuffers actions) {
+        int moveAction = actions.DiscreteActions[0];
+        int attackAction = actions.DiscreteActions[1];
+
+        boss.moveDownAbility.UseAbility(moveAction == 1);
+        boss.moveUpAbility.UseAbility(moveAction == 2);
+        boss.basicAttackAbility.UseAbility(attackAction == 1);
+        boss.spawnAttackDroneAbility.UseAbility(attackAction == 2);
+    }
+
+
 
 }

@@ -41,7 +41,8 @@ public class AssaultRifle : MonoBehaviour, IAttackAbility{
         player = Utility.ComponentFinder.FindComponentInParents<Player>(this.transform);
         ResetCooldown();
         projectilePrefab.GetComponent<DamagingProjectile>().damage = Damage;
-        projectilePrefab.GetComponent<DamagingProjectile>().tagToDamage = "Boss";
+        projectilePrefab.GetComponent<DamagingProjectile>().tagsToDamage.Add("Boss");
+        projectilePrefab.GetComponent<DamagingProjectile>().tagsToDamage.Add("AttackDrone");
         AbilityLock = this;
     }
 
@@ -61,7 +62,6 @@ public class AssaultRifle : MonoBehaviour, IAttackAbility{
     private void ShootBullet(){
         Rigidbody2D projectileRb = Instantiate(projectilePrefab, player.Environment.transform).GetComponent<Rigidbody2D>();
         player.Environment.AddObjectToEnvironmentList(projectileRb.gameObject);
-        Debug.Log(projectileRb.transform.position);
         if(projectileRb != null){
             projectileRb.transform.position = player.transform.position;
             projectileRb.gameObject.GetComponent<DamagingProjectile>().projectileVelocity = new Vector2(projectileVelocityX, 0);

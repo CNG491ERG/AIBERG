@@ -42,7 +42,8 @@ public class MachineGun : MonoBehaviour, IAttackAbility{
         player = Utility.ComponentFinder.FindComponentInParents<Player>(this.transform);
         ResetCooldown();
         projectilePrefab.GetComponent<DamagingProjectile>().damage = Damage;
-        projectilePrefab.GetComponent<DamagingProjectile>().tagToDamage = "Boss";
+        projectilePrefab.GetComponent<DamagingProjectile>().tagsToDamage.Add("Boss");
+        projectilePrefab.GetComponent<DamagingProjectile>().tagsToDamage.Add("AttackDrone");
         AbilityLock = this;
     }
 

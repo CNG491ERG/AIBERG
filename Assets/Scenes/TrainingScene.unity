@@ -380,6 +380,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: DroneTarget
       objectReference: {fileID: 0}
+    - target: {fileID: 8144670803522539749, guid: e817350291c831c468c2ef17ff0b896f, type: 3}
+      propertyPath: m_Name
+      value: AttackDroneSensor
+      objectReference: {fileID: 0}
     - target: {fileID: 8765598544773047791, guid: e817350291c831c468c2ef17ff0b896f, type: 3}
       propertyPath: m_Name
       value: DroneTargetPosition
@@ -393,7 +397,13 @@ PrefabInstance:
     - {fileID: 6216501382530575711, guid: e817350291c831c468c2ef17ff0b896f, type: 3}
     - {fileID: 4742388863269624110, guid: e817350291c831c468c2ef17ff0b896f, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1180348067399829270, guid: e817350291c831c468c2ef17ff0b896f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1441834735}
+    - targetCorrespondingSourceObject: {fileID: 1180348067399829270, guid: e817350291c831c468c2ef17ff0b896f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1441834734}
   m_SourcePrefab: {fileID: 100100000, guid: e817350291c831c468c2ef17ff0b896f, type: 3}
 --- !u!1001 &613544899
 PrefabInstance:
@@ -1089,11 +1099,65 @@ Transform:
   m_Father: {fileID: 341362223}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1441834726 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1180348067399829270, guid: e817350291c831c468c2ef17ff0b896f, type: 3}
+  m_PrefabInstance: {fileID: 466002342}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1441834733 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1075976921849669044, guid: e817350291c831c468c2ef17ff0b896f, type: 3}
   m_PrefabInstance: {fileID: 466002342}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1441834734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441834726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1c4e0b1822b495aa52bc52839ecb30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BrainParameters:
+    VectorObservationSize: 1
+    NumStackedVectorObservations: 1
+    m_ActionSpec:
+      m_NumContinuousActions: 0
+      BranchSizes: 01000000
+    VectorActionSize: 01000000
+    VectorActionDescriptions: []
+    VectorActionSpaceType: 0
+    hasUpgradedBrainParametersWithActionSpec: 1
+  m_Model: {fileID: 0}
+  m_InferenceDevice: 0
+  m_BehaviorType: 0
+  m_BehaviorName: My Behavior
+  TeamId: 0
+  m_UseChildSensors: 1
+  m_UseChildActuators: 1
+  m_ObservableAttributeHandling: 0
+--- !u!114 &1441834735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441834726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c2456471c835d94dbb595372ac42f56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentParameters:
+    maxStep: 0
+  hasUpgradedFromAgentParameters: 1
+  MaxStep: 0
+  environment: {fileID: 341362222}
+  player: {fileID: 0}
+  boss: {fileID: 0}
 --- !u!1 &1546123361
 GameObject:
   m_ObjectHideFlags: 0

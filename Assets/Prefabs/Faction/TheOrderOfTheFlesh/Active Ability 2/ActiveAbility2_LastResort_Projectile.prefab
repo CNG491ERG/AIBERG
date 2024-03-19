@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3535611997249777764}
   - component: {fileID: 380131795986091179}
-  m_Layer: 8
+  m_Layer: 3
   m_Name: MissileTail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1098353145939182039}
-  m_Layer: 8
+  m_Layer: 3
   m_Name: BulletVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1619242830576640479}
   - component: {fileID: 3143396691036155710}
-  m_Layer: 8
+  m_Layer: 3
   m_Name: MissileHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,7 +212,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2726568389279339181}
   - component: {fileID: 6395085000310946059}
-  m_Layer: 8
+  m_Layer: 3
   m_Name: MissileBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,9 +298,9 @@ GameObject:
   - component: {fileID: 8640798421454719521}
   - component: {fileID: 8483955856221425588}
   - component: {fileID: 3638068416293148722}
-  m_Layer: 8
+  m_Layer: 3
   m_Name: ActiveAbility2_LastResort_Projectile
-  m_TagString: PlayerDamageProjectile
+  m_TagString: PlayerProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -360,7 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 971e533b424c5e5449daf437a6ad4efe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 9
   tagToDamage: Boss
   projectileVelocity: {x: 0, y: 0}
 --- !u!70 &3638068416293148722

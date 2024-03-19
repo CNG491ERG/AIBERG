@@ -19,11 +19,11 @@ public class Boss : MonoBehaviour, IDamageable{
     [SerializeField] private GameObject moveUpAbilityObject;
     [SerializeField] private GameObject moveDownAbilityObject;
     [SerializeField] private GameObject basicAbilityObject;
-    [SerializeField] private GameObject attackDroneAbilityObject;
+    [SerializeField] private GameObject spawnAttackDroneAbilityObject;
     public IAbility moveUpAbility;
     public IAbility moveDownAbility;
     public IAbility basicAttackAbility;
-    public IAbility attackDroneAbility;
+    public IAbility spawnAttackDroneAbility;
     
     [Header("IDamageable Values")]
     [SerializeField] private float health;
@@ -58,8 +58,8 @@ public class Boss : MonoBehaviour, IDamageable{
             moveDownAbility = moveDownAbilityObject.GetComponent<IAbility>();
         }
         if(bossAbilities.AttackDroneAbility != null){
-            attackDroneAbilityObject = Instantiate(bossAbilities.AttackDroneAbility, this.transform);
-            attackDroneAbility = attackDroneAbilityObject.GetComponent<IAbility>();
+            spawnAttackDroneAbilityObject = Instantiate(bossAbilities.AttackDroneAbility, this.transform);
+            spawnAttackDroneAbility = spawnAttackDroneAbilityObject.GetComponent<IAbility>();
         }
 
         health = maxHealth = bossAbilities.MaxHealth;
@@ -68,10 +68,7 @@ public class Boss : MonoBehaviour, IDamageable{
     }
     
     private void FixedUpdate() {
-        moveUpAbility?.UseAbility(Input.GetKey(KeyCode.UpArrow));
-        moveDownAbility?.UseAbility(Input.GetKey(KeyCode.DownArrow));
-        basicAttackAbility?.UseAbility(Input.GetKey(KeyCode.J));
-        attackDroneAbility?.UseAbility(Input.GetKey(KeyCode.K));
+
     }
     public void TakeDamage(float damageToTake) {
         float totalDamage = damageToTake * (1 - Defense);
@@ -87,7 +84,7 @@ public class Boss : MonoBehaviour, IDamageable{
         basicAttackAbility?.ResetCooldown();
         moveUpAbility?.ResetCooldown();
         moveDownAbility?.ResetCooldown();
-        attackDroneAbility?.ResetCooldown();
+        spawnAttackDroneAbility?.ResetCooldown();
     }
 }
     

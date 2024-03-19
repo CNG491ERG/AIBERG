@@ -45,7 +45,8 @@ public class LastResort : MonoBehaviour, IAttackAbility
         ResetCooldown();
         durationTimer = 0;
         projectilePrefab.GetComponent<DamagingProjectile>().damage = Damage;
-        projectilePrefab.GetComponent<DamagingProjectile>().tagToDamage = "Boss";
+        projectilePrefab.GetComponent<DamagingProjectile>().tagsToDamage.Add("Boss");
+        projectilePrefab.GetComponent<DamagingProjectile>().tagsToDamage.Add("AttackDrone");
         AbilityLock = this;
     }
 

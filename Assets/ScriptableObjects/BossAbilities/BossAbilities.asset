@@ -18,4 +18,4 @@ MonoBehaviour:
   AttackDroneAbility: {fileID: 5403507820072579581, guid: 0ef8d29275783ab4dbfaaed168743321, type: 3}
   MaxHealth: 100
   Defense: 0
-  Speed: 5
+  Speed: 10

@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7300846623026583247}
   - component: {fileID: 1033450460895304424}
   - component: {fileID: 5810692838231897381}
-  m_Layer: 10
+  m_Layer: 3
   m_Name: AttackDrone_Projectile
-  m_TagString: Untagged
+  m_TagString: BossProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 971e533b424c5e5449daf437a6ad4efe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 0.6
   tagToDamage: Player
   projectileVelocity: {x: 0, y: 0}
 --- !u!58 &5810692838231897381
@@ -122,7 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8456512889417309571}
   - component: {fileID: 5493329915596348826}
-  m_Layer: 10
+  m_Layer: 3
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}

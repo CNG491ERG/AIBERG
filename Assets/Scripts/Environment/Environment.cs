@@ -13,10 +13,12 @@ public class Environment : MonoBehaviour{
     public Boss Boss{get => boss; private set => boss = value;}
     public List<GameObject> ChildObjects {get => childObjects; private set => childObjects = value;}
 
-    private void Start() {
+    private void Awake() {
         player = Utility.ComponentFinder.FindComponentInChildren<Player>(this.transform);
         boss = Utility.ComponentFinder.FindComponentInChildren<Boss>(this.transform);
         foregroundObjects = Utility.ComponentFinder.FindGameObjectsWithTagInChildren("ForegroundObject", this.transform);
+    }
+    private void Start() {
         ResetEnvironment();
     }
 
@@ -38,8 +40,11 @@ public class Environment : MonoBehaviour{
     public void ResetEnvironment(){
         RemoveSpawnedObjects();
         player.ResetAllCooldowns();
-        boss.ResetAllCooldowns();
+        player.Health = player.MaxHealth;
         player.transform.localPosition = playerSpawnPosition.transform.localPosition;
+
+        boss.ResetAllCooldowns();
+        boss.Health = boss.MaxHealth;
         boss.transform.localPosition = bossSpawnPosition.transform.localPosition;
     }
 }

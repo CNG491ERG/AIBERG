@@ -1,28 +1,33 @@
 using UnityEngine;
+using System.Collections.Generic;
 
-public class DamagingProjectile : MonoBehaviour{
+public class DamagingProjectile : MonoBehaviour
+{
     public float damage;
-    public string tagToDamage;
+    public List<string> tagsToDamage;
     public Vector2 projectileVelocity;
     private Rigidbody2D rb;
-    void Start(){
+
+    void Start()
+    {
         GetComponent<Collider2D>().isTrigger = true;
         rb = GetComponent<Rigidbody2D>();
     }
 
-    private void FixedUpdate() {
-        //Normally this wasn't needed, but once removed
-        //projectiles shot by the boss behave unexpectedly
+    private void FixedUpdate()
+    {
         rb.velocity = projectileVelocity;
     }
-    private void OnTriggerEnter2D(Collider2D other) {
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
         IDamageable objectToDamage = other.gameObject.GetComponent<IDamageable>();
-        //Not too good but needed for solving the problem where collider
-        //spawning inside another collider registers as collision.
-        if(objectToDamage != null && other.CompareTag(tagToDamage)){ 
-            objectToDamage.TakeDamage(damage);
-            Destroy(this.gameObject);
-        }
         
+        // Check if the collider's tag is in the list of tags to damage
+        if (objectToDamage != null && tagsToDamage.Contains(other.tag))
+        {
+            objectToDamage.TakeDamage(damage);
+            Destroy(gameObject);
+        }
     }
 }
