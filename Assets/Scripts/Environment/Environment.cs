@@ -9,7 +9,7 @@ public class Environment : MonoBehaviour{
     [SerializeField] private List<GameObject> childObjects = new();
     public Player Player{get => player; private set => player = value;}
     public Boss Boss{get => boss; private set => boss = value;}
-    
+    public List<GameObject> ChildObjects {get => childObjects; private set => childObjects = value;}
 
     private void Start() {
         player = Utility.ComponentFinder.FindComponentInChildren<Player>(this.transform);

@@ -44,10 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 988511652c16b9a4fb478512bee490ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  faction: {fileID: 0}
-  misillePrefab: {fileID: 9216531737267913027, guid: ded2dad941c7ea544a26ce5878ab6527, type: 3}
-  misilleVelocityX: 30
+  player: {fileID: 0}
+  abilityCooldown: 17.5
   cooldownTimer: 0
+  abilityDuration: 2
   durationTimer: 0
-  misillesPerSecond: 2.5
-  boss: {fileID: 0}
+  canBeUsed: 0
+  projectilePrefab: {fileID: 9216531737267913027, guid: ded2dad941c7ea544a26ce5878ab6527, type: 3}
+  projectilesPerSecond: 5
+  projectileVelocityX: 5
+  projectileDamage: 9

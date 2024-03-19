@@ -49,11 +49,14 @@ public class LastResort : MonoBehaviour, IAttackAbility
         AbilityLock = this;
     }
 
+    private void FixedUpdate() {
+        canBeUsed = cooldownTimer >=(Cooldown-0.0001f);
+        cooldownTimer = CanBeUsed ? cooldownTimer : cooldownTimer + Time.fixedDeltaTime;
+    }
     public  void UseAbility(bool inputReceived){
-        if(cooldownTimer >=(Cooldown-0.0001f) && inputReceived){
+        if(canBeUsed && inputReceived){
             StartCoroutine(LastResortCoroutine(projectilesPerSecond));
         }
-        cooldownTimer = CanBeUsed ? cooldownTimer : cooldownTimer + Time.fixedDeltaTime;
     }
     
     IEnumerator LastResortCoroutine(float misillesPerSecond){
