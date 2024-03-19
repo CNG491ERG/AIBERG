@@ -57,10 +57,12 @@ public class SpawnAttackDrones : MonoBehaviour, IAttackAbility{
     private void FixedUpdate() {
         canBeUsed = cooldownTimer >= (Cooldown-0.001f);
         cooldownTimer = canBeUsed ? cooldownTimer : cooldownTimer + Time.fixedDeltaTime;
+
     }
 
     public void UseAbility(bool inputReceived){
         if(inputReceived && canBeUsed){
+            aliveDrones.RemoveAll(drone => drone==null);
             StartCoroutine(SpawnAttackDronesCoroutine());
         }
     }

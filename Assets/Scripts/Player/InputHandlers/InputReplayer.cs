@@ -4,6 +4,7 @@ using Npgsql;
 using UnityEngine;
 
 public class InputReplayer : InputHandler{
+    /*
     
     private int currentStep = 0;
     //[SerializeField] private Faction faction;
@@ -65,4 +66,5 @@ public class InputReplayer : InputHandler{
         //faction.ActiveAbility1.UseAbility(input[2] == '1');
         //faction.ActiveAbility2.UseAbility(input[3] == '1');
     }
+    */
 }

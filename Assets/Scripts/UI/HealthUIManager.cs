@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class HealthUIManager : MonoBehaviour
-{
+public class HealthUIManager : MonoBehaviour{
     public GameObject healthOwner;
     public Image healthBar;
     private IDamageable healthOwnerComponent;

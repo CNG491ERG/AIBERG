@@ -3,8 +3,8 @@ using UnityEngine;
 using Npgsql;
 using System.Text;
 
-public class InputRecorder : MonoBehaviour
-{
+public class InputRecorder : MonoBehaviour{
+    /*
     private StringBuilder inputsRecorded = new StringBuilder();
     [SerializeField] private bool startRecording;
     [SerializeField] private int playerId = 1; // Replace with the actual player's ID
@@ -77,5 +77,5 @@ public class InputRecorder : MonoBehaviour
             conn.Close();
             Debug.Log("Disconnected from database.");
         }
-    }
+    }*/
 }

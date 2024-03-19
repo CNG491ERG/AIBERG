@@ -52,5 +52,5 @@ MonoBehaviour:
   canBeUsed: 0
   projectilePrefab: {fileID: 9216531737267913027, guid: ded2dad941c7ea544a26ce5878ab6527, type: 3}
   projectilesPerSecond: 5
-  projectileVelocityX: 5
+  projectileVelocityX: 20
   projectileDamage: 9

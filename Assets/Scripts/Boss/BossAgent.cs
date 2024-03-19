@@ -38,6 +38,7 @@ public class BossAgent : Agent{
     }
 
     public override void Heuristic(in ActionBuffers actionsOut) {
+        Debug.Log("Inside heuristic");
         bool moveDownInput = Input.GetKey(KeyCode.DownArrow);
         bool moveUpInput = Input.GetKey(KeyCode.UpArrow);
         bool basicAttackInput = Input.GetKey(KeyCode.J);
