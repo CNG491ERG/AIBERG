@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 
-//INCOMPLETE - NEEDS REFERENCE TO BOSS
 public class LastResort : MonoBehaviour, IAttackAbility
 {
     [Header("Player Reference")]

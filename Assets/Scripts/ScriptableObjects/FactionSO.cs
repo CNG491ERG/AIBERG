@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "FactionData", menuName = "ScriptableObjects/FactionScriptableObject", order = 1)]
