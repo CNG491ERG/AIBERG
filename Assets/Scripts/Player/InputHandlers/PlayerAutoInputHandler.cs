@@ -1,6 +1,6 @@
 using UnityEngine;
 
-    public class PlayerAutoInputHandler : MonoBehaviour{
+public class PlayerAutoInputHandler : MonoBehaviour{
     /*//[SerializeField] private Faction faction;//faction of the player
     [SerializeField] private Boss boss;//the boss
     [SerializeField] private Player player;//the player
