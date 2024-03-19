@@ -75,6 +75,8 @@ public class BossAgent : Agent{
         int moveAction = actions.DiscreteActions[0];
         int attackAction = actions.DiscreteActions[1];
 
+        Debug.Log("Move Action: " + moveAction);
+        Debug.Log("Attack Action: " + attackAction);
         boss.moveDownAbility.UseAbility(moveAction == 1);
         boss.moveUpAbility.UseAbility(moveAction == 2);
         boss.basicAttackAbility.UseAbility(attackAction == 1);

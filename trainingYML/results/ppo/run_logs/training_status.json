@@ -2,64 +2,28 @@
     "Boss": {
         "checkpoints": [
             {
-                "steps": 99972,
-                "file_path": "results\\ppo\\Boss\\Boss-99972.onnx",
-                "reward": -414.7369751095772,
-                "creation_time": 1704442130.3095365,
+                "steps": 9062,
+                "file_path": "results\\ppo\\Boss\\Boss-9062.onnx",
+                "reward": -0.22088052630424498,
+                "creation_time": 1710870229.908988,
                 "auxillary_file_paths": [
-                    "results\\ppo\\Boss\\Boss-99972.pt"
-                ]
-            },
-            {
-                "steps": 199699,
-                "file_path": "results\\ppo\\Boss\\Boss-199699.onnx",
-                "reward": -407.1730494119904,
-                "creation_time": 1704442206.215869,
-                "auxillary_file_paths": [
-                    "results\\ppo\\Boss\\Boss-199699.pt"
-                ]
-            },
-            {
-                "steps": 299904,
-                "file_path": "results\\ppo\\Boss\\Boss-299904.onnx",
-                "reward": -428.0109374306419,
-                "creation_time": 1704442398.3224597,
-                "auxillary_file_paths": [
-                    "results\\ppo\\Boss\\Boss-299904.pt"
-                ]
-            },
-            {
-                "steps": 399790,
-                "file_path": "results\\ppo\\Boss\\Boss-399790.onnx",
-                "reward": -396.3803796052933,
-                "creation_time": 1704442474.4232414,
-                "auxillary_file_paths": [
-                    "results\\ppo\\Boss\\Boss-399790.pt"
-                ]
-            },
-            {
-                "steps": 469520,
-                "file_path": "results\\ppo\\Boss\\Boss-469520.onnx",
-                "reward": -401.0254071321128,
-                "creation_time": 1704442529.2113557,
-                "auxillary_file_paths": [
-                    "results\\ppo\\Boss\\Boss-469520.pt"
+                    "results\\ppo\\Boss\\Boss-9062.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 469520,
+            "steps": 9062,
             "file_path": "results\\ppo\\Boss.onnx",
-            "reward": -401.0254071321128,
-            "creation_time": 1704442529.2113557,
+            "reward": -0.22088052630424498,
+            "creation_time": 1710870229.908988,
             "auxillary_file_paths": [
-                "results\\ppo\\Boss\\Boss-469520.pt"
+                "results\\ppo\\Boss\\Boss-9062.pt"
             ]
         }
     },
     "metadata": {
         "stats_format_version": "0.3.0",
-        "mlagents_version": "1.1.0.dev0",
-        "torch_version": "2.1.2+cpu"
+        "mlagents_version": "1.0.0",
+        "torch_version": "1.13.1+cu117"
     }
 }

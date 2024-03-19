@@ -65,10 +65,7 @@ public class Boss : MonoBehaviour, IDamageable{
         defense = bossAbilities.Defense;
         speed = bossAbilities.Speed;
     }
-    
-    private void FixedUpdate() {
 
-    }
     public void TakeDamage(float damageToTake) {
         float totalDamage = damageToTake * (1 - Defense);
         Health = Health - totalDamage <= 0 ? 0 : Health - totalDamage;

@@ -38,14 +38,14 @@ behaviors:
     init_path: null
     keep_checkpoints: 5
     even_checkpoints: false
-    max_steps: 500000
+    max_steps: 1000000
     time_horizon: 512
-    summary_freq: 10000
+    summary_freq: 1000
     threaded: true
     self_play: null
     behavioral_cloning: null
 env_settings:
-  env_path: C:\Users\yurek\OneDrive\Desktop\boks\EndlessRunnerGame.exe
+  env_path: EndlessRunnerGame.exe
   env_args: null
   base_port: 5005
   num_envs: 1
@@ -56,14 +56,13 @@ env_settings:
   restarts_rate_limit_n: 1
   restarts_rate_limit_period_s: 60
 engine_settings:
-  width: 1024
+  width: 1280
   height: 720
   quality_level: 5
   time_scale: 20
   target_frame_rate: -1
   capture_frame_rate: 60
   no_graphics: false
-  no_graphics_monitor: false
 environment_parameters: null
 checkpoint_settings:
   run_id: ppo
