@@ -5,6 +5,8 @@ public class Environment : MonoBehaviour{
     [Header("References")]
     [SerializeField] private Player player;
     [SerializeField] private Boss boss;
+    [SerializeField] private Transform playerSpawnPosition;
+    [SerializeField] private Transform bossSpawnPosition;
     [SerializeField] private List<GameObject> foregroundObjects;
     [SerializeField] private List<GameObject> childObjects = new();
     public Player Player{get => player; private set => player = value;}
@@ -15,6 +17,7 @@ public class Environment : MonoBehaviour{
         player = Utility.ComponentFinder.FindComponentInChildren<Player>(this.transform);
         boss = Utility.ComponentFinder.FindComponentInChildren<Boss>(this.transform);
         foregroundObjects = Utility.ComponentFinder.FindGameObjectsWithTagInChildren("ForegroundObject", this.transform);
+        ResetEnvironment();
     }
 
     public void AddObjectToEnvironmentList(GameObject obj){
@@ -22,6 +25,7 @@ public class Environment : MonoBehaviour{
             childObjects.Add(obj);
         }
     }
+
     private void RemoveSpawnedObjects(){
         foreach(GameObject obj in childObjects){
             if(obj != null){
@@ -29,5 +33,13 @@ public class Environment : MonoBehaviour{
             }
         }
         childObjects.Clear();
+    }
+
+    public void ResetEnvironment(){
+        RemoveSpawnedObjects();
+        player.ResetAllCooldowns();
+        boss.ResetAllCooldowns();
+        player.transform.localPosition = playerSpawnPosition.transform.localPosition;
+        boss.transform.localPosition = bossSpawnPosition.transform.localPosition;
     }
 }
