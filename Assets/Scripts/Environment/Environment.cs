@@ -20,8 +20,7 @@ public class Environment : MonoBehaviour{
     public Boss Boss{get => boss; private set => boss = value;}
     public List<GameObject> ChildObjects {get => childObjects; private set => childObjects = value;}
 
-    public event EventHandler OnGameEnded;
-    
+    public event EventHandler OnMaxStepsReached;
     private void Awake() {
         player = Utility.ComponentFinder.FindComponentInChildren<Player>(this.transform);
         boss = Utility.ComponentFinder.FindComponentInChildren<Boss>(this.transform);
@@ -30,19 +29,12 @@ public class Environment : MonoBehaviour{
 
     private void Start() {
         stepCounter = 0;
-        OnGameEnded += Environment_OnGameEnded;
-        player.GetComponent<IDamageable>().OnDamageableDeath += Environment_OnGameEnded;
-        boss.GetComponent<IDamageable>().OnDamageableDeath += Environment_OnGameEnded;
-    }
-
-    private void Environment_OnGameEnded(object sender, EventArgs e){
-        ResetEnvironment();
     }
 
     private void FixedUpdate() {
         stepCounter++;
         if(stepCounter == maxSteps){
-            OnGameEnded?.Invoke(this, EventArgs.Empty);
+            OnMaxStepsReached?.Invoke(this, EventArgs.Empty);
         }
     }
 

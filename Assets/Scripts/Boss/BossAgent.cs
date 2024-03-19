@@ -15,13 +15,10 @@ public class BossAgent : Agent{
         player = environment.Player;
         environment.Player.OnDamageableDeath += Player_OnDamageableDeath;
         boss.OnDamageableDeath += Boss_OnDamageableDeath;
+        environment.OnMaxStepsReached += Environment_OnMaxStepsReached;
     }
 
-    public override void OnEpisodeBegin() {
-        environment.ResetEnvironment();
-    }
-
-        public override void CollectObservations(VectorSensor sensor) {
+    public override void CollectObservations(VectorSensor sensor) {
         sensor.AddObservation(boss.transform.localPosition);
         sensor.AddObservation(boss.Health);
         sensor.AddObservation(boss.basicAttackAbility.CanBeUsed);
@@ -34,6 +31,10 @@ public class BossAgent : Agent{
         sensor.AddObservation(player.basicAbility.CanBeUsed);
 
         sensor.AddObservation(environment.StepCounter);
+    }
+
+    public override void OnEpisodeBegin(){
+        environment.ResetEnvironment();
     }
 
     public override void Heuristic(in ActionBuffers actionsOut) {
@@ -63,6 +64,9 @@ public class BossAgent : Agent{
         float reward = (float)(0.5 + (boss.Health/boss.MaxHealth) * 0.5);
         AddReward(reward);
         EndEpisode();
+    }
+    private void Environment_OnMaxStepsReached(object sender, EventArgs e){
+        EndEpisode();    
     }
 
 
