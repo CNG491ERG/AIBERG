@@ -33,7 +33,7 @@ public class BossAgent : Agent{
         sensor.AddObservation(player.activeAbility2.CanBeUsed);
         sensor.AddObservation(player.basicAbility.CanBeUsed);
 
-        //sensor.AddObservation(gameManager.StepCount); //Haven't figured out gamemanager yet
+        sensor.AddObservation(environment.StepCounter);
     }
 
     public override void Heuristic(in ActionBuffers actionsOut) {
