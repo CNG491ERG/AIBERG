@@ -662,7 +662,7 @@ Transform:
   - {fileID: 1943094234517722119}
   - {fileID: 8837120244831810335}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1174594653043831186
 MonoBehaviour:
@@ -995,14 +995,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1079669412543454020}
     m_Modifications:
-    - target: {fileID: 2034492873233785043, guid: b9a2a0db3135b304caee05348df11778, type: 3}
-      propertyPath: faction
-      value: 
-      objectReference: {fileID: 11400000, guid: 9879c03292a64e4429278a1b0c7d3d6f, type: 2}
-    - target: {fileID: 2034492873233785043, guid: b9a2a0db3135b304caee05348df11778, type: 3}
-      propertyPath: inputHandler
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 3937757196682215542, guid: b9a2a0db3135b304caee05348df11778, type: 3}
       propertyPath: m_RootOrder
       value: -1

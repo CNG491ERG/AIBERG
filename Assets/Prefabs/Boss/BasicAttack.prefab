@@ -50,6 +50,6 @@ MonoBehaviour:
   abilityDuration: 0
   canBeUsed: 0
   projectilePrefab: {fileID: 9216531737267913027, guid: cf5ebb141a0fbd64cba60982b997d77e, type: 3}
-  projectileVelocityX: 10
+  projectileVelocityX: 15
   projectileDamage: 7.5
   tagToDamage: Player

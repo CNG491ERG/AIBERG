@@ -45,16 +45,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boss: {fileID: 0}
-  abilityCooldown: 75
+  abilityCooldown: 30
   cooldownTimer: 0
   canBeUsed: 0
+  aliveDrones: []
   attackDronePrefab: {fileID: 3872242157519897278, guid: 47df06e90fa9c364ebd3f7c5ba1bdd17, type: 3}
   attackDroneSpawnPositions: []
-  attackDroneMaxHealth: 5
+  attackDroneMaxHealth: 10
   attackDroneDefense: 0
   attackDroneMaxVelocity: 7.5
   attackDroneMovementForce: 20.81
   projectilePrefab: {fileID: 3324519851683650514, guid: b9155f10165162f4986c4d2af251947d, type: 3}
-  projectileDamage: 0.6
+  projectileDamage: 2
   projectileSpeed: 8
   tagToDamage: Player

@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  abilityCooldown: 10
+  abilityCooldown: 15
   cooldownTimer: 0
   abilityDuration: 4
   durationTimer: 0
@@ -53,4 +53,4 @@ MonoBehaviour:
   projectilePrefab: {fileID: 9216531737267913027, guid: abd72793a8102524099debfed2f231ca, type: 3}
   projectilesPerSecond: 10
   projectileVelocityX: 20
-  projectileDamage: 0.2
+  projectileDamage: 1

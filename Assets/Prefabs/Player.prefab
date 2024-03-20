@@ -367,7 +367,7 @@ GameObject:
   - component: {fileID: 363403041882248195}
   - component: {fileID: 4398537680869169390}
   - component: {fileID: 2034492873233785043}
-  - component: {fileID: 5657249159862188614}
+  - component: {fileID: 5614391676888087411}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -478,7 +478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputHandler: {fileID: 0}
   environment: {fileID: 0}
-  faction: {fileID: 0}
+  faction: {fileID: 11400000, guid: 9879c03292a64e4429278a1b0c7d3d6f, type: 2}
   basicAbilityObject: {fileID: 0}
   activeAbility1Object: {fileID: 0}
   activeAbility2Object: {fileID: 0}
@@ -488,7 +488,7 @@ MonoBehaviour:
   health: 0
   defense: 0
   boss: {fileID: 0}
---- !u!114 &5657249159862188614
+--- !u!114 &5614391676888087411
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -497,8 +497,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6164509095480725507}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26758b615fe39ad4195721d581da58db, type: 3}
+  m_Script: {fileID: 11500000, guid: 8cb3a284d2f910a4796978e2a708d3ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boss: {fileID: 0}
-  alignmentThreshold: 0.1
