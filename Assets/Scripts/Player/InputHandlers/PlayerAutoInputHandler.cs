@@ -1,17 +1,27 @@
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
-public class PlayerAutoInputHandler : MonoBehaviour{
-    /*//[SerializeField] private Faction faction;//faction of the player
-    [SerializeField] private Boss boss;//the boss
-    [SerializeField] private Player player;//the player
-    [SerializeField] private Transform playerSpawnPoint;//player spawn point as a reference
+public class PlayerAutoInputHandler : InputHandler{
+    public Transform boss;
+    public Transform player;
+    public Transform playerSpawnPoint;//player spawn point as a reference
 
     //at start, gets the needed objects
     private void Start() {
-        //faction = transform.parent.GetComponentInChildren<Faction>();
-        boss = transform.parent.parent.Find("Boss").GetComponent<Boss>();
+        boss = Utility.ComponentFinder.FindComponentInParents<Environment>(this.transform).Boss.transform;
+        player = Utility.ComponentFinder.FindComponentInParents<Environment>(this.transform).Player.transform;
+        this.BasicAbilityInput = true;
+        this.ActiveAbility2Input = true;
+        
+        /*Debug.DrawLine(new Vector2(0, 0), new Vector3(3, 3), Color.red, 2, false);
+        Debug.DrawLine(new Vector2(-10, -5), new Vector3(3, 3), Color.red, 2, false);
+        Debug.DrawLine(new Vector2(-100, 0), new Vector3(0, 100), Color.red, 2, false);
+        Debug.DrawLine(new Vector3(200f, 200f, 0f), Vector3.zero, Color.green, 10000000000, false);
+        Debug.DrawLine(new Vector3(200, 200, 200), Vector3.zero, Color.green, 10000000000000, false);*/
+
+
     }
-   
+
     //Detects any attacks coming to the collider
     private bool Attackdetector(RaycastHit2D hit) {
         bool val = false;
@@ -48,6 +58,8 @@ public class PlayerAutoInputHandler : MonoBehaviour{
         //|                               1                                  |
         //|                                                                  |
         //--------------------------------------------------------------------
+
+        //                       -3.6             -1.2             1.2              3.6  
         private int Search(float position1, float position2, float position3, float position4, float coordinate) {
         if (coordinate > position2) {
             if (coordinate > position3) {
@@ -69,27 +81,21 @@ public class PlayerAutoInputHandler : MonoBehaviour{
     }
 
     private void FixedUpdate() {
-        bool basicAbilityInput = true; //Always use basic input as it has no cooldown
-        //checking cooldown on abilities
-        //bool ActiveAbility2Input = faction.ActiveAbility2.CanBeUsed;
+        this.BasicAbilityInput = true;
+        this.ActiveAbility2Input = true;
+        bool ActiveAbility2Input = this.ActiveAbility1Input;
         //bool ActiveAbility1Input = faction.ActiveAbility1.CanBeUsed;
         bool JumpAbilityInput = false;
 
-        //ActiveAbility2 directly aims at the boss, so no need to put logic
-        //faction.BasicAttack.UseAbility(basicAbilityInput);
-        //faction.ActiveAbility2.UseAbility(ActiveAbility2Input);
 
-        RaycastHit2D raycastBelow = Physics2D.Raycast(playerSpawnPoint.transform.position, -playerSpawnPoint.transform.up, Mathf.Infinity, LayerMask.GetMask("ForegroundEnvironment"));
-        RaycastHit2D raycastAbove = Physics2D.Raycast(playerSpawnPoint.transform.position, playerSpawnPoint.transform.up, Mathf.Infinity, LayerMask.GetMask("ForegroundEnvironment"));
-        //distance between the up and down limits is 8.02f
-        //divide it by 3 parts and create Box Casts accordingly
+        RaycastHit2D LeftAttackDetector3 = Physics2D.BoxCast(origin: new Vector2(-9f, 2.1f),
+            size: new Vector2(6f, 3.8f), angle: 0f, direction: Vector2.right, distance: 10);
+        RaycastHit2D LeftAttackDetector2 = Physics2D.BoxCast(origin: new Vector2(-9f, -1.9f),
+            size: new Vector2(6f, 3.8f), angle: 0f, direction: Vector2.right, distance: 10);
+        RaycastHit2D LeftAttackDetector1 = Physics2D.BoxCast(origin: new Vector2(-9f, -5.9f),
+            size: new Vector2(6f,3.8f), angle: 0f, direction: Vector2.right, distance: 10);
 
-        RaycastHit2D LeftAttackDetector3 = Physics2D.BoxCast(origin: new Vector2(5.7f + raycastAbove.point.x, raycastAbove.point.y - 1.36f), 
-            size: new Vector2(10f, 2.7f), angle: 0f, direction: Vector2.right, distance: 10);
-        RaycastHit2D LeftAttackDetector2 = Physics2D.BoxCast(origin: new Vector2(5.7f + raycastAbove.point.x, raycastAbove.point.y - 4.068f),
-            size: new Vector2(10f, 2.7f), angle: 0f, direction: Vector2.right, distance: 10);
-        RaycastHit2D LeftAttackDetector1 = Physics2D.BoxCast(origin: new Vector2(5.7f + raycastAbove.point.x, raycastAbove.point.y - 6.72f),
-            size: new Vector2(10f, 2.59f), angle: 0f, direction: Vector2.right, distance: 10);
+
         //detects if collision happens in any of the fields, logic is shaped using these sensors
         bool p1 = Attackdetector(LeftAttackDetector1);
         bool p2 = Attackdetector(LeftAttackDetector2);
@@ -103,10 +109,12 @@ public class PlayerAutoInputHandler : MonoBehaviour{
         float bossY = boss.transform.localPosition.y;
         float playerY = player.transform.localPosition.y;
 
-        //searchs their fields(1,0,2,6,3)
-        y = Search(-2.70f,0.0f,1.3f,2.0f, bossY);
-        x = Search(-1.28f, -0.76f, 1.34f, 1.87f, playerY);
 
+        //searchs their fields(1,0,2,6,3)
+        y = Search(-3.6f,-1.2f,1.2f,3.6f, bossY);
+        x = Search(-3.6f, -1.2f, 1.2f, 3.6f, playerY);
+
+        
         //main logic is applied here
         //according to the boss&player field and if there are any incoming attacks
         switch (x, y)
@@ -114,7 +122,7 @@ public class PlayerAutoInputHandler : MonoBehaviour{
             //field 0
             case (0, 0):
                 if (p0 && ActiveAbility1Input) {//if p0 has an active attack and ActiveAbility is ready
-                    faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
+                    this.ActiveAbility1Input = true;
                     JumpAbilityInput = true;
                 }
                 else if (p2! || p1) {
@@ -151,7 +159,7 @@ public class PlayerAutoInputHandler : MonoBehaviour{
                 break;
             case (1, 1):   
                 if(ActiveAbility1Input) {
-                    faction.ActiveAbility1.UseAbility(ActiveAbility1Input); 
+                    this.ActiveAbility1Input = true; 
                 }
                  else
                     JumpAbilityInput = true;
@@ -185,7 +193,7 @@ public class PlayerAutoInputHandler : MonoBehaviour{
             case (2, 2):
                 if (p1)
                     JumpAbilityInput = true;
-                faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
+                this.ActiveAbility1Input = true;
                 break;
             case (2, 3):
                 if ((p2 || ActiveAbility1Input))
@@ -205,7 +213,7 @@ public class PlayerAutoInputHandler : MonoBehaviour{
                 if ((ActiveAbility1Input)) {
                     JumpAbilityInput = true;
                 }
-                faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
+                this.ActiveAbility1Input = true;
                 break;
             case (3, 6):
                 if ((p2 && !p3) || ActiveAbility1Input)
@@ -230,9 +238,9 @@ public class PlayerAutoInputHandler : MonoBehaviour{
             case (6, 6):
                 if (p2 || JumpAbilityInput)
                     JumpAbilityInput = true;
-                faction.ActiveAbility1.UseAbility(ActiveAbility1Input);
+                this.ActiveAbility1Input = true;
                 break;
         }
-        faction.JumpAbility.UseAbility(JumpAbilityInput);
-    }*/
+        this.JumpInput =JumpAbilityInput;
+    }
 }
