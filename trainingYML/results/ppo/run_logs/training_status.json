@@ -2,22 +2,58 @@
     "Boss": {
         "checkpoints": [
             {
-                "steps": 9062,
-                "file_path": "results\\ppo\\Boss\\Boss-9062.onnx",
-                "reward": -0.22088052630424498,
-                "creation_time": 1710870229.908988,
+                "steps": 1499813,
+                "file_path": "results\\ppo\\Boss\\Boss-1499813.onnx",
+                "reward": -0.8906760503138814,
+                "creation_time": 1710972507.5258884,
                 "auxillary_file_paths": [
-                    "results\\ppo\\Boss\\Boss-9062.pt"
+                    "results\\ppo\\Boss\\Boss-1499813.pt"
+                ]
+            },
+            {
+                "steps": 1599843,
+                "file_path": "results\\ppo\\Boss\\Boss-1599843.onnx",
+                "reward": -0.896719557610718,
+                "creation_time": 1710973750.0665438,
+                "auxillary_file_paths": [
+                    "results\\ppo\\Boss\\Boss-1599843.pt"
+                ]
+            },
+            {
+                "steps": 1699891,
+                "file_path": "results\\ppo\\Boss\\Boss-1699891.onnx",
+                "reward": -0.89883113170599,
+                "creation_time": 1710974865.5110912,
+                "auxillary_file_paths": [
+                    "results\\ppo\\Boss\\Boss-1699891.pt"
+                ]
+            },
+            {
+                "steps": 1799795,
+                "file_path": "results\\ppo\\Boss\\Boss-1799795.onnx",
+                "reward": -0.8733827732503414,
+                "creation_time": 1710976225.2039301,
+                "auxillary_file_paths": [
+                    "results\\ppo\\Boss\\Boss-1799795.pt"
+                ]
+            },
+            {
+                "steps": 1881996,
+                "file_path": "results\\ppo\\Boss\\Boss-1881996.onnx",
+                "reward": -0.8954063604030703,
+                "creation_time": 1710977302.8269947,
+                "auxillary_file_paths": [
+                    "results\\ppo\\Boss\\Boss-1881996.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 9062,
+            "steps": 1881996,
             "file_path": "results\\ppo\\Boss.onnx",
-            "reward": -0.22088052630424498,
-            "creation_time": 1710870229.908988,
+            "reward": -0.8954063604030703,
+            "creation_time": 1710977302.8269947,
             "auxillary_file_paths": [
-                "results\\ppo\\Boss\\Boss-9062.pt"
+                "results\\ppo\\Boss\\Boss-1881996.pt"
             ]
         }
     },

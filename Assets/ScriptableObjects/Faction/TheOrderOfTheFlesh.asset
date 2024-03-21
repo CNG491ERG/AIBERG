@@ -23,4 +23,4 @@ MonoBehaviour:
   ActiveAbility2Name: Last Resort
   PassiveAbilityName: 
   MaxHealth: 100
-  Defense: 0
+  Defense: 0.05
