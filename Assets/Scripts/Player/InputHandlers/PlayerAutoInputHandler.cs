@@ -4,7 +4,11 @@ using static UnityEngine.GraphicsBuffer;
 public class PlayerAutoInputHandler : InputHandler{
     public Transform boss;
     public Transform player;
+    [SerializeField] private FactionSO faction;
+    [SerializeField] private GameObject activeAbility1Object;
     public Transform playerSpawnPoint;//player spawn point as a reference
+    IAbility a;
+    public IAbility activeAbility1;
 
     //at start, gets the needed objects
     private void Start() {
@@ -12,7 +16,18 @@ public class PlayerAutoInputHandler : InputHandler{
         player = Utility.ComponentFinder.FindComponentInParents<Environment>(this.transform).Player.transform;
         this.BasicAbilityInput = true;
         this.ActiveAbility2Input = true;
+
+        //try
+        //{
+           if (faction.ActiveAbility1 != null)
+            {
+            activeAbility1Object = Instantiate(faction.ActiveAbility1, this.transform);
+            activeAbility1 = activeAbility1Object.GetComponent<IAbility>();
+             } 
+        //}catch
+        //{ print("Obj reference not set"); }
         
+
         /*Debug.DrawLine(new Vector2(0, 0), new Vector3(3, 3), Color.red, 2, false);
         Debug.DrawLine(new Vector2(-10, -5), new Vector3(3, 3), Color.red, 2, false);
         Debug.DrawLine(new Vector2(-100, 0), new Vector3(0, 100), Color.red, 2, false);
@@ -121,7 +136,7 @@ public class PlayerAutoInputHandler : InputHandler{
         {
             //field 0
             case (0, 0):
-                if (p0 && ActiveAbility1Input) {//if p0 has an active attack and ActiveAbility is ready
+                if (p0 && a.CanBeUsed) {//if p0 has an active attack and ActiveAbility is ready
                     this.ActiveAbility1Input = true;
                     JumpAbilityInput = true;
                 }
