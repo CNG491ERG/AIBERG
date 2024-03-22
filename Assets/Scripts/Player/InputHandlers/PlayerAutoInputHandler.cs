@@ -7,8 +7,8 @@ public class PlayerAutoInputHandler : InputHandler{
     [SerializeField] private Boss boss;
     [SerializeField] private Player player;
     [SerializeField] private Transform playerSpawnPosition;
-    [SerializeField] private GameObject ceilingObject;
-    [SerializeField] private GameObject groundObject;
+    [SerializeField] private Transform topLeftCorner;
+    [SerializeField] private Transform bottomRightCorner;
     IAbility a;
 
     //at start, gets the needed objects
@@ -16,9 +16,10 @@ public class PlayerAutoInputHandler : InputHandler{
         environment = Utility.ComponentFinder.FindComponentInParents<Environment>(this.transform);
         boss = environment.Boss;
         player = environment.Player;
-        ceilingObject = environment.ForegroundObjects.First(foregroundObject => foregroundObject.name == "Ceiling");
-        groundObject = environment.ForegroundObjects.First(foregroundObject => foregroundObject.name == "Ground");
+        topLeftCorner = environment.ForegroundObjects.First(foregroundObject => foregroundObject.name == "TopLeftCorner").transform;
+        bottomRightCorner = environment.ForegroundObjects.First(foregroundObject => foregroundObject.name == "BottomRightCorner").transform;
         playerSpawnPosition = environment.PlayerSpawnPosition;
+
         this.BasicAbilityInput = true;
         this.ActiveAbility2Input = true;
 
