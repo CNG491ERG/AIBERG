@@ -1,32 +1,26 @@
+using System.Linq;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class PlayerAutoInputHandler : InputHandler{
-    public Transform boss;
-    public Transform player;
-    [SerializeField] private FactionSO faction;
-    [SerializeField] private GameObject activeAbility1Object;
-    public Transform playerSpawnPoint;//player spawn point as a reference
+
+    [SerializeField] private Environment environment;
+    [SerializeField] private Boss boss;
+    [SerializeField] private Player player;
+    [SerializeField] private Transform playerSpawnPosition;
+    [SerializeField] private GameObject ceilingObject;
+    [SerializeField] private GameObject groundObject;
     IAbility a;
-    public IAbility activeAbility1;
 
     //at start, gets the needed objects
     private void Start() {
-        boss = Utility.ComponentFinder.FindComponentInParents<Environment>(this.transform).Boss.transform;
-        player = Utility.ComponentFinder.FindComponentInParents<Environment>(this.transform).Player.transform;
+        environment = Utility.ComponentFinder.FindComponentInParents<Environment>(this.transform);
+        boss = environment.Boss;
+        player = environment.Player;
+        ceilingObject = environment.ForegroundObjects.First(foregroundObject => foregroundObject.name == "Ceiling");
+        groundObject = environment.ForegroundObjects.First(foregroundObject => foregroundObject.name == "Ground");
+        playerSpawnPosition = environment.PlayerSpawnPosition;
         this.BasicAbilityInput = true;
         this.ActiveAbility2Input = true;
-
-        //try
-        //{
-           if (faction.ActiveAbility1 != null)
-            {
-            activeAbility1Object = Instantiate(faction.ActiveAbility1, this.transform);
-            activeAbility1 = activeAbility1Object.GetComponent<IAbility>();
-             } 
-        //}catch
-        //{ print("Obj reference not set"); }
-        
 
         /*Debug.DrawLine(new Vector2(0, 0), new Vector3(3, 3), Color.red, 2, false);
         Debug.DrawLine(new Vector2(-10, -5), new Vector3(3, 3), Color.red, 2, false);

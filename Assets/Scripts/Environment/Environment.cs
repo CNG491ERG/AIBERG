@@ -19,7 +19,9 @@ public class Environment : MonoBehaviour{
     public Player Player{get => player; private set => player = value;}
     public Boss Boss{get => boss; private set => boss = value;}
     public List<GameObject> ChildObjects {get => childObjects; private set => childObjects = value;}
-
+    public List<GameObject> ForegroundObjects {get => foregroundObjects; private set => foregroundObjects = value;}
+    public Transform PlayerSpawnPosition {get => playerSpawnPosition; private set => playerSpawnPosition = value;}
+    public Transform BossSpawnPosition {get => bossSpawnPosition; private set => bossSpawnPosition = value;}
     public event EventHandler OnMaxStepsReached;
     private void Awake() {
         player = Utility.ComponentFinder.FindComponentInChildren<Player>(this.transform);
