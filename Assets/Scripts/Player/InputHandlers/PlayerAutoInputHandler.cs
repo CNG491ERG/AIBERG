@@ -23,13 +23,6 @@ public class PlayerAutoInputHandler : InputHandler{
         this.BasicAbilityInput = true;
         this.ActiveAbility2Input = true;
 
-        /*Debug.DrawLine(new Vector2(0, 0), new Vector3(3, 3), Color.red, 2, false);
-        Debug.DrawLine(new Vector2(-10, -5), new Vector3(3, 3), Color.red, 2, false);
-        Debug.DrawLine(new Vector2(-100, 0), new Vector3(0, 100), Color.red, 2, false);
-        Debug.DrawLine(new Vector3(200f, 200f, 0f), Vector3.zero, Color.green, 10000000000, false);
-        Debug.DrawLine(new Vector3(200, 200, 200), Vector3.zero, Color.green, 10000000000000, false);*/
-
-
     }
 
     //Detects any attacks coming to the collider
@@ -69,7 +62,6 @@ public class PlayerAutoInputHandler : InputHandler{
         //|                                                                  |
         //--------------------------------------------------------------------
 
-        //                       -3.6             -1.2             1.2              3.6  
         private int Search(float position1, float position2, float position3, float position4, float coordinate) {
         if (coordinate > position2) {
             if (coordinate > position3) {
@@ -94,16 +86,28 @@ public class PlayerAutoInputHandler : InputHandler{
         this.BasicAbilityInput = true;
         this.ActiveAbility2Input = true;
         bool ActiveAbility2Input = this.ActiveAbility1Input;
-        //bool ActiveAbility1Input = faction.ActiveAbility1.CanBeUsed;
         bool JumpAbilityInput = false;
 
 
-        RaycastHit2D LeftAttackDetector3 = Physics2D.BoxCast(origin: new Vector2(-9f, 2.1f),
-            size: new Vector2(6f, 3.8f), angle: 0f, direction: Vector2.right, distance: 10);
-        RaycastHit2D LeftAttackDetector2 = Physics2D.BoxCast(origin: new Vector2(-9f, -1.9f),
-            size: new Vector2(6f, 3.8f), angle: 0f, direction: Vector2.right, distance: 10);
-        RaycastHit2D LeftAttackDetector1 = Physics2D.BoxCast(origin: new Vector2(-9f, -5.9f),
-            size: new Vector2(6f,3.8f), angle: 0f, direction: Vector2.right, distance: 10);
+        float bottomRightCornerX = bottomRightCorner.localPosition.x;
+        float bottomRightCornerY = bottomRightCorner.localPosition.y;
+        float topLeftCornerX = topLeftCorner.localPosition.x;
+        float topLeftCornerY = topLeftCorner.localPosition.y;
+
+        float verticalLen = topLeftCornerY - bottomRightCornerY;
+        float horizontalLen = bottomRightCornerX - topLeftCornerX;
+
+        float divided3 = verticalLen / 3f;
+        float divided5 = verticalLen / 5f;
+
+
+
+        RaycastHit2D LeftAttackDetector3 = Physics2D.BoxCast(origin: new Vector2(horizontalLen/4, bottomRightCornerY),
+            size: new Vector2((3*horizontalLen)/4, bottomRightCornerY + divided3), angle: 0f, direction: Vector2.right, distance: 10); 
+        RaycastHit2D LeftAttackDetector2 = Physics2D.BoxCast(origin: new Vector2(horizontalLen / 4, -1.9f),
+            size: new Vector2((3 * horizontalLen) / 4, bottomRightCornerY + (2*divided3)), angle: 0f, direction: Vector2.right, distance: 10);
+        RaycastHit2D LeftAttackDetector1 = Physics2D.BoxCast(origin: new Vector2(horizontalLen / 4, -5.9f),
+            size: new Vector2((3 * horizontalLen) / 4, bottomRightCornerY + (3 * divided3)), angle: 0f, direction: Vector2.right, distance: 10);
 
 
         //detects if collision happens in any of the fields, logic is shaped using these sensors
@@ -121,8 +125,8 @@ public class PlayerAutoInputHandler : InputHandler{
 
 
         //searchs their fields(1,0,2,6,3)
-        y = Search(-3.6f,-1.2f,1.2f,3.6f, bossY);
-        x = Search(-3.6f, -1.2f, 1.2f, 3.6f, playerY);
+        y = Search(bottomRightCornerY+ divided5, bottomRightCornerY + (2*divided5), bottomRightCornerY + (3*divided5), bottomRightCornerY + (4*divided5), bossY);
+        x = Search(bottomRightCornerY + divided5, bottomRightCornerY + (2 * divided5), bottomRightCornerY + (3 * divided5), bottomRightCornerY + (4 * divided5), playerY);
 
         
         //main logic is applied here
