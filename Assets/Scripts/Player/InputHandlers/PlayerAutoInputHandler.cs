@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 using UnityEngine;
 
@@ -10,6 +9,7 @@ public class PlayerAutoInputHandler : InputHandler{
     [SerializeField] private Transform playerSpawnPosition;
     [SerializeField] private Transform topLeftCorner;
     [SerializeField] private Transform bottomRightCorner;
+    IAbility a;
 
     //at start, gets the needed objects
     private void Start() {
@@ -128,15 +128,14 @@ public class PlayerAutoInputHandler : InputHandler{
         y = Search(bottomRightCornerY+ divided5, bottomRightCornerY + (2*divided5), bottomRightCornerY + (3*divided5), bottomRightCornerY + (4*divided5), bossY);
         x = Search(bottomRightCornerY + divided5, bottomRightCornerY + (2 * divided5), bottomRightCornerY + (3 * divided5), bottomRightCornerY + (4 * divided5), playerY);
 
-        
-
+      
         //main logic is applied here
         //according to the boss&player field and if there are any incoming attacks
         switch (x, y)
         {
             //field 0
             case (0, 0):
-                if (p0 && environment.Player.activeAbility1.CanBeUsed) {//if p0 has an active attack and ActiveAbility is ready
+                if (p0) {//if p0 has an active attack and ActiveAbility is ready
                     this.ActiveAbility1Input = true;
                     JumpAbilityInput = true;
                 }
@@ -145,39 +144,36 @@ public class PlayerAutoInputHandler : InputHandler{
                 }
                 break;
             case (0, 1):
-                if ((p1 && !p2) || (!environment.Player.activeAbility1.CanBeUsed)) {
+                if ((p1 && !p2)) {
                     JumpAbilityInput = true;
                 }
                 break;
             case (0, 2):
-                if(environment.Player.activeAbility1.CanBeUsed || p0)
+                if( p0)
                     JumpAbilityInput = true;
                 break;
             case (0, 3):
-                if(environment.Player.activeAbility1.CanBeUsed || p0 ||p1)
+                if(p0 ||p1)
                     JumpAbilityInput = true;
                 break;
             case (0, 6):
                 if (p6 || p0) {
                     JumpAbilityInput = true;
                 }
-                else if (!p2 && p3 && environment.Player.activeAbility1.CanBeUsed) {
+                else if (!p2 && p3) {
                     JumpAbilityInput = true;
                 }
                 break;
 
             //field 1
             case (1, 0):
-                if ((p0 ||(p1)) || environment.Player.activeAbility1.CanBeUsed) {
+                if ((p0 ||(p1))) {
                     JumpAbilityInput = true;
                 }
                 break;
             case (1, 1):   
-                if(environment.Player.activeAbility1.CanBeUsed) {
-                    this.ActiveAbility1Input = true; 
-                }
-                 else
-                    JumpAbilityInput = true;
+                 this.ActiveAbility1Input = true; 
+                 JumpAbilityInput = true;
                 break;
             case (1, 2):
                 if ((!p1 && p2) || (p0)) {
@@ -185,8 +181,7 @@ public class PlayerAutoInputHandler : InputHandler{
                 }
                 break;
             case (1, 3):
-                if(environment.Player.activeAbility1.CanBeUsed)
-                    JumpAbilityInput = true;
+                JumpAbilityInput = true;
                 break;
             case (1, 6):
                 JumpAbilityInput = true;
@@ -194,16 +189,15 @@ public class PlayerAutoInputHandler : InputHandler{
 
             //field 2
             case (2, 0):
-                if (!p2 && !environment.Player.activeAbility1.CanBeUsed) {
+                if (!p2) {
                     JumpAbilityInput = true;        
                 }
-                else if (p0 && !environment.Player.activeAbility1.CanBeUsed) {
+                else if (p0) {
                     JumpAbilityInput = true;
                 }
                 break;
             case (2, 1):
-                if (!environment.Player.activeAbility1.CanBeUsed)
-                    JumpAbilityInput = true;
+                JumpAbilityInput = true;
                 break;
             case (2, 2):
                 if (p1)
@@ -211,27 +205,27 @@ public class PlayerAutoInputHandler : InputHandler{
                 this.ActiveAbility1Input = true;
                 break;
             case (2, 3):
-                if ((p2 || environment.Player.activeAbility1.CanBeUsed))
+                if (p2)
                     JumpAbilityInput = true;
                 break;
             case (2, 6):
-                if ((p2 && environment.Player.activeAbility1.CanBeUsed) || (!p2))
+                if (p2|| !p2)
                     JumpAbilityInput = true;
                 break;
 
             //field 3
             case (3, 2):
-                if (p1 && !p2 && p3 && !environment.Player.activeAbility1.CanBeUsed)
+                if (p1 && !p2 && p3)
                     JumpAbilityInput = true;
                 break;
             case (3, 3):
-                if ((environment.Player.activeAbility1.CanBeUsed)) {
+
                     JumpAbilityInput = true;
-                }
+
                 this.ActiveAbility1Input = true;
                 break;
             case (3, 6):
-                if ((p2 && !p3) || ActiveAbility1Input)
+                if ((p2 && !p3))
                     JumpAbilityInput = true;
                 break;
 
@@ -243,11 +237,10 @@ public class PlayerAutoInputHandler : InputHandler{
             case (6, 1):
                 break;
             case (6, 2):
-                if (p1 || (!p3 && !environment.Player.activeAbility1.CanBeUsed))
+                if (p1 || (!p3))
                     JumpAbilityInput = true;
                 break;
             case (6, 3):
-                if (environment.Player.activeAbility1.CanBeUsed)
                     JumpAbilityInput = true;
                 break;
             case (6, 6):
