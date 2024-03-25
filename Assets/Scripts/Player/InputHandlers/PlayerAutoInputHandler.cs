@@ -131,123 +131,147 @@ public class PlayerAutoInputHandler : InputHandler{
       
         //main logic is applied here
         //according to the boss&player field and if there are any incoming attacks
-        switch (x, y)
+        if(!p1 && !p2 && !p3) { 
+            if(x==1) {
+                JumpAbilityInput = true;
+            }
+            else if(x==0)  {
+                JumpAbilityInput = true;
+            }
+            else if(x==1)  {
+                JumpAbilityInput = true;
+                this.ActiveAbility1Input = true;
+            }
+        }
+        else
         {
-            //field 0
-            case (0, 0):
-                if (p0) {//if p0 has an active attack and ActiveAbility is ready
+            switch (x, y)
+            {
+                //field 0
+                case (0, 0):
+                    if (p0)
+                    {//if p0 has an active attack and ActiveAbility is ready
+                        this.ActiveAbility1Input = true;
+                        JumpAbilityInput = true;
+                    }
+                    else if (p2! || p1)
+                    {
+                        JumpAbilityInput = true;
+                    }
+                    break;
+                case (0, 1):
+                    if ((p1 && !p2))
+                    {
+                        JumpAbilityInput = true;
+                    }
+                    break;
+                case (0, 2):
+                    if (p0 || environment.Player.activeAbility1.AbilityDuration>0)
+                        JumpAbilityInput = true;
+                    break;
+                case (0, 3):
+                    if (p0 || p1)
+                        JumpAbilityInput = true;
+                    break;
+                case (0, 6):
+                    if (p6 || p0)
+                    {
+                        JumpAbilityInput = true;
+                    }
+                    else if (!p2 && p3)
+                    {
+                        JumpAbilityInput = true;
+                    }
+                    break;
+
+                //field 1
+                case (1, 0):
+                    if ((p0 || (p1)))
+                    {
+                        JumpAbilityInput = true;
+                    }
+                    break;
+                case (1, 1):
                     this.ActiveAbility1Input = true;
                     JumpAbilityInput = true;
-                }
-                else if (p2! || p1) {
+                    break;
+                case (1, 2):
+                    if ((!p1 && p2) || (p0))
+                    {
+                        JumpAbilityInput = true;
+                    }
+                    break;
+                case (1, 3):
                     JumpAbilityInput = true;
-                }
-                break;
-            case (0, 1):
-                if ((p1 && !p2)) {
+                    break;
+                case (1, 6):
                     JumpAbilityInput = true;
-                }
-                break;
-            case (0, 2):
-                if( p0)
-                    JumpAbilityInput = true;
-                break;
-            case (0, 3):
-                if(p0 ||p1)
-                    JumpAbilityInput = true;
-                break;
-            case (0, 6):
-                if (p6 || p0) {
-                    JumpAbilityInput = true;
-                }
-                else if (!p2 && p3) {
-                    JumpAbilityInput = true;
-                }
-                break;
+                    break;
 
-            //field 1
-            case (1, 0):
-                if ((p0 ||(p1))) {
+                //field 2
+                case (2, 0):
+                    if (!p2)
+                    {
+                        JumpAbilityInput = true;
+                    }
+                    else if (p0)
+                    {
+                        JumpAbilityInput = true;
+                    }
+                    break;
+                case (2, 1):
                     JumpAbilityInput = true;
-                }
-                break;
-            case (1, 1):   
-                 this.ActiveAbility1Input = true; 
-                 JumpAbilityInput = true;
-                break;
-            case (1, 2):
-                if ((!p1 && p2) || (p0)) {
-                    JumpAbilityInput = true;
-                }
-                break;
-            case (1, 3):
-                JumpAbilityInput = true;
-                break;
-            case (1, 6):
-                JumpAbilityInput = true;
-                break;
+                    break;
+                case (2, 2):
+                    if (p1)
+                        JumpAbilityInput = true;
+                    this.ActiveAbility1Input = true;
+                    break;
+                case (2, 3):
+                    if (p2)
+                        JumpAbilityInput = true;
+                    break;
+                case (2, 6):
+                    if (p2 || !p2)
+                        JumpAbilityInput = true;
+                    break;
 
-            //field 2
-            case (2, 0):
-                if (!p2) {
-                    JumpAbilityInput = true;        
-                }
-                else if (p0) {
-                    JumpAbilityInput = true;
-                }
-                break;
-            case (2, 1):
-                JumpAbilityInput = true;
-                break;
-            case (2, 2):
-                if (p1)
-                    JumpAbilityInput = true;
-                this.ActiveAbility1Input = true;
-                break;
-            case (2, 3):
-                if (p2)
-                    JumpAbilityInput = true;
-                break;
-            case (2, 6):
-                if (p2|| !p2)
-                    JumpAbilityInput = true;
-                break;
-
-            //field 3
-            case (3, 2):
-                if (p1 && !p2 && p3)
-                    JumpAbilityInput = true;
-                break;
-            case (3, 3):
+                //field 3
+                case (3, 2):
+                    if (p1 && !p2 && p3)
+                        JumpAbilityInput = true;
+                    break;
+                case (3, 3):
 
                     JumpAbilityInput = true;
 
-                this.ActiveAbility1Input = true;
-                break;
-            case (3, 6):
-                if ((p2 && !p3))
-                    JumpAbilityInput = true;
-                break;
+                    this.ActiveAbility1Input = true;
+                    break;
+                case (3, 6):
+                    if ((p2 && !p3))
+                        JumpAbilityInput = true;
+                    break;
 
-            //field 6
-            case (6, 0):
-                if (p2 && !p1)
+                //field 6
+                case (6, 0):
+                    if (p2 && !p1)
+                        JumpAbilityInput = true;
+                    break;
+                case (6, 1):
+                    break;
+                case (6, 2):
+                    if (p1 || (!p3))
+                        JumpAbilityInput = true;
+                    break;
+                case (6, 3):
                     JumpAbilityInput = true;
-                break;
-            case (6, 1):
-                break;
-            case (6, 2):
-                if (p1 || (!p3))
-                    JumpAbilityInput = true;
-                break;
-            case (6, 3):
-                    JumpAbilityInput = true;
-                break;
-            case (6, 6):
-                if (p2 || JumpAbilityInput)
-                    JumpAbilityInput = true;
-                this.ActiveAbility1Input = true;
-                break;
+                    break;
+                case (6, 6):
+                    if (p2 || JumpAbilityInput)
+                        JumpAbilityInput = true;
+                    this.ActiveAbility1Input = true;
+                    break;
+            }
         }
         this.JumpInput =JumpAbilityInput;
     }
