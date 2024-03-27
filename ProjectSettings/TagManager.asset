@@ -10,6 +10,7 @@ TagManager:
   - AttackDrone
   - BossProjectile
   - PlayerProjectile
+  - AttackDroneProjectile
   layers:
   - Default
   - TransparentFX

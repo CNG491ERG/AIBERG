@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 8640798421454719521}
   - component: {fileID: 8483955856221425588}
   - component: {fileID: 1514981125335683834}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: BossBasicAttack_Projectile
   m_TagString: BossProjectile
   m_Icon: {fileID: 0}
@@ -159,7 +159,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 7.5
-  tagToDamage: Player
+  tagsToDamage:
+  - Player
+  - Player
+  - Player
+  - Player
+  - Player
+  - Player
+  - Player
+  - Player
+  - Player
+  - Player
+  - Player
+  - Player
+  - Player
+  - Player
+  - Player
+  - Player
+  - Player
+  - Player
+  - Player
+  - Player
   projectileVelocity: {x: 0, y: 0}
 --- !u!58 &1514981125335683834
 CircleCollider2D:
