@@ -37,7 +37,7 @@ public class BasicAttack : MonoBehaviour, IAttackAbility{
     private void Start() {
         boss = Utility.ComponentFinder.FindComponentInParents<Boss>(this.transform);
         projectilePrefab.GetComponent<DamagingProjectile>().damage = projectileDamage;
-        projectilePrefab.GetComponent<DamagingProjectile>().tagsToDamage.Add(tagToDamage);
+        projectilePrefab.GetComponent<DamagingProjectile>().AddTagToDamage(tagToDamage);
         AbilityLock = this;
     }
 

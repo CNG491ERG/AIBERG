@@ -94,7 +94,7 @@ public class SpawnAttackDrones : MonoBehaviour, IAttackAbility{
 
     private void SetupProjectilePrefab(){
         projectilePrefab.GetComponent<DamagingProjectile>().damage = projectileDamage;
-        projectilePrefab.GetComponent<DamagingProjectile>().tagsToDamage.Add(tagToDamage);
+        projectilePrefab.GetComponent<DamagingProjectile>().AddTagToDamage(tagToDamage);
     }
 
     public void ResetCooldown(){

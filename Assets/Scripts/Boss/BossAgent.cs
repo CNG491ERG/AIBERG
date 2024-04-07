@@ -11,6 +11,7 @@ public class BossAgent : Agent{
     [SerializeField] private Boss boss;
 
     public override void Initialize() {
+        environment = Utility.ComponentFinder.FindComponentInParents<Environment>(this.transform);
         boss = environment.Boss;
         player = environment.Player;
         environment.Player.OnDamageableDeath += Player_OnDamageableDeath;

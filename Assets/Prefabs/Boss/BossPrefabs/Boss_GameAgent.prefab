@@ -53,7 +53,7 @@ MonoBehaviour:
   m_RayLength: 18
   m_RayLayerMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 384
   m_ObservationStacks: 1
   rayHitColor: {r: 0, g: 1, b: 0, a: 1}
   rayMissColor: {r: 0, g: 0, b: 0, a: 1}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 9038845977325347096}
   - component: {fileID: 8798389328075773108}
   m_Layer: 2
-  m_Name: Boss
+  m_Name: Boss_GameAgent
   m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,7 +98,7 @@ Transform:
   - {fileID: 1035510186935241816}
   - {fileID: 1402077997742486685}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &3103068248609763531
 Rigidbody2D:
@@ -189,7 +189,10 @@ MonoBehaviour:
   speed: 2
   cooldownMultiplier: 0
   damageMultiplier: 0
-  droneTargetPositions: []
+  droneTargetPositions:
+  - {fileID: 7182859435599759692}
+  - {fileID: 6467741132957040109}
+  - {fileID: 5445944892872662058}
   bossAbilities: {fileID: 11400000, guid: 66c5987cbffb4c84b99a123125224283, type: 2}
   moveUpAbilityObject: {fileID: 0}
   moveDownAbilityObject: {fileID: 0}
@@ -272,7 +275,7 @@ GameObject:
   - component: {fileID: 7182859435599759692}
   m_Layer: 2
   m_Name: DroneSpawnPosition
-  m_TagString: Untagged
+  m_TagString: DroneTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -303,7 +306,7 @@ GameObject:
   - component: {fileID: 6467741132957040109}
   m_Layer: 2
   m_Name: DroneSpawnPosition
-  m_TagString: Untagged
+  m_TagString: DroneTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -712,7 +715,7 @@ MonoBehaviour:
   m_RayLength: 18
   m_RayLayerMask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 1032
   m_ObservationStacks: 1
   rayHitColor: {r: 1, g: 0, b: 0, a: 1}
   rayMissColor: {r: 0, g: 0, b: 0, a: 1}
@@ -902,7 +905,7 @@ MonoBehaviour:
   m_RayLength: 18
   m_RayLayerMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 8
   m_ObservationStacks: 1
   rayHitColor: {r: 1, g: 0, b: 0, a: 1}
   rayMissColor: {r: 0, g: 0, b: 0, a: 1}
@@ -959,7 +962,7 @@ MonoBehaviour:
   m_RayLength: 23
   m_RayLayerMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 640
   m_ObservationStacks: 1
   rayHitColor: {r: 1, g: 1, b: 1, a: 1}
   rayMissColor: {r: 0, g: 0, b: 0, a: 1}
@@ -974,7 +977,7 @@ GameObject:
   - component: {fileID: 5445944892872662058}
   m_Layer: 2
   m_Name: DroneSpawnPosition
-  m_TagString: Untagged
+  m_TagString: DroneTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

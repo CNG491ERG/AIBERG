@@ -11,11 +11,8 @@ public class PlayerAgent : Agent{
     [SerializeField] private Boss boss;
 
     public override void Initialize(){
-        boss = environment.Boss;
-        player = environment.Player;
-        player.OnDamageableDeath += Player_OnDamageableDeath;
-        boss.OnDamageableDeath += Boss_OnDamageableDeath;
-        environment.OnMaxStepsReached += Environment_OnMaxStepsReached;
+        environment = Utility.ComponentFinder.FindComponentInParents<Environment>(this.transform);
+
     }
 
     public override void CollectObservations(VectorSensor sensor){
@@ -34,6 +31,11 @@ public class PlayerAgent : Agent{
     }
 
     public override void OnEpisodeBegin(){
+        boss = environment.Boss;
+        player = environment.Player;
+        player.OnDamageableDeath += Player_OnDamageableDeath;
+        boss.OnDamageableDeath += Boss_OnDamageableDeath;
+        environment.OnMaxStepsReached += Environment_OnMaxStepsReached;
         environment.ResetEnvironment();
     }
 
@@ -57,16 +59,25 @@ public class PlayerAgent : Agent{
     private void Boss_OnDamageableDeath(object sender, EventArgs e){
         float reward = (float)(0.5 + (player.Health/player.MaxHealth) * 0.5);
         AddReward(reward);
+        player.OnDamageableDeath -= Player_OnDamageableDeath;
+        boss.OnDamageableDeath -= Boss_OnDamageableDeath;
+        environment.OnMaxStepsReached -= Environment_OnMaxStepsReached;
         EndEpisode();
     }
 
     private void Player_OnDamageableDeath(object sender, EventArgs e){
         float reward = (float)(-0.5 - (boss.Health/boss.MaxHealth) * 0.5);
         AddReward(reward);
+        player.OnDamageableDeath -= Player_OnDamageableDeath;
+        boss.OnDamageableDeath -= Boss_OnDamageableDeath;
+        environment.OnMaxStepsReached -= Environment_OnMaxStepsReached;
         EndEpisode();
     }
 
     private void Environment_OnMaxStepsReached(object sender, EventArgs e){
+        player.OnDamageableDeath -= Player_OnDamageableDeath;
+        boss.OnDamageableDeath -= Boss_OnDamageableDeath;
+        environment.OnMaxStepsReached -= Environment_OnMaxStepsReached;
         EndEpisode();    
     }
 

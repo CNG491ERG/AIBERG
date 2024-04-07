@@ -66,10 +66,12 @@ public class Player : MonoBehaviour, IDamageable{
     }
 
     private void FixedUpdate() {
-        basicAbility?.UseAbility(inputHandler.BasicAbilityInput);
-        activeAbility1?.UseAbility(inputHandler.ActiveAbility1Input);
-        activeAbility2?.UseAbility(inputHandler.ActiveAbility2Input);
-        jump?.UseAbility(inputHandler.JumpInput);
+        if(inputHandler != null){ //When the player is an agent it will have no input handler
+            basicAbility?.UseAbility(inputHandler.BasicAbilityInput);
+            activeAbility1?.UseAbility(inputHandler.ActiveAbility1Input);
+            activeAbility2?.UseAbility(inputHandler.ActiveAbility2Input);
+            jump?.UseAbility(inputHandler.JumpInput);
+        }   
     }
 
     public void TakeDamage(float damageToTake){

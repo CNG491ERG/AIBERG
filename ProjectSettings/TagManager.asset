@@ -11,15 +11,17 @@ TagManager:
   - BossProjectile
   - PlayerProjectile
   - AttackDroneProjectile
+  - PlayerMachineGunProjectile
+  - PlayerMissile
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Projectile
+  - PlayerProjectiles
   - Water
   - UI
   - Drone
-  - 
+  - BossProjectiles
   - 
   - 
   - 

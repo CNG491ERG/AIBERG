@@ -19,6 +19,11 @@ public class DamagingProjectile : MonoBehaviour
         rb.velocity = projectileVelocity;
     }
 
+    public void AddTagToDamage(string tag){
+        if(!tagsToDamage.Contains(tag)){
+            tagsToDamage.Add(tag);
+        }
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         IDamageable objectToDamage = other.gameObject.GetComponent<IDamageable>();

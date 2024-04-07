@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7300846623026583247}
   - component: {fileID: 1033450460895304424}
   - component: {fileID: 5810692838231897381}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: AttackDrone_Projectile
   m_TagString: AttackDroneProjectile
   m_Icon: {fileID: 0}
@@ -77,25 +77,6 @@ MonoBehaviour:
   damage: 2
   tagsToDamage:
   - Player
-  - Player
-  - Player
-  - Player
-  - Player
-  - Player
-  - Player
-  - Player
-  - Player
-  - Player
-  - Player
-  - Player
-  - Player
-  - Player
-  - Player
-  - Player
-  - Player
-  - Player
-  - Player
-  - Player
   projectileVelocity: {x: 0, y: 0}
 --- !u!58 &5810692838231897381
 CircleCollider2D:
@@ -142,7 +123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8456512889417309571}
   - component: {fileID: 5493329915596348826}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
