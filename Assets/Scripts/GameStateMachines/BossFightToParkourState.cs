@@ -12,8 +12,5 @@ public class BossFightToParkourState : BaseState
     {
 
     }
-    public override void ExitState(GameStateMachineScript stateMachine)
-    {
 
-    }
 }

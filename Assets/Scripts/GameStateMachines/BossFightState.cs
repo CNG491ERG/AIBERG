@@ -10,7 +10,5 @@ public class BossFightState : BaseState
     public override void UpdateState(GameStateMachineScript stateMachine){
 
     }
-    public override void ExitState(GameStateMachineScript stateMachine){
-
-    }
 }
+

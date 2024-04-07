@@ -6,5 +6,5 @@ public abstract class BaseState
 {
     public abstract void EnterState(GameStateMachineScript stateMachine);
     public abstract void UpdateState(GameStateMachineScript stateMachine);
-    public abstract void ExitState(GameStateMachineScript stateMachine);
+
 }

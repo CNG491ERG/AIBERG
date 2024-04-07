@@ -15,7 +15,7 @@ public class ParkourState : BaseState
         else if (playTime >= reference)//FİX
             stateMachine.SwitchState(stateMachine.ParkourToBossFight);
     }
-    public override void ExitState(GameStateMachineScript stateMachine)
+    public  void CollisionState(GameStateMachineScript stateMachine)
     {
 
     }

@@ -12,8 +12,5 @@ public class GameOverState : BaseState
     {
 
     }
-    public override void ExitState(GameStateMachineScript stateMachine)
-    {
 
-    }
 }
