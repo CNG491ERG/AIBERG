@@ -12,19 +12,17 @@ public class GameStateMachineScript : MonoBehaviour
     public GameOverState GameOver = new GameOverState();
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         currentState = Parkour;
         currentState.EnterState(this);
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update()  {
         currentState.UpdateState(this);
     }
-    public void SwitchState(BaseState state)
-    {
+    //for switching states
+    public void SwitchState(BaseState state) {
         currentState = state;
         state.EnterState(this);
     }
