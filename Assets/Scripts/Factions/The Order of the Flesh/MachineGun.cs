@@ -42,7 +42,7 @@ public class MachineGun : MonoBehaviour, IAttackAbility{
     #endregion
 
     void Start(){
-        player = Utility.ComponentFinder.FindComponentInParents<Player>(this.transform);
+        player = Utilities.ComponentFinder.FindComponentInParents<Player>(this.transform);
         ResetCooldown();
         projectilePrefab.GetComponent<DamagingProjectile>().damage = Damage;
         projectilePrefab.GetComponent<DamagingProjectile>().AddTagToDamage("Boss");

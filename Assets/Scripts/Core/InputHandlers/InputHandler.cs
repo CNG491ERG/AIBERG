@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace AIBERG.InputHandlers{
+namespace AIBERG.Core.InputHandlers{
 public class InputHandler : MonoBehaviour{
 
     public bool ActiveAbility1Input{

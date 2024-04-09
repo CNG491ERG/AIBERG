@@ -38,7 +38,7 @@ namespace AIBERG.BossAbilities{
     #endregion
  
     private void Start() {
-        boss = Utility.ComponentFinder.FindComponentInParents<Boss>(this.transform);
+        boss = Utilities.ComponentFinder.FindComponentInParents<Boss>(this.transform);
         projectilePrefab.GetComponent<DamagingProjectile>().damage = projectileDamage;
         projectilePrefab.GetComponent<DamagingProjectile>().AddTagToDamage(tagToDamage);
         AbilityLock = this;

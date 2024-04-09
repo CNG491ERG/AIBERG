@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace AIBERG.Utility{
+namespace AIBERG.Utilities{
     public static class ComponentFinder{
         // Static function to search for a component in the parent hierarchy recursively
         public static T FindComponentInParents<T>(Transform currentTransform) where T : Component{

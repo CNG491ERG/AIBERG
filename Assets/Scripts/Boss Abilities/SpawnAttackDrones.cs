@@ -51,7 +51,7 @@ namespace AIBERG.BossAbilities{
         SetupAttackDronePrefab();
     }
     void Start(){
-        boss = Utility.ComponentFinder.FindComponentInParents<Boss>(this.transform);
+        boss = Utilities.ComponentFinder.FindComponentInParents<Boss>(this.transform);
         attackDroneSpawnPositions = boss.DroneTargetPositions;
         ResetCooldown();
         AbilityLock = this;

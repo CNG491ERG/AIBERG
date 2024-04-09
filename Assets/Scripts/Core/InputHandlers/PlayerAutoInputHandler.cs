@@ -1,10 +1,10 @@
 using System.Linq;
 using AIBERG.Core;
 using AIBERG.Interfaces;
-
+using AIBERG.Utilities;
 using UnityEngine;
 
-namespace AIBERG.InputHandlers{
+namespace AIBERG.Core.InputHandlers{
 public class PlayerAutoInputHandler : InputHandler{
 
     [SerializeField] private GameEnvironment environment;
@@ -17,7 +17,7 @@ public class PlayerAutoInputHandler : InputHandler{
 
     //at start, gets the needed objects
     private void Start() {
-        environment = Utility.ComponentFinder.FindComponentInParents<GameEnvironment>(this.transform);
+        environment = ComponentFinder.FindComponentInParents<GameEnvironment>(this.transform);
         boss = environment.Boss;
         player = environment.Player;
         topLeftCorner = environment.ForegroundObjects.First(foregroundObject => foregroundObject.name == "TopLeftCorner").transform;

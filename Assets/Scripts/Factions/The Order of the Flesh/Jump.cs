@@ -28,7 +28,7 @@ public class Jump : MonoBehaviour, IAbility{
     #endregion
 
     private void Start() {
-        player = Utility.ComponentFinder.FindComponentInParents<Player>(this.transform);
+        player = Utilities.ComponentFinder.FindComponentInParents<Player>(this.transform);
         AbilityLock = this;
     }
 

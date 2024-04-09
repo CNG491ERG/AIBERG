@@ -44,7 +44,7 @@ namespace AIBERG.BossAbilities{
 
     void Start(){
         Health = MaxHealth;
-        GameEnvironment e = Utility.ComponentFinder.FindComponentInParents<GameEnvironment>(this.transform);
+        GameEnvironment e = Utilities.ComponentFinder.FindComponentInParents<GameEnvironment>(this.transform);
         boss = e.Boss;
         attackDroneRb = GetComponent<Rigidbody2D>();
     }

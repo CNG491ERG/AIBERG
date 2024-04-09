@@ -1,0 +1,19 @@
+{
+    "name": "AIBERG.Core",
+    "rootNamespace": "AIBERG",
+    "references": [
+        "GUID:2b7ab872e11101446a8b05abc7aef0cb",
+        "GUID:85e0054f8e64b47309646d35f8851f81",
+        "GUID:2e07c3b9e30309a4e910b9ffe9e8a097",
+        "GUID:59a211b7827d39040976311585eb638b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

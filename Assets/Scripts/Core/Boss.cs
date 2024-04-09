@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using AIBERG.Interfaces;
 using AIBERG.ScriptableObjects;
+using AIBERG.Utilities;
 
 namespace AIBERG.Core{
     public class Boss : MonoBehaviour, IDamageable{
@@ -45,8 +46,8 @@ namespace AIBERG.Core{
     public float DamageMultiplier { get => damageMultiplier; set => damageMultiplier = value;}
     public List<Transform> DroneTargetPositions{get => droneTargetPositions;}
     private void Start() {
-        environment = Utility.ComponentFinder.FindComponentInParents<GameEnvironment>(this.transform);
-        droneTargetPositions = Utility.ComponentFinder.FindGameObjectsWithTagInChildren("DroneTarget",this.transform).ConvertAll(obj=>obj.transform);
+        environment = ComponentFinder.FindComponentInParents<GameEnvironment>(this.transform);
+        droneTargetPositions = ComponentFinder.FindGameObjectsWithTagInChildren("DroneTarget",this.transform).ConvertAll(obj=>obj.transform);
         if(bossAbilities.BasicAttackAbility != null){
             basicAbilityObject = Instantiate(bossAbilities.BasicAttackAbility, this.transform);
             basicAttackAbility = basicAbilityObject.GetComponent<IAbility>();

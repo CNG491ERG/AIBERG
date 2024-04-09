@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using AIBERG.Utilities;
 
 
 namespace AIBERG.Core{
@@ -26,9 +27,9 @@ namespace AIBERG.Core{
     public Transform BossSpawnPosition {get => bossSpawnPosition; private set => bossSpawnPosition = value;}
     public event EventHandler OnMaxStepsReached;
     private void Awake() {
-        player = Utility.ComponentFinder.FindComponentInChildren<Player>(this.transform);
-        boss = Utility.ComponentFinder.FindComponentInChildren<Boss>(this.transform);
-        foregroundObjects = Utility.ComponentFinder.FindGameObjectsWithTagInChildren("ForegroundObject", this.transform);
+        player = ComponentFinder.FindComponentInChildren<Player>(this.transform);
+        boss = ComponentFinder.FindComponentInChildren<Boss>(this.transform);
+        foregroundObjects = ComponentFinder.FindGameObjectsWithTagInChildren("ForegroundObject", this.transform);
     }
 
     private void Start() {

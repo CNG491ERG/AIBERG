@@ -3,6 +3,7 @@ using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
 using UnityEngine;
+using AIBERG.Utilities;
 
 namespace AIBERG.Core{
     public class BossAgent : Agent{
@@ -12,7 +13,7 @@ namespace AIBERG.Core{
     [SerializeField] private Boss boss;
 
     public override void Initialize() {
-        environment = Utility.ComponentFinder.FindComponentInParents<GameEnvironment>(this.transform);
+        environment = ComponentFinder.FindComponentInParents<GameEnvironment>(this.transform);
         boss = environment.Boss;
         player = environment.Player;
         environment.Player.OnDamageableDeath += Player_OnDamageableDeath;

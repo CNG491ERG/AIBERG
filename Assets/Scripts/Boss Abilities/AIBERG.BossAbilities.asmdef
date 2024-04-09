@@ -1,0 +1,18 @@
+{
+    "name": "AIBERG.BossAbilities",
+    "rootNamespace": "AIBERG",
+    "references": [
+        "GUID:c8ee656e90be07f48818698d0d125c2f",
+        "GUID:59a211b7827d39040976311585eb638b",
+        "GUID:2b7ab872e11101446a8b05abc7aef0cb"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

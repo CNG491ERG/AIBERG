@@ -29,7 +29,7 @@ public class MoveDown : MonoBehaviour, IAbility{
     #endregion
 
     private void Start() {
-        boss = Utility.ComponentFinder.FindComponentInParents<Boss>(this.transform);
+        boss = Utilities.ComponentFinder.FindComponentInParents<Boss>(this.transform);
         movementSpeed = boss.Speed;
         AbilityLock = this;
     }

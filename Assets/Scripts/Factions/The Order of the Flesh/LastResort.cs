@@ -43,7 +43,7 @@ public class LastResort : MonoBehaviour, IAttackAbility
     #endregion
  
     void Start(){
-        player = Utility.ComponentFinder.FindComponentInParents<Player>(this.transform);
+        player = Utilities.ComponentFinder.FindComponentInParents<Player>(this.transform);
         ResetCooldown();
         durationTimer = 0;
         projectilePrefab.GetComponent<DamagingProjectile>().damage = Damage;

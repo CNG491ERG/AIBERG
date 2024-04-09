@@ -3,6 +3,7 @@ using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
 using UnityEngine;
+using AIBERG.Utilities;
 
 namespace AIBERG.Core{
 public class PlayerAgent : Agent{
@@ -11,7 +12,7 @@ public class PlayerAgent : Agent{
     [SerializeField] private Player player;
     [SerializeField] private Boss boss;
     public override void Initialize(){
-        environment = Utility.ComponentFinder.FindComponentInParents<GameEnvironment>(this.transform);
+        environment = ComponentFinder.FindComponentInParents<GameEnvironment>(this.transform);
         Debug.Log("PlayerAgent.Initialize()");
     }
 

@@ -1,7 +1,8 @@
 using System;
-using AIBERG.InputHandlers;
+using AIBERG.Core.InputHandlers;
 using AIBERG.Interfaces;
 using AIBERG.ScriptableObjects;
+using AIBERG.Utilities;
 using UnityEngine;
 
 namespace AIBERG.Core{
@@ -42,7 +43,7 @@ public class Player : MonoBehaviour, IDamageable{
     public event EventHandler OnDamageableHurt;
 
     void Start(){
-        environment = Utility.ComponentFinder.FindComponentInParents<GameEnvironment>(this.transform);
+        environment = ComponentFinder.FindComponentInParents<GameEnvironment>(this.transform);
         inputHandler = GetComponent<InputHandler>();
         if(faction.BasicAbility != null){
             basicAbilityObject = Instantiate(faction.BasicAbility, this.transform);
