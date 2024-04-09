@@ -12,6 +12,7 @@ public class PlayerAgent : Agent{
     [SerializeField] private AIBERG.Boss.Boss boss;
     public override void Initialize(){
         environment = Utility.ComponentFinder.FindComponentInParents<AIBERG.Environment.Environment>(this.transform);
+        Debug.Log("PlayerAgent.Initialize()");
     }
 
     public override void CollectObservations(VectorSensor sensor){
@@ -27,6 +28,7 @@ public class PlayerAgent : Agent{
         sensor.AddObservation(player.basicAbility.CanBeUsed);
 
         sensor.AddObservation(environment.StepCounter);
+        Debug.Log("PlayerAgent.CollectObservations()");
     }
 
     public override void OnEpisodeBegin(){
@@ -36,10 +38,11 @@ public class PlayerAgent : Agent{
         boss.OnDamageableDeath += Boss_OnDamageableDeath;
         environment.OnMaxStepsReached += Environment_OnMaxStepsReached;
         environment.ResetEnvironment();
+        Debug.Log("PlayerAgent.OnEpisodeBegin()");
     }
 
     public override void Heuristic(in ActionBuffers actionsOut) {
-        Debug.Log("Inside Player heuristic");
+        Debug.Log("PlayerAgent.Heuristic()");
         bool basicAttackInput = player.inputHandler.BasicAbilityInput;
         bool activeAbility1Input = player.inputHandler.ActiveAbility1Input;
         bool activeAbility2Input = player.inputHandler.ActiveAbility2Input;
@@ -81,6 +84,7 @@ public class PlayerAgent : Agent{
     }
 
     public override void OnActionReceived(ActionBuffers actions) {
+        Debug.Log("PlayerAgent.OnActionReceived()");
         int moveAction = actions.DiscreteActions[0];
         int attackAction = actions.DiscreteActions[1];
 
