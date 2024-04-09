@@ -1,5 +1,7 @@
 using UnityEngine;
 
+
+namespace AIBERG.ScriptableObjects{
 [CreateAssetMenu(fileName = "BossAbilities", menuName = "ScriptableObjects/BossAbilitiesScriptableObject", order = 1)]
 public class BossAbilitiesSO : ScriptableObject{
     public GameObject MoveUpAbility;
@@ -9,4 +11,6 @@ public class BossAbilitiesSO : ScriptableObject{
     public float MaxHealth;
     public float Defense;
     public float Speed;
+}
+
 }

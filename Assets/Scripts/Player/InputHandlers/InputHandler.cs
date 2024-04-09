@@ -1,5 +1,6 @@
 using UnityEngine;
 
+namespace AIBERG.Player.InputHandlers{
 public class InputHandler : MonoBehaviour{
 
     public bool ActiveAbility1Input{
@@ -18,4 +19,6 @@ public class InputHandler : MonoBehaviour{
         get;
         protected set;
     }
+}
+
 }

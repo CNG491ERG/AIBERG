@@ -1,8 +1,10 @@
+using AIBERG.Interfaces;
 using UnityEngine;
 
+namespace AIBERG.Factions.TheOrderOfTheFlesh{
 public class Jump : MonoBehaviour, IAbility{
     [Header("Player Reference")]
-    [SerializeField] private Player player;
+    [SerializeField] private AIBERG.Player.Player player;
 
     [Header("Ability Properties")]
     [SerializeField] private const bool canBeUsed=true;
@@ -25,7 +27,7 @@ public class Jump : MonoBehaviour, IAbility{
     #endregion
 
     private void Start() {
-        player = Utility.ComponentFinder.FindComponentInParents<Player>(this.transform);
+        player = Utility.ComponentFinder.FindComponentInParents<AIBERG.Player.Player>(this.transform);
         AbilityLock = this;
     }
 
@@ -38,4 +40,5 @@ public class Jump : MonoBehaviour, IAbility{
     public void ResetCooldown(){
         return;
     }
+}
 }

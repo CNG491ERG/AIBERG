@@ -1,5 +1,8 @@
-public interface IAttackAbility : IAbility{
+namespace AIBERG.Interfaces{
+    public interface IAttackAbility : IAbility{
     public float Damage{
         get;
     }
 }
+}
+

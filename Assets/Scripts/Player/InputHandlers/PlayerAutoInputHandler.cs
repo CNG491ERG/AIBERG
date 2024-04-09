@@ -1,10 +1,13 @@
 using System.Linq;
+using AIBERG.Interfaces;
+using AIBERG.Other;
 using UnityEngine;
 
+namespace AIBERG.Player.InputHandlers{
 public class PlayerAutoInputHandler : InputHandler{
 
-    [SerializeField] private Environment environment;
-    [SerializeField] private Boss boss;
+    [SerializeField] private AIBERG.Environment.Environment environment;
+    [SerializeField] private AIBERG.Boss.Boss boss;
     [SerializeField] private Player player;
     [SerializeField] private Transform playerSpawnPosition;
     [SerializeField] private Transform topLeftCorner;
@@ -13,7 +16,7 @@ public class PlayerAutoInputHandler : InputHandler{
 
     //at start, gets the needed objects
     private void Start() {
-        environment = Utility.ComponentFinder.FindComponentInParents<Environment>(this.transform);
+        environment = Utility.ComponentFinder.FindComponentInParents<AIBERG.Environment.Environment>(this.transform);
         boss = environment.Boss;
         player = environment.Player;
         topLeftCorner = environment.ForegroundObjects.First(foregroundObject => foregroundObject.name == "TopLeftCorner").transform;
@@ -275,4 +278,5 @@ public class PlayerAutoInputHandler : InputHandler{
         }
         this.JumpInput =JumpAbilityInput;
     }
+}
 }

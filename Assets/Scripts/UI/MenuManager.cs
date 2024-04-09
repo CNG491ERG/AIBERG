@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+namespace AIBERG.UI{
 public class MenuManager : MonoBehaviour{
 
     public void LoadScene(string sceneName){
@@ -12,3 +11,5 @@ public class MenuManager : MonoBehaviour{
         Application.Quit();
     }
 }
+}
+

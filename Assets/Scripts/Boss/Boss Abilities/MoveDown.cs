@@ -1,5 +1,7 @@
+using AIBERG.Interfaces;
 using UnityEngine;
 
+namespace AIBERG.Boss.Abilities{
 public class MoveDown : MonoBehaviour, IAbility{
     [Header("Boss Reference")]
     [SerializeField] private Boss boss;
@@ -43,4 +45,6 @@ public class MoveDown : MonoBehaviour, IAbility{
     public void ResetCooldown(){
         return;
     }
+}
+
 }

@@ -1,6 +1,9 @@
+using AIBERG.Interfaces;
+using AIBERG.Other;
 using UnityEngine;
 
-public class BasicAttack : MonoBehaviour, IAttackAbility{
+namespace AIBERG.Boss.Abilities{
+    public class BasicAttack : MonoBehaviour, IAttackAbility{
     [Header("Boss Reference")]
     [SerializeField] private Boss boss;
     
@@ -61,5 +64,7 @@ public class BasicAttack : MonoBehaviour, IAttackAbility{
     public void ResetCooldown(){
         cooldownTimer = Cooldown;
     }
+
+}
 
 }

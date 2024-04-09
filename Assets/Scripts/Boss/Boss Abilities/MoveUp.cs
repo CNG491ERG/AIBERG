@@ -1,6 +1,8 @@
+using AIBERG.Interfaces;
 using UnityEngine;
 
-public class MoveUp : MonoBehaviour, IAbility{
+namespace AIBERG.Boss.Abilities{
+    public class MoveUp : MonoBehaviour, IAbility{
     [Header("Boss Reference")]
     [SerializeField] private Boss boss;
     [SerializeField] private Rigidbody2D bossRb;
@@ -43,4 +45,6 @@ public class MoveUp : MonoBehaviour, IAbility{
     public void ResetCooldown(){
         return;
     }
+}
+
 }

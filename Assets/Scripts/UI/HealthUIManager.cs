@@ -1,5 +1,8 @@
+using AIBERG.Interfaces;
 using UnityEngine;
 using UnityEngine.UI;
+
+namespace AIBERG.UI{
 public class HealthUIManager : MonoBehaviour{
     public GameObject healthOwner;
     public Image healthBar;
@@ -10,4 +13,6 @@ public class HealthUIManager : MonoBehaviour{
     private void Update() {
         healthBar.fillAmount = healthOwnerComponent.Health/healthOwnerComponent.MaxHealth;
     }
+}
+
 }

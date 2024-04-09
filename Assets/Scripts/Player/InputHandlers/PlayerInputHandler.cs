@@ -1,5 +1,6 @@
 using UnityEngine;
 
+namespace AIBERG.Player.InputHandlers{
 public class PlayerInputHandler : InputHandler{
     private void FixedUpdate() {
         this.BasicAbilityInput = Input.GetMouseButton(0);
@@ -7,4 +8,5 @@ public class PlayerInputHandler : InputHandler{
         this.ActiveAbility1Input = Input.GetKey(KeyCode.Q);
         this.ActiveAbility2Input = Input.GetKey(KeyCode.E);
     }
+}
 }

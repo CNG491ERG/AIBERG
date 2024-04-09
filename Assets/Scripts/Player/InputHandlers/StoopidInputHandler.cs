@@ -1,5 +1,6 @@
 using UnityEngine;
 
+namespace AIBERG.Player.InputHandlers{
 public class StoopidInputHandler : InputHandler{
     public Transform boss; // Reference to the boss GameObject
 
@@ -7,7 +8,7 @@ public class StoopidInputHandler : InputHandler{
     public float alignmentThreshold;
 
     private void Start() {
-        boss = Utility.ComponentFinder.FindComponentInParents<Environment>(this.transform).Boss.transform;
+        boss = Utility.ComponentFinder.FindComponentInParents<AIBERG.Environment.Environment>(this.transform).Boss.transform;
         this.BasicAbilityInput = true;
     }
 
@@ -32,3 +33,4 @@ public class StoopidInputHandler : InputHandler{
 
 }
 
+}

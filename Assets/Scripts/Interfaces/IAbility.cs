@@ -1,5 +1,6 @@
 using UnityEngine;
 
+namespace AIBERG.Interfaces{
 public interface IAbility{
     public GameObject AbilityOwner{
         get;
@@ -21,4 +22,6 @@ public interface IAbility{
     
     public void UseAbility(bool inputReceived);
     public void ResetCooldown();
+}
+
 }

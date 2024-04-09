@@ -1,7 +1,9 @@
 using UnityEngine;
 using System.Collections.Generic;
+using AIBERG.Interfaces;
 
-public class DamagingProjectile : MonoBehaviour
+namespace AIBERG.Other{
+    public class DamagingProjectile : MonoBehaviour
 {
     public float damage;
     public List<string> tagsToDamage;
@@ -35,4 +37,6 @@ public class DamagingProjectile : MonoBehaviour
             Destroy(gameObject);
         }
     }
+}
+
 }

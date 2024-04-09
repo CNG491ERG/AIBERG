@@ -1,5 +1,7 @@
 using UnityEngine;
 
+
+namespace AIBERG.ScriptableObjects{
 [CreateAssetMenu(fileName = "FactionData", menuName = "ScriptableObjects/FactionScriptableObject", order = 1)]
 public class FactionSO : ScriptableObject{
     public string FactionName;
@@ -18,4 +20,5 @@ public class FactionSO : ScriptableObject{
     public float MaxHealth;
     public float Defense;
 
+}
 }

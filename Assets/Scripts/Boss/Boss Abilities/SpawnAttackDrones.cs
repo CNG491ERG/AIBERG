@@ -1,8 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using AIBERG.Interfaces;
+using AIBERG.Other;
 using UnityEngine;
 
-public class SpawnAttackDrones : MonoBehaviour, IAttackAbility{
+namespace AIBERG.Boss.Abilities{
+    public class SpawnAttackDrones : MonoBehaviour, IAttackAbility{
     [Header("Boss Reference")]
     [SerializeField] private Boss boss;
 
@@ -106,4 +109,6 @@ public class SpawnAttackDrones : MonoBehaviour, IAttackAbility{
             Destroy(aliveDrone);
         }
     }
+}
+
 }

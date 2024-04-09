@@ -1,4 +1,4 @@
-using System;
+/*using System;
 using System.Collections.Generic;
 using Npgsql;
 using UnityEngine;
@@ -66,5 +66,6 @@ public class InputReplayer : InputHandler{
         //faction.ActiveAbility1.UseAbility(input[2] == '1');
         //faction.ActiveAbility2.UseAbility(input[3] == '1');
     }
-    */
+    
 }
+*/

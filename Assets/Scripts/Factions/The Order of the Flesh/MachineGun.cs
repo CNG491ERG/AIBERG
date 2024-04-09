@@ -1,9 +1,12 @@
 using System.Collections;
+using AIBERG.Interfaces;
+using AIBERG.Other;
 using UnityEngine;
 
+namespace AIBERG.Factions.TheOrderOfTheFlesh{
 public class MachineGun : MonoBehaviour, IAttackAbility{
     [Header("Player Reference")]
-    [SerializeField] private Player player;
+    [SerializeField] private AIBERG.Player.Player player;
     
     [Header("Ability Properties")]
     [SerializeField] private float abilityCooldown = 10f;
@@ -39,7 +42,7 @@ public class MachineGun : MonoBehaviour, IAttackAbility{
     #endregion
 
     void Start(){
-        player = Utility.ComponentFinder.FindComponentInParents<Player>(this.transform);
+        player = Utility.ComponentFinder.FindComponentInParents<AIBERG.Player.Player>(this.transform);
         ResetCooldown();
         projectilePrefab.GetComponent<DamagingProjectile>().damage = Damage;
         projectilePrefab.GetComponent<DamagingProjectile>().AddTagToDamage("Boss");
@@ -79,4 +82,5 @@ public class MachineGun : MonoBehaviour, IAttackAbility{
     public void ResetCooldown(){
         cooldownTimer = Cooldown;
     }
+}
 }

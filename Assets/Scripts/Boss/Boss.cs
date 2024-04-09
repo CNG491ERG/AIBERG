@@ -1,10 +1,13 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
+using AIBERG.Interfaces;
+using AIBERG.ScriptableObjects;
 
-public class Boss : MonoBehaviour, IDamageable{
+namespace AIBERG.Boss{
+    public class Boss : MonoBehaviour, IDamageable{
     [Header("Environment")]
-    [SerializeField] private Environment environment;
+    [SerializeField] private AIBERG.Environment.Environment environment;
 
     [Header("Boss Attributes")]
     [SerializeField] private int enragement;
@@ -32,7 +35,7 @@ public class Boss : MonoBehaviour, IDamageable{
     public event EventHandler OnDamageableDeath;
     public event EventHandler OnDamageableHurt;
     
-    public Environment Environment{get=>environment; private set => environment = value;}
+    public AIBERG.Environment.Environment Environment{get=>environment; private set => environment = value;}
     public float Health { get => health; set => health = value;}
     public float Defense { get => defense; set => defense = value;}
     public float MaxHealth { get => maxHealth; set => maxHealth = value; }
@@ -42,7 +45,7 @@ public class Boss : MonoBehaviour, IDamageable{
     public float DamageMultiplier { get => damageMultiplier; set => damageMultiplier = value;}
     public List<Transform> DroneTargetPositions{get => droneTargetPositions;}
     private void Start() {
-        environment = Utility.ComponentFinder.FindComponentInParents<Environment>(this.transform);
+        environment = Utility.ComponentFinder.FindComponentInParents<AIBERG.Environment.Environment>(this.transform);
         droneTargetPositions = Utility.ComponentFinder.FindGameObjectsWithTagInChildren("DroneTarget",this.transform).ConvertAll(obj=>obj.transform);
         if(bossAbilities.BasicAttackAbility != null){
             basicAbilityObject = Instantiate(bossAbilities.BasicAttackAbility, this.transform);
@@ -84,3 +87,4 @@ public class Boss : MonoBehaviour, IDamageable{
     }
 }
     
+}

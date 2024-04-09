@@ -1,6 +1,7 @@
 using System;
 
-public interface IDamageable{
+namespace AIBERG.Interfaces{
+    public interface IDamageable{
     float Health{
         get;
         set;
@@ -17,4 +18,6 @@ public interface IDamageable{
 
     event EventHandler OnDamageableDeath;
     event EventHandler OnDamageableHurt;
+}
+
 }

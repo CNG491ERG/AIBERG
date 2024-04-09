@@ -4,13 +4,14 @@ using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
 using UnityEngine;
 
+namespace AIBERG.Player{
 public class PlayerAgent : Agent{
 	[Header("References")]
-    [SerializeField] private Environment environment;
+    [SerializeField] private AIBERG.Environment.Environment environment;
     [SerializeField] private Player player;
-    [SerializeField] private Boss boss;
+    [SerializeField] private AIBERG.Boss.Boss boss;
     public override void Initialize(){
-        environment = Utility.ComponentFinder.FindComponentInParents<Environment>(this.transform);
+        environment = Utility.ComponentFinder.FindComponentInParents<AIBERG.Environment.Environment>(this.transform);
     }
 
     public override void CollectObservations(VectorSensor sensor){
@@ -92,3 +93,5 @@ public class PlayerAgent : Agent{
     }
 }
 
+
+}

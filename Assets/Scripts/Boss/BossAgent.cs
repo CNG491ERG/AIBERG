@@ -4,14 +4,15 @@ using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
 using UnityEngine;
 
-public class BossAgent : Agent{
+namespace AIBERG.Boss{
+    public class BossAgent : Agent{
     [Header("References")]
-    [SerializeField] private Environment environment;
-    [SerializeField] private Player player;
+    [SerializeField] private AIBERG.Environment.Environment environment;
+    [SerializeField] private AIBERG.Player.Player player;
     [SerializeField] private Boss boss;
 
     public override void Initialize() {
-        environment = Utility.ComponentFinder.FindComponentInParents<Environment>(this.transform);
+        environment = Utility.ComponentFinder.FindComponentInParents<AIBERG.Environment.Environment>(this.transform);
         boss = environment.Boss;
         player = environment.Player;
         environment.Player.OnDamageableDeath += Player_OnDamageableDeath;
@@ -83,4 +84,6 @@ public class BossAgent : Agent{
         boss.basicAttackAbility.UseAbility(attackAction == 1);
         boss.spawnAttackDroneAbility.UseAbility(attackAction == 2);
     }
+}
+
 }

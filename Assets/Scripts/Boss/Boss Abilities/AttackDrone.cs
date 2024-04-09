@@ -1,12 +1,15 @@
 using System;
+using AIBERG.Interfaces;
+using AIBERG.Other;
 using UnityEngine;
 
-public class AttackDrone : MonoBehaviour, IDamageable{
+namespace AIBERG.Boss.Abilities{
+    public class AttackDrone : MonoBehaviour, IDamageable{
     [Header("Boss Reference")]
     [SerializeField] private Boss boss;
 
     [Header("Player Reference")]
-    [SerializeField] private Player player;
+    [SerializeField] private AIBERG.Player.Player player;
 
     [Header("Attack Drone Rigidbody Reference")]
     [SerializeField] private Rigidbody2D attackDroneRb;
@@ -41,7 +44,7 @@ public class AttackDrone : MonoBehaviour, IDamageable{
 
     void Start(){
         Health = MaxHealth;
-        Environment e = Utility.ComponentFinder.FindComponentInParents<Environment>(this.transform);
+        AIBERG.Environment.Environment e = Utility.ComponentFinder.FindComponentInParents<AIBERG.Environment.Environment>(this.transform);
         boss = e.Boss;
         attackDroneRb = GetComponent<Rigidbody2D>();
     }
@@ -78,5 +81,7 @@ public class AttackDrone : MonoBehaviour, IDamageable{
             Destroy(this.gameObject);
         }
     }
+
+}
 
 }

@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public class Despawner : MonoBehaviour{
+namespace AIBERG.Environment{
+    public class Despawner : MonoBehaviour{
     Environment environment;
     private void Start() {
         environment = Utility.ComponentFinder.FindComponentInParents<Environment>(this.transform);
@@ -14,4 +15,6 @@ public class Despawner : MonoBehaviour{
             Destroy(g);
         }
     }
+}
+
 }
