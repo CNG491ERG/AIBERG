@@ -1,58 +1,53 @@
 ﻿# Summary
 |||
 |:---|:---|
-| Generated on: | 4/8/2024 - 11:48:50 AM |
-| Parser: | MultiReportParser (2x OpenCoverParser) |
-| Assemblies: | 3 |
-| Classes: | 34 |
-| Files: | 33 |
-| Covered lines: | 0 |
-| Uncovered lines: | 1704 |
-| Coverable lines: | 1704 |
-| Total lines: | 3540 |
-| Line coverage: | 0% (0 of 1704) |
+| Generated on: | 4/9/2024 - 2:45:15 PM |
+| Parser: | MultiReportParser (4x OpenCoverParser) |
+| Assemblies: | 6 |
+| Classes: | 26 |
+| Files: | 26 |
+| Covered lines: | 23 |
+| Uncovered lines: | 972 |
+| Coverable lines: | 995 |
+| Total lines: | 1740 |
+| Line coverage: | 2.3% (23 of 995) |
 | Covered branches: | 0 |
 | Total branches: | 0 |
-| Covered methods: | 0 |
-| Total methods: | 344 |
-| Method coverage: | 0% (0 of 344) |
+| Covered methods: | 6 |
+| Total methods: | 228 |
+| Method coverage: | 2.6% (6 of 228) |
 
 |**Name**|**Covered**|**Uncovered**|**Coverable**|**Total**|**Line coverage**|**Covered**|**Total**|**Branch coverage**|**Covered**|**Total**|**Method coverage**|
 |:---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-|**Assembly-CSharp**|**0**|**975**|**975**|**1605**|**0%**|**0**|**0**|****|**0**|**225**|**0%**|
-|AssaultRifle|0|45|45|74|0%|0|0||0|13|0%|
-|AttackDrone|0|44|44|82|0%|0|0||0|23|0%|
-|BasicAttack|0|40|40|65|0%|0|0||0|12|0%|
-|Boss|0|47|47|86|0%|0|0||0|21|0%|
-|BossAgent|0|60|60|86|0%|0|0||0|8|0%|
-|DamagingProjectile|0|20|20|38|0%|0|0||0|4|0%|
-|Despawner|0|11|11|17|0%|0|0||0|3|0%|
-|Environment|0|51|51|76|0%|0|0||0|23|0%|
-|HealthUIManager|0|6|6|13|0%|0|0||0|2|0%|
-|InputHandler|0|8|8|21|0%|0|0||0|8|0%|
-|Jump|0|22|22|41|0%|0|0||0|9|0%|
-|LastResort|0|56|56|85|0%|0|0||0|14|0%|
-|MachineGun|0|57|57|82|0%|0|0||0|14|0%|
-|MenuManager|0|6|6|14|0%|0|0||0|2|0%|
-|MoveDown|0|26|26|46|0%|0|0||0|9|0%|
-|MoveUp|0|26|26|46|0%|0|0||0|9|0%|
-|Player|0|53|53|94|0%|0|0||0|12|0%|
-|PlayerAgent|0|69|69|96|0%|0|0||0|8|0%|
-|PlayerAutoInputHandler|0|166|166|278|0%|0|0||0|4|0%|
-|PlayerInputHandler|0|6|6|10|0%|0|0||0|1|0%|
-|RandomInputHandler|0|6|6|10|0%|0|0||0|1|0%|
-|SpawnAttackDrones|0|77|77|109|0%|0|0||0|17|0%|
-|StepCounter|0|3|3|10|0%|0|0||0|1|0%|
-|StoopidInputHandler|0|20|20|34|0%|0|0||0|2|0%|
-|Utility.ComponentFinder|0|50|50|92|0%|0|0||0|5|0%|
-|**Assembly-CSharp-firstpass**|**0**|**725**|**725**|**2307**|**0%**|**0**|**0**|****|**0**|**117**|**0%**|
-|DG.Tweening.DOTweenCYInstruction|0|44|44|389|0%|0|0||0|12|0%|
-|DG.Tweening.DOTweenModuleAudio|0|56|56|198|0%|0|0||0|15|0%|
-|DG.Tweening.DOTweenModulePhysics|0|83|83|216|0%|0|0||0|11|0%|
-|DG.Tweening.DOTweenModulePhysics2D|0|76|76|193|0%|0|0||0|9|0%|
-|DG.Tweening.DOTweenModuleSprite|0|34|34|93|0%|0|0||0|4|0%|
-|DG.Tweening.DOTweenModuleUI|0|268|268|662|0%|0|0||0|43|0%|
-|DG.Tweening.DOTweenModuleUnityVersion|0|118|118|389|0%|0|0||0|16|0%|
-|DG.Tweening.DOTweenModuleUtils|0|46|46|167|0%|0|0||0|7|0%|
-|**Tests**|**0**|**4**|**4**|**17**|**0%**|**0**|**0**|****|**0**|**2**|**0%**|
-|DamagingProjectileTests|0|4|4|17|0%|0|0||0|2|0%|
+|**AIBERG.BossAbilities**|**0**|**213**|**213**|**373**|**0%**|**0**|**0**|****|**0**|**70**|**0%**|
+|AIBERG.BossAbilities.AttackDrone|0|44|44|87|0%|0|0||0|23|0%|
+|AIBERG.BossAbilities.BasicAttack|0|40|40|70|0%|0|0||0|12|0%|
+|AIBERG.BossAbilities.MoveDown|0|26|26|51|0%|0|0||0|9|0%|
+|AIBERG.BossAbilities.MoveUp|0|26|26|51|0%|0|0||0|9|0%|
+|AIBERG.BossAbilities.SpawnAttackDrones|0|77|77|114|0%|0|0||0|17|0%|
+|**AIBERG.Core**|**8**|**514**|**522**|**897**|**1.5%**|**0**|**0**|****|**4**|**96**|**4.1%**|
+|AIBERG.Core.Boss|1|46|47|91|2.1%|0|0||1|21|4.7%|
+|AIBERG.Core.BossAgent|0|60|60|90|0%|0|0||0|8|0%|
+|AIBERG.Core.DamagingProjectile|6|15|21|42|28.5%|0|0||2|5|40%|
+|AIBERG.Core.Despawner|0|11|11|21|0%|0|0||0|3|0%|
+|AIBERG.Core.GameEnvironment|1|50|51|81|1.9%|0|0||1|23|4.3%|
+|AIBERG.Core.InputHandlers.InputHandler|0|8|8|24|0%|0|0||0|8|0%|
+|AIBERG.Core.InputHandlers.PlayerAutoInputHandler|0|166|166|283|0%|0|0||0|4|0%|
+|AIBERG.Core.InputHandlers.PlayerInputHandler|0|6|6|12|0%|0|0||0|1|0%|
+|AIBERG.Core.InputHandlers.RandomInputHandler|0|6|6|12|0%|0|0||0|1|0%|
+|AIBERG.Core.InputHandlers.StoopidInputHandler|0|20|20|38|0%|0|0||0|2|0%|
+|AIBERG.Core.Player|0|53|53|101|0%|0|0||0|12|0%|
+|AIBERG.Core.PlayerAgent|0|73|73|102|0%|0|0||0|8|0%|
+|**AIBERG.Factions.TheOrderOfTheFlesh**|**0**|**180**|**180**|**298**|**0%**|**0**|**0**|****|**0**|**50**|**0%**|
+|AIBERG.Factions.TheOrderOfTheFlesh.AssaultRifle|0|45|45|79|0%|0|0||0|13|0%|
+|AIBERG.Factions.TheOrderOfTheFlesh.Jump|0|22|22|45|0%|0|0||0|9|0%|
+|AIBERG.Factions.TheOrderOfTheFlesh.LastResort|0|56|56|88|0%|0|0||0|14|0%|
+|AIBERG.Factions.TheOrderOfTheFlesh.MachineGun|0|57|57|86|0%|0|0||0|14|0%|
+|**AIBERG.UI**|**0**|**15**|**15**|**47**|**0%**|**0**|**0**|****|**0**|**5**|**0%**|
+|AIBERG.UI.HealthUIManager|0|6|6|18|0%|0|0||0|2|0%|
+|AIBERG.UI.MenuManager|0|6|6|15|0%|0|0||0|2|0%|
+|AIBERG.UI.StepCounter|0|3|3|14|0%|0|0||0|1|0%|
+|**AIBERG.Utilities**|**0**|**50**|**50**|**92**|**0%**|**0**|**0**|****|**0**|**5**|**0%**|
+|AIBERG.Utilities.ComponentFinder|0|50|50|92|0%|0|0||0|5|0%|
+|**EditModeTests**|**15**|**0**|**15**|**33**|**100%**|**0**|**0**|****|**2**|**2**|**100%**|
+|DamagingProjectileTests|15|0|15|33|100%|0|0||2|2|100%|

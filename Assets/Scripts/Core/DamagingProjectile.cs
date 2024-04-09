@@ -6,7 +6,7 @@ namespace AIBERG.Core{
     public class DamagingProjectile : MonoBehaviour
 {
     public float damage;
-    public List<string> tagsToDamage;
+    public List<string> tagsToDamage = new List<string>();
     public Vector2 projectileVelocity;
     private Rigidbody2D rb;
 
