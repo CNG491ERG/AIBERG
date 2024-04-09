@@ -1,13 +1,13 @@
 using System.Collections;
+using AIBERG.Core;
 using AIBERG.Interfaces;
-using AIBERG.Other;
 using UnityEngine;
 
 namespace AIBERG.Factions.TheOrderOfTheFlesh{
 public class LastResort : MonoBehaviour, IAttackAbility
 {
     [Header("Player Reference")]
-    [SerializeField] private AIBERG.Player.Player player;
+    [SerializeField] private Player player;
     
     [Header("Ability Properties")]
     [SerializeField] private float abilityCooldown = 17.5f;
@@ -43,7 +43,7 @@ public class LastResort : MonoBehaviour, IAttackAbility
     #endregion
  
     void Start(){
-        player = Utility.ComponentFinder.FindComponentInParents<AIBERG.Player.Player>(this.transform);
+        player = Utility.ComponentFinder.FindComponentInParents<Player>(this.transform);
         ResetCooldown();
         durationTimer = 0;
         projectilePrefab.GetComponent<DamagingProjectile>().damage = Damage;

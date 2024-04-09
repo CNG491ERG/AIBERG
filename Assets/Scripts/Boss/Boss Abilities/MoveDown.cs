@@ -1,7 +1,8 @@
+using AIBERG.Core;
 using AIBERG.Interfaces;
 using UnityEngine;
 
-namespace AIBERG.Boss.Abilities{
+namespace AIBERG.BossAbilities{
 public class MoveDown : MonoBehaviour, IAbility{
     [Header("Boss Reference")]
     [SerializeField] private Boss boss;

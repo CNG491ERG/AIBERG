@@ -4,15 +4,15 @@ using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
 using UnityEngine;
 
-namespace AIBERG.Boss{
+namespace AIBERG.Core{
     public class BossAgent : Agent{
     [Header("References")]
-    [SerializeField] private AIBERG.Environment.Environment environment;
-    [SerializeField] private AIBERG.Player.Player player;
+    [SerializeField] private GameEnvironment environment;
+    [SerializeField] private Player player;
     [SerializeField] private Boss boss;
 
     public override void Initialize() {
-        environment = Utility.ComponentFinder.FindComponentInParents<AIBERG.Environment.Environment>(this.transform);
+        environment = Utility.ComponentFinder.FindComponentInParents<GameEnvironment>(this.transform);
         boss = environment.Boss;
         player = environment.Player;
         environment.Player.OnDamageableDeath += Player_OnDamageableDeath;

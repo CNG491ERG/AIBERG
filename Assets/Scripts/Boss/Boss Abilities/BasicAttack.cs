@@ -1,8 +1,8 @@
 using AIBERG.Interfaces;
-using AIBERG.Other;
+using AIBERG.Core;
 using UnityEngine;
 
-namespace AIBERG.Boss.Abilities{
+namespace AIBERG.BossAbilities{
     public class BasicAttack : MonoBehaviour, IAttackAbility{
     [Header("Boss Reference")]
     [SerializeField] private Boss boss;

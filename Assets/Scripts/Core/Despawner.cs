@@ -1,10 +1,10 @@
 using UnityEngine;
 
-namespace AIBERG.Environment{
+namespace AIBERG.Core{
     public class Despawner : MonoBehaviour{
-    Environment environment;
+    GameEnvironment environment;
     private void Start() {
-        environment = Utility.ComponentFinder.FindComponentInParents<Environment>(this.transform);
+        environment = Utility.ComponentFinder.FindComponentInParents<GameEnvironment>(this.transform);
     }
 
     private void OnTriggerEnter2D(Collider2D other) {

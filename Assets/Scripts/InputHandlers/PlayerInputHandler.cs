@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace AIBERG.Player.InputHandlers{
+namespace AIBERG.InputHandlers{
 public class PlayerInputHandler : InputHandler{
     private void FixedUpdate() {
         this.BasicAbilityInput = Input.GetMouseButton(0);

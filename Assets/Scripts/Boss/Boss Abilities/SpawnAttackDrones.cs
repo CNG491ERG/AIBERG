@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using AIBERG.Core;
 using AIBERG.Interfaces;
-using AIBERG.Other;
 using UnityEngine;
 
-namespace AIBERG.Boss.Abilities{
+namespace AIBERG.BossAbilities{
     public class SpawnAttackDrones : MonoBehaviour, IAttackAbility{
     [Header("Boss Reference")]
     [SerializeField] private Boss boss;

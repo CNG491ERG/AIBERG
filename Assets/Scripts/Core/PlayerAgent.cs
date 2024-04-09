@@ -4,14 +4,14 @@ using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
 using UnityEngine;
 
-namespace AIBERG.Player{
+namespace AIBERG.Core{
 public class PlayerAgent : Agent{
 	[Header("References")]
-    [SerializeField] private AIBERG.Environment.Environment environment;
+    [SerializeField] private GameEnvironment environment;
     [SerializeField] private Player player;
-    [SerializeField] private AIBERG.Boss.Boss boss;
+    [SerializeField] private Boss boss;
     public override void Initialize(){
-        environment = Utility.ComponentFinder.FindComponentInParents<AIBERG.Environment.Environment>(this.transform);
+        environment = Utility.ComponentFinder.FindComponentInParents<GameEnvironment>(this.transform);
         Debug.Log("PlayerAgent.Initialize()");
     }
 

@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using AIBERG.Interfaces;
 using AIBERG.ScriptableObjects;
 
-namespace AIBERG.Boss{
+namespace AIBERG.Core{
     public class Boss : MonoBehaviour, IDamageable{
     [Header("Environment")]
-    [SerializeField] private AIBERG.Environment.Environment environment;
+    [SerializeField] private GameEnvironment environment;
 
     [Header("Boss Attributes")]
     [SerializeField] private int enragement;
@@ -35,7 +35,7 @@ namespace AIBERG.Boss{
     public event EventHandler OnDamageableDeath;
     public event EventHandler OnDamageableHurt;
     
-    public AIBERG.Environment.Environment Environment{get=>environment; private set => environment = value;}
+    public GameEnvironment Environment{get=>environment; private set => environment = value;}
     public float Health { get => health; set => health = value;}
     public float Defense { get => defense; set => defense = value;}
     public float MaxHealth { get => maxHealth; set => maxHealth = value; }
@@ -45,7 +45,7 @@ namespace AIBERG.Boss{
     public float DamageMultiplier { get => damageMultiplier; set => damageMultiplier = value;}
     public List<Transform> DroneTargetPositions{get => droneTargetPositions;}
     private void Start() {
-        environment = Utility.ComponentFinder.FindComponentInParents<AIBERG.Environment.Environment>(this.transform);
+        environment = Utility.ComponentFinder.FindComponentInParents<GameEnvironment>(this.transform);
         droneTargetPositions = Utility.ComponentFinder.FindGameObjectsWithTagInChildren("DroneTarget",this.transform).ConvertAll(obj=>obj.transform);
         if(bossAbilities.BasicAttackAbility != null){
             basicAbilityObject = Instantiate(bossAbilities.BasicAttackAbility, this.transform);

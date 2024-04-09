@@ -1,16 +1,16 @@
 using System;
+using AIBERG.InputHandlers;
 using AIBERG.Interfaces;
-using AIBERG.Player.InputHandlers;
 using AIBERG.ScriptableObjects;
 using UnityEngine;
 
-namespace AIBERG.Player{
+namespace AIBERG.Core{
 public class Player : MonoBehaviour, IDamageable{
     [Header("Player's Input Handler")]
     public InputHandler inputHandler;
 
     [Header("Environment")]
-    [SerializeField] private AIBERG.Environment.Environment environment;
+    [SerializeField] private GameEnvironment environment;
 
     [Header("Faction Data of the Player")]
     [SerializeField] private FactionSO faction;
@@ -30,19 +30,19 @@ public class Player : MonoBehaviour, IDamageable{
     [SerializeField] private float health;
     [SerializeField] private float defense;
 
-    public AIBERG.Environment.Environment Environment{get=>environment; private set => environment = value;}
+    public GameEnvironment Environment{get=>environment; private set => environment = value;}
     public float Health{ get => health; set => health = value;}
     public float Defense { get => defense; set => defense = value;}
     public float MaxHealth { get => maxHealth; set => maxHealth = value; }
     
 
     [Header("Other")]
-    [SerializeField] private AIBERG.Boss.Boss boss;
+    [SerializeField] private Boss boss;
     public event EventHandler OnDamageableDeath;
     public event EventHandler OnDamageableHurt;
 
     void Start(){
-        environment = Utility.ComponentFinder.FindComponentInParents<AIBERG.Environment.Environment>(this.transform);
+        environment = Utility.ComponentFinder.FindComponentInParents<GameEnvironment>(this.transform);
         inputHandler = GetComponent<InputHandler>();
         if(faction.BasicAbility != null){
             basicAbilityObject = Instantiate(faction.BasicAbility, this.transform);

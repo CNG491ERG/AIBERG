@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using AIBERG.Interfaces;
 
-namespace AIBERG.Other{
+namespace AIBERG.Core{
     public class DamagingProjectile : MonoBehaviour
 {
     public float damage;

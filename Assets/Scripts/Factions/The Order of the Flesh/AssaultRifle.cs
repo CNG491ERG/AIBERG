@@ -1,12 +1,11 @@
 using UnityEngine;
-using AIBERG.Environment;
 using AIBERG.Interfaces;
-using AIBERG.Other;
+using AIBERG.Core;
 
 namespace AIBERG.Factions.TheOrderOfTheFlesh{
 public class AssaultRifle : MonoBehaviour, IAttackAbility{
     [Header("Player Reference")]
-    [SerializeField] private AIBERG.Player.Player player;
+    [SerializeField] private Player player;
     
     [Header("Ability Properties")]
     [SerializeField] private float abilityCooldown = 0.30f;
@@ -42,7 +41,7 @@ public class AssaultRifle : MonoBehaviour, IAttackAbility{
     #endregion
 
     private void Start() {
-        player = Utility.ComponentFinder.FindComponentInParents<AIBERG.Player.Player>(this.transform);
+        player = Utility.ComponentFinder.FindComponentInParents<Player>(this.transform);
         ResetCooldown();
         projectilePrefab.GetComponent<DamagingProjectile>().damage = Damage;
         projectilePrefab.GetComponent<DamagingProjectile>().AddTagToDamage("Boss");

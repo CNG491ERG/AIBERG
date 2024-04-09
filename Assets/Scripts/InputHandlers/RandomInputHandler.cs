@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace AIBERG.Player.InputHandlers{
+namespace AIBERG.InputHandlers{
 public class RandomInputHandler : InputHandler{
     private void FixedUpdate() {
         this.JumpInput = Random.Range(0f,1f) < 0.15f;
