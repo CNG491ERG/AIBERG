@@ -1,0 +1,59 @@
+{
+  "summary": {
+    "generatedon": "2024-04-08T08:48:50Z",
+    "parser": "MultiReportParser (2x OpenCoverParser)",
+    "assemblies": 3,
+    "classes": 34,
+    "files": 33,
+    "coveredlines": 0,
+    "uncoveredlines": 1704,
+    "coverablelines": 1704,
+    "totallines": 3540,
+    "linecoverage": 0,
+    "coveredbranches": 0,
+    "totalbranches": 0,
+    "coveredmethods": 0,
+    "totalmethods": 344,
+    "methodcoverage": 0
+ },
+  "coverage": {
+    "assemblies": [
+      { "name": "Assembly-CSharp", "classes": 25, "coverage": 0, "coveredlines": 0, "coverablelines": 975, "totallines": 1605, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 225, "classesinassembly": [
+        { "name": "AssaultRifle", "coverage": 0, "coveredlines": 0, "coverablelines": 45, "totallines": 74, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 13 },
+        { "name": "AttackDrone", "coverage": 0, "coveredlines": 0, "coverablelines": 44, "totallines": 82, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 23 },
+        { "name": "BasicAttack", "coverage": 0, "coveredlines": 0, "coverablelines": 40, "totallines": 65, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 12 },
+        { "name": "Boss", "coverage": 0, "coveredlines": 0, "coverablelines": 47, "totallines": 86, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 21 },
+        { "name": "BossAgent", "coverage": 0, "coveredlines": 0, "coverablelines": 60, "totallines": 86, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 8 },
+        { "name": "DamagingProjectile", "coverage": 0, "coveredlines": 0, "coverablelines": 20, "totallines": 38, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 4 },
+        { "name": "Despawner", "coverage": 0, "coveredlines": 0, "coverablelines": 11, "totallines": 17, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 3 },
+        { "name": "Environment", "coverage": 0, "coveredlines": 0, "coverablelines": 51, "totallines": 76, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 23 },
+        { "name": "HealthUIManager", "coverage": 0, "coveredlines": 0, "coverablelines": 6, "totallines": 13, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 2 },
+        { "name": "InputHandler", "coverage": 0, "coveredlines": 0, "coverablelines": 8, "totallines": 21, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 8 },
+        { "name": "Jump", "coverage": 0, "coveredlines": 0, "coverablelines": 22, "totallines": 41, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 9 },
+        { "name": "LastResort", "coverage": 0, "coveredlines": 0, "coverablelines": 56, "totallines": 85, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 14 },
+        { "name": "MachineGun", "coverage": 0, "coveredlines": 0, "coverablelines": 57, "totallines": 82, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 14 },
+        { "name": "MenuManager", "coverage": 0, "coveredlines": 0, "coverablelines": 6, "totallines": 14, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 2 },
+        { "name": "MoveDown", "coverage": 0, "coveredlines": 0, "coverablelines": 26, "totallines": 46, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 9 },
+        { "name": "MoveUp", "coverage": 0, "coveredlines": 0, "coverablelines": 26, "totallines": 46, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 9 },
+        { "name": "Player", "coverage": 0, "coveredlines": 0, "coverablelines": 53, "totallines": 94, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 12 },
+        { "name": "PlayerAgent", "coverage": 0, "coveredlines": 0, "coverablelines": 69, "totallines": 96, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 8 },
+        { "name": "PlayerAutoInputHandler", "coverage": 0, "coveredlines": 0, "coverablelines": 166, "totallines": 278, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 4 },
+        { "name": "PlayerInputHandler", "coverage": 0, "coveredlines": 0, "coverablelines": 6, "totallines": 10, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 1 },
+        { "name": "RandomInputHandler", "coverage": 0, "coveredlines": 0, "coverablelines": 6, "totallines": 10, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 1 },
+        { "name": "SpawnAttackDrones", "coverage": 0, "coveredlines": 0, "coverablelines": 77, "totallines": 109, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 17 },
+        { "name": "StepCounter", "coverage": 0, "coveredlines": 0, "coverablelines": 3, "totallines": 10, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 1 },
+        { "name": "StoopidInputHandler", "coverage": 0, "coveredlines": 0, "coverablelines": 20, "totallines": 34, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 2 },
+        { "name": "Utility.ComponentFinder", "coverage": 0, "coveredlines": 0, "coverablelines": 50, "totallines": 92, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 5 } ] },
+      { "name": "Assembly-CSharp-firstpass", "classes": 8, "coverage": 0, "coveredlines": 0, "coverablelines": 725, "totallines": 2307, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 117, "classesinassembly": [
+        { "name": "DG.Tweening.DOTweenCYInstruction", "coverage": 0, "coveredlines": 0, "coverablelines": 44, "totallines": 389, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 12 },
+        { "name": "DG.Tweening.DOTweenModuleAudio", "coverage": 0, "coveredlines": 0, "coverablelines": 56, "totallines": 198, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 15 },
+        { "name": "DG.Tweening.DOTweenModulePhysics", "coverage": 0, "coveredlines": 0, "coverablelines": 83, "totallines": 216, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 11 },
+        { "name": "DG.Tweening.DOTweenModulePhysics2D", "coverage": 0, "coveredlines": 0, "coverablelines": 76, "totallines": 193, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 9 },
+        { "name": "DG.Tweening.DOTweenModuleSprite", "coverage": 0, "coveredlines": 0, "coverablelines": 34, "totallines": 93, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 4 },
+        { "name": "DG.Tweening.DOTweenModuleUI", "coverage": 0, "coveredlines": 0, "coverablelines": 268, "totallines": 662, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 43 },
+        { "name": "DG.Tweening.DOTweenModuleUnityVersion", "coverage": 0, "coveredlines": 0, "coverablelines": 118, "totallines": 389, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 16 },
+        { "name": "DG.Tweening.DOTweenModuleUtils", "coverage": 0, "coveredlines": 0, "coverablelines": 46, "totallines": 167, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 7 } ] },
+      { "name": "Tests", "classes": 1, "coverage": 0, "coveredlines": 0, "coverablelines": 4, "totallines": 17, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 2, "classesinassembly": [
+        { "name": "DamagingProjectileTests", "coverage": 0, "coveredlines": 0, "coverablelines": 4, "totallines": 17, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 2 } ] } ]
+  }
+}

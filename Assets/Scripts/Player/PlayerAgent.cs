@@ -9,10 +9,8 @@ public class PlayerAgent : Agent{
     [SerializeField] private Environment environment;
     [SerializeField] private Player player;
     [SerializeField] private Boss boss;
-
     public override void Initialize(){
         environment = Utility.ComponentFinder.FindComponentInParents<Environment>(this.transform);
-
     }
 
     public override void CollectObservations(VectorSensor sensor){
@@ -41,10 +39,10 @@ public class PlayerAgent : Agent{
 
     public override void Heuristic(in ActionBuffers actionsOut) {
         Debug.Log("Inside Player heuristic");
-        bool basicAttackInput = Input.GetMouseButton(0);
-        bool activeAbility1Input = Input.GetKey(KeyCode.Q);
-        bool activeAbility2Input = Input.GetKey(KeyCode.E);
-        bool jumpInput = Input.GetKey(KeyCode.Space);
+        bool basicAttackInput = player.inputHandler.BasicAbilityInput;
+        bool activeAbility1Input = player.inputHandler.ActiveAbility1Input;
+        bool activeAbility2Input = player.inputHandler.ActiveAbility2Input;
+        bool jumpInput = player.inputHandler.JumpInput;
 
         var discreteActionsOut = actionsOut.DiscreteActions;
         

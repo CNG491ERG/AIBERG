@@ -66,7 +66,7 @@ public class Player : MonoBehaviour, IDamageable{
     }
 
     private void FixedUpdate() {
-        if(inputHandler != null){ //When the player is an agent it will have no input handler
+        if(this.GetComponent<PlayerAgent>() == null){
             basicAbility?.UseAbility(inputHandler.BasicAbilityInput);
             activeAbility1?.UseAbility(inputHandler.ActiveAbility1Input);
             activeAbility2?.UseAbility(inputHandler.ActiveAbility2Input);

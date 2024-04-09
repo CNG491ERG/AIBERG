@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CoverageReport scope="Summary">
+  <Summary>
+    <Generatedon>4/8/2024 - 11:48:50 AM</Generatedon>
+    <Parser>MultiReportParser (2x OpenCoverParser)</Parser>
+    <Assemblies>3</Assemblies>
+    <Classes>34</Classes>
+    <Files>33</Files>
+    <Coveredlines>0</Coveredlines>
+    <Uncoveredlines>1704</Uncoveredlines>
+    <Coverablelines>1704</Coverablelines>
+    <Totallines>3540</Totallines>
+    <Linecoverage>0</Linecoverage>
+    <Coveredbranches>0</Coveredbranches>
+    <Totalbranches>0</Totalbranches>
+    <Coveredmethods>0</Coveredmethods>
+    <Totalmethods>344</Totalmethods>
+    <Methodcoverage>0</Methodcoverage>
+  </Summary>
+  <Coverage>
+    <Assembly name="Assembly-CSharp" classes="25" coverage="0" coveredlines="0" coverablelines="975" totallines="1605" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="225" methodcoverage="0">
+      <Class name="AssaultRifle" coverage="0" coveredlines="0" coverablelines="45" totallines="74" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="13" methodcoverage="0" />
+      <Class name="AttackDrone" coverage="0" coveredlines="0" coverablelines="44" totallines="82" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="23" methodcoverage="0" />
+      <Class name="BasicAttack" coverage="0" coveredlines="0" coverablelines="40" totallines="65" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="12" methodcoverage="0" />
+      <Class name="Boss" coverage="0" coveredlines="0" coverablelines="47" totallines="86" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="21" methodcoverage="0" />
+      <Class name="BossAgent" coverage="0" coveredlines="0" coverablelines="60" totallines="86" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="8" methodcoverage="0" />
+      <Class name="DamagingProjectile" coverage="0" coveredlines="0" coverablelines="20" totallines="38" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="4" methodcoverage="0" />
+      <Class name="Despawner" coverage="0" coveredlines="0" coverablelines="11" totallines="17" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="3" methodcoverage="0" />
+      <Class name="Environment" coverage="0" coveredlines="0" coverablelines="51" totallines="76" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="23" methodcoverage="0" />
+      <Class name="HealthUIManager" coverage="0" coveredlines="0" coverablelines="6" totallines="13" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
+      <Class name="InputHandler" coverage="0" coveredlines="0" coverablelines="8" totallines="21" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="8" methodcoverage="0" />
+      <Class name="Jump" coverage="0" coveredlines="0" coverablelines="22" totallines="41" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="9" methodcoverage="0" />
+      <Class name="LastResort" coverage="0" coveredlines="0" coverablelines="56" totallines="85" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="14" methodcoverage="0" />
+      <Class name="MachineGun" coverage="0" coveredlines="0" coverablelines="57" totallines="82" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="14" methodcoverage="0" />
+      <Class name="MenuManager" coverage="0" coveredlines="0" coverablelines="6" totallines="14" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
+      <Class name="MoveDown" coverage="0" coveredlines="0" coverablelines="26" totallines="46" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="9" methodcoverage="0" />
+      <Class name="MoveUp" coverage="0" coveredlines="0" coverablelines="26" totallines="46" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="9" methodcoverage="0" />
+      <Class name="Player" coverage="0" coveredlines="0" coverablelines="53" totallines="94" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="12" methodcoverage="0" />
+      <Class name="PlayerAgent" coverage="0" coveredlines="0" coverablelines="69" totallines="96" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="8" methodcoverage="0" />
+      <Class name="PlayerAutoInputHandler" coverage="0" coveredlines="0" coverablelines="166" totallines="278" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="4" methodcoverage="0" />
+      <Class name="PlayerInputHandler" coverage="0" coveredlines="0" coverablelines="6" totallines="10" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
+      <Class name="RandomInputHandler" coverage="0" coveredlines="0" coverablelines="6" totallines="10" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
+      <Class name="SpawnAttackDrones" coverage="0" coveredlines="0" coverablelines="77" totallines="109" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="17" methodcoverage="0" />
+      <Class name="StepCounter" coverage="0" coveredlines="0" coverablelines="3" totallines="10" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
+      <Class name="StoopidInputHandler" coverage="0" coveredlines="0" coverablelines="20" totallines="34" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
+      <Class name="Utility.ComponentFinder" coverage="0" coveredlines="0" coverablelines="50" totallines="92" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="5" methodcoverage="0" />
+    </Assembly>
+    <Assembly name="Assembly-CSharp-firstpass" classes="8" coverage="0" coveredlines="0" coverablelines="725" totallines="2307" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="117" methodcoverage="0">
+      <Class name="DG.Tweening.DOTweenCYInstruction" coverage="0" coveredlines="0" coverablelines="44" totallines="389" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="12" methodcoverage="0" />
+      <Class name="DG.Tweening.DOTweenModuleAudio" coverage="0" coveredlines="0" coverablelines="56" totallines="198" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="15" methodcoverage="0" />
+      <Class name="DG.Tweening.DOTweenModulePhysics" coverage="0" coveredlines="0" coverablelines="83" totallines="216" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="11" methodcoverage="0" />
+      <Class name="DG.Tweening.DOTweenModulePhysics2D" coverage="0" coveredlines="0" coverablelines="76" totallines="193" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="9" methodcoverage="0" />
+      <Class name="DG.Tweening.DOTweenModuleSprite" coverage="0" coveredlines="0" coverablelines="34" totallines="93" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="4" methodcoverage="0" />
+      <Class name="DG.Tweening.DOTweenModuleUI" coverage="0" coveredlines="0" coverablelines="268" totallines="662" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="43" methodcoverage="0" />
+      <Class name="DG.Tweening.DOTweenModuleUnityVersion" coverage="0" coveredlines="0" coverablelines="118" totallines="389" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="16" methodcoverage="0" />
+      <Class name="DG.Tweening.DOTweenModuleUtils" coverage="0" coveredlines="0" coverablelines="46" totallines="167" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="7" methodcoverage="0" />
+    </Assembly>
+    <Assembly name="Tests" classes="1" coverage="0" coveredlines="0" coverablelines="4" totallines="17" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0">
+      <Class name="DamagingProjectileTests" coverage="0" coveredlines="0" coverablelines="4" totallines="17" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
+    </Assembly>
+  </Coverage>
+</CoverageReport>
