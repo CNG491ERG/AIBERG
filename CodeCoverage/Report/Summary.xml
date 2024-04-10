@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CoverageReport scope="Summary">
   <Summary>
-    <Generatedon>4/9/2024 - 2:45:15 PM</Generatedon>
-    <Parser>MultiReportParser (4x OpenCoverParser)</Parser>
-    <Assemblies>6</Assemblies>
-    <Classes>26</Classes>
-    <Files>26</Files>
-    <Coveredlines>23</Coveredlines>
-    <Uncoveredlines>972</Uncoveredlines>
-    <Coverablelines>995</Coverablelines>
-    <Totallines>1740</Totallines>
-    <Linecoverage>2.3</Linecoverage>
+    <Generatedon>4/9/2024 - 6:48:55 PM</Generatedon>
+    <Parser>MultiReportParser (6x OpenCoverParser)</Parser>
+    <Assemblies>5</Assemblies>
+    <Classes>25</Classes>
+    <Files>25</Files>
+    <Coveredlines>57</Coveredlines>
+    <Uncoveredlines>929</Uncoveredlines>
+    <Coverablelines>986</Coverablelines>
+    <Totallines>1709</Totallines>
+    <Linecoverage>5.7</Linecoverage>
     <Coveredbranches>0</Coveredbranches>
     <Totalbranches>0</Totalbranches>
-    <Coveredmethods>6</Coveredmethods>
+    <Coveredmethods>14</Coveredmethods>
     <Totalmethods>228</Totalmethods>
-    <Methodcoverage>2.6</Methodcoverage>
+    <Methodcoverage>6.1</Methodcoverage>
   </Summary>
   <Coverage>
     <Assembly name="AIBERG.BossAbilities" classes="5" coverage="0" coveredlines="0" coverablelines="213" totallines="373" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="70" methodcoverage="0">
@@ -25,12 +25,12 @@
       <Class name="AIBERG.BossAbilities.MoveUp" coverage="0" coveredlines="0" coverablelines="26" totallines="51" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="9" methodcoverage="0" />
       <Class name="AIBERG.BossAbilities.SpawnAttackDrones" coverage="0" coveredlines="0" coverablelines="77" totallines="114" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="17" methodcoverage="0" />
     </Assembly>
-    <Assembly name="AIBERG.Core" classes="12" coverage="1.5" coveredlines="8" coverablelines="522" totallines="897" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="4" totalmethods="96" methodcoverage="4.1">
-      <Class name="AIBERG.Core.Boss" coverage="2.1" coveredlines="1" coverablelines="47" totallines="91" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="21" methodcoverage="4.7" />
-      <Class name="AIBERG.Core.BossAgent" coverage="0" coveredlines="0" coverablelines="60" totallines="90" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="8" methodcoverage="0" />
+    <Assembly name="AIBERG.Core" classes="12" coverage="4.3" coveredlines="23" coverablelines="528" totallines="899" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="10" totalmethods="98" methodcoverage="10.2">
+      <Class name="AIBERG.Core.Boss" coverage="1.8" coveredlines="1" coverablelines="53" totallines="93" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="23" methodcoverage="4.3" />
+      <Class name="AIBERG.Core.BossAgent" coverage="13.3" coveredlines="8" coverablelines="60" totallines="90" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="8" methodcoverage="12.5" />
       <Class name="AIBERG.Core.DamagingProjectile" coverage="28.5" coveredlines="6" coverablelines="21" totallines="42" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="2" totalmethods="5" methodcoverage="40" />
       <Class name="AIBERG.Core.Despawner" coverage="0" coveredlines="0" coverablelines="11" totallines="21" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="3" methodcoverage="0" />
-      <Class name="AIBERG.Core.GameEnvironment" coverage="1.9" coveredlines="1" coverablelines="51" totallines="81" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="23" methodcoverage="4.3" />
+      <Class name="AIBERG.Core.GameEnvironment" coverage="15.6" coveredlines="8" coverablelines="51" totallines="81" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="6" totalmethods="23" methodcoverage="26" />
       <Class name="AIBERG.Core.InputHandlers.InputHandler" coverage="0" coveredlines="0" coverablelines="8" totallines="24" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="8" methodcoverage="0" />
       <Class name="AIBERG.Core.InputHandlers.PlayerAutoInputHandler" coverage="0" coveredlines="0" coverablelines="166" totallines="283" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="4" methodcoverage="0" />
       <Class name="AIBERG.Core.InputHandlers.PlayerInputHandler" coverage="0" coveredlines="0" coverablelines="6" totallines="12" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
@@ -50,11 +50,8 @@
       <Class name="AIBERG.UI.MenuManager" coverage="0" coveredlines="0" coverablelines="6" totallines="15" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
       <Class name="AIBERG.UI.StepCounter" coverage="0" coveredlines="0" coverablelines="3" totallines="14" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
     </Assembly>
-    <Assembly name="AIBERG.Utilities" classes="1" coverage="0" coveredlines="0" coverablelines="50" totallines="92" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="5" methodcoverage="0">
-      <Class name="AIBERG.Utilities.ComponentFinder" coverage="0" coveredlines="0" coverablelines="50" totallines="92" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="5" methodcoverage="0" />
-    </Assembly>
-    <Assembly name="EditModeTests" classes="1" coverage="100" coveredlines="15" coverablelines="15" totallines="33" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="2" totalmethods="2" methodcoverage="100">
-      <Class name="DamagingProjectileTests" coverage="100" coveredlines="15" coverablelines="15" totallines="33" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="2" totalmethods="2" methodcoverage="100" />
+    <Assembly name="AIBERG.Utilities" classes="1" coverage="68" coveredlines="34" coverablelines="50" totallines="92" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="4" totalmethods="5" methodcoverage="80">
+      <Class name="AIBERG.Utilities.ComponentFinder" coverage="68" coveredlines="34" coverablelines="50" totallines="92" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="4" totalmethods="5" methodcoverage="80" />
     </Assembly>
   </Coverage>
 </CoverageReport>

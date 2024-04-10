@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CoverageSession xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="0.0.0.0">
+  <Summary numSequencePoints="63" visitedSequencePoints="62" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="98.41" branchCoverage="0.0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="4" numClasses="4" visitedMethods="10" numMethods="10" />
+  <Modules>
+    <Module>
+      <Summary numSequencePoints="46" visitedSequencePoints="45" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="97.83" branchCoverage="0.0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="1" numClasses="1" visitedMethods="4" numMethods="4" />
+      <ModuleTime>0001-01-01T00:00:00</ModuleTime>
+      <ModuleName>AIBERG.Utilities</ModuleName>
+      <Files>
+        <File uid="5" fullPath="D:/CNG491ERG/EndlessRunnerGame/Assets/Scripts/Utilities/ComponentFinder.cs" />
+      </Files>
+      <Classes>
+        <Class>
+          <Summary numSequencePoints="46" visitedSequencePoints="45" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="97.83" branchCoverage="0.0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="1" numClasses="1" visitedMethods="4" numMethods="4" />
+          <FullName>AIBERG.Utilities.ComponentFinder</FullName>
+          <Methods>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="90.91" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="11" visitedSequencePoints="10" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="90.91" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663299</MetadataToken>
+              <Name>static T AIBERG.Utilities.ComponentFinder::FindComponentInParents[T](UnityEngine.Transform)</Name>
+              <FileRef uid="5" />
+              <SequencePoints>
+                <SequencePoint vc="1" uspid="1293" ordinal="0" offset="0" sl="7" sc="0" el="7" ec="0" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="2" uspid="1294" ordinal="0" offset="3" sl="10" sc="0" el="10" ec="0" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="2" uspid="1295" ordinal="0" offset="4" sl="12" sc="0" el="12" ec="0" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="2" uspid="1296" ordinal="0" offset="11" sl="15" sc="0" el="15" ec="0" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="1" uspid="1297" ordinal="0" offset="27" sl="16" sc="0" el="16" ec="0" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="1" uspid="1298" ordinal="0" offset="28" sl="17" sc="0" el="17" ec="0" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="1" uspid="1299" ordinal="0" offset="32" sl="21" sc="0" el="21" ec="0" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="1" uspid="1300" ordinal="0" offset="40" sl="22" sc="0" el="22" ec="0" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="2" uspid="1301" ordinal="0" offset="41" sl="9" sc="0" el="9" ec="0" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="0" uspid="1302" ordinal="0" offset="52" sl="25" sc="0" el="25" ec="0" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="1" uspid="1303" ordinal="0" offset="65" sl="26" sc="0" el="26" ec="0" bec="0" bev="0" fileid="5" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="17" visitedSequencePoints="17" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663300</MetadataToken>
+              <Name>static T AIBERG.Utilities.ComponentFinder::FindComponentInChildren[T](UnityEngine.Transform)</Name>
+              <FileRef uid="5" />
+              <SequencePoints>
+                <SequencePoint vc="9" uspid="1304" ordinal="0" offset="0" sl="28" sc="0" el="28" ec="0" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="9" uspid="1305" ordinal="0" offset="1" sl="30" sc="0" el="30" ec="0" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="9" uspid="1306" ordinal="0" offset="8" sl="33" sc="0" el="33" ec="0" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="2" uspid="1307" ordinal="0" offset="24" sl="33" sc="0" el="33" ec="0" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="2" uspid="1308" ordinal="0" offset="25" sl="34" sc="0" el="34" ec="0" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="7" uspid="1309" ordinal="0" offset="29" sl="38" sc="0" el="38" ec="0" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="7" uspid="1310" ordinal="0" offset="30" sl="38" sc="0" el="38" ec="0" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="7" uspid="1311" ordinal="0" offset="39" sl="38" sc="0" el="38" ec="0" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="7" uspid="1312" ordinal="0" offset="52" sl="38" sc="0" el="38" ec="0" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="7" uspid="1313" ordinal="0" offset="53" sl="40" sc="0" el="40" ec="0" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="7" uspid="1314" ordinal="0" offset="61" sl="43" sc="0" el="43" ec="0" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="2" uspid="1315" ordinal="0" offset="79" sl="43" sc="0" el="43" ec="0" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="2" uspid="1316" ordinal="0" offset="80" sl="44" sc="0" el="44" ec="0" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="5" uspid="1317" ordinal="0" offset="84" sl="46" sc="0" el="46" ec="0" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="12" uspid="1318" ordinal="0" offset="85" sl="38" sc="0" el="38" ec="0" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="5" uspid="1319" ordinal="0" offset="116" sl="48" sc="0" el="48" ec="0" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="9" uspid="1320" ordinal="0" offset="129" sl="49" sc="0" el="49" ec="0" bec="0" bev="0" fileid="5" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="5" visitedSequencePoints="5" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663301</MetadataToken>
+              <Name>static System.Collections.Generic.List[GameObject] AIBERG.Utilities.ComponentFinder::FindGameObjectsWithTagInChildren(System.String, UnityEngine.Transform)</Name>
+              <FileRef uid="5" />
+              <SequencePoints>
+                <SequencePoint vc="1" uspid="1321" ordinal="0" offset="0" sl="51" sc="112" el="51" ec="112" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="1" uspid="1322" ordinal="0" offset="1" sl="52" sc="13" el="52" ec="13" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="1" uspid="1323" ordinal="0" offset="7" sl="55" sc="13" el="55" ec="13" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="1" uspid="1324" ordinal="0" offset="16" sl="57" sc="13" el="57" ec="13" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="1" uspid="1325" ordinal="0" offset="20" sl="58" sc="9" el="58" ec="9" bec="0" bev="0" fileid="5" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="13" visitedSequencePoints="13" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663302</MetadataToken>
+              <Name>static System.Void AIBERG.Utilities.ComponentFinder::FindGameObjectsWithTagRecursively(System.String, UnityEngine.Transform, System.Collections.Generic.List[GameObject])</Name>
+              <FileRef uid="5" />
+              <SequencePoints>
+                <SequencePoint vc="32" uspid="1326" ordinal="0" offset="0" sl="60" sc="133" el="60" ec="133" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="32" uspid="1327" ordinal="0" offset="1" sl="62" sc="13" el="62" ec="13" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="8" uspid="1328" ordinal="0" offset="12" sl="62" sc="50" el="62" ec="50" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="8" uspid="1329" ordinal="0" offset="13" sl="64" sc="17" el="64" ec="17" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="8" uspid="1330" ordinal="0" offset="26" sl="65" sc="13" el="65" ec="13" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="32" uspid="1331" ordinal="0" offset="27" sl="67" sc="13" el="67" ec="13" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="32" uspid="1332" ordinal="0" offset="28" sl="67" sc="41" el="67" ec="41" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="31" uspid="1333" ordinal="0" offset="37" sl="67" sc="22" el="67" ec="22" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="31" uspid="1334" ordinal="0" offset="49" sl="67" sc="58" el="67" ec="58" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="31" uspid="1335" ordinal="0" offset="50" sl="69" sc="17" el="69" ec="17" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="31" uspid="1336" ordinal="0" offset="59" sl="70" sc="13" el="70" ec="13" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="63" uspid="1337" ordinal="0" offset="60" sl="67" sc="38" el="67" ec="38" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="32" uspid="1338" ordinal="0" offset="88" sl="71" sc="9" el="71" ec="9" bec="0" bev="0" fileid="5" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+          </Methods>
+        </Class>
+      </Classes>
+    </Module>
+    <Module>
+      <Summary numSequencePoints="17" visitedSequencePoints="17" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0.0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="3" numClasses="3" visitedMethods="6" numMethods="6" />
+      <ModuleTime>0001-01-01T00:00:00</ModuleTime>
+      <ModuleName>AIBERG.Core</ModuleName>
+      <Files>
+        <File uid="11" fullPath="D:/CNG491ERG/EndlessRunnerGame/Assets/Scripts/Core/Boss.cs" />
+        <File uid="12" fullPath="D:/CNG491ERG/EndlessRunnerGame/Assets/Scripts/Core/BossAgent.cs" />
+        <File uid="13" fullPath="D:/CNG491ERG/EndlessRunnerGame/Assets/Scripts/Core/DamagingProjectile.cs" />
+        <File uid="14" fullPath="D:/CNG491ERG/EndlessRunnerGame/Assets/Scripts/Core/Despawner.cs" />
+        <File uid="15" fullPath="D:/CNG491ERG/EndlessRunnerGame/Assets/Scripts/Core/GameEnvironment.cs" />
+        <File uid="16" fullPath="D:/CNG491ERG/EndlessRunnerGame/Assets/Scripts/Core/Player.cs" />
+        <File uid="17" fullPath="D:/CNG491ERG/EndlessRunnerGame/Assets/Scripts/Core/PlayerAgent.cs" />
+        <File uid="18" fullPath="D:/CNG491ERG/EndlessRunnerGame/Assets/Scripts/Core/InputHandlers/InputHandler.cs" />
+        <File uid="19" fullPath="D:/CNG491ERG/EndlessRunnerGame/Assets/Scripts/Core/InputHandlers/PlayerAutoInputHandler.cs" />
+        <File uid="20" fullPath="D:/CNG491ERG/EndlessRunnerGame/Assets/Scripts/Core/InputHandlers/PlayerInputHandler.cs" />
+        <File uid="21" fullPath="D:/CNG491ERG/EndlessRunnerGame/Assets/Scripts/Core/InputHandlers/RandomInputHandler.cs" />
+        <File uid="22" fullPath="D:/CNG491ERG/EndlessRunnerGame/Assets/Scripts/Core/InputHandlers/StoopidInputHandler.cs" />
+      </Files>
+      <Classes>
+        <Class>
+          <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0.0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="1" />
+          <FullName>AIBERG.Core.Boss</FullName>
+          <Methods>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="true" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663323</MetadataToken>
+              <Name>AIBERG.Core.Boss::Boss()</Name>
+              <FileRef uid="11" />
+              <SequencePoints>
+                <SequencePoint vc="2" uspid="1666" ordinal="0" offset="0" sl="18" sc="22" el="18" ec="22" bec="0" bev="0" fileid="11" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="8" visitedSequencePoints="8" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0.0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="1" />
+          <FullName>AIBERG.Core.BossAgent</FullName>
+          <Methods>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="8" visitedSequencePoints="8" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663324</MetadataToken>
+              <Name>System.Void AIBERG.Core.BossAgent::Initialize()</Name>
+              <FileRef uid="12" />
+              <SequencePoints>
+                <SequencePoint vc="1" uspid="1667" ordinal="0" offset="0" sl="15" sc="39" el="15" ec="39" bec="0" bev="0" fileid="12" />
+                <SequencePoint vc="1" uspid="1668" ordinal="0" offset="1" sl="16" sc="9" el="16" ec="9" bec="0" bev="0" fileid="12" />
+                <SequencePoint vc="1" uspid="1669" ordinal="0" offset="18" sl="17" sc="9" el="17" ec="9" bec="0" bev="0" fileid="12" />
+                <SequencePoint vc="1" uspid="1670" ordinal="0" offset="35" sl="18" sc="9" el="18" ec="9" bec="0" bev="0" fileid="12" />
+                <SequencePoint vc="1" uspid="1671" ordinal="0" offset="52" sl="19" sc="9" el="19" ec="9" bec="0" bev="0" fileid="12" />
+                <SequencePoint vc="1" uspid="1672" ordinal="0" offset="81" sl="20" sc="9" el="20" ec="9" bec="0" bev="0" fileid="12" />
+                <SequencePoint vc="1" uspid="1673" ordinal="0" offset="105" sl="21" sc="9" el="21" ec="9" bec="0" bev="0" fileid="12" />
+                <SequencePoint vc="1" uspid="1674" ordinal="0" offset="129" sl="22" sc="5" el="22" ec="5" bec="0" bev="0" fileid="12" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="8" visitedSequencePoints="8" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0.0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="1" numClasses="1" visitedMethods="4" numMethods="4" />
+          <FullName>AIBERG.Core.GameEnvironment</FullName>
+          <Methods>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="true" isSetter="false">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663344</MetadataToken>
+              <Name>AIBERG.Core.Player AIBERG.Core.GameEnvironment::get_Player()</Name>
+              <FileRef uid="15" />
+              <SequencePoints>
+                <SequencePoint vc="2" uspid="1763" ordinal="0" offset="0" sl="22" sc="33" el="22" ec="33" bec="0" bev="0" fileid="15" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="true" isSetter="false">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663346</MetadataToken>
+              <Name>AIBERG.Core.Boss AIBERG.Core.GameEnvironment::get_Boss()</Name>
+              <FileRef uid="15" />
+              <SequencePoints>
+                <SequencePoint vc="1" uspid="1765" ordinal="0" offset="0" sl="23" sc="29" el="23" ec="29" bec="0" bev="0" fileid="15" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="5" visitedSequencePoints="5" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663358</MetadataToken>
+              <Name>System.Void AIBERG.Core.GameEnvironment::Awake()</Name>
+              <FileRef uid="15" />
+              <SequencePoints>
+                <SequencePoint vc="1" uspid="1775" ordinal="0" offset="0" sl="29" sc="25" el="29" ec="25" bec="0" bev="0" fileid="15" />
+                <SequencePoint vc="1" uspid="1776" ordinal="0" offset="1" sl="30" sc="9" el="30" ec="9" bec="0" bev="0" fileid="15" />
+                <SequencePoint vc="1" uspid="1777" ordinal="0" offset="18" sl="31" sc="9" el="31" ec="9" bec="0" bev="0" fileid="15" />
+                <SequencePoint vc="1" uspid="1778" ordinal="0" offset="35" sl="32" sc="9" el="32" ec="9" bec="0" bev="0" fileid="15" />
+                <SequencePoint vc="1" uspid="1779" ordinal="0" offset="57" sl="33" sc="5" el="33" ec="5" bec="0" bev="0" fileid="15" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="true" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663366</MetadataToken>
+              <Name>AIBERG.Core.GameEnvironment::GameEnvironment()</Name>
+              <FileRef uid="15" />
+              <SequencePoints>
+                <SequencePoint vc="2" uspid="1825" ordinal="0" offset="0" sl="19" sc="22" el="19" ec="22" bec="0" bev="0" fileid="15" />
+              </SequencePoints>
+              <BranchPoints />
+            </Method>
+          </Methods>
+        </Class>
+      </Classes>
+    </Module>
+  </Modules>
+</CoverageSession>

@@ -48,26 +48,28 @@ namespace AIBERG.Core{
     private void Start() {
         environment = ComponentFinder.FindComponentInParents<GameEnvironment>(this.transform);
         droneTargetPositions = ComponentFinder.FindGameObjectsWithTagInChildren("DroneTarget",this.transform).ConvertAll(obj=>obj.transform);
-        if(bossAbilities.BasicAttackAbility != null){
-            basicAbilityObject = Instantiate(bossAbilities.BasicAttackAbility, this.transform);
-            basicAttackAbility = basicAbilityObject.GetComponent<IAbility>();
-        }
-        if(bossAbilities.MoveUpAbility != null){
-            moveUpAbilityObject = Instantiate(bossAbilities.MoveUpAbility, this.transform);
-            moveUpAbility = moveUpAbilityObject.GetComponent<IAbility>();
-        }
-        if(bossAbilities.MoveDownAbility != null){
-            moveDownAbilityObject = Instantiate(bossAbilities.MoveDownAbility, this.transform);
-            moveDownAbility = moveDownAbilityObject.GetComponent<IAbility>();
-        }
-        if(bossAbilities.AttackDroneAbility != null){
-            spawnAttackDroneAbilityObject = Instantiate(bossAbilities.AttackDroneAbility, this.transform);
-            spawnAttackDroneAbility = spawnAttackDroneAbilityObject.GetComponent<IAbility>();
-        }
+        if(bossAbilities != null){
+            if(bossAbilities.BasicAttackAbility != null){
+                basicAbilityObject = Instantiate(bossAbilities.BasicAttackAbility, this.transform);
+                basicAttackAbility = basicAbilityObject.GetComponent<IAbility>();
+            }
+            if(bossAbilities.MoveUpAbility != null){
+                moveUpAbilityObject = Instantiate(bossAbilities.MoveUpAbility, this.transform);
+                moveUpAbility = moveUpAbilityObject.GetComponent<IAbility>();
+            }
+            if(bossAbilities.MoveDownAbility != null){
+                moveDownAbilityObject = Instantiate(bossAbilities.MoveDownAbility, this.transform);
+                moveDownAbility = moveDownAbilityObject.GetComponent<IAbility>();
+            }
+            if(bossAbilities.AttackDroneAbility != null){
+                spawnAttackDroneAbilityObject = Instantiate(bossAbilities.AttackDroneAbility, this.transform);
+                spawnAttackDroneAbility = spawnAttackDroneAbilityObject.GetComponent<IAbility>();
+            }
 
-        health = maxHealth = bossAbilities.MaxHealth;
-        defense = bossAbilities.Defense;
-        speed = bossAbilities.Speed;
+            health = maxHealth = bossAbilities.MaxHealth;
+            defense = bossAbilities.Defense;
+            speed = bossAbilities.Speed;
+        }
     }
 
     public void TakeDamage(float damageToTake) {

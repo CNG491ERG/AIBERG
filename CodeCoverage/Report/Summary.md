@@ -1,21 +1,21 @@
 ﻿# Summary
 |||
 |:---|:---|
-| Generated on: | 4/9/2024 - 2:45:15 PM |
-| Parser: | MultiReportParser (4x OpenCoverParser) |
-| Assemblies: | 6 |
-| Classes: | 26 |
-| Files: | 26 |
-| Covered lines: | 23 |
-| Uncovered lines: | 972 |
-| Coverable lines: | 995 |
-| Total lines: | 1740 |
-| Line coverage: | 2.3% (23 of 995) |
+| Generated on: | 4/9/2024 - 6:48:55 PM |
+| Parser: | MultiReportParser (6x OpenCoverParser) |
+| Assemblies: | 5 |
+| Classes: | 25 |
+| Files: | 25 |
+| Covered lines: | 57 |
+| Uncovered lines: | 929 |
+| Coverable lines: | 986 |
+| Total lines: | 1709 |
+| Line coverage: | 5.7% (57 of 986) |
 | Covered branches: | 0 |
 | Total branches: | 0 |
-| Covered methods: | 6 |
+| Covered methods: | 14 |
 | Total methods: | 228 |
-| Method coverage: | 2.6% (6 of 228) |
+| Method coverage: | 6.1% (14 of 228) |
 
 |**Name**|**Covered**|**Uncovered**|**Coverable**|**Total**|**Line coverage**|**Covered**|**Total**|**Branch coverage**|**Covered**|**Total**|**Method coverage**|
 |:---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -25,12 +25,12 @@
 |AIBERG.BossAbilities.MoveDown|0|26|26|51|0%|0|0||0|9|0%|
 |AIBERG.BossAbilities.MoveUp|0|26|26|51|0%|0|0||0|9|0%|
 |AIBERG.BossAbilities.SpawnAttackDrones|0|77|77|114|0%|0|0||0|17|0%|
-|**AIBERG.Core**|**8**|**514**|**522**|**897**|**1.5%**|**0**|**0**|****|**4**|**96**|**4.1%**|
-|AIBERG.Core.Boss|1|46|47|91|2.1%|0|0||1|21|4.7%|
-|AIBERG.Core.BossAgent|0|60|60|90|0%|0|0||0|8|0%|
+|**AIBERG.Core**|**23**|**505**|**528**|**899**|**4.3%**|**0**|**0**|****|**10**|**98**|**10.2%**|
+|AIBERG.Core.Boss|1|52|53|93|1.8%|0|0||1|23|4.3%|
+|AIBERG.Core.BossAgent|8|52|60|90|13.3%|0|0||1|8|12.5%|
 |AIBERG.Core.DamagingProjectile|6|15|21|42|28.5%|0|0||2|5|40%|
 |AIBERG.Core.Despawner|0|11|11|21|0%|0|0||0|3|0%|
-|AIBERG.Core.GameEnvironment|1|50|51|81|1.9%|0|0||1|23|4.3%|
+|AIBERG.Core.GameEnvironment|8|43|51|81|15.6%|0|0||6|23|26%|
 |AIBERG.Core.InputHandlers.InputHandler|0|8|8|24|0%|0|0||0|8|0%|
 |AIBERG.Core.InputHandlers.PlayerAutoInputHandler|0|166|166|283|0%|0|0||0|4|0%|
 |AIBERG.Core.InputHandlers.PlayerInputHandler|0|6|6|12|0%|0|0||0|1|0%|
@@ -47,7 +47,5 @@
 |AIBERG.UI.HealthUIManager|0|6|6|18|0%|0|0||0|2|0%|
 |AIBERG.UI.MenuManager|0|6|6|15|0%|0|0||0|2|0%|
 |AIBERG.UI.StepCounter|0|3|3|14|0%|0|0||0|1|0%|
-|**AIBERG.Utilities**|**0**|**50**|**50**|**92**|**0%**|**0**|**0**|****|**0**|**5**|**0%**|
-|AIBERG.Utilities.ComponentFinder|0|50|50|92|0%|0|0||0|5|0%|
-|**EditModeTests**|**15**|**0**|**15**|**33**|**100%**|**0**|**0**|****|**2**|**2**|**100%**|
-|DamagingProjectileTests|15|0|15|33|100%|0|0||2|2|100%|
+|**AIBERG.Utilities**|**34**|**16**|**50**|**92**|**68%**|**0**|**0**|****|**4**|**5**|**80%**|
+|AIBERG.Utilities.ComponentFinder|34|16|50|92|68%|0|0||4|5|80%|

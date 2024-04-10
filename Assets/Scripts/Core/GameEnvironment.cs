@@ -19,20 +19,20 @@ namespace AIBERG.Core{
     [SerializeField] private List<GameObject> childObjects = new();
 
     public long StepCounter{get => stepCounter; private set => stepCounter = value;}
-    public Player Player{get => player; private set => player = value;}
-    public Boss Boss{get => boss; private set => boss = value;}
+    public Player Player{get => player;  set => player = value;}
+    public Boss Boss{get => boss;  set => boss = value;}
     public List<GameObject> ChildObjects {get => childObjects; private set => childObjects = value;}
     public List<GameObject> ForegroundObjects {get => foregroundObjects; private set => foregroundObjects = value;}
     public Transform PlayerSpawnPosition {get => playerSpawnPosition; private set => playerSpawnPosition = value;}
     public Transform BossSpawnPosition {get => bossSpawnPosition; private set => bossSpawnPosition = value;}
     public event EventHandler OnMaxStepsReached;
-    private void Awake() {
+    public void Awake() {
         player = ComponentFinder.FindComponentInChildren<Player>(this.transform);
         boss = ComponentFinder.FindComponentInChildren<Boss>(this.transform);
         foregroundObjects = ComponentFinder.FindGameObjectsWithTagInChildren("ForegroundObject", this.transform);
     }
 
-    private void Start() {
+    public void Start() {
         stepCounter = 0;
     }
 
