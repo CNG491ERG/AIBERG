@@ -1,11 +1,13 @@
 
-/*using System;
+using System;
 using UnityEngine;
 using Npgsql;
 using System.Text;
+using AIBERG.Utilities;
+using AIBERG.Core;
 
 public class InputRecorder : MonoBehaviour{
-    /*
+    GameEnvironment environment;
     private StringBuilder inputsRecorded = new StringBuilder();
     [SerializeField] private bool startRecording;
     [SerializeField] private int playerId = 1; // Replace with the actual player's ID
@@ -17,23 +19,8 @@ public class InputRecorder : MonoBehaviour{
         Debug.Log("connecteed");
         connString = "Host=34.42.114.162;Port=5432;Username=postgres;Password=postgres;Database=db";
         conn = new NpgsqlConnection(connString);
-        GameManager.Instance.OnGameStarted += GameManager_OnGameStarted;
-        GameManager.Instance.OnGameEnded += GameManager_OnGameEnded;
-
     }
 
-    private void GameManager_OnGameEnded(object sender, EventArgs e)
-    {
-        startRecording = false;
-        Debug.Log("Record complete, sending to db");
-        SendDataToDB(playerId, inputsRecorded.ToString());
-    }
-
-    private void GameManager_OnGameStarted(object sender, EventArgs e)
-    {
-        startRecording = true;
-        Debug.Log("Started recording");
-    }
 
     void FixedUpdate(){
         if(startRecording){
@@ -78,4 +65,5 @@ public class InputRecorder : MonoBehaviour{
             conn.Close();
             Debug.Log("Disconnected from database.");
         }
-    }*/
+    }
+}
