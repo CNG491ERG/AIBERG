@@ -10,7 +10,7 @@ public class ObstacleSpawner : MonoBehaviour
     public float minX;
     public float minY;
     public float spawnInterval;
-    public float spawnTime;
+    private float spawnTime;
  
 
     // Update is called once per frame
