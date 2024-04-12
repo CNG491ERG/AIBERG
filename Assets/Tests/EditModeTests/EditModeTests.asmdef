@@ -4,7 +4,9 @@
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "AIBERG.Core"
+        "AIBERG.Core",
+        "AIBERG.API",
+        "Unity.TextMeshPro"
     ],
     "includePlatforms": [
         "Editor"

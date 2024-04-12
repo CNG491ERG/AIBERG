@@ -1,52 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CoverageReport scope="Summary">
   <Summary>
-    <Generatedon>4/9/2024 - 6:48:55 PM</Generatedon>
+    <Generatedon>4/12/2024 - 7:17:43 AM</Generatedon>
     <Parser>MultiReportParser (6x OpenCoverParser)</Parser>
-    <Assemblies>5</Assemblies>
-    <Classes>25</Classes>
-    <Files>25</Files>
-    <Coveredlines>57</Coveredlines>
-    <Uncoveredlines>929</Uncoveredlines>
-    <Coverablelines>986</Coverablelines>
-    <Totallines>1709</Totallines>
-    <Linecoverage>5.7</Linecoverage>
+    <Assemblies>6</Assemblies>
+    <Classes>28</Classes>
+    <Files>28</Files>
+    <Coveredlines>474</Coveredlines>
+    <Uncoveredlines>617</Uncoveredlines>
+    <Coverablelines>1091</Coverablelines>
+    <Totallines>1911</Totallines>
+    <Linecoverage>43.4</Linecoverage>
     <Coveredbranches>0</Coveredbranches>
     <Totalbranches>0</Totalbranches>
-    <Coveredmethods>14</Coveredmethods>
-    <Totalmethods>228</Totalmethods>
-    <Methodcoverage>6.1</Methodcoverage>
+    <Coveredmethods>130</Coveredmethods>
+    <Totalmethods>239</Totalmethods>
+    <Methodcoverage>54.3</Methodcoverage>
   </Summary>
   <Coverage>
-    <Assembly name="AIBERG.BossAbilities" classes="5" coverage="0" coveredlines="0" coverablelines="213" totallines="373" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="70" methodcoverage="0">
-      <Class name="AIBERG.BossAbilities.AttackDrone" coverage="0" coveredlines="0" coverablelines="44" totallines="87" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="23" methodcoverage="0" />
-      <Class name="AIBERG.BossAbilities.BasicAttack" coverage="0" coveredlines="0" coverablelines="40" totallines="70" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="12" methodcoverage="0" />
-      <Class name="AIBERG.BossAbilities.MoveDown" coverage="0" coveredlines="0" coverablelines="26" totallines="51" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="9" methodcoverage="0" />
-      <Class name="AIBERG.BossAbilities.MoveUp" coverage="0" coveredlines="0" coverablelines="26" totallines="51" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="9" methodcoverage="0" />
-      <Class name="AIBERG.BossAbilities.SpawnAttackDrones" coverage="0" coveredlines="0" coverablelines="77" totallines="114" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="17" methodcoverage="0" />
+    <Assembly name="AIBERG.API" classes="3" coverage="20.9" coveredlines="22" coverablelines="105" totallines="202" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="2" totalmethods="11" methodcoverage="18.1">
+      <Class name="AIBERG.API.LoginController" coverage="68.7" coveredlines="22" coverablelines="32" totallines="67" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="2" totalmethods="3" methodcoverage="66.6" />
+      <Class name="InputRecorder" coverage="0" coveredlines="0" coverablelines="44" totallines="69" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="5" methodcoverage="0" />
+      <Class name="RegisterController" coverage="0" coveredlines="0" coverablelines="29" totallines="66" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="3" methodcoverage="0" />
     </Assembly>
-    <Assembly name="AIBERG.Core" classes="12" coverage="4.3" coveredlines="23" coverablelines="528" totallines="899" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="10" totalmethods="98" methodcoverage="10.2">
-      <Class name="AIBERG.Core.Boss" coverage="1.8" coveredlines="1" coverablelines="53" totallines="93" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="23" methodcoverage="4.3" />
-      <Class name="AIBERG.Core.BossAgent" coverage="13.3" coveredlines="8" coverablelines="60" totallines="90" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="8" methodcoverage="12.5" />
+    <Assembly name="AIBERG.BossAbilities" classes="5" coverage="54.4" coveredlines="116" coverablelines="213" totallines="373" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="40" totalmethods="70" methodcoverage="57.1">
+      <Class name="AIBERG.BossAbilities.AttackDrone" coverage="15.9" coveredlines="7" coverablelines="44" totallines="87" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="13" totalmethods="23" methodcoverage="56.5" />
+      <Class name="AIBERG.BossAbilities.BasicAttack" coverage="70" coveredlines="28" coverablelines="40" totallines="70" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="8" totalmethods="12" methodcoverage="66.6" />
+      <Class name="AIBERG.BossAbilities.MoveDown" coverage="61.5" coveredlines="16" coverablelines="26" totallines="51" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="4" totalmethods="9" methodcoverage="44.4" />
+      <Class name="AIBERG.BossAbilities.MoveUp" coverage="61.5" coveredlines="16" coverablelines="26" totallines="51" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="4" totalmethods="9" methodcoverage="44.4" />
+      <Class name="AIBERG.BossAbilities.SpawnAttackDrones" coverage="63.6" coveredlines="49" coverablelines="77" totallines="114" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="11" totalmethods="17" methodcoverage="64.7" />
+    </Assembly>
+    <Assembly name="AIBERG.Core" classes="12" coverage="34.4" coveredlines="182" coverablelines="528" totallines="899" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="50" totalmethods="98" methodcoverage="51">
+      <Class name="AIBERG.Core.Boss" coverage="67.9" coveredlines="36" coverablelines="53" totallines="93" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="12" totalmethods="23" methodcoverage="52.1" />
+      <Class name="AIBERG.Core.BossAgent" coverage="78.3" coveredlines="47" coverablelines="60" totallines="90" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="5" totalmethods="8" methodcoverage="62.5" />
       <Class name="AIBERG.Core.DamagingProjectile" coverage="28.5" coveredlines="6" coverablelines="21" totallines="42" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="2" totalmethods="5" methodcoverage="40" />
-      <Class name="AIBERG.Core.Despawner" coverage="0" coveredlines="0" coverablelines="11" totallines="21" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="3" methodcoverage="0" />
-      <Class name="AIBERG.Core.GameEnvironment" coverage="15.6" coveredlines="8" coverablelines="51" totallines="81" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="6" totalmethods="23" methodcoverage="26" />
-      <Class name="AIBERG.Core.InputHandlers.InputHandler" coverage="0" coveredlines="0" coverablelines="8" totallines="24" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="8" methodcoverage="0" />
+      <Class name="AIBERG.Core.Despawner" coverage="27.2" coveredlines="3" coverablelines="11" totallines="21" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="3" methodcoverage="33.3" />
+      <Class name="AIBERG.Core.GameEnvironment" coverage="70.5" coveredlines="36" coverablelines="51" totallines="81" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="14" totalmethods="23" methodcoverage="60.8" />
+      <Class name="AIBERG.Core.InputHandlers.InputHandler" coverage="100" coveredlines="8" coverablelines="8" totallines="24" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="8" totalmethods="8" methodcoverage="100" />
       <Class name="AIBERG.Core.InputHandlers.PlayerAutoInputHandler" coverage="0" coveredlines="0" coverablelines="166" totallines="283" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="4" methodcoverage="0" />
-      <Class name="AIBERG.Core.InputHandlers.PlayerInputHandler" coverage="0" coveredlines="0" coverablelines="6" totallines="12" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
+      <Class name="AIBERG.Core.InputHandlers.PlayerInputHandler" coverage="100" coveredlines="6" coverablelines="6" totallines="12" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="1" methodcoverage="100" />
       <Class name="AIBERG.Core.InputHandlers.RandomInputHandler" coverage="0" coveredlines="0" coverablelines="6" totallines="12" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
       <Class name="AIBERG.Core.InputHandlers.StoopidInputHandler" coverage="0" coveredlines="0" coverablelines="20" totallines="38" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
-      <Class name="AIBERG.Core.Player" coverage="0" coveredlines="0" coverablelines="53" totallines="101" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="12" methodcoverage="0" />
+      <Class name="AIBERG.Core.Player" coverage="75.4" coveredlines="40" coverablelines="53" totallines="101" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="7" totalmethods="12" methodcoverage="58.3" />
       <Class name="AIBERG.Core.PlayerAgent" coverage="0" coveredlines="0" coverablelines="73" totallines="102" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="8" methodcoverage="0" />
     </Assembly>
-    <Assembly name="AIBERG.Factions.TheOrderOfTheFlesh" classes="4" coverage="0" coveredlines="0" coverablelines="180" totallines="298" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="50" methodcoverage="0">
-      <Class name="AIBERG.Factions.TheOrderOfTheFlesh.AssaultRifle" coverage="0" coveredlines="0" coverablelines="45" totallines="79" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="13" methodcoverage="0" />
-      <Class name="AIBERG.Factions.TheOrderOfTheFlesh.Jump" coverage="0" coveredlines="0" coverablelines="22" totallines="45" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="9" methodcoverage="0" />
-      <Class name="AIBERG.Factions.TheOrderOfTheFlesh.LastResort" coverage="0" coveredlines="0" coverablelines="56" totallines="88" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="14" methodcoverage="0" />
-      <Class name="AIBERG.Factions.TheOrderOfTheFlesh.MachineGun" coverage="0" coveredlines="0" coverablelines="57" totallines="86" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="14" methodcoverage="0" />
+    <Assembly name="AIBERG.Factions.TheOrderOfTheFlesh" classes="4" coverage="63.3" coveredlines="114" coverablelines="180" totallines="298" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="32" totalmethods="50" methodcoverage="64">
+      <Class name="AIBERG.Factions.TheOrderOfTheFlesh.AssaultRifle" coverage="71.1" coveredlines="32" coverablelines="45" totallines="79" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="10" totalmethods="13" methodcoverage="76.9" />
+      <Class name="AIBERG.Factions.TheOrderOfTheFlesh.Jump" coverage="68.1" coveredlines="15" coverablelines="22" totallines="45" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="4" totalmethods="9" methodcoverage="44.4" />
+      <Class name="AIBERG.Factions.TheOrderOfTheFlesh.LastResort" coverage="60.7" coveredlines="34" coverablelines="56" totallines="88" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="9" totalmethods="14" methodcoverage="64.2" />
+      <Class name="AIBERG.Factions.TheOrderOfTheFlesh.MachineGun" coverage="57.8" coveredlines="33" coverablelines="57" totallines="86" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="9" totalmethods="14" methodcoverage="64.2" />
     </Assembly>
-    <Assembly name="AIBERG.UI" classes="3" coverage="0" coveredlines="0" coverablelines="15" totallines="47" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="5" methodcoverage="0">
-      <Class name="AIBERG.UI.HealthUIManager" coverage="0" coveredlines="0" coverablelines="6" totallines="18" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
+    <Assembly name="AIBERG.UI" classes="3" coverage="40" coveredlines="6" coverablelines="15" totallines="47" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="2" totalmethods="5" methodcoverage="40">
+      <Class name="AIBERG.UI.HealthUIManager" coverage="100" coveredlines="6" coverablelines="6" totallines="18" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="2" totalmethods="2" methodcoverage="100" />
       <Class name="AIBERG.UI.MenuManager" coverage="0" coveredlines="0" coverablelines="6" totallines="15" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
       <Class name="AIBERG.UI.StepCounter" coverage="0" coveredlines="0" coverablelines="3" totallines="14" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
     </Assembly>

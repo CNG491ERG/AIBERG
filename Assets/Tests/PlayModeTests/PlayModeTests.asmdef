@@ -10,7 +10,9 @@
         "AIBERG.Interfaces",
         "AIBERG.ScriptableObjects",
         "AIBERG.UI",
-        "AIBERG.Utilities"
+        "AIBERG.Utilities",
+        "Unity.TextMeshPro",
+        "AIBERG.API"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
