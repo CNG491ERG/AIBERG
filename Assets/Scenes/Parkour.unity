@@ -1957,6 +1957,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 27
       objectReference: {fileID: 0}
+    - target: {fileID: 8938342132256894854, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7008751185487760957, guid: c7d157d5e5245b848b00de7471d22450, type: 3}
     m_RemovedGameObjects:
