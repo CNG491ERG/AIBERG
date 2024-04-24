@@ -4,10 +4,11 @@ using UnityEngine;
 
 public abstract class BaseState
 {
+    [SerializeField] protected Environment environment = GameObject.Find("Environment").GetComponent<Environment>();
     protected static int parkourCounter = 0;
     protected static int bossCounter = 0;
-    protected SceneLoader sceneLoader;
     protected float stateStartTime;
+
     public int GetParkourCounter()
     {
         return parkourCounter;

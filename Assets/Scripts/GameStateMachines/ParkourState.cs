@@ -8,9 +8,10 @@ public class ParkourState : BaseState
     [SerializeField] Player player;
     public override void EnterState(GameStateMachineScript stateMachine)
     {
+        stateStartTime = Time.deltaTime;
         parkourCounter++;                                                   //number of times parkour happened increased
         stateStartTime = Time.time;                                         //state start time
-        player = GameObject.Find("Player").GetComponent<Player>();          //gets player obj
+        player = environment.GetComponent<Player>();                        //gets player obj
     }       
     public override void UpdateState(GameStateMachineScript stateMachine)
     {

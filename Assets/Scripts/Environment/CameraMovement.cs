@@ -6,7 +6,7 @@ public class CameraMovement : MonoBehaviour
 {
     public float cameraSpeed;
     BaseState state;
-    GameStateMachineScript stateMachine;
+    [SerializeField] GameStateMachineScript stateMachine;
 
     private void Start()
     {

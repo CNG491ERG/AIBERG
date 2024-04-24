@@ -17,7 +17,7 @@ public class GameStateMachineScript : MonoBehaviour
         currentState.EnterState(this);
     }
 
-    // Update is called once per frame
+    //MIGHT NEED TO CHANGE THIS INTO FIXEDUPATE IN FUTURE
     void Update()  {
         currentState.UpdateState(this);
     }

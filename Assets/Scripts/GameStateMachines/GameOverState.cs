@@ -7,6 +7,7 @@ public class GameOverState : BaseState
 {
     public override void EnterState(GameStateMachineScript stateMachine)
     {
+        Debug.Log("Entered game over");
         GameObject[] obstacles;
 
         obstacles = GameObject.FindGameObjectsWithTag("Obstacle1");     //Array of Obstacle1 type objects

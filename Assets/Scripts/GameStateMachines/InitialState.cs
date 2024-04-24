@@ -7,7 +7,6 @@ public class InitialState : BaseState
     float timeZero = Time.time;
     public override void EnterState(GameStateMachineScript stateMachine)
     {
-        sceneLoader.LoadScene("Parkour");                           //loads parkour scene
         GameObject.Find("Boss").SetActive(false);                   //sets boss diasbled
         //GameObject.Find("Player").SetActive(false);                 //sets player inactive
         //Score counter should start counting
