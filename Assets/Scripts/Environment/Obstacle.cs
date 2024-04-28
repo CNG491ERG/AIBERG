@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditorInternal;
+using AIBERG.Core;
 using UnityEngine;
 
+namespace AIBERG.Environment{
 public class Obstacle : MonoBehaviour
 {
     [SerializeField] Player player;
@@ -24,4 +23,6 @@ public class Obstacle : MonoBehaviour
             player.Health = 0;
         }
     }
+}
+
 }

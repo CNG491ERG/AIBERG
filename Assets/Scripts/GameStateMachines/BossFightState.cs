@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.SceneManagement;
-using UnityEngine;
+using AIBERG.Core;
 
+namespace AIBERG.GameStateMachines{
 public class BossFightState : BaseState
 {
     Player player;
@@ -18,5 +16,7 @@ public class BossFightState : BaseState
         else if (boss.Health <= 0)                                                       //if boss health is 0
             stateMachine.SwitchState(stateMachine.BossFightToParkour);                  //switch to boss figt to parkour state
     }
+}
+
 }
 

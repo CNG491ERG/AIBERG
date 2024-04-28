@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using AIBERG.GameStateMachines;
 using UnityEngine;
 
+namespace AIBERG.GameStateMachines{
 public class GameStateMachineScript : MonoBehaviour
 {
     public BaseState currentState;
@@ -26,4 +28,6 @@ public class GameStateMachineScript : MonoBehaviour
         currentState = state;
         state.EnterState(this);
     }
+}
+
 }

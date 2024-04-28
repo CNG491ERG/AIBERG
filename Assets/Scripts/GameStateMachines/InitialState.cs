@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+namespace AIBERG.GameStateMachines{
 public class InitialState : BaseState
 {
     float timeZero = Time.time;
@@ -18,3 +17,5 @@ public class InitialState : BaseState
             stateMachine.SwitchState(stateMachine.Parkour);         //load parkour
     }
 }
+}
+

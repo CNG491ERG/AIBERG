@@ -1,7 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+
+namespace AIBERG.Environment{
 public class ObstacleSpawner : MonoBehaviour
 {
     public GameObject obstacle;
@@ -29,4 +29,6 @@ public class ObstacleSpawner : MonoBehaviour
 
         Instantiate(obstacle, transform.position + new Vector3(randomX, randomY, 0), transform.rotation);//MIGHT FACE ISSUES ON COLLISION WITH Z AXIS
     }
+}
+
 }

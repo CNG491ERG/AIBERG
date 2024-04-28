@@ -1,8 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.SceneManagement;
+﻿using AIBERG.Core;
 using UnityEngine;
 
+
+namespace AIBERG.GameStateMachines{
 public class ParkourState : BaseState
 {
     [SerializeField] Player player;
@@ -20,5 +20,7 @@ public class ParkourState : BaseState
         else if ((Time.time - stateStartTime)>=120)                         //after 2 minutes boss arrives
             stateMachine.SwitchState(stateMachine.ParkourToBossFight);      //when player survives 2 minutes go boss fight mode
     }
+
+}
 
 }

@@ -1,7 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+
+namespace AIBERG.Environment{
 public class Parallax : MonoBehaviour
 {
     private float length, startPosition;
@@ -29,4 +29,6 @@ public class Parallax : MonoBehaviour
             startPosition -= length;
                 }
     }
+}
+
 }

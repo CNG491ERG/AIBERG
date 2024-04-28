@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
+using AIBERG.GameStateMachines;
 using UnityEngine;
-using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
+namespace AIBERG.Environment{
 public class CameraMovement : MonoBehaviour
 {
     public float cameraSpeed;
@@ -29,3 +28,5 @@ public class CameraMovement : MonoBehaviour
         transform.position += new Vector3(cameraSpeed * Time.deltaTime, 0, 0);
     }
 }
+}
+

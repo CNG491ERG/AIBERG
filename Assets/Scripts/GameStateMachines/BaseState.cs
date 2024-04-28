@@ -1,23 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using AIBERG.Core;
 
-public abstract class BaseState
+
+namespace AIBERG.GameStateMachines
 {
-    [SerializeField] protected Environment environment = GameObject.Find("Environment").GetComponent<Environment>();
-    protected static int parkourCounter = 0;
-    protected static int bossCounter = 0;
-    protected float stateStartTime;
-
-    public int GetParkourCounter()
+    public abstract class BaseState
     {
-        return parkourCounter;
-    }
-    public int GetBossCounter()
-    {
-        return bossCounter;
-    }
-    public abstract void EnterState(GameStateMachineScript stateMachine);
-    public abstract void UpdateState(GameStateMachineScript stateMachine);
+        [SerializeField] protected GameEnvironment environment = GameObject.Find("Environment").GetComponent<GameEnvironment>();
+        protected static int parkourCounter = 0;
+        protected static int bossCounter = 0;
+        protected float stateStartTime;
 
+        public int GetParkourCounter()
+        {
+            return parkourCounter;
+        }
+        public int GetBossCounter()
+        {
+            return bossCounter;
+        }
+        public abstract void EnterState(GameStateMachineScript stateMachine);
+        public abstract void UpdateState(GameStateMachineScript stateMachine);
+    }
 }
