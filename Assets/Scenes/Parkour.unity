@@ -864,7 +864,7 @@ GameObject:
   - component: {fileID: 678712846}
   m_Layer: 0
   m_Name: SpawnPoint
-  m_TagString: Untagged
+  m_TagString: SpawnPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1185,6 +1185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraSpeed: 10
+  stateMachine: {fileID: 0}
 --- !u!4 &966310290
 Transform:
   m_ObjectHideFlags: 0
@@ -1216,10 +1217,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b484eff3f345b41ba751fc3a6cf45a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  environmentObjects:
-  - {fileID: 966310290}
-  treshold: 100
-  Camera: {fileID: 1426875706}
 --- !u!1 &973938884
 GameObject:
   m_ObjectHideFlags: 0

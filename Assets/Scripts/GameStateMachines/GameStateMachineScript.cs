@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using AIBERG.Core;
 using AIBERG.GameStateMachines;
 using UnityEngine;
 
@@ -13,10 +14,14 @@ public class GameStateMachineScript : MonoBehaviour
     public ParkourState Parkour = new ParkourState();
     public GameOverState GameOver = new GameOverState();
     public InitialState initialState = new InitialState();
+    public GameObject SpawnPoint;
 
-    // Start is called before the first frame update
-    void Start() {
-        currentState = initialState;
+        // Start is called before the first frame update
+        void Start() {
+
+            GameObject spawnPoint = GameObject.Find("ObstacleSpawner").GetComponent<ObstacleSpawner>();
+
+            currentState = initialState;
         currentState.EnterState(this);
     }
 

@@ -10,6 +10,7 @@ namespace AIBERG.GameStateMachines
         protected static int parkourCounter = 0;
         protected static int bossCounter = 0;
         protected float stateStartTime;
+        [SerializeField] protected GameEnvironment Background = GameObject.Find("SpawnPoint").GetComponent<GameEnvironment>();
 
         public int GetParkourCounter()
         {

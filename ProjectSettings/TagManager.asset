@@ -13,6 +13,8 @@ TagManager:
   - AttackDroneProjectile
   - PlayerMachineGunProjectile
   - PlayerMissile
+  - Obstacle
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX
