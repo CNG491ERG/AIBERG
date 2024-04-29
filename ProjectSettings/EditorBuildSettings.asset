@@ -11,7 +11,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/GameScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TrainingScene_BossAgentOnly.unity
     guid: 3b9ef869c3337714ba753a389250d83e
+  - enabled: 1
+    path: Assets/Scenes/TrainingScene_BossAndPlayerAgent.unity
+    guid: de90281f69480fa4daef5879851b74ab
   m_configObjects: {}
