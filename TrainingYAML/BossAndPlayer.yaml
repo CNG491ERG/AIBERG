@@ -24,13 +24,13 @@ behaviors:
     even_checkpoints: false
     checkpoint_interval: 100000
     threaded: true
-    max_steps: 10000000
+    max_steps: 4000000
     time_horizon: 1024
     summary_freq: 100000
-    self_paly:
-      save_steps: 200000
-      team_change: 2000000
-      swap_steps: 200000
+    self_play:
+      save_steps: 40000
+      team_change: 200000
+      swap_steps: 40000
 
   Player:
     trainer_type: ppo
@@ -57,10 +57,10 @@ behaviors:
     even_checkpoints: false
     checkpoint_interval: 100000
     threaded: true
-    max_steps: 10000000
+    max_steps: 4000000
     time_horizon: 1024
     summary_freq: 100000
-    self_paly:
-      save_steps: 200000
-      team_change: 2000000
-      swap_steps: 200000
+    self_play:
+      save_steps: 40000
+      team_change: 200000
+      swap_steps: 40000
