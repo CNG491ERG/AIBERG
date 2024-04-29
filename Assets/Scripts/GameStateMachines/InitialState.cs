@@ -6,8 +6,9 @@ public class InitialState : BaseState
     float timeZero = Time.time;
     public override void EnterState(GameStateMachineScript stateMachine)
     {
-        GameObject.Find("Boss").SetActive(false);                   //sets boss diasbled
-        //GameObject.Find("Player").SetActive(false);                 //sets player inactive
+        GameObject.Find("SpawnPoint").SetActive(false);
+        GameObject.Find("Player_Agent").SetActive(false);
+        GameObject.Find("Boss_Agent").SetActive(false);                      //sets boss diasbled
         //Score counter should start counting
         //time counter should start counting
     }

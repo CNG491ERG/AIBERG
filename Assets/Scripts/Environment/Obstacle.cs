@@ -8,7 +8,7 @@ public class Obstacle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+         player = GameObject.Find("Player_Game").GetComponent<Player>();
     }
 
     // Update is called once per frame

@@ -12,10 +12,11 @@ public class GameStateMachineScript : MonoBehaviour
     public ParkourToBossFightState ParkourToBossFight = new ParkourToBossFightState();
     public ParkourState Parkour = new ParkourState();
     public GameOverState GameOver = new GameOverState();
+    public InitialState initialState = new InitialState();
 
     // Start is called before the first frame update
     void Start() {
-        currentState = Parkour;
+        currentState = initialState;
         currentState.EnterState(this);
     }
 
