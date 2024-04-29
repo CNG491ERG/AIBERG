@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boss: {fileID: 0}
-  abilityCooldown: 30
+  abilityCooldown: 25
   cooldownTimer: 0
   canBeUsed: 0
   aliveDrones: []
