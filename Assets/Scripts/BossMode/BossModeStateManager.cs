@@ -1,11 +1,18 @@
+using AIBERG.Core;
 using UnityEngine;
 
 namespace AIBERG.BossMode
 {
     public class BossModeStateManager : MonoBehaviour{
         BossModeBaseState currentState;
-        BossModeInitialState initialState = new BossModeInitialState();
-
+        public BossModeInitialState initialState = new BossModeInitialState();
+        public BossModeBossFightState bossFightState = new BossModeBossFightState();
+        public BossModeDeathState deathState = new BossModeDeathState();
+        public BossModeGameOverState gameOverState= new BossModeGameOverState();
+        public GameEnvironment gameEnvironment{get; private set;}
+        private void Awake() {
+            gameEnvironment = Utilities.ComponentFinder.FindComponentInParents<GameEnvironment>(this.transform); 
+        }
         void Start(){
             currentState = initialState;
             currentState.EnterState(this);

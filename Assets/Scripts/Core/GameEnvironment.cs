@@ -16,6 +16,8 @@ namespace AIBERG.Core{
     [SerializeField] private Boss boss;
     [SerializeField] private Transform playerSpawnPosition;
     [SerializeField] private Transform bossSpawnPosition;
+    [SerializeField] public Transform playerOffScreenPosition;
+    [SerializeField] public Transform bossOffScreenPosition;
     [SerializeField] private List<GameObject> foregroundObjects;
     [SerializeField] private List<GameObject> childObjects = new();
 
@@ -26,10 +28,15 @@ namespace AIBERG.Core{
     public List<GameObject> ForegroundObjects {get => foregroundObjects; private set => foregroundObjects = value;}
     public Transform PlayerSpawnPosition {get => playerSpawnPosition; private set => playerSpawnPosition = value;}
     public Transform BossSpawnPosition {get => bossSpawnPosition; private set => bossSpawnPosition = value;}
+    public long MaxSteps{get => maxSteps;}
     public event EventHandler OnMaxStepsReached;
     public void Awake() {
-        player = ComponentFinder.FindComponentInChildren<Player>(this.transform);
-        boss = ComponentFinder.FindComponentInChildren<Boss>(this.transform);
+        if(player == null){
+            player = ComponentFinder.FindComponentInChildren<Player>(this.transform);
+        }
+        if(boss == null){
+            boss = ComponentFinder.FindComponentInChildren<Boss>(this.transform);
+        }
         foregroundObjects = ComponentFinder.FindGameObjectsWithTagInChildren("ForegroundObject", this.transform);
     }
 
