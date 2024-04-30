@@ -1,6 +1,7 @@
 using UnityEngine;
+using AIBERG.UI;
 
-namespace AIBERG.GameStateMachines
+namespace AIBERG.ParkourMode.States
 {
     public class ParkourToBossFightState : BaseState
     {

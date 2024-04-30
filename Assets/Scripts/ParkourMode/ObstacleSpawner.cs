@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-namespace AIBERG.Environment{
+namespace AIBERG.ParkourMode{
 public class ObstacleSpawner : MonoBehaviour
 {
     public GameObject obstacle;

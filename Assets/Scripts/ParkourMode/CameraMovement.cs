@@ -1,7 +1,7 @@
-using AIBERG.GameStateMachines;
 using UnityEngine;
+using AIBERG.ParkourMode.States;
 
-namespace AIBERG.Environment{
+namespace AIBERG.ParkourMode{
 public class CameraMovement : MonoBehaviour
 {
     public float cameraSpeed;

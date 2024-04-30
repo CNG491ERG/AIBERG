@@ -2,7 +2,7 @@
 using UnityEngine;
 
 
-namespace AIBERG.GameStateMachines{
+namespace AIBERG.ParkourMode.States{
 public class ParkourState : BaseState
 {
     [SerializeField] Player player;

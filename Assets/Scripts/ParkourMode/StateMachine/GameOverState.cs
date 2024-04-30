@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
-using AIBERG.GameStateMachines;
 
-namespace AIBERG.GameStateMachines{
+namespace AIBERG.ParkourMode.States{
 public class GameOverState : BaseState
 {
     public override void EnterState(GameStateMachineScript stateMachine)

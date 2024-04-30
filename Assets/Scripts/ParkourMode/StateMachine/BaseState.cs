@@ -1,8 +1,8 @@
 using UnityEngine;
 using AIBERG.Core;
+using AIBERG.ParkourMode;
 
-
-namespace AIBERG.GameStateMachines
+namespace AIBERG.ParkourMode.States
 {
     public abstract class BaseState
     {

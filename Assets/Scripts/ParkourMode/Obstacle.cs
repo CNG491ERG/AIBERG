@@ -1,7 +1,7 @@
 using AIBERG.Core;
 using UnityEngine;
 
-namespace AIBERG.Environment{
+namespace AIBERG.ParkourMode{
 public class Obstacle : MonoBehaviour
 {
     [SerializeField] Player player;

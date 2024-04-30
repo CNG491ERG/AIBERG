@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using AIBERG.Core;
-using AIBERG.GameStateMachines;
+using AIBERG.ParkourMode;
 using UnityEngine;
 
-namespace AIBERG.GameStateMachines{
+namespace AIBERG.ParkourMode.States{
 public class GameStateMachineScript : MonoBehaviour
 {
     public BaseState currentState;

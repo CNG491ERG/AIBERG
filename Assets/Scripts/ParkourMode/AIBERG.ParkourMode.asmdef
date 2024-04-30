@@ -1,5 +1,5 @@
 {
-    "name": "AIBERG.GameStateMachines",
+    "name": "AIBERG.ParkourMode",
     "rootNamespace": "",
     "references": [
         "GUID:c8ee656e90be07f48818698d0d125c2f",
