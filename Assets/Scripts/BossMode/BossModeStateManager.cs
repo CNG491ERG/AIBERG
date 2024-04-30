@@ -12,6 +12,7 @@ namespace AIBERG.BossMode
         public GameEnvironment gameEnvironment{get; private set;}
         private void Awake() {
             gameEnvironment = Utilities.ComponentFinder.FindComponentInParents<GameEnvironment>(this.transform); 
+            gameEnvironment.IsTrainingEnvironment = false;
         }
         void Start(){
             currentState = initialState;

@@ -17,6 +17,7 @@ namespace AIBERG.BossMode
             player = stateManager.gameEnvironment.Player;
             boss = stateManager.gameEnvironment.Boss;
 
+
             player.inputHandler.enabled = false;
             player.GetComponent<Rigidbody2D>().gravityScale = 0;
             stateTimer = 0f;

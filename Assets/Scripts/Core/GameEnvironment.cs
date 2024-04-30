@@ -10,6 +10,7 @@ namespace AIBERG.Core{
     [SerializeField] private const int maxSteps = 6000;
     [SerializeField] private long stepCounter;
     [SerializeField] private bool countStep = false;
+    [SerializeField] private bool isTrainingEnvironment = true;
 
     [Header("References")]
     [SerializeField] private Player player;
@@ -29,6 +30,7 @@ namespace AIBERG.Core{
     public Transform PlayerSpawnPosition {get => playerSpawnPosition; private set => playerSpawnPosition = value;}
     public Transform BossSpawnPosition {get => bossSpawnPosition; private set => bossSpawnPosition = value;}
     public long MaxSteps{get => maxSteps;}
+    public bool IsTrainingEnvironment{get => isTrainingEnvironment; set => isTrainingEnvironment = value;}
     public event EventHandler OnMaxStepsReached;
     public void Awake() {
         if(player == null){
