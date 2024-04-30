@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace AIBERG.GameStateMachines{
+namespace AIBERG.ParkourMode.States{
 public class InitialState : BaseState
 {
     float timeZero = Time.time;

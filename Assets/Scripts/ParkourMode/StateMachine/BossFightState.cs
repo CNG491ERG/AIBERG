@@ -1,6 +1,6 @@
 using AIBERG.Core;
 
-namespace AIBERG.GameStateMachines{
+namespace AIBERG.ParkourMode.States{
 public class BossFightState : BaseState
 {
     Player player;
