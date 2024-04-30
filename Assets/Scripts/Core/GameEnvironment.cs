@@ -9,6 +9,7 @@ namespace AIBERG.Core{
     [Header("Step Information")]
     [SerializeField] private const int maxSteps = 6000;
     [SerializeField] private long stepCounter;
+    [SerializeField] private bool countStep = false;
 
     [Header("References")]
     [SerializeField] private Player player;
@@ -37,7 +38,9 @@ namespace AIBERG.Core{
     }
 
     private void FixedUpdate() {
-        stepCounter++;
+        if(countStep){
+            stepCounter++;
+        }
         if(stepCounter == maxSteps){
             OnMaxStepsReached?.Invoke(this, EventArgs.Empty);
         }
@@ -75,6 +78,14 @@ namespace AIBERG.Core{
         player.ResetAllCooldowns();
         player.Health = player.MaxHealth;
         player.transform.localPosition = playerSpawnPosition.transform.localPosition;
+    }
+
+    public void StartCountingSteps(){
+        countStep = true;
+    }
+
+    public void StopCountingSteps(){
+        countStep = false;
     }
 }
 
