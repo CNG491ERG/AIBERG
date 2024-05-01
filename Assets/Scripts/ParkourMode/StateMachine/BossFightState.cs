@@ -11,11 +11,8 @@ namespace AIBERG.ParkourMode.States{
             Debug.Log("BossFight");
             timed = Time.time;
             bossCounter++;                                                                  //num of times boss came across
-            Debug.Log(stateMachine.player.Health);
-            Player player = stateMachine.player;                 //get player health
-            if (player == null)
-                Debug.Log("player is null in bosfight");
-            Boss boss = stateMachine.boss;                     //get boss health
+            player = stateMachine.player;                 //get player health
+            boss = stateMachine.boss;                     //get boss health
             boss.gameObject.SetActive(true);
         }
         public override void UpdateState(GameStateMachineScript stateMachine){
