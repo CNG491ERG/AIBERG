@@ -1,0 +1,65 @@
+{
+    "Boss": {
+        "checkpoints": [
+            {
+                "steps": 1699876,
+                "file_path": "results\\RandomInputHandler\\Boss\\Boss-1699876.onnx",
+                "reward": 0.799358973136315,
+                "creation_time": 1714568341.5682063,
+                "auxillary_file_paths": [
+                    "results\\RandomInputHandler\\Boss\\Boss-1699876.pt"
+                ]
+            },
+            {
+                "steps": 1799870,
+                "file_path": "results\\RandomInputHandler\\Boss\\Boss-1799870.onnx",
+                "reward": 0.7992500007152558,
+                "creation_time": 1714569196.6967242,
+                "auxillary_file_paths": [
+                    "results\\RandomInputHandler\\Boss\\Boss-1799870.pt"
+                ]
+            },
+            {
+                "steps": 1899998,
+                "file_path": "results\\RandomInputHandler\\Boss\\Boss-1899998.onnx",
+                "reward": 0.762499988079071,
+                "creation_time": 1714570080.2312627,
+                "auxillary_file_paths": [
+                    "results\\RandomInputHandler\\Boss\\Boss-1899998.pt"
+                ]
+            },
+            {
+                "steps": 1999893,
+                "file_path": "results\\RandomInputHandler\\Boss\\Boss-1999893.onnx",
+                "reward": 0.785081519704798,
+                "creation_time": 1714570895.6822445,
+                "auxillary_file_paths": [
+                    "results\\RandomInputHandler\\Boss\\Boss-1999893.pt"
+                ]
+            },
+            {
+                "steps": 2000081,
+                "file_path": "results\\RandomInputHandler\\Boss\\Boss-2000081.onnx",
+                "reward": 0.7848918898685558,
+                "creation_time": 1714570895.8410473,
+                "auxillary_file_paths": [
+                    "results\\RandomInputHandler\\Boss\\Boss-2000081.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 2000081,
+            "file_path": "results\\RandomInputHandler\\Boss.onnx",
+            "reward": 0.7848918898685558,
+            "creation_time": 1714570895.8410473,
+            "auxillary_file_paths": [
+                "results\\RandomInputHandler\\Boss\\Boss-2000081.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.0.0",
+        "torch_version": "1.13.1+cu117"
+    }
+}
