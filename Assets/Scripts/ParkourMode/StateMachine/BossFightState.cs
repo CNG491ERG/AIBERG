@@ -7,8 +7,8 @@ public class BossFightState : BaseState
     Boss boss;
     public override void EnterState(GameStateMachineScript stateMachine){
         bossCounter++;                                                                  //num of times boss came across
-        Player player = environment.GetComponent<Player>();                 //get player health
-        Boss boss = environment.GetComponent<Boss>();                     //get boss health
+        Player player = stateMachine.player;                 //get player health
+        Boss boss = stateMachine.boss;                     //get boss health
     }
     public override void UpdateState(GameStateMachineScript stateMachine){
         if (player.Health <= 0)                                                          //if player health is 0

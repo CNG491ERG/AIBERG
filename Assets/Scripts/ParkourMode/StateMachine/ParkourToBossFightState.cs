@@ -10,7 +10,14 @@ namespace AIBERG.ParkourMode.States
         public override void EnterState(GameStateMachineScript stateMachine)
         {
             stateStartTime = Time.time;                                     // time at entering the state
-            t.TextEdit("Boss is Coming!!");                                 //calling fucntion from TextManager to edit the text to say Boss is Coming!!!
+            Debug.Log("Parkour to Boss");
+            //t.TextEdit("Boss is Coming!!");                                 //calling fucntion from TextManager to edit the text to say Boss is Coming!!!
+            ObstacleSpawner obstacleSpawner = stateMachine.spawnPoint.GetComponent<ObstacleSpawner>();
+            if (obstacleSpawner != null)
+            {
+                obstacleSpawner.canSpawn = false; // Set canSpawn to false
+            }
+
             GameObject[] obstacles;
 
             obstacles = GameObject.FindGameObjectsWithTag("Obstacle1");     //Array of Obstacle1 type objects

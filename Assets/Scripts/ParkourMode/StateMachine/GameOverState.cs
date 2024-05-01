@@ -8,10 +8,15 @@ public class GameOverState : BaseState
 {
     public override void EnterState(GameStateMachineScript stateMachine)
     {
-        Debug.Log("Entered game over");
+            ObstacleSpawner obstacleSpawner = stateMachine.spawnPoint.GetComponent<ObstacleSpawner>();
+            if (obstacleSpawner != null)
+            {
+                obstacleSpawner.canSpawn = false; // Set canSpawn to false
+            }
+            Debug.Log("Entered game over");
         GameObject[] obstacles;
 
-        obstacles = GameObject.FindGameObjectsWithTag("Obstacle1");     //Array of Obstacle1 type objects
+        obstacles = GameObject.FindGameObjectsWithTag("Obstacle");     //Array of Obstacle1 type objects
 
         foreach (GameObject obstacle in obstacles)                      //for each Obstacle1 type object
         {
