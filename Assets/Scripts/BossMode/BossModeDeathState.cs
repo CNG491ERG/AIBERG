@@ -9,7 +9,7 @@ namespace AIBERG.BossMode
     {   
         private Player player;
         private Boss boss;
-        private bool bossMovementComplete = false;
+        private bool allMovementComplete = false;
         public override void EnterState(BossModeStateManager stateManager)
         {
             player = stateManager.gameEnvironment.Player;
@@ -19,7 +19,7 @@ namespace AIBERG.BossMode
             float endPoint = stateManager.gameEnvironment.ForegroundObjects.Where(t => t.gameObject.name == "Ground").First().transform.position.y+1;
             player.transform.DOLocalMoveY(endPoint, 1.5f).SetEase(Ease.OutBounce).OnComplete(() =>{
                 boss.transform.DOLocalMove(stateManager.gameEnvironment.playerOffScreenPosition.position, 1.0f).SetEase(Ease.InQuad).OnComplete(() => {
-                    bossMovementComplete = true;
+                    allMovementComplete = true;
                 });
 
                 //for whatever reason player starts to fly if the jump button was pressed at the time of this movement starts
@@ -28,8 +28,8 @@ namespace AIBERG.BossMode
         }
 
         public override void UpdateState(BossModeStateManager stateManager){
-            if(bossMovementComplete){
-                Debug.Log("Boss mode is complete, do whatever is next!");
+            if(allMovementComplete){
+                Debug.Log("Boss mode is complete - player died, do whatever is next!");
             }
         }
     }
