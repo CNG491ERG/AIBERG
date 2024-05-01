@@ -19,7 +19,7 @@ public class ObstacleSpawner : MonoBehaviour
     {
         if (canSpawn && Time.time > spawnTime) // Check if canSpawn is true
         {
-            Debug.Log(canSpawn);
+            //Debug.Log(canSpawn);
             Spawn();
             spawnTime = Time.time + spawnInterval;
         }

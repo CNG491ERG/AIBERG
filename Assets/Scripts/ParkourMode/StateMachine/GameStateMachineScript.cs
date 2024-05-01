@@ -9,7 +9,7 @@ namespace AIBERG.ParkourMode.States{
 public class GameStateMachineScript : MonoBehaviour
 {
     public BaseState currentState;
-    public BossFightState BossFight;
+    public BossFightState BossFight = new BossFightState();
     public BossFightToParkourState BossFightToParkour = new BossFightToParkourState();
     public ParkourToBossFightState ParkourToBossFight = new ParkourToBossFightState();
     public ParkourState Parkour = new ParkourState();
@@ -25,7 +25,7 @@ public class GameStateMachineScript : MonoBehaviour
             //environment = GameObject.Find("Environment").GetComponent<GameEnvironment>();
             player = GameObject.Find("Player_Game").GetComponent<Player>();
             boss = GameObject.Find("Boss_GameAgent").GetComponent<Boss>();
-            Debug.Log("start gamestatemachine");
+            //Debug.Log("start gamestatemachine");
 
             spawnPoint = GameObject.Find("SpawnPoint");
             if (spawnPoint != null) {
@@ -53,9 +53,9 @@ public class GameStateMachineScript : MonoBehaviour
         }
 
         public void SwitchState(BaseState state) {
-        currentState = state;
-        state.EnterState(this);
-    }
+            currentState = state;
+            state.EnterState(this);
+        }
 }
 
 }

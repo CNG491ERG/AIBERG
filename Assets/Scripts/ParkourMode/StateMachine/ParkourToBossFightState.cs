@@ -20,7 +20,7 @@ namespace AIBERG.ParkourMode.States
 
             GameObject[] obstacles;
 
-            obstacles = GameObject.FindGameObjectsWithTag("Obstacle1");     //Array of Obstacle1 type objects
+            obstacles = GameObject.FindGameObjectsWithTag("Obstacle");     //Array of Obstacle1 type objects
 
             foreach (GameObject obstacle in obstacles)                      //for each Obstacle1 type object
             {
@@ -29,9 +29,17 @@ namespace AIBERG.ParkourMode.States
         }
         public override void UpdateState(GameStateMachineScript stateMachine)
         {
-            if ((Time.time - stateStartTime) >= 2.0f)                       //state should last 2 seconds
+            if ((Time.time - stateStartTime) >= 2.0f)
             {
-                stateMachine.SwitchState(stateMachine.BossFight);           //switch to boss fight
+                Debug.Log(Time.time - stateStartTime);
+                if (stateMachine.BossFight != null)
+                {
+                    stateMachine.SwitchState(stateMachine.BossFight);
+                }
+                else
+                {
+                    Debug.LogError("BossFight state is null!");
+                }
             }
         }
 
