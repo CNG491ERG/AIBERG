@@ -19,7 +19,7 @@ public class GameStateMachineScript : MonoBehaviour
         // Start is called before the first frame update
         void Start() {
 
-            GameObject spawnPoint = GameObject.Find("ObstacleSpawner").GetComponent<ObstacleSpawner>();
+            //GameObject spawnPoint = GameObject.Find("ObstacleSpawner").GetComponent<ObstacleSpawner>();
 
             currentState = initialState;
         currentState.EnterState(this);

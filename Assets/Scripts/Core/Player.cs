@@ -42,9 +42,11 @@ public class Player : MonoBehaviour, IDamageable{
     public event EventHandler OnDamageableDeath;
     public event EventHandler OnDamageableHurt;
 
+    private void Awake() {
+        inputHandler = GetComponent<InputHandler>();
+    }
     void Start(){
         environment = ComponentFinder.FindComponentInParents<GameEnvironment>(this.transform);
-        inputHandler = GetComponent<InputHandler>();
         if(faction.BasicAbility != null){
             basicAbilityObject = Instantiate(faction.BasicAbility, this.transform);
             basicAbility = basicAbilityObject.GetComponent<IAbility>();
