@@ -9,6 +9,13 @@ using System;
 
 namespace AIBERG.API
 {
+    [Serializable]
+    public class LoginResponse
+    {
+        public string message;
+        public int userid;
+        public string username;
+    }
     public class LoginController : MonoBehaviour
     {
 
@@ -61,9 +68,14 @@ namespace AIBERG.API
                 else
                 {
                     // Print the response
-                    Debug.Log("Response: " + request.downloadHandler.text);
+                    string response = request.downloadHandler.text;
+                    LoginResponse loginResponse = JsonUtility.FromJson<LoginResponse>(response);
+                    UserInformation.Instance.userID =loginResponse.userid;
+                    UserInformation.Instance.username = loginResponse.username;
+                     
                     loggedInStatus = true;
                     OnSuccessfulLogin?.Invoke(this, EventArgs.Empty);
+                    
                 }
             }
         }
