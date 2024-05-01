@@ -1,4 +1,5 @@
 using AIBERG.Core;
+using AIBERG.Interfaces;
 using UnityEngine;
 
 namespace AIBERG.BossMode
@@ -18,6 +19,9 @@ namespace AIBERG.BossMode
         }
 
         public override void UpdateState(BossModeStateManager stateManager){
+            if(Input.GetKeyDown(KeyCode.Escape)){
+                (player as IDamageable).TakeDamage(100000f);
+            }
             if(stateManager.gameEnvironment.StepCounter == stateManager.gameEnvironment.MaxSteps){
                 stateManager.SwitchState(stateManager.gameOverState);
             }

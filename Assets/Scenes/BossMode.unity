@@ -227,6 +227,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Environment_Game_BossMode
       objectReference: {fileID: 0}
+    - target: {fileID: 1975380696964181894, guid: df0ef772c38d6e1479e9b1bb748dc136, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6641115801287893920, guid: df0ef772c38d6e1479e9b1bb748dc136, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -274,5 +278,40 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1562171458196063311, guid: df0ef772c38d6e1479e9b1bb748dc136, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1581963861}
   m_SourcePrefab: {fileID: 100100000, guid: df0ef772c38d6e1479e9b1bb748dc136, type: 3}
+--- !u!1 &1581963857 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1562171458196063311, guid: df0ef772c38d6e1479e9b1bb748dc136, type: 3}
+  m_PrefabInstance: {fileID: 622571571}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1581963861
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581963857}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 1
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
