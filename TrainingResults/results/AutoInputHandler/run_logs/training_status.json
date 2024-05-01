@@ -1,0 +1,65 @@
+{
+    "Boss": {
+        "checkpoints": [
+            {
+                "steps": 1699830,
+                "file_path": "results\\AutoInputHandler\\Boss\\Boss-1699830.onnx",
+                "reward": 0.895789478954516,
+                "creation_time": 1714538828.2724514,
+                "auxillary_file_paths": [
+                    "results\\AutoInputHandler\\Boss\\Boss-1699830.pt"
+                ]
+            },
+            {
+                "steps": 1799844,
+                "file_path": "results\\AutoInputHandler\\Boss\\Boss-1799844.onnx",
+                "reward": 0.9300000071525574,
+                "creation_time": 1714539570.2668777,
+                "auxillary_file_paths": [
+                    "results\\AutoInputHandler\\Boss\\Boss-1799844.pt"
+                ]
+            },
+            {
+                "steps": 1899981,
+                "file_path": "results\\AutoInputHandler\\Boss\\Boss-1899981.onnx",
+                "reward": 0.8987318817256154,
+                "creation_time": 1714540280.3617346,
+                "auxillary_file_paths": [
+                    "results\\AutoInputHandler\\Boss\\Boss-1899981.pt"
+                ]
+            },
+            {
+                "steps": 1999979,
+                "file_path": "results\\AutoInputHandler\\Boss\\Boss-1999979.onnx",
+                "reward": 0.8955416649580001,
+                "creation_time": 1714541006.7625492,
+                "auxillary_file_paths": [
+                    "results\\AutoInputHandler\\Boss\\Boss-1999979.pt"
+                ]
+            },
+            {
+                "steps": 2000149,
+                "file_path": "results\\AutoInputHandler\\Boss\\Boss-2000149.onnx",
+                "reward": 0.8954545436811842,
+                "creation_time": 1714541006.898076,
+                "auxillary_file_paths": [
+                    "results\\AutoInputHandler\\Boss\\Boss-2000149.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 2000149,
+            "file_path": "results\\AutoInputHandler\\Boss.onnx",
+            "reward": 0.8954545436811842,
+            "creation_time": 1714541006.898076,
+            "auxillary_file_paths": [
+                "results\\AutoInputHandler\\Boss\\Boss-2000149.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.0.0",
+        "torch_version": "1.13.1+cu117"
+    }
+}

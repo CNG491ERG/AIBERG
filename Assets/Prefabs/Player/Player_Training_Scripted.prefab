@@ -63,14 +63,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6164509095480725507, guid: b9a2a0db3135b304caee05348df11778, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3206606641586315729}
+      addedObject: {fileID: 5354496403839670784}
   m_SourcePrefab: {fileID: 100100000, guid: b9a2a0db3135b304caee05348df11778, type: 3}
 --- !u!1 &4068410424766926154 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6164509095480725507, guid: b9a2a0db3135b304caee05348df11778, type: 3}
   m_PrefabInstance: {fileID: 7924463860934876489}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3206606641586315729
+--- !u!114 &5354496403839670784
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -79,12 +79,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4068410424766926154}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cb8173ff4eeada47864bb14ef54e675, type: 3}
+  m_Script: {fileID: 11500000, guid: 8cb3a284d2f910a4796978e2a708d3ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  environment: {fileID: 0}
-  boss: {fileID: 0}
-  player: {fileID: 0}
-  playerSpawnPosition: {fileID: 0}
-  topLeftCorner: {fileID: 0}
-  bottomRightCorner: {fileID: 0}
