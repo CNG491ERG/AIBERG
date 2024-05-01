@@ -9,12 +9,16 @@ namespace AIBERG.Core{
     [Header("Step Information")]
     [SerializeField] private const int maxSteps = 6000;
     [SerializeField] private long stepCounter;
+    [SerializeField] private bool countStep = false;
+    [SerializeField] private bool isTrainingEnvironment = true;
 
     [Header("References")]
     [SerializeField] private Player player;
     [SerializeField] private Boss boss;
     [SerializeField] private Transform playerSpawnPosition;
     [SerializeField] private Transform bossSpawnPosition;
+    [SerializeField] public Transform playerOffScreenPosition;
+    [SerializeField] public Transform bossOffScreenPosition;
     [SerializeField] private List<GameObject> foregroundObjects;
     [SerializeField] private List<GameObject> childObjects = new();
 
@@ -25,10 +29,16 @@ namespace AIBERG.Core{
     public List<GameObject> ForegroundObjects {get => foregroundObjects; private set => foregroundObjects = value;}
     public Transform PlayerSpawnPosition {get => playerSpawnPosition; private set => playerSpawnPosition = value;}
     public Transform BossSpawnPosition {get => bossSpawnPosition; private set => bossSpawnPosition = value;}
+    public long MaxSteps{get => maxSteps;}
+    public bool IsTrainingEnvironment{get => isTrainingEnvironment; set => isTrainingEnvironment = value;}
     public event EventHandler OnMaxStepsReached;
     public void Awake() {
-        player = ComponentFinder.FindComponentInChildren<Player>(this.transform);
-        boss = ComponentFinder.FindComponentInChildren<Boss>(this.transform);
+        if(player == null){
+            player = ComponentFinder.FindComponentInChildren<Player>(this.transform);
+        }
+        if(boss == null){
+            boss = ComponentFinder.FindComponentInChildren<Boss>(this.transform);
+        }
         foregroundObjects = ComponentFinder.FindGameObjectsWithTagInChildren("ForegroundObject", this.transform);
     }
 
@@ -37,7 +47,9 @@ namespace AIBERG.Core{
     }
 
     private void FixedUpdate() {
-        stepCounter++;
+        if(countStep){
+            stepCounter++;
+        }
         if(stepCounter == maxSteps){
             OnMaxStepsReached?.Invoke(this, EventArgs.Empty);
         }
@@ -75,6 +87,14 @@ namespace AIBERG.Core{
         player.ResetAllCooldowns();
         player.Health = player.MaxHealth;
         player.transform.localPosition = playerSpawnPosition.transform.localPosition;
+    }
+
+    public void StartCountingSteps(){
+        countStep = true;
+    }
+
+    public void StopCountingSteps(){
+        countStep = false;
     }
 }
 

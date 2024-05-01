@@ -37,7 +37,9 @@ namespace AIBERG.Core{
     }
 
     public override void OnEpisodeBegin(){
-        environment.ResetEnvironment();
+        if(environment.IsTrainingEnvironment){
+            environment.ResetEnvironment();
+        }   
     }
 
     public override void Heuristic(in ActionBuffers actionsOut) {
@@ -61,16 +63,22 @@ namespace AIBERG.Core{
     private void Boss_OnDamageableDeath(object sender, EventArgs e){
         float reward = (float)(-0.5 - (player.Health/player.MaxHealth) * 0.5);
         AddReward(reward);
-        EndEpisode();
+        if(environment.IsTrainingEnvironment){
+            EndEpisode();
+        }
     }
 
     private void Player_OnDamageableDeath(object sender, EventArgs e){
         float reward = (float)(0.5 + (boss.Health/boss.MaxHealth) * 0.5);
         AddReward(reward);
-        EndEpisode();
+        if(environment.IsTrainingEnvironment){
+            EndEpisode();
+        }
     }
     private void Environment_OnMaxStepsReached(object sender, EventArgs e){
-        EndEpisode();    
+        if(environment.IsTrainingEnvironment){
+            EndEpisode();
+        }
     }
 
 

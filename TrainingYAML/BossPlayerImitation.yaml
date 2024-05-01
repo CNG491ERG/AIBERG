@@ -20,17 +20,24 @@ behaviors:
       extrinsic:
         gamma: 0.99
         strength: 1.0
+      gail:
+        strength: 0.8
+        demo_path: /content/drive/MyDrive/Demos/BossDemo.demo
+    behavioral_cloning:
+      strength: 0.8
+      demo_path: /content/drive/MyDrive/Demos/BossDemo.demo
+
     keep_checkpoints: 5
     even_checkpoints: false
     checkpoint_interval: 100000
     threaded: true
-    max_steps: 10000000
+    max_steps: 4000000
     time_horizon: 1024
     summary_freq: 100000
-    self_paly:
-      save_steps: 200000
-      team_change: 2000000
-      swap_steps: 200000
+    self_play:
+      save_steps: 40000
+      team_change: 200000
+      swap_steps: 40000
 
   Player:
     trainer_type: ppo
@@ -53,14 +60,20 @@ behaviors:
       extrinsic:
         gamma: 0.99
         strength: 1.0
+      gail:
+        strength: 0.8
+        demo_path: /content/drive/MyDrive/Demos/PlayerDemo.demo
+    behavioral_cloning:
+      strength: 0.8
+      demo_path: /content/drive/MyDrive/Demos/PlayerDemo.demo
     keep_checkpoints: 5
     even_checkpoints: false
     checkpoint_interval: 100000
     threaded: true
-    max_steps: 10000000
+    max_steps: 4000000
     time_horizon: 1024
     summary_freq: 100000
-    self_paly:
-      save_steps: 200000
-      team_change: 2000000
-      swap_steps: 200000
+    self_play:
+      save_steps: 40000
+      team_change: 200000
+      swap_steps: 40000
