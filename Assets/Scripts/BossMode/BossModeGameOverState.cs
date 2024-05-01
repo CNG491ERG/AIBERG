@@ -27,7 +27,7 @@ namespace AIBERG.BossMode
             });
 
             boss.transform.DOLocalMove(stateManager.gameEnvironment.bossOffScreenPosition.position, 3.0f).SetEase(Ease.InBack).OnComplete(() => {
-                    bossMovementComplete = true;
+                bossMovementComplete = true;
             });
         }
 

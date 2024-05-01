@@ -21,9 +21,6 @@ namespace AIBERG.BossMode
                 boss.transform.DOLocalMove(stateManager.gameEnvironment.playerOffScreenPosition.position, 1.0f).SetEase(Ease.InQuad).OnComplete(() => {
                     allMovementComplete = true;
                 });
-
-                //for whatever reason player starts to fly if the jump button was pressed at the time of this movement starts
-                player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             });
         }
 
