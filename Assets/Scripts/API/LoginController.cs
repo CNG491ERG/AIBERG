@@ -5,6 +5,7 @@ using UnityEngine.Networking;
 using UnityEngine.UI;
 using TMPro;
 using System.Text;
+using System;
 
 namespace AIBERG.API
 {
@@ -16,6 +17,9 @@ namespace AIBERG.API
         [SerializeField] public Button loginButton;
 
         [SerializeField] public bool loggedInStatus;
+
+        public event EventHandler OnSuccessfulLogin;
+
         void Start()
         {
             loggedInStatus = false;
@@ -59,6 +63,7 @@ namespace AIBERG.API
                     // Print the response
                     Debug.Log("Response: " + request.downloadHandler.text);
                     loggedInStatus = true;
+                    OnSuccessfulLogin?.Invoke(this, EventArgs.Empty);
                 }
             }
         }
