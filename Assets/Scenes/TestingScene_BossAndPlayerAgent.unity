@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 1793277867}
   - component: {fileID: 1793277868}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: StatCollector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
