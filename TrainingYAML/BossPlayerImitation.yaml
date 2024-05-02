@@ -22,10 +22,10 @@ behaviors:
         strength: 1.0
       gail:
         strength: 0.8
-        demo_path: /content/drive/MyDrive/Demos/BossDemo.demo
+        demo_path: D:\CNG491ERG\EndlessRunnerGame\Demos\BossDemo_1.demo
     behavioral_cloning:
       strength: 0.8
-      demo_path: /content/drive/MyDrive/Demos/BossDemo.demo
+      demo_path: D:\CNG491ERG\EndlessRunnerGame\Demos\BossDemo_1.demo
 
     keep_checkpoints: 5
     even_checkpoints: false
@@ -62,10 +62,10 @@ behaviors:
         strength: 1.0
       gail:
         strength: 0.8
-        demo_path: /content/drive/MyDrive/Demos/PlayerDemo.demo
+        demo_path: D:\CNG491ERG\EndlessRunnerGame\Demos\PlayerDemo_1.demo
     behavioral_cloning:
       strength: 0.8
-      demo_path: /content/drive/MyDrive/Demos/PlayerDemo.demo
+      demo_path: D:\CNG491ERG\EndlessRunnerGame\Demos\PlayerDemo_1.demo
     keep_checkpoints: 5
     even_checkpoints: false
     checkpoint_interval: 100000

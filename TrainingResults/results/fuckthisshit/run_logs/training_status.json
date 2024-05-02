@@ -1,0 +1,53 @@
+{
+    "Player": {
+        "elo": 1213.6608630539022,
+        "checkpoints": [
+            {
+                "steps": 93965,
+                "file_path": "results\\fuckthisshit\\Player\\Player-93965.onnx",
+                "reward": 0.7333333333333333,
+                "creation_time": 1714598121.1955402,
+                "auxillary_file_paths": [
+                    "results\\fuckthisshit\\Player\\Player-93965.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 93965,
+            "file_path": "results\\fuckthisshit\\Player.onnx",
+            "reward": 0.7333333333333333,
+            "creation_time": 1714598121.1955402,
+            "auxillary_file_paths": [
+                "results\\fuckthisshit\\Player\\Player-93965.pt"
+            ]
+        }
+    },
+    "Boss": {
+        "elo": 1190.2387517152158,
+        "checkpoints": [
+            {
+                "steps": 0,
+                "file_path": "results\\fuckthisshit\\Boss\\Boss-0.onnx",
+                "reward": null,
+                "creation_time": 1714598121.3011854,
+                "auxillary_file_paths": [
+                    "results\\fuckthisshit\\Boss\\Boss-0.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 0,
+            "file_path": "results\\fuckthisshit\\Boss.onnx",
+            "reward": null,
+            "creation_time": 1714598121.3011854,
+            "auxillary_file_paths": [
+                "results\\fuckthisshit\\Boss\\Boss-0.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.0.0",
+        "torch_version": "1.13.1+cu117"
+    }
+}

@@ -50,7 +50,7 @@ namespace AIBERG.API
                 string jsonData = "{\"email\":\"" + emailField.text + "\", \"password\":\"" + passwordField.text + "\"}";
 
                 // Create a UnityWebRequest for the login endpoint
-                UnityWebRequest request = new UnityWebRequest("http://34.16.220.152:5000/login", "POST");
+                UnityWebRequest request = new UnityWebRequest(UserInformation.Instance.loginAddress, "POST");
                 byte[] bodyRaw = Encoding.UTF8.GetBytes(jsonData);
                 request.uploadHandler = new UploadHandlerRaw(bodyRaw);
                 request.downloadHandler = new DownloadHandlerBuffer();

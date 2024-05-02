@@ -33,13 +33,18 @@ namespace AIBERG.Core{
         sensor.AddObservation(player.activeAbility2.CanBeUsed);
         sensor.AddObservation(player.basicAbility.CanBeUsed);
 
-        sensor.AddObservation(environment.StepCounter);
+        Debug.Log("Deez other nuts");
+        //sensor.AddObservation(environment.StepCounter);
     }
 
     public override void OnEpisodeBegin(){
         if(environment.IsTrainingEnvironment){
             environment.ResetEnvironment();
         }   
+    }
+
+    private void FixedUpdate() {
+        Debug.Log("deez nuts");
     }
 
     public override void Heuristic(in ActionBuffers actionsOut) {

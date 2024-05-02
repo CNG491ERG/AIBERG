@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using AIBERG.API;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -43,7 +44,7 @@ public class RegisterController : MonoBehaviour
                             + "\"}";
 
         // Create a UnityWebRequest for the login endpoint
-        UnityWebRequest request = new UnityWebRequest("http://34.16.220.152:5000/register", "POST");
+        UnityWebRequest request = new UnityWebRequest(UserInformation.Instance.registerAddress, "POST");
         byte[] bodyRaw = Encoding.UTF8.GetBytes(jsonData);
         request.uploadHandler = new UploadHandlerRaw(bodyRaw);
         request.downloadHandler = new DownloadHandlerBuffer();

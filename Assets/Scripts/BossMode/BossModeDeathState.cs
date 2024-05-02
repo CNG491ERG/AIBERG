@@ -22,6 +22,8 @@ namespace AIBERG.BossMode
                     allMovementComplete = true;
                 });
             });
+
+            stateManager.inputRecorder.SendInputData();
         }
 
         public override void UpdateState(BossModeStateManager stateManager){

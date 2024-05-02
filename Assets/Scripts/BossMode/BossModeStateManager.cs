@@ -10,6 +10,7 @@ namespace AIBERG.BossMode
         public BossModeDeathState deathState = new BossModeDeathState();
         public BossModeGameOverState gameOverState= new BossModeGameOverState();
         public GameEnvironment gameEnvironment{get; private set;}
+        public InputRecorder inputRecorder;
         private void Awake() {
             gameEnvironment = Utilities.ComponentFinder.FindComponentInParents<GameEnvironment>(this.transform); 
             gameEnvironment.IsTrainingEnvironment = false;

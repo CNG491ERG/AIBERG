@@ -3,67 +3,50 @@ using System;
 using UnityEngine;
 using Npgsql;
 using System.Text;
-using AIBERG.Utilities;
 using AIBERG.Core;
+using AIBERG.API;
+using System.Collections;
+using UnityEngine.Networking;
 
 public class InputRecorder : MonoBehaviour{
-    GameEnvironment environment;
+    [SerializeField] public GameEnvironment environment;
     private StringBuilder inputsRecorded = new StringBuilder();
-    [SerializeField] private bool startRecording;
-    [SerializeField] private int playerId = 1; // Replace with the actual player's ID
-    private NpgsqlConnection conn; // Npgsql connection variable
-    private string connString;
-
-    // Start is called before the first frame update
-    void Start(){
-        Debug.Log("connecteed");
-        connString = "Host=34.42.114.162;Port=5432;Username=postgres;Password=postgres;Database=db";
-        conn = new NpgsqlConnection(connString);
-    }
-
+    [SerializeField] private int playerId = UserInformation.Instance.userID;
 
     void FixedUpdate(){
-        if(startRecording){
+        if(environment.IsCountingSteps){
             // Capture player movements
-            char jumpInput = Input.GetKey(KeyCode.Space) ? '1' : '0';
-            char basicAttackInput = Input.GetMouseButton(0) ? '1' : '0';
-            char specialAttack1Input = Input.GetKey(KeyCode.Q) ? '1' : '0';
-            char specialAttack2Input = Input.GetKey(KeyCode.E) ? '1' : '0';
-            string input = $"{jumpInput}{basicAttackInput}{specialAttack1Input}{specialAttack2Input}\n";
+            char jumpInput = environment.Player.inputHandler.JumpInput ? '1' : '0';
+            char basicAbilityInput = environment.Player.inputHandler.BasicAbilityInput ? '1' : '0';
+            char activeAbility1Input = environment.Player.inputHandler.ActiveAbility1Input ? '1' : '0';
+            char activeAbility2Input = environment.Player.inputHandler.ActiveAbility2Input ? '1' : '0';
+            string input = $"{jumpInput}{basicAbilityInput}{activeAbility1Input}{activeAbility2Input}\n";
             inputsRecorded.Append(input);
         }
+    }
+
+
+    // Call this method when you want to send the data, for example, at the end of a game level
+    public void SendInputData() {
+        StartCoroutine(SendInputDataCoroutine());
+    }
+
+    private IEnumerator SendInputDataCoroutine() {
+        string jsonData = $"{{\"user_id\":{UserInformation.Instance.userID}, \"inputs\":\"{inputsRecorded.ToString()}\"}}";
         
-    }
+        Debug.Log(jsonData);
+        UnityWebRequest request = new UnityWebRequest(UserInformation.Instance.storeMovementAddress, "POST");
+        byte[] bodyRaw = Encoding.UTF8.GetBytes(jsonData);
+        request.uploadHandler = new UploadHandlerRaw(bodyRaw);
+        request.downloadHandler = new DownloadHandlerBuffer();
+        request.SetRequestHeader("Content-Type", "application/json");
 
-    private void SendDataToDB(int playerId, string inputsRecorded)
-    {
-        try
-        {
-            conn.Open();
-            using (var cmd = new NpgsqlCommand())
-            {
-                cmd.Connection = conn;
-                cmd.CommandText = "INSERT INTO movements (player_id, input_data, timestamp) VALUES (@playerId, @movementData, @timeStamp)";
-                cmd.Parameters.AddWithValue("playerId", playerId);
-                cmd.Parameters.AddWithValue("movementData", inputsRecorded);
-                cmd.Parameters.AddWithValue("timeStamp", DateTime.Now);
-                cmd.ExecuteNonQuery();
-            }
-            conn.Close();
-        }
-        catch (Exception e)
-        {
-            Debug.LogError("Error inserting movement data: " + e.Message);
-            conn.Close();
-        }
-    }
+        yield return request.SendWebRequest();
 
-    void OnDestroy()
-    {
-        if (conn != null && conn.State == System.Data.ConnectionState.Open)
-        {
-            conn.Close();
-            Debug.Log("Disconnected from database.");
+        if (request.result != UnityWebRequest.Result.Success) {
+            Debug.LogError("Input data send error: " + request.error);
+        } else {
+            Debug.Log("Input data sent successfully.");
         }
     }
 }

@@ -31,6 +31,7 @@ namespace AIBERG.Core{
     public Transform BossSpawnPosition {get => bossSpawnPosition; private set => bossSpawnPosition = value;}
     public long MaxSteps{get => maxSteps;}
     public bool IsTrainingEnvironment{get => isTrainingEnvironment; set => isTrainingEnvironment = value;}
+    public bool IsCountingSteps{get => countStep;}
     public event EventHandler OnMaxStepsReached;
     public void Awake() {
         if(player == null){
