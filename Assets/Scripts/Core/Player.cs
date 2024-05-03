@@ -98,6 +98,11 @@ public class Player : MonoBehaviour, IDamageable{
         jump?.ResetCooldown();
         passiveAbility?.ResetCooldown();
     }
-}
+
+        public static explicit operator Player(GameObject v)
+        {
+            throw new NotImplementedException();
+        }
+    }
 
 }
