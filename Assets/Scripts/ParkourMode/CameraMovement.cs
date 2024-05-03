@@ -3,33 +3,32 @@ using AIBERG.ParkourMode.States;
 using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 namespace AIBERG.ParkourMode{
-public class CameraMovement : MonoBehaviour
-{
-    public float cameraSpeed;
-    BaseState state;
-    [SerializeField] GameStateMachineScript stateMachine;
-
-    private void Start()
+    public class CameraMovement : MonoBehaviour
     {
-        stateMachine = FindObjectOfType<GameStateMachineScript>();
-        if (stateMachine == null)
-        {
-            Debug.LogError("No GameStateMachine found in the scene!");
-        }
-    }
+        public float cameraSpeed;
+        BaseState state;
+        [SerializeField] GameStateMachineScript stateMachine;
 
-        // Update is called once per frame
-    void Update()
+        private void Start()
         {
-        if(stateMachine.currentState is GameOverState)
-                transform.position = new Vector3(0, 0, 0);
-        else if (stateMachine != null && stateMachine.currentState != null)
-        {
-            int counter = stateMachine.currentState.GetParkourCounter();
-            transform.position += new Vector3(cameraSpeed * Time.deltaTime, 0, 0);
+            stateMachine = FindObjectOfType<GameStateMachineScript>();
+            if (stateMachine == null)
+            {
+                Debug.LogError("No GameStateMachine found in the scene!");
+            }
         }
-        //transform.position += new Vector3(cameraSpeed * Time.deltaTime, 0, 0);
+
+            // Update is called once per frame
+        void Update()
+            {
+            if(stateMachine.currentState is GameOverState)
+                    transform.position = new Vector3(0, 0, 0);
+            else if (stateMachine != null && stateMachine.currentState != null)
+            {
+                int counter = stateMachine.currentState.GetParkourCounter();
+                transform.position += new Vector3(cameraSpeed * Time.deltaTime, 0, 0);
+            }
+        }
     }
-}
 }
 
