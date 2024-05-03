@@ -1,3 +1,4 @@
+using AIBERG.Core;
 using UnityEngine;
 
 namespace AIBERG.ParkourMode.States
@@ -11,7 +12,10 @@ namespace AIBERG.ParkourMode.States
         public override void UpdateState(GameStateMachineScript stateMachine)
         {
             if ((Time.time - stateStartTime) >= 2.0f)
-            {//state should last 2 seconds
+            {
+                Debug.Log("BossToParkour");
+                Boss boss = stateMachine.GetBoss();                     
+                boss.gameObject.SetActive(false);
                 stateMachine.SwitchState(stateMachine.Parkour);
             }
         }

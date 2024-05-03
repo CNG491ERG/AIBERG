@@ -902,6 +902,7 @@ MonoBehaviour:
   minX: 0
   minY: -4.8
   spawnInterval: 1.5
+  canSpawn: 1
 --- !u!1 &801044023
 GameObject:
   m_ObjectHideFlags: 0
@@ -1165,6 +1166,7 @@ GameObject:
   - component: {fileID: 966310290}
   - component: {fileID: 966310289}
   - component: {fileID: 966310291}
+  - component: {fileID: 966310292}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1217,6 +1219,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b484eff3f345b41ba751fc3a6cf45a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &966310292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966310288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e235187a879098745abc90f28ac367fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 0}
+  environment: {fileID: 0}
+  player: {fileID: 0}
+  boss: {fileID: 0}
 --- !u!1 &973938884
 GameObject:
   m_ObjectHideFlags: 0

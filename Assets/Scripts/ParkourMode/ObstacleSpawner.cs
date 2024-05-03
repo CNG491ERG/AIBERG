@@ -11,15 +11,17 @@ public class ObstacleSpawner : MonoBehaviour
     public float minY;
     public float spawnInterval;
     private float spawnTime;
- 
+    public bool canSpawn = false;
 
-    // Update is called once per frame
+
+        // Update is called once per frame
     void Update()
     {
-        if(Time.time > spawnTime)
+        if (canSpawn && Time.time > spawnTime) // Check if canSpawn is true
         {
+            //Debug.Log(canSpawn);
             Spawn();
-            spawnTime = Time.time +  spawnInterval;
+            spawnTime = Time.time + spawnInterval;
         }
     }
     void Spawn()
