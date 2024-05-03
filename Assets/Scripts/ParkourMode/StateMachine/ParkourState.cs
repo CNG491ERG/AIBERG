@@ -12,7 +12,7 @@ public class ParkourState : BaseState
         stateStartTime = Time.deltaTime;
         parkourCounter++;                                                   
         stateStartTime = Time.time;                                         
-        player = stateMachine.player;                        
+        player = stateMachine.GetPlayer();                        
     }       
     public override void UpdateState(GameStateMachineScript stateMachine)
     {

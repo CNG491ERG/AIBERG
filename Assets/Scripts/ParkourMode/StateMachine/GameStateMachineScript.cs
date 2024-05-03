@@ -16,9 +16,24 @@ public class GameStateMachineScript : MonoBehaviour
     public GameOverState GameOver = new GameOverState();
     public InitialState initialState = new InitialState();
     public GameObject spawnPoint;
-    [SerializeField] public GameEnvironment environment;
-    [SerializeField] public Player player;
-    [SerializeField] public Boss boss;
+    [SerializeField] protected GameEnvironment environment;
+    [SerializeField] protected Player player;
+    [SerializeField] protected Boss boss;
+
+        public GameEnvironment GetEnvironment()
+        {
+            return environment;
+        }
+
+        public Player GetPlayer()
+        {
+            return player;
+        }
+
+        public Boss GetBoss()
+        {
+            return boss;
+        }
 
         // Start is called before the first frame update
         void Start() {
