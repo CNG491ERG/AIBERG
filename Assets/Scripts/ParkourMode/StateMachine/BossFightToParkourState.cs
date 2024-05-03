@@ -12,9 +12,9 @@ namespace AIBERG.ParkourMode.States
         public override void UpdateState(GameStateMachineScript stateMachine)
         {
             if ((Time.time - stateStartTime) >= 2.0f)
-            {//state should last 2 seconds
+            {
                 Debug.Log("BossToParkour");
-                Boss boss = stateMachine.boss;                     //get boss health
+                Boss boss = stateMachine.boss;                     
                 boss.gameObject.SetActive(false);
                 stateMachine.SwitchState(stateMachine.Parkour);
             }

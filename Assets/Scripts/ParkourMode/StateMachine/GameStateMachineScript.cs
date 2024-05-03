@@ -22,12 +22,10 @@ public class GameStateMachineScript : MonoBehaviour
 
         // Start is called before the first frame update
         void Start() {
-            //environment = GameObject.Find("Environment").GetComponent<GameEnvironment>();
             player = GameObject.Find("Player_Game").GetComponent<Player>();
             boss = GameObject.Find("Boss_GameAgent").GetComponent<Boss>();
-            //Debug.Log("start gamestatemachine");
-
             spawnPoint = GameObject.Find("SpawnPoint");
+
             if (spawnPoint != null) {
                 if (initialState != null) {
                     currentState = initialState;

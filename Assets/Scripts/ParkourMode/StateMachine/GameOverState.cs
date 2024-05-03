@@ -8,20 +8,9 @@ public class GameOverState : BaseState
 {
     public override void EnterState(GameStateMachineScript stateMachine)
     {
-            ObstacleSpawner obstacleSpawner = stateMachine.spawnPoint.GetComponent<ObstacleSpawner>();
-            if (obstacleSpawner != null)
-            {
-                obstacleSpawner.canSpawn = false; // Set canSpawn to false
-            }
-            Debug.Log("Entered game over");
-        GameObject[] obstacles;
-
-        obstacles = GameObject.FindGameObjectsWithTag("Obstacle");     //Array of Obstacle1 type objects
-
-        foreach (GameObject obstacle in obstacles)                      //for each Obstacle1 type object
-        {
-            UnityEngine.Object.Destroy(obstacle);                       //destroy
-        }
+        ObstacleHandler(stateMachine, false);
+        Debug.Log("Entered game over");
+        ObstacleCleaner();
         /*Should be discussed about how to navigate through after-game*/
     }
     public override void UpdateState(GameStateMachineScript stateMachine)
