@@ -76,7 +76,12 @@ namespace AIBERG.Core{
         float totalDamage = damageToTake * (1 - Defense);
         Health = Health - totalDamage <= 0 ? 0 : Health - totalDamage;
         OnDamageableHurt?.Invoke(this, EventArgs.Empty);
-
+        if(environment.gameMode == GameEnvironment.GameMode.BossMode){
+            environment.scoreCounter.AddScore((long)(1000*damageToTake));
+        }
+        else if(environment.gameMode == GameEnvironment.GameMode.ParkourMode){
+            environment.scoreCounter.AddScore((long)(1000*damageToTake)); //PROBABLY NEED TO MOVE THIS INTO STATE MACHINE, USE THE EVENT
+        }
         if(Health == 0){
             OnDamageableDeath?.Invoke(this, EventArgs.Empty);
         }

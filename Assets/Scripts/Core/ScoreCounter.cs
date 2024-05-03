@@ -1,12 +1,11 @@
 using UnityEngine;
 
 namespace AIBERG.Core{
-    public class ScoreCounter : MonoBehaviour
+    public class ScoreCounter
     {
-
         [SerializeField] private long score;
-        void Start()
-        {
+        public long Score{get => score; private set => score = value;}
+        public ScoreCounter(){
             ResetScore();
         }
 
@@ -15,6 +14,7 @@ namespace AIBERG.Core{
         }
 
         public void AddScore(long scoreToAdd){
+            Debug.Log(scoreToAdd);
             score += scoreToAdd;
         }
     }
