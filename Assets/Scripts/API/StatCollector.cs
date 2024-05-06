@@ -25,7 +25,10 @@ public class StatCollector : MonoBehaviour
         player.OnDamageableDeath += Player_OnDamageableDeath;
         boss.OnDamageableDeath += Boss_OnDamageableDeath;
         environment.OnMaxStepsReached += Environment_OnMaxStepsReached;
-        Debug.Log("Stat Collector Initialized");
+        environment.StartCountingSteps();
+        bossHealth = boss.MaxHealth;
+        playerHealth = player.MaxHealth;
+        gameLength = 0;
     }
 
     private void OnDestroy() {
@@ -34,36 +37,34 @@ public class StatCollector : MonoBehaviour
         environment.OnMaxStepsReached -= Environment_OnMaxStepsReached;
     }
 
+    private void FixedUpdate()
+    {
+        bossHealth = boss.Health < bossHealth ? boss.Health : bossHealth;
+        playerHealth = player.Health < playerHealth ? player.Health : playerHealth;
+        gameLength = environment.StepCounter > gameLength ? environment.StepCounter : gameLength;
+    }
+    
     private void Player_OnDamageableDeath(object sender, EventArgs e)
     {
         winner = 'B';
-        gameLength = environment.StepCounter;
-        bossHealth = boss.Health;
-        playerHealth = player.Health;
         WriteStats();
     }
 
     private void Boss_OnDamageableDeath(object sender, EventArgs e)
     {
         winner = 'P';
-        gameLength = environment.StepCounter;
-        bossHealth = boss.Health;
-        playerHealth = player.Health;
         WriteStats();
     }
 
     private void Environment_OnMaxStepsReached(object sender, EventArgs e)
     {
         winner = 'N';
-        gameLength = environment.MaxSteps;
-        bossHealth = boss.Health;
-        playerHealth = player.Health;
         WriteStats();
     }
 
     private void WriteStats()
     {
-        string path = Path.Combine(Application.persistentDataPath, "gameStats.txt");
+        string path = Path.Combine(Application.dataPath, "gameStats.txt");
         string stats = $"Winner: {winner}, Game Length: {gameLength}, Boss Health: {bossHealth}, Player Health: {playerHealth}\n";
 
         // Check if the file exists, if not create it and set headers
@@ -81,6 +82,9 @@ public class StatCollector : MonoBehaviour
             sw.WriteLine(stats);
         }
 
-        Debug.Log("Stat written");
+        bossHealth = boss.MaxHealth;
+        playerHealth = player.MaxHealth;
+        gameLength = 0;
+        Debug.Log($"Stats written to {path}");
     }
 }
