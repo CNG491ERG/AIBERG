@@ -47,12 +47,14 @@ public class StatCollector : MonoBehaviour
     private void Player_OnDamageableDeath(object sender, EventArgs e)
     {
         winner = 'B';
+        playerHealth = 0;
         WriteStats();
     }
 
     private void Boss_OnDamageableDeath(object sender, EventArgs e)
     {
         winner = 'P';
+        bossHealth = 0;
         WriteStats();
     }
 
