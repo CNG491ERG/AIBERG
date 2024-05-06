@@ -21,12 +21,12 @@ behaviors:
         gamma: 0.99
         strength: 1.0
       gail:
-        strength: 0.8
+        strength: 0.4
         demo_path: /content/drive/MyDrive/Demos/BossDemo.demo
     behavioral_cloning:
-      strength: 0.8
+      strength: 0.4
       demo_path: /content/drive/MyDrive/Demos/BossDemo.demo
-
+      steps: 1000000
     keep_checkpoints: 5
     even_checkpoints: false
     checkpoint_interval: 100000
@@ -61,11 +61,12 @@ behaviors:
         gamma: 0.99
         strength: 1.0
       gail:
-        strength: 0.8
+        strength: 0.4
         demo_path: /content/drive/MyDrive/Demos/PlayerDemo.demo
     behavioral_cloning:
-      strength: 0.8
+      strength: 0.4
       demo_path: /content/drive/MyDrive/Demos/PlayerDemo.demo
+      steps: 1000000
     keep_checkpoints: 5
     even_checkpoints: false
     checkpoint_interval: 100000
