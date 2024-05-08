@@ -1,4 +1,5 @@
 using System.Linq;
+using AIBERG.API;
 using AIBERG.Core;
 using DG.Tweening;
 using UnityEngine;
@@ -17,7 +18,7 @@ namespace AIBERG.BossMode
             player = stateManager.gameEnvironment.Player;
             boss = stateManager.gameEnvironment.Boss;  
             player.inputHandler.enabled = false;
-
+            stateManager.gameEnvironment.StopCountingSteps();
             float groundY = stateManager.gameEnvironment.ForegroundObjects.Where(t => t.gameObject.name == "Ground").First().transform.position.y+1;
             Sequence playerSequence = DOTween.Sequence();
             playerSequence.Append(player.transform.DOLocalMoveY(groundY, 0.5f).SetEase(Ease.InCubic));
@@ -30,6 +31,9 @@ namespace AIBERG.BossMode
                 bossMovementComplete = true;
             });
 
+            UserInformation.Instance.win = true;
+            UserInformation.Instance.timetaken = stateManager.gameEnvironment.StepCounter;
+            //UserInformation.Instance.score = ...; 
             stateManager.inputRecorder.SendInputData();
         }
 

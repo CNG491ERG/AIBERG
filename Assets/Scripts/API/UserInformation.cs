@@ -7,6 +7,11 @@ namespace AIBERG.API
     {
         public string username;
         public int userID;
+        public bool playMode;
+        public int score = 0;
+        public bool win;
+        public bool isLocalMode = true;
+        public long timetaken;
         public string loginAddress = "http://34.16.220.152:5000/login";
         public string registerAddress = "http://34.16.220.152:5000/register";
         public string storeMovementAddress = "http://34.16.220.152:5000/storeMovements";
@@ -20,6 +25,11 @@ namespace AIBERG.API
             else
             {
                 Instance = this;
+            }
+            if(isLocalMode){
+                loginAddress = "http://127.0.0.1:5000/login";
+                registerAddress = "http://127.0.0.1:5000/register";
+                storeMovementAddress = "http://127.0.0.1:5000/storeMovements";
             }
         }
 

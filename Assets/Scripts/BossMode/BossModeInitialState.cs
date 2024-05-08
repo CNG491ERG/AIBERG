@@ -1,3 +1,4 @@
+using AIBERG.API;
 using AIBERG.Core;
 using DG.Tweening;
 using UnityEngine;
@@ -17,7 +18,7 @@ namespace AIBERG.BossMode
             player = stateManager.gameEnvironment.Player;
             boss = stateManager.gameEnvironment.Boss;
 
-
+            UserInformation.Instance.playMode = true;
             player.inputHandler.enabled = false;
             player.GetComponent<Rigidbody2D>().gravityScale = 0;
             stateTimer = 0f;
