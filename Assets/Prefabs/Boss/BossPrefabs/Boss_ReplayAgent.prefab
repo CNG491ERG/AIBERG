@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss_ReplayAgent
       objectReference: {fileID: 0}
+    - target: {fileID: 8798389328075773108, guid: fc3110552e6a1404faca628807f0b93f, type: 3}
+      propertyPath: DecisionPeriod
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9038845977325347096, guid: fc3110552e6a1404faca628807f0b93f, type: 3}
       propertyPath: m_BehaviorType
       value: 1

@@ -1,6 +1,5 @@
 using UnityEngine;
 using AIBERG.ParkourMode.States;
-using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 namespace AIBERG.ParkourMode{
     public class CameraMovement : MonoBehaviour

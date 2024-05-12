@@ -422,6 +422,14 @@ PrefabInstance:
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 5653261860735405571, guid: a86549fc3af1b444091daf39be643458, type: 3}
+      propertyPath: DecisionPeriod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5653261860735405571, guid: a86549fc3af1b444091daf39be643458, type: 3}
+      propertyPath: TakeActionsBetweenDecisions
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7956601139670298137, guid: a86549fc3af1b444091daf39be643458, type: 3}
       propertyPath: m_Name
       value: Player_Replay_Agent
@@ -485,6 +493,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3733928864604831288, guid: bb300a4c973af6548a4bb73ecca08a3f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5126538600154681144, guid: bb300a4c973af6548a4bb73ecca08a3f, type: 3}
+      propertyPath: DecisionPeriod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5126538600154681144, guid: bb300a4c973af6548a4bb73ecca08a3f, type: 3}
+      propertyPath: TakeActionsBetweenDecisions
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

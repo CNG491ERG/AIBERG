@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: m_BehaviorType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6115847359706607798, guid: 775109d879f7f7440ae47b93993a8a85, type: 3}
+      propertyPath: DecisionPeriod
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8412785557883801772, guid: 775109d879f7f7440ae47b93993a8a85, type: 3}
       propertyPath: m_Name
       value: Player_Replay_Agent

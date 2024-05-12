@@ -17,6 +17,7 @@ namespace AIBERG.Core
             replayManager = GetComponent<ReplayManager>();
         }
 
+
         void FixedUpdate()
         {
             if (replayManager.queueReady)
