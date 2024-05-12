@@ -25,7 +25,12 @@ namespace AIBERG.API
                 char basicAbilityInput = environment.Player.inputHandler.BasicAbilityInput ? '1' : '0';
                 char activeAbility1Input = environment.Player.inputHandler.ActiveAbility1Input ? '1' : '0';
                 char activeAbility2Input = environment.Player.inputHandler.ActiveAbility2Input ? '1' : '0';
-                string input = $"{jumpInput}{basicAbilityInput}{activeAbility1Input}{activeAbility2Input}-";
+                char bossMoveUpInput = environment.Boss.GetComponent<BossAgent>().moveUpInput ? '1' : '0';
+                char bossMoveDownInput = environment.Boss.GetComponent<BossAgent>().moveDownInput ? '1' : '0';
+                char bossBasicAttackInput = environment.Boss.GetComponent<BossAgent>().basicAttackInput ? '1' : '0';
+                char bossAttackDroneInput = environment.Boss.GetComponent<BossAgent>().attackDroneInput ? '1' : '0';
+
+                string input = $"{jumpInput}{basicAbilityInput}{activeAbility1Input}{activeAbility2Input}{bossMoveUpInput}{bossMoveDownInput}{bossBasicAttackInput}{bossAttackDroneInput}-";
                 inputsRecorded.Append(input);
             }
         }
