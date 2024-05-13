@@ -4,7 +4,7 @@ using AIBERG.API;
 using TMPro;
 using UnityEngine;
 
-namespace AIBERG
+namespace AIBERG.UI
 {
     public class ShowUsername : MonoBehaviour
     {
