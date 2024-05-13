@@ -38,9 +38,9 @@ namespace AIBERG.BossAbilities{
         if(inputReceived){
             bossRb = boss.GetComponent<Rigidbody2D>();
             bossRb.velocity = new Vector2(0, 2);
-            //if(bossRb.velocity.y < movementSpeed){
-            //    bossRb.AddForce(new Vector2(0, movementSpeed));
-            //}
+            if(bossRb.velocity.y < movementSpeed){
+                bossRb.AddForce(new Vector2(0, movementSpeed));
+            }
         }
     }
 

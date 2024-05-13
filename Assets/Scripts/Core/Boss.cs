@@ -79,6 +79,7 @@ namespace AIBERG.Core{
 
         if(Health == 0){
             OnDamageableDeath?.Invoke(this, EventArgs.Empty);
+            Debug.Log("Boss died");
         }
     }
 

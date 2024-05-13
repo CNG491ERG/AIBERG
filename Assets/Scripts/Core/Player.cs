@@ -88,6 +88,7 @@ public class Player : MonoBehaviour, IDamageable{
 
         if(Health == 0){
             OnDamageableDeath?.Invoke(this, EventArgs.Empty);
+            Debug.Log("Player died");
         }
     }
 

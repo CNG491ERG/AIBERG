@@ -34,8 +34,7 @@ public class Jump : MonoBehaviour, IAbility{
 
     public void UseAbility(bool inputReceived){
         if(inputReceived){
-            //player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce));
-            player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 5);
+            player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce));
         } 
     }
 

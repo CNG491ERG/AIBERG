@@ -11,10 +11,14 @@ namespace AIBERG
         public TextMeshProUGUI text;
         private void Start()
         {
-            if (!string.IsNullOrEmpty(UserInformation.Instance.username))
+            if (UserInformation.Instance != null)
             {
-                text.text = UserInformation.Instance.username;
+                if (!string.IsNullOrEmpty(UserInformation.Instance.username))
+                {
+                    text.text = UserInformation.Instance.username;
+                }
             }
+
         }
     }
 }

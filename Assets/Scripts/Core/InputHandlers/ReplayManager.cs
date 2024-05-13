@@ -11,16 +11,21 @@ namespace AIBERG.Core.InputHandlers
     {
         public int playthroughID;
         public string playthrough;
-        public Dictionary<int, string> stepInputs = new Dictionary<int, string>();
-
+        public Dictionary<int, string> binaryInputs = new Dictionary<int, string>();
+        public Dictionary<int, float> playerLocalPositions = new Dictionary<int, float>();
+        public Dictionary<int, float> bossLocalPositions = new Dictionary<int, float>();
+        public GameObject environmentPrefab;
         public void ParseStepInputs()
         {
-            string[] splits = playthrough.Split('-');
+            string[] splits = playthrough.Split('*');
             for (int i = 0; i < splits.Length; i++)
             {
                 if (!string.IsNullOrEmpty(splits[i]))
                 {
-                    stepInputs[i] = splits[i];
+                    string[] splitMore = splits[i].Split(';');
+                    playerLocalPositions[i] = float.Parse(splitMore[0]);
+                    bossLocalPositions[i] = float.Parse(splitMore[1]);
+                    binaryInputs[i] = splitMore[2];
                 }
             }
         }
