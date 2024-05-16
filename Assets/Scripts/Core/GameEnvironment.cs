@@ -24,8 +24,9 @@ namespace AIBERG.Core{
     
     [Header("Automatic Agent Test")]
     [SerializeField] private bool countMatches = false;
-    [SerializeField] private int totalMatches = 4;
+    [SerializeField] public bool collectStats = false;
     [SerializeField] private int currentMatch = 0;
+    [SerializeField] private int totalMatches = 4;
 
     public long StepCounter{get => stepCounter; private set => stepCounter = value;}
     public Player Player{get => player;  set => player = value;}
@@ -79,9 +80,15 @@ namespace AIBERG.Core{
         if (countMatches)
         {
             currentMatch++;
+            Debug.Log($"Current Match: {currentMatch}");
             
-            if (currentMatch >= totalMatches) {
-                Terminate();
+            if (currentMatch >= totalMatches)
+            {
+                currentMatch = 0;
+                countMatches = false;
+                collectStats = false;
+                Debug.Log("Calling Test Match Manager Environment Completed");
+                TestMatchManager.Instance.EnvironmentCompleted();
                 return;
             }   
         }
@@ -118,15 +125,6 @@ namespace AIBERG.Core{
 
     public void StopCountingMatches(){
         countMatches = false;
-    }
-
-    private void Terminate()
-    {
-        #if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
-        #else
-                Application.Quit();
-        #endif
     }
 }
 

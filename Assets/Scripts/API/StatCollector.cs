@@ -25,6 +25,7 @@ public class StatCollector : MonoBehaviour
         player.OnDamageableDeath += Player_OnDamageableDeath;
         boss.OnDamageableDeath += Boss_OnDamageableDeath;
         environment.OnMaxStepsReached += Environment_OnMaxStepsReached;
+		environment.collectStats = true;
         environment.StartCountingSteps();
         environment.StartCountingMatches();
         bossHealth = boss.MaxHealth;
@@ -67,27 +68,39 @@ public class StatCollector : MonoBehaviour
 
     private void WriteStats()
     {
-        string path = Path.Combine(Application.dataPath, "gameStats.txt");
-        string stats = $"Winner: {winner}, Game Length: {gameLength}, Boss Health: {bossHealth}, Player Health: {playerHealth}\n";
+		if(environment.collectStats){
+            string envName = environment.gameObject.name;
+            string fileName = $"{envName}_Stats.txt";
+            string folderPath = Path.Combine(Application.dataPath, "Statistics");
 
-        // Check if the file exists, if not create it and set headers
-        if (!File.Exists(path))
-        {
-            using (StreamWriter sw = File.CreateText(path))
-            {
-                sw.WriteLine("Winner, Game Length, Boss Health, Player Health");
+            // Ensure the Statistics folder exists
+            if (!Directory.Exists(folderPath)) {
+                Directory.CreateDirectory(folderPath);
             }
-        }
 
-        // Append the stats to the file
-        using (StreamWriter sw = File.AppendText(path))
-        {
-            sw.WriteLine(stats);
-        }
+            string path = Path.Combine(folderPath, fileName);
+            string stats = $"Winner: {winner}, Game Length: {gameLength}, Boss Health: {bossHealth}, Player Health: {playerHealth}\n";
 
-        bossHealth = boss.MaxHealth;
-        playerHealth = player.MaxHealth;
-        gameLength = 0;
-        Debug.Log($"Stats written to {path}");
+            // Check if the file exists, if not create it and set headers
+            if (!File.Exists(path))
+            {
+                using (StreamWriter sw = File.CreateText(path))
+                {
+                    sw.WriteLine("Winner, Game Length, Boss Health, Player Health");
+                }
+            }
+
+            // Append the stats to the file
+            using (StreamWriter sw = File.AppendText(path))
+            {
+                sw.WriteLine(stats);
+            }
+
+            bossHealth = boss.MaxHealth;
+            playerHealth = player.MaxHealth;
+            gameLength = 0;
+            Debug.Log($"Stats written to {path}");
+		}
+        
     }
 }
