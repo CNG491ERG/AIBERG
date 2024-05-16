@@ -33,6 +33,14 @@ namespace AIBERG.Core
             }
         }
 
+		private void Start(){
+    		Time.timeScale = 100.0f;
+			//Time.fixedDeltaTime = 0.01f;
+    		Application.targetFrameRate = -1;
+    		Time.maximumDeltaTime = 0.1f;
+			Camera.main.enabled = false;		
+		}        
+        
         public void EnvironmentCompleted() {
             completedEnvironments++;
             Debug.Log($"Completed Envs: {completedEnvironments}");

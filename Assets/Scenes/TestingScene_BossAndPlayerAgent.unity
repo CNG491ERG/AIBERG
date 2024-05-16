@@ -179,7 +179,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 818784262950563905, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_Name
-      value: Environment_Testing_BossAndPlayerAgent (3)
+      value: Env16M
       objectReference: {fileID: 0}
     - target: {fileID: 2280411837469207206, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_Model
@@ -269,7 +269,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 818784262950563905, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_Name
-      value: Environment_Testing_BossAndPlayerAgent (1)
+      value: Env12M
       objectReference: {fileID: 0}
     - target: {fileID: 2280411837469207206, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_Model
@@ -446,7 +446,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 818784262950563905, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_Name
-      value: Environment_Testing_BossAndPlayerAgent (2)
+      value: Env20M
       objectReference: {fileID: 0}
     - target: {fileID: 2280411837469207206, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_Model
@@ -573,7 +573,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 818784262950563905, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_Name
-      value: Environment_Testing_BossAndPlayerAgent
+      value: Env8M
       objectReference: {fileID: 0}
     - target: {fileID: 2280411837469207206, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_Model
