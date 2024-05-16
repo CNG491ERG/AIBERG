@@ -21,6 +21,11 @@ namespace AIBERG.Core{
     [SerializeField] public Transform bossOffScreenPosition;
     [SerializeField] private List<GameObject> foregroundObjects;
     [SerializeField] private List<GameObject> childObjects = new();
+    
+    [Header("Automatic Agent Test")]
+    [SerializeField] private bool countMatches = false;
+    [SerializeField] private int totalMatches = 4;
+    [SerializeField] private int currentMatch = 0;
 
     public long StepCounter{get => stepCounter; private set => stepCounter = value;}
     public Player Player{get => player;  set => player = value;}
@@ -71,6 +76,16 @@ namespace AIBERG.Core{
     }
     
     public void ResetEnvironment(){
+        if (countMatches)
+        {
+            currentMatch++;
+            
+            if (currentMatch >= totalMatches) {
+                Terminate();
+                return;
+            }   
+        }
+        
         RemoveSpawnedObjects();
         ResetPlayer();
         ResetBoss();
@@ -95,6 +110,23 @@ namespace AIBERG.Core{
 
     public void StopCountingSteps(){
         countStep = false;
+    }
+    
+    public void StartCountingMatches(){
+        countMatches = true;
+    }
+
+    public void StopCountingMatches(){
+        countMatches = false;
+    }
+
+    private void Terminate()
+    {
+        #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+        #else
+                Application.Quit();
+        #endif
     }
 }
 

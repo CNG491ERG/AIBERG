@@ -26,6 +26,7 @@ public class StatCollector : MonoBehaviour
         boss.OnDamageableDeath += Boss_OnDamageableDeath;
         environment.OnMaxStepsReached += Environment_OnMaxStepsReached;
         environment.StartCountingSteps();
+        environment.StartCountingMatches();
         bossHealth = boss.MaxHealth;
         playerHealth = player.MaxHealth;
         gameLength = 0;

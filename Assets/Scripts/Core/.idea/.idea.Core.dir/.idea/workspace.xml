@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d13bcd5d-3fea-4ebc-b108-d25ac7770c05" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Brains/Boss/Boss20M.onnx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../Brains/Boss/Boss20M.onnx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Brains/Player/Player20M.onnx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../Brains/Player/Player20M.onnx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ML-Agents/Timers/TestingScene_BossAndPlayerAgent_timers.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../ML-Agents/Timers/TestingScene_BossAndPlayerAgent_timers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/StatCollector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../API/StatCollector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEnvironment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GameEnvironment.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../gameStats.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../gameStats.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;MahradHosseini&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/CNG491ERG/AIBERG.git&quot;,
+    &quot;accountId&quot;: &quot;5512f4c8-e405-42a4-a57f-22ff5d9793f5&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../API/StatCollector.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GameEnvironment.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2gYl27tHizFsWEFhCzJOebksyhm" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;AgentvsAgentTest&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.build.unityPlugin&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\Mahrad\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\Mahrad\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\Mahrad\\AppData\\Local\\Symbols\\src&quot;
+    ]
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d13bcd5d-3fea-4ebc-b108-d25ac7770c05" name="Changes" comment="" />
+      <created>1715882186660</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1715882186660</updated>
+      <workItem from="1715882189597" duration="1509000" />
+      <workItem from="1715883822382" duration="17000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>
