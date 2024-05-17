@@ -53,3 +53,49 @@ Winner: B, Game Length: 1950, Boss Health: 85, Player Health: 0
 
 Winner: B, Game Length: 1906, Boss Health: 60, Player Health: 0
 
+Winner: B, Game Length: 2130, Boss Health: 76, Player Health: 0
+
+Winner: B, Game Length: 1963, Boss Health: 76, Player Health: 0
+
+Winner: B, Game Length: 3179, Boss Health: 59, Player Health: 0
+
+Winner: B, Game Length: 2023, Boss Health: 84, Player Health: 0
+
+Winner: B, Game Length: 3804, Boss Health: 67, Player Health: 0
+
+Winner: B, Game Length: 1813, Boss Health: 70, Player Health: 0
+
+Winner: B, Game Length: 1849, Boss Health: 70, Player Health: 0
+
+Winner: B, Game Length: 2495, Boss Health: 85, Player Health: 0
+
+Winner: B, Game Length: 2247, Boss Health: 85, Player Health: 0
+
+Winner: B, Game Length: 2782, Boss Health: 76, Player Health: 0
+
+Winner: B, Game Length: 3997, Boss Health: 83, Player Health: 0
+
+Winner: B, Game Length: 1916, Boss Health: 85, Player Health: 0
+
+Winner: B, Game Length: 3892, Boss Health: 93, Player Health: 0
+
+Winner: B, Game Length: 1994, Boss Health: 70, Player Health: 0
+
+Winner: B, Game Length: 1939, Boss Health: 79, Player Health: 0
+
+Winner: B, Game Length: 2734, Boss Health: 85, Player Health: 0
+
+Winner: B, Game Length: 2415, Boss Health: 84, Player Health: 0
+
+Winner: B, Game Length: 3132, Boss Health: 85, Player Health: 0
+
+Winner: B, Game Length: 2666, Boss Health: 85, Player Health: 0
+
+Winner: B, Game Length: 2127, Boss Health: 82, Player Health: 0
+
+Winner: B, Game Length: 1918, Boss Health: 81, Player Health: 0
+
+Winner: B, Game Length: 2790, Boss Health: 69, Player Health: 0
+
+Winner: B, Game Length: 2091, Boss Health: 64, Player Health: 0
+
