@@ -184,7 +184,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.76
+  orthographic size: 10.076636
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -227,14 +227,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Environment_Testing_BossAndPlayerAgent
       objectReference: {fileID: 0}
+    - target: {fileID: 1171522198026385954, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 2280411837469207206, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: a6159bad6d5ca1f43ac017fc4e0b1be5, type: 3}
+      objectReference: {fileID: 5022602860645237092, guid: 160789a0399d2074193b83ae6e788d3d, type: 3}
+    - target: {fileID: 2280411837469207206, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
+      propertyPath: m_BehaviorType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4549868478834900224, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 9703d4529a8e1f5438767f36b2cc977b, type: 3}
+      objectReference: {fileID: 5022602860645237092, guid: a2f8611ede20fdd40893c1c4dce48b21, type: 3}
+    - target: {fileID: 4549868478834900224, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
+      propertyPath: m_BehaviorType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6272276099997638794, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_RootOrder
       value: 1
