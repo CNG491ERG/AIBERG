@@ -99,3 +99,5 @@ Winner: N, Game Length: 5999, Boss Health: 80, Player Health: 11.17498
 
 Winner: N, Game Length: 5999, Boss Health: 78, Player Health: 5.949985
 
+Winner: N, Game Length: 5999, Boss Health: 81, Player Health: 0
+

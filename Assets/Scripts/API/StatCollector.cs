@@ -71,7 +71,7 @@ public class StatCollector : MonoBehaviour
 		if(environment.collectStats){
             string envName = environment.gameObject.name;
             string fileName = $"{envName}_Stats.txt";
-            string folderPath = Path.Combine(Application.dataPath, "Statistics");
+            string folderPath = Path.Combine(Application.persistentDataPath, "Statistics");
 
             // Ensure the Statistics folder exists
             if (!Directory.Exists(folderPath)) {
