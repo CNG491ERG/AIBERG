@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: 6cd0759de1dce8d45860f4dbcc2051eb
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AIBERG MENU-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1260
+        width: 320
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dad0a74750c98e4a97b88a03544fba9
+      internalID: 509083870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIBERG MENU-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 1318
+        width: 106
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5afd7525a93d26c428459b1811850cb2
+      internalID: -589026936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIBERG MENU-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 1400
+        width: 160
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 576d777872353e44d9f0761de83b9e00
+      internalID: -161397783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIBERG MENU-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 1269
+        width: 36
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88085d49dbb00004fa9a37ad2e475a9c
+      internalID: 1427473540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIBERG MENU-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 1140
+        width: 106
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e209c7edfa511384481dbe782ace3c7b
+      internalID: -1702949361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIBERG MENU-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 1089
+        width: 36
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cacdd99aa905911478db1783e5461bd0
+      internalID: 2093127563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIBERG MENU-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 958
+        width: 106
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f2e4b60b33dcb64eb2bb69746227718
+      internalID: 1580004183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIBERG MENU-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 909
+        width: 36
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 442e078fb12f630468343a820aac2c9b
+      internalID: -129955007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIBERG MENU-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 781
+        width: 106
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bb3b698eec717e429e67eaf864581a5
+      internalID: -1433831310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIBERG MENU-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 729
+        width: 36
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d4b892ae205f624eba07224fa6ef7c0
+      internalID: -1937687549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIBERG MENU-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 599
+        width: 106
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bda0d63facbf6da41986ae5908cb3b42
+      internalID: 864115904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIBERG MENU-Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 549
+        width: 36
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3a17d172a21f7f43911d14f8eba9dc6
+      internalID: -417705270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIBERG MENU-Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 421
+        width: 106
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2b5e1e2e3f803944912352608c3ca7b
+      internalID: -1429945271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIBERG MENU-Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 369
+        width: 36
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2874ec30d0450b9418a9bb7685a76e68
+      internalID: -123978246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIBERG MENU-Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 239
+        width: 106
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c9e3f41d6809bb4388bfde5759b129c
+      internalID: -689155379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIBERG MENU-Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 189
+        width: 36
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91f1b5fd4d346cc4cbf758b2125bbabb
+      internalID: -1246705972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIBERG MENU-Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 60
+        width: 106
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4839c5cdd78eb954392ceb66d043d7fd
+      internalID: -1807140125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIBERG MENU-Sheet_64
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 9
+        width: 36
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1983eed9030acfb48b10917d38082fde
+      internalID: -1012844162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      AIBERG MENU-Sheet_0: 509083870
+      AIBERG MENU-Sheet_1: -589026936
+      AIBERG MENU-Sheet_10: 407146171
+      AIBERG MENU-Sheet_11: -1980192051
+      AIBERG MENU-Sheet_12: 1027954203
+      AIBERG MENU-Sheet_13: -568984364
+      AIBERG MENU-Sheet_14: -573958128
+      AIBERG MENU-Sheet_15: 1071240630
+      AIBERG MENU-Sheet_16: 2093127563
+      AIBERG MENU-Sheet_17: 1580004183
+      AIBERG MENU-Sheet_18: 1763758705
+      AIBERG MENU-Sheet_19: -340754069
+      AIBERG MENU-Sheet_2: -161397783
+      AIBERG MENU-Sheet_20: 192937740
+      AIBERG MENU-Sheet_21: 2096757128
+      AIBERG MENU-Sheet_22: -1307289338
+      AIBERG MENU-Sheet_23: -1338748334
+      AIBERG MENU-Sheet_24: -129955007
+      AIBERG MENU-Sheet_25: -1433831310
+      AIBERG MENU-Sheet_26: 331481089
+      AIBERG MENU-Sheet_27: 1910007658
+      AIBERG MENU-Sheet_28: -226137593
+      AIBERG MENU-Sheet_29: 1353672836
+      AIBERG MENU-Sheet_3: -147530699
+      AIBERG MENU-Sheet_30: -993168691
+      AIBERG MENU-Sheet_31: 1869051630
+      AIBERG MENU-Sheet_32: -1937687549
+      AIBERG MENU-Sheet_33: 864115904
+      AIBERG MENU-Sheet_34: -910581345
+      AIBERG MENU-Sheet_35: -131650797
+      AIBERG MENU-Sheet_36: -664356160
+      AIBERG MENU-Sheet_37: -1062280016
+      AIBERG MENU-Sheet_38: -451046984
+      AIBERG MENU-Sheet_39: 1870130779
+      AIBERG MENU-Sheet_4: -1673521770
+      AIBERG MENU-Sheet_40: -417705270
+      AIBERG MENU-Sheet_41: -1429945271
+      AIBERG MENU-Sheet_42: 1830050332
+      AIBERG MENU-Sheet_43: 452383083
+      AIBERG MENU-Sheet_44: -649761304
+      AIBERG MENU-Sheet_45: -2058148330
+      AIBERG MENU-Sheet_46: 2027875027
+      AIBERG MENU-Sheet_47: 1782096006
+      AIBERG MENU-Sheet_48: -123978246
+      AIBERG MENU-Sheet_49: -689155379
+      AIBERG MENU-Sheet_5: -123920380
+      AIBERG MENU-Sheet_50: 847051551
+      AIBERG MENU-Sheet_51: -865778015
+      AIBERG MENU-Sheet_52: -48313080
+      AIBERG MENU-Sheet_53: 1123607995
+      AIBERG MENU-Sheet_54: -1531373539
+      AIBERG MENU-Sheet_55: -1155932233
+      AIBERG MENU-Sheet_56: -1246705972
+      AIBERG MENU-Sheet_57: -1807140125
+      AIBERG MENU-Sheet_58: 882210428
+      AIBERG MENU-Sheet_59: 702616570
+      AIBERG MENU-Sheet_6: -1826907128
+      AIBERG MENU-Sheet_60: -1114341791
+      AIBERG MENU-Sheet_61: -1385267821
+      AIBERG MENU-Sheet_62: -62807909
+      AIBERG MENU-Sheet_63: 1932161856
+      AIBERG MENU-Sheet_64: -1012844162
+      AIBERG MENU-Sheet_65: -1609994842
+      AIBERG MENU-Sheet_66: 1417249558
+      AIBERG MENU-Sheet_7: 950296542
+      AIBERG MENU-Sheet_8: 1427473540
+      AIBERG MENU-Sheet_9: -1702949361
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

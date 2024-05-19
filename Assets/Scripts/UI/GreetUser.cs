@@ -13,7 +13,7 @@ namespace AIBERG.UI
         {
             if (!string.IsNullOrEmpty(UserInformation.Instance.username))
             {
-                text.text = "Welcome " + UserInformation.Instance.username + " !";
+                text.text = "Welcome " + UserInformation.Instance.username + "!";
             }
         }
     }
