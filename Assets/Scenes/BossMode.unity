@@ -184,7 +184,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.5
+  orthographic size: 7.4468527
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -230,14 +230,22 @@ PrefabInstance:
     - target: {fileID: 1479366751564409228, guid: df0ef772c38d6e1479e9b1bb748dc136, type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: bfab72b508d51c2458704b2f8f072fd8, type: 3}
-    - target: {fileID: 1479366751564409228, guid: df0ef772c38d6e1479e9b1bb748dc136, type: 3}
-      propertyPath: m_BehaviorType
-      value: 0
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5022602860645237092, guid: 23d0ae1d87db40748940b79a35bc6565, type: 3}
     - target: {fileID: 1975380696964181894, guid: df0ef772c38d6e1479e9b1bb748dc136, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519944443519907727, guid: df0ef772c38d6e1479e9b1bb748dc136, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 3926952042691365687, guid: df0ef772c38d6e1479e9b1bb748dc136, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 34.656612
+      objectReference: {fileID: 0}
+    - target: {fileID: 3926952042691365687, guid: df0ef772c38d6e1479e9b1bb748dc136, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.4177
       objectReference: {fileID: 0}
     - target: {fileID: 6641115801287893920, guid: df0ef772c38d6e1479e9b1bb748dc136, type: 3}
       propertyPath: m_RootOrder
@@ -283,9 +291,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7203344924979120617, guid: df0ef772c38d6e1479e9b1bb748dc136, type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
+    - target: {fileID: 6783473045463670542, guid: df0ef772c38d6e1479e9b1bb748dc136, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 34.5382
+      objectReference: {fileID: 0}
+    - target: {fileID: 6783473045463670542, guid: df0ef772c38d6e1479e9b1bb748dc136, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.4771
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
