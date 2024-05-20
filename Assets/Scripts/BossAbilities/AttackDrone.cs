@@ -2,6 +2,7 @@ using System;
 using AIBERG.Interfaces;
 using AIBERG.Core;
 using UnityEngine;
+using DG.Tweening;
 
 namespace AIBERG.BossAbilities{
     public class AttackDrone : MonoBehaviour, IDamageable{
@@ -78,6 +79,8 @@ namespace AIBERG.BossAbilities{
     public void TakeDamage(float damageToTake){
         float totalDamage = damageToTake * (1 - Defense);
         Health = Health - totalDamage <= 0 ? 0 : Health - totalDamage;
+        GetComponentInChildren<SpriteRenderer>().material.color = Color.red;
+        GetComponentInChildren<SpriteRenderer>().material.DOColor(Color.white, 0.2f);
         OnDamageableHurt?.Invoke(this, EventArgs.Empty);
         if(Health == 0){
             OnDamageableDeath?.Invoke(this, EventArgs.Empty);

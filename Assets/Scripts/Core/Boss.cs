@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using AIBERG.Interfaces;
 using AIBERG.ScriptableObjects;
 using AIBERG.Utilities;
+using DG.Tweening;
 
 namespace AIBERG.Core{
     public class Boss : MonoBehaviour, IDamageable{
@@ -74,6 +75,8 @@ namespace AIBERG.Core{
     }
 
     public void TakeDamage(float damageToTake) {
+        GetComponentInChildren<SpriteRenderer>().material.color = Color.red;
+        GetComponentInChildren<SpriteRenderer>().material.DOColor(Color.white, 0.2f);
         float totalDamage = damageToTake * (1 - Defense);
         Health = Health - totalDamage <= 0 ? 0 : Health - totalDamage;
         OnDamageableHurt?.Invoke(this, EventArgs.Empty);

@@ -3,6 +3,7 @@ using AIBERG.Core.InputHandlers;
 using AIBERG.Interfaces;
 using AIBERG.ScriptableObjects;
 using AIBERG.Utilities;
+using DG.Tweening;
 using UnityEngine;
 
 namespace AIBERG.Core{
@@ -93,6 +94,10 @@ public class Player : MonoBehaviour, IDamageable{
     public void TakeDamage(float damageToTake){
         float totalDamage = damageToTake * (1 - Defense);
         Health = Health - totalDamage <= 0 ? 0 : Health - totalDamage;
+        armsAnimator.GetComponent<SpriteRenderer>().material.color = Color.red;
+        armsAnimator.GetComponent<SpriteRenderer>().material.DOColor(Color.white, 0.2f);
+        bodyAnimator.GetComponent<SpriteRenderer>().material.color = Color.red;
+        bodyAnimator.GetComponent<SpriteRenderer>().material.DOColor(Color.white, 0.2f);
         OnDamageableHurt?.Invoke(this, EventArgs.Empty);
         if(Health == 0){
             OnDamageableDeath?.Invoke(this, EventArgs.Empty);

@@ -9,7 +9,7 @@ namespace AIBERG.Core{
     public List<string> tagsToDamage = new List<string>();
     public Vector2 projectileVelocity;
     private Rigidbody2D rb;
-
+    private bool hasImpacted = false;
     void Start()
     {
         GetComponent<Collider2D>().isTrigger = true;
@@ -18,7 +18,12 @@ namespace AIBERG.Core{
 
     private void FixedUpdate()
     {
-        rb.velocity = projectileVelocity;
+        if(!hasImpacted){
+            rb.velocity = projectileVelocity;
+        }
+        else{
+            rb.velocity = Vector2.zero;
+        }
     }
 
     public void AddTagToDamage(string tag){
@@ -33,8 +38,9 @@ namespace AIBERG.Core{
         // Check if the collider's tag is in the list of tags to damage
         if (objectToDamage != null && tagsToDamage.Contains(other.tag))
         {
+            hasImpacted = true;
             objectToDamage.TakeDamage(damage);
-            Destroy(gameObject);
+            GetComponentInChildren<Animator>().SetTrigger("impact");
         }
     }
 }
