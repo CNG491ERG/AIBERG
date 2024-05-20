@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a2c38977aa5a437488cb9b9d88cb657e
+guid: 52ed4e35541307b42ba2343d006f0e46
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,49 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: character 2 jump animation-Sheet_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 192
-        width: 96
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6362c5a696d0d0d4781b9063257bdc29
-      internalID: 338727598
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character 2 jump animation-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 192
-        width: 96
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 278ceb20ab678ac46b432dfb318e2f03
-      internalID: 474561629
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character 2 jump animation-Sheet_2
+      name: character 2-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -179,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f827941ce3faa844b95b8ee8d515459
-      internalID: 377616756
+      spriteID: 2b7151cd6810fda4592f1b4ed061a7c5
+      internalID: 1590258552
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character 2 jump animation-Sheet_3
+      name: character 2-Sheet_1
       rect:
         serializedVersion: 2
         x: 96
@@ -200,14 +158,56 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 488605c11835f824b983401c6fb31e01
-      internalID: -708123820
+      spriteID: 8c188df8f3d2bd540b6e5dffc40ac02c
+      internalID: -31138669
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character 2 jump animation-Sheet_4
+      name: character 2-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c497513ea900b6c43a31d7d84f1eebce
+      internalID: 1816489789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character 2-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 96
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05b583f2a9a3faa42b7a406f0707f683
+      internalID: -75524992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character 2-Sheet_4
       rect:
         serializedVersion: 2
         x: 0
@@ -221,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b981ee5ea22119c478fde68d1e318fec
-      internalID: -1906538849
+      spriteID: b23969aaad8430346bce6d105ea0c61c
+      internalID: -1593986946
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character 2 jump animation-Sheet_5
+      name: character 2-Sheet_5
       rect:
         serializedVersion: 2
         x: 96
@@ -242,8 +242,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6de7d60fea103f47b61f35a04110519
-      internalID: -1125336918
+      spriteID: a1bdea8c98b5ec14798182fd80bf659c
+      internalID: -1294173088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character 2-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d9c66bee1b8368418cc0db69bea50b7
+      internalID: 453140814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character 2-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b7935ee76a8544498a20c5ed88dd62d
+      internalID: 2055340050
       vertices: []
       indices: 
       edges: []
@@ -259,12 +301,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      character 2 jump animation-Sheet_0: 338727598
-      character 2 jump animation-Sheet_1: 474561629
-      character 2 jump animation-Sheet_2: 377616756
-      character 2 jump animation-Sheet_3: -708123820
-      character 2 jump animation-Sheet_4: -1906538849
-      character 2 jump animation-Sheet_5: -1125336918
+      character 2-Sheet_0: 1590258552
+      character 2-Sheet_1: -31138669
+      character 2-Sheet_2: 1816489789
+      character 2-Sheet_3: -75524992
+      character 2-Sheet_4: -1593986946
+      character 2-Sheet_5: -1294173088
+      character 2-Sheet_6: 453140814
+      character 2-Sheet_7: 2055340050
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

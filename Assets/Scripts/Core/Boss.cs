@@ -78,6 +78,7 @@ namespace AIBERG.Core{
         OnDamageableHurt?.Invoke(this, EventArgs.Empty);
 
         if(Health == 0){
+            GetComponentInChildren<Animator>().SetBool("isDead", true);
             OnDamageableDeath?.Invoke(this, EventArgs.Empty);
             Debug.Log("Boss died");
         }

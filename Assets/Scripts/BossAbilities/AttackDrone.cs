@@ -69,6 +69,8 @@ namespace AIBERG.BossAbilities{
             projectileRb.transform.position = transform.position;
             Vector3 projectileShootingDir = (boss.Environment.Player.transform.position - transform.position).normalized;
             projectileRb.gameObject.GetComponent<DamagingProjectile>().projectileVelocity = projectileShootingDir * ShootingSpeed;
+            float angle = (Mathf.Atan2(projectileShootingDir.y, projectileShootingDir.x) * Mathf.Rad2Deg)+180f;
+            projectileRb.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
         }
     }
 

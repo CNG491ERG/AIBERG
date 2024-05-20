@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Boss_idle
+  m_Name: Movement
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -24,13 +24,13 @@ AnimationClip:
       value: {fileID: 1940442750, guid: 9a1ac55d879c5d44f9a26a46d4333de0, type: 3}
     - time: 0.13333334
       value: {fileID: 433543646, guid: 9a1ac55d879c5d44f9a26a46d4333de0, type: 3}
-    - time: 0.28333333
+    - time: 0.3
       value: {fileID: -2017274228, guid: 9a1ac55d879c5d44f9a26a46d4333de0, type: 3}
     - time: 0.43333334
       value: {fileID: 348413733, guid: 9a1ac55d879c5d44f9a26a46d4333de0, type: 3}
     - time: 0.56666666
       value: {fileID: -1440194706, guid: 9a1ac55d879c5d44f9a26a46d4333de0, type: 3}
-    - time: 0.71666664
+    - time: 0.7
       value: {fileID: 1929545928, guid: 9a1ac55d879c5d44f9a26a46d4333de0, type: 3}
     - time: 0.8666667
       value: {fileID: -416772433, guid: 9a1ac55d879c5d44f9a26a46d4333de0, type: 3}
@@ -38,8 +38,8 @@ AnimationClip:
       value: {fileID: -1458296741, guid: 9a1ac55d879c5d44f9a26a46d4333de0, type: 3}
     attribute: m_Sprite
     path: 
-    classID: 114
-    script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+    classID: 212
+    script: {fileID: 0}
     flags: 2
   m_SampleRate: 60
   m_WrapMode: 0
@@ -50,10 +50,10 @@ AnimationClip:
     genericBindings:
     - serializedVersion: 2
       path: 0
-      attribute: 2015549526
-      script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-      typeID: 114
-      customType: 0
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
       isPPtrCurve: 1
       isIntCurve: 0
       isSerializeReferenceCurve: 0

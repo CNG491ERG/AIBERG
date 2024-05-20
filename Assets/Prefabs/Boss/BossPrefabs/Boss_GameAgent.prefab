@@ -220,6 +220,10 @@ MonoBehaviour:
   environment: {fileID: 0}
   player: {fileID: 0}
   boss: {fileID: 0}
+  basicAttackInput: 0
+  attackDroneInput: 0
+  moveUpInput: 0
+  moveDownInput: 0
 --- !u!114 &9038845977325347096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -588,6 +592,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1560753183429228712}
   - component: {fileID: 3031455757521741008}
+  - component: {fileID: 2977302300858855935}
   m_Layer: 2
   m_Name: BossVisuals
   m_TagString: Untagged
@@ -604,8 +609,8 @@ Transform:
   m_GameObject: {fileID: 7533655617675837721}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 5.5, y: 5.5, z: 5.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1075976921849669044}
   m_RootOrder: -1
@@ -651,17 +656,38 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b7ad8625ab516204888c18154ade7fad, type: 3}
+  m_Sprite: {fileID: 1940442750, guid: 9a1ac55d879c5d44f9a26a46d4333de0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.28, y: 1.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &2977302300858855935
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7533655617675837721}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9a0c0ff8334a22c4d88d9cdb25162a8f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7927309466790474827
 GameObject:
   m_ObjectHideFlags: 0
