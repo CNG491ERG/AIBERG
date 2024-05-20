@@ -23,6 +23,7 @@ namespace AIBERG.BossAbilities{
     [SerializeField] private Transform targetPosition;
     [SerializeField] private float damage;
     [SerializeField] private float shootingSpeed;
+    [SerializeField] public Transform shootPoint;
 
     [Header("Projectile Prefab")]
     [SerializeField] private GameObject projectilePrefab;
@@ -66,7 +67,7 @@ namespace AIBERG.BossAbilities{
         Rigidbody2D projectileRb = Instantiate(projectilePrefab, boss.Environment.transform).GetComponent<Rigidbody2D>();
         boss.Environment.AddObjectToEnvironmentList(projectileRb.gameObject);
         if(projectileRb != null){
-            projectileRb.transform.position = transform.position;
+            projectileRb.transform.position = shootPoint.position;
             Vector3 projectileShootingDir = (boss.Environment.Player.transform.position - transform.position).normalized;
             projectileRb.gameObject.GetComponent<DamagingProjectile>().projectileVelocity = projectileShootingDir * ShootingSpeed;
             float angle = (Mathf.Atan2(projectileShootingDir.y, projectileShootingDir.x) * Mathf.Rad2Deg)+180f;

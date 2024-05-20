@@ -54,7 +54,7 @@ namespace AIBERG.BossAbilities{
             Rigidbody2D projectileRb = Instantiate(projectilePrefab, boss.Environment.transform).GetComponent<Rigidbody2D>();
             boss.Environment.AddObjectToEnvironmentList(projectileRb.gameObject);
             if(projectileRb != null){
-                projectileRb.transform.position = boss.transform.position;
+                projectileRb.transform.position = boss.shootPoint.position;
                 projectileRb.gameObject.GetComponent<DamagingProjectile>().projectileVelocity = new Vector2(-projectileVelocityX, 0);
             }
             cooldownTimer = 0;

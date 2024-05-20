@@ -23,6 +23,7 @@ namespace AIBERG.Core{
     [SerializeField] private GameObject moveDownAbilityObject;
     [SerializeField] private GameObject basicAbilityObject;
     [SerializeField] private GameObject spawnAttackDroneAbilityObject;
+    [SerializeField] public Transform shootPoint;
     public IAbility moveUpAbility;
     public IAbility moveDownAbility;
     public IAbility basicAttackAbility;

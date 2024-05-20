@@ -22,6 +22,7 @@ namespace AIBERG.BossMode
             player.inputHandler.enabled = false;
             player.GetComponent<Rigidbody2D>().gravityScale = 0;
             stateTimer = 0f;
+
         }
 
         public override void UpdateState(BossModeStateManager stateManager){
@@ -37,6 +38,12 @@ namespace AIBERG.BossMode
             }
             else{
                 stateTimer += Time.deltaTime;
+            }
+            if(player.bodyAnimator != null){
+                player.bodyAnimator.SetBool("isFlying", true);
+            }
+            if(player.thrustersAnimator != null){
+                player.thrustersAnimator.SetBool("isFlying", true);
             }
         }
     }

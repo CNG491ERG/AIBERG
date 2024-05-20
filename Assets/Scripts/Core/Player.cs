@@ -7,6 +7,11 @@ using UnityEngine;
 
 namespace AIBERG.Core{
 public class Player : MonoBehaviour, IDamageable{
+    [Header("Animators")]
+    public Animator armsAnimator;
+    public Animator bodyAnimator;
+    public Animator thrustersAnimator;
+
     [Header("Player's Input Handler")]
     public InputHandler inputHandler;
 
@@ -39,6 +44,7 @@ public class Player : MonoBehaviour, IDamageable{
 
     [Header("Other")]
     [SerializeField] private Boss boss;
+    [SerializeField] public Transform shootPoint;
     public event EventHandler OnDamageableDeath;
     public event EventHandler OnDamageableHurt;
 
@@ -78,7 +84,10 @@ public class Player : MonoBehaviour, IDamageable{
             activeAbility1?.UseAbility(inputHandler.ActiveAbility1Input);
             activeAbility2?.UseAbility(inputHandler.ActiveAbility2Input);
             jump?.UseAbility(inputHandler.JumpInput);
-        }   
+        }
+        RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y-1f), Vector2.down, 0.5f);
+        Debug.DrawRay(new Vector2(transform.position.x, transform.position.y-1f), Vector2.down);
+        bodyAnimator.SetBool("isOnGround", hit.collider != null && hit.collider.tag.CompareTo("ForegroundObject") == 0);
     }
 
     public void TakeDamage(float damageToTake){

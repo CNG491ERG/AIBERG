@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: character 2-Sheet_0
+      name: character 2 shooting animation-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b7151cd6810fda4592f1b4ed061a7c5
-      internalID: 1590258552
+      spriteID: 92c6f8076bcad924fae003f0dab7dd9d
+      internalID: 707228005
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character 2-Sheet_1
+      name: character 2 shooting animation-Sheet_1
       rect:
         serializedVersion: 2
         x: 96
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c188df8f3d2bd540b6e5dffc40ac02c
-      internalID: -31138669
+      spriteID: ee7205a555984d445a7c7f66e7cace46
+      internalID: -1304509148
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character 2-Sheet_2
+      name: character 2 shooting animation-Sheet_2
       rect:
         serializedVersion: 2
         x: 192
@@ -179,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c497513ea900b6c43a31d7d84f1eebce
-      internalID: 1816489789
+      spriteID: 67f2d09a4703e9f4a80ee427447152a4
+      internalID: 1388902060
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character 2-Sheet_3
+      name: character 2 shooting animation-Sheet_3
       rect:
         serializedVersion: 2
         x: 288
@@ -200,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05b583f2a9a3faa42b7a406f0707f683
-      internalID: -75524992
+      spriteID: d2c0cd2d8dd6b2b43963b6f576ba4e39
+      internalID: -1066757103
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character 2-Sheet_4
+      name: character 2 shooting animation-Sheet_4
       rect:
         serializedVersion: 2
         x: 0
@@ -221,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b23969aaad8430346bce6d105ea0c61c
-      internalID: -1593986946
+      spriteID: 9a9b930ce6ddf524a9ff39134593bc3b
+      internalID: -815769291
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character 2-Sheet_5
+      name: character 2 shooting animation-Sheet_5
       rect:
         serializedVersion: 2
         x: 96
@@ -242,14 +242,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1bdea8c98b5ec14798182fd80bf659c
-      internalID: -1294173088
+      spriteID: 63b320e12bd9ea5488f3539e264881bc
+      internalID: -2124724890
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character 2-Sheet_6
+      name: character 2 shooting animation-Sheet_6
       rect:
         serializedVersion: 2
         x: 192
@@ -263,14 +263,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d9c66bee1b8368418cc0db69bea50b7
-      internalID: 453140814
+      spriteID: bde9abfa451708541a95699ad69e5348
+      internalID: -919445253
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character 2-Sheet_7
+      name: character 2 shooting animation-Sheet_7
       rect:
         serializedVersion: 2
         x: 288
@@ -284,8 +284,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b7935ee76a8544498a20c5ed88dd62d
-      internalID: 2055340050
+      spriteID: 6235570bb5c37e74f91b70e62c4b3afa
+      internalID: -872381548
       vertices: []
       indices: 
       edges: []
@@ -301,14 +301,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      character 2-Sheet_0: 1590258552
-      character 2-Sheet_1: -31138669
-      character 2-Sheet_2: 1816489789
-      character 2-Sheet_3: -75524992
-      character 2-Sheet_4: -1593986946
-      character 2-Sheet_5: -1294173088
-      character 2-Sheet_6: 453140814
-      character 2-Sheet_7: 2055340050
+      character 2 shooting animation-Sheet_0: 707228005
+      character 2 shooting animation-Sheet_1: -1304509148
+      character 2 shooting animation-Sheet_2: 1388902060
+      character 2 shooting animation-Sheet_3: -1066757103
+      character 2 shooting animation-Sheet_4: -815769291
+      character 2 shooting animation-Sheet_5: -2124724890
+      character 2 shooting animation-Sheet_6: -919445253
+      character 2 shooting animation-Sheet_7: -872381548
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
