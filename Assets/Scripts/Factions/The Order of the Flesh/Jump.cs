@@ -1,5 +1,6 @@
 using AIBERG.Core;
 using AIBERG.Interfaces;
+using log4net.DateFormatter;
 using UnityEngine;
 
 namespace AIBERG.Factions.TheOrderOfTheFlesh
@@ -51,11 +52,12 @@ namespace AIBERG.Factions.TheOrderOfTheFlesh
             {
                 if (player.bodyAnimator != null)
                 {
-                    player.bodyAnimator.SetBool("isFlying", playerRb.velocity.y > 0.001f);
+                    player.bodyAnimator.SetBool("isFlying", playerRb.velocity.y > 0.001f || inputReceived);
+                    player.bodyAnimator.SetBool("isOnGround", Mathf.Abs(playerRb.velocity.y) > 0.001f);
                 }
                 if (player.thrustersAnimator != null)
                 {
-                    player.thrustersAnimator.SetBool("isFlying", playerRb.velocity.y > 0.001f);
+                    player.thrustersAnimator.SetBool("isFlying", playerRb.velocity.y > 0.001f || inputReceived);
                 }
             }
 

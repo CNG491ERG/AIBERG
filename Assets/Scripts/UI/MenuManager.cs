@@ -38,6 +38,9 @@ namespace AIBERG.UI
         public void LoadBossModeScene(){
             SceneManager.LoadScene(1);
         }
+        public void LoadParkourModeScene(){
+            SceneManager.LoadScene(2);
+        }
         public void SwitchToLoginMenu(){
             previousMenu = currentMenu;
             currentMenu.SetActive(false);
