@@ -179,7 +179,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 818784262950563905, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_Name
-      value: Env16M
+      value: 16M
       objectReference: {fileID: 0}
     - target: {fileID: 2280411837469207206, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_Model
@@ -192,7 +192,7 @@ PrefabInstance:
     - target: {fileID: 4549868478834900224, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: e75f575e3ab08d742899baa794469af0, type: 3}
+      objectReference: {fileID: 5022602860645237092, guid: 0a0507371dc64b445a46b0e1f2ea7247, type: 3}
     - target: {fileID: 4549868478834900224, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_BehaviorType
       value: 2
@@ -264,7 +264,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 818784262950563905, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_Name
-      value: EnvImitatedPlayer+40M
+      value: ImitatedPlayer+40M
       objectReference: {fileID: 0}
     - target: {fileID: 1171522198026385954, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
@@ -281,7 +281,7 @@ PrefabInstance:
     - target: {fileID: 4549868478834900224, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: e75f575e3ab08d742899baa794469af0, type: 3}
+      objectReference: {fileID: 5022602860645237092, guid: 0a0507371dc64b445a46b0e1f2ea7247, type: 3}
     - target: {fileID: 4549868478834900224, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_BehaviorType
       value: 2
@@ -353,7 +353,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 818784262950563905, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_Name
-      value: Env12M
+      value: 12M
       objectReference: {fileID: 0}
     - target: {fileID: 2280411837469207206, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_Model
@@ -366,7 +366,7 @@ PrefabInstance:
     - target: {fileID: 4549868478834900224, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: e75f575e3ab08d742899baa794469af0, type: 3}
+      objectReference: {fileID: 5022602860645237092, guid: 0a0507371dc64b445a46b0e1f2ea7247, type: 3}
     - target: {fileID: 4549868478834900224, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_BehaviorType
       value: 2
@@ -530,7 +530,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 818784262950563905, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_Name
-      value: EnvImitatedPlayer
+      value: ImitatedPlayer
       objectReference: {fileID: 0}
     - target: {fileID: 1171522198026385954, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
@@ -547,7 +547,7 @@ PrefabInstance:
     - target: {fileID: 4549868478834900224, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: e75f575e3ab08d742899baa794469af0, type: 3}
+      objectReference: {fileID: 5022602860645237092, guid: 0a0507371dc64b445a46b0e1f2ea7247, type: 3}
     - target: {fileID: 4549868478834900224, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_BehaviorType
       value: 2
@@ -708,7 +708,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 818784262950563905, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_Name
-      value: Env8M
+      value: 8M
       objectReference: {fileID: 0}
     - target: {fileID: 2280411837469207206, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_Model
@@ -721,7 +721,7 @@ PrefabInstance:
     - target: {fileID: 4549868478834900224, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: e75f575e3ab08d742899baa794469af0, type: 3}
+      objectReference: {fileID: 5022602860645237092, guid: 0a0507371dc64b445a46b0e1f2ea7247, type: 3}
     - target: {fileID: 4549868478834900224, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_BehaviorType
       value: 2
@@ -991,7 +991,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 818784262950563905, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_Name
-      value: EnvRandomizedPlayer
+      value: RandomizedPlayer
       objectReference: {fileID: 0}
     - target: {fileID: 1171522198026385954, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
@@ -1008,7 +1008,7 @@ PrefabInstance:
     - target: {fileID: 4549868478834900224, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: e75f575e3ab08d742899baa794469af0, type: 3}
+      objectReference: {fileID: 5022602860645237092, guid: 0a0507371dc64b445a46b0e1f2ea7247, type: 3}
     - target: {fileID: 4549868478834900224, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_BehaviorType
       value: 2
@@ -1075,7 +1075,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 818784262950563905, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_Name
-      value: EnvScriptedPlayer
+      value: ScriptedPlayer
       objectReference: {fileID: 0}
     - target: {fileID: 1171522198026385954, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
@@ -1092,7 +1092,7 @@ PrefabInstance:
     - target: {fileID: 4549868478834900224, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: e75f575e3ab08d742899baa794469af0, type: 3}
+      objectReference: {fileID: 5022602860645237092, guid: 0a0507371dc64b445a46b0e1f2ea7247, type: 3}
     - target: {fileID: 4549868478834900224, guid: 3285362cb433fa741ad2ad718dadd15f, type: 3}
       propertyPath: m_BehaviorType
       value: 2

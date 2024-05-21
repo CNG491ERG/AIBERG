@@ -55,7 +55,11 @@ PrefabInstance:
     - target: {fileID: 2174979180698438383, guid: 775109d879f7f7440ae47b93993a8a85, type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: cd8095af800148e4b84ac04451d38a3a, type: 3}
+      objectReference: {fileID: 5022602860645237092, guid: 0a0507371dc64b445a46b0e1f2ea7247, type: 3}
+    - target: {fileID: 2174979180698438383, guid: 775109d879f7f7440ae47b93993a8a85, type: 3}
+      propertyPath: m_BehaviorType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8412785557883801772, guid: 775109d879f7f7440ae47b93993a8a85, type: 3}
       propertyPath: m_Name
       value: Player_Testing_Agent

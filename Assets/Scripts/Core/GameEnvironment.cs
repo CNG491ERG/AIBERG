@@ -26,7 +26,7 @@ namespace AIBERG.Core{
     [SerializeField] private bool countMatches = false;
     [SerializeField] public bool collectStats = false;
     [SerializeField] private int currentMatch = 0;
-    [SerializeField] private int totalMatches = 4;
+    [SerializeField] private int totalMatches = 103;
 
     public long StepCounter{get => stepCounter; private set => stepCounter = value;}
     public Player Player{get => player;  set => player = value;}
