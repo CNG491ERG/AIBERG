@@ -22,15 +22,15 @@ behaviors:
         strength: 1.0
     keep_checkpoints: 5
     even_checkpoints: false
-    checkpoint_interval: 1000000
+    checkpoint_interval: 4000000
     threaded: false
-    max_steps: 40000000
+    max_steps: 160000000
     time_horizon: 1024
-    summary_freq: 100000
+    summary_freq: 1000000
     self_play:
-      save_steps: 200000
-      team_change: 1000000
-      swap_steps: 200000
+      save_steps: 800000
+      team_change: 4000000
+      swap_steps: 800000
 
   Player:
     trainer_type: ppo
@@ -55,12 +55,12 @@ behaviors:
         strength: 1.0
     keep_checkpoints: 5
     even_checkpoints: false
-    checkpoint_interval: 1000000
+    checkpoint_interval: 4000000
     threaded: false
-    max_steps: 40000000
+    max_steps: 160000000
     time_horizon: 1024
-    summary_freq: 100000
+    summary_freq: 1000000
     self_play:
-      save_steps: 200000
-      team_change: 1000000
-      swap_steps: 200000
+      save_steps: 800000
+      team_change: 4000000
+      swap_steps: 800000
