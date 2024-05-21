@@ -8,7 +8,7 @@ namespace AIBERG.Core
         [Header("Environments")]
         [SerializeField] private static TestMatchManager _instance;
         [SerializeField] private int completedEnvironments = 0;
-        [SerializeField] public int totalEnvironments = 4;
+        [SerializeField] public int totalEnvironments = 7;
 
         public static TestMatchManager Instance {
             get {
@@ -35,7 +35,6 @@ namespace AIBERG.Core
 
 		private void Start(){
     		Time.timeScale = 10.0f;
-			//Time.fixedDeltaTime = 0.01f;
     		Application.targetFrameRate = -1;
     		Time.maximumDeltaTime = 0.1f;
 			//  Camera.main.enabled = false;		
