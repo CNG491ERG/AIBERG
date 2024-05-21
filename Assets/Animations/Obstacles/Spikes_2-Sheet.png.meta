@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 327aaa2dbf9b38341b01d74a022b15a0
-      internalID: -569602119
+      spriteID: 89c8148a216a87944ae0e261e45ac44e
+      internalID: 1567350272
       vertices: []
       indices: 
       edges: []
@@ -145,8 +145,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6bb8e114b954ecd408e52cff5d027707
-      internalID: -1959045192
+      spriteID: d4d1148181c53114aafae8e3b66f1334
+      internalID: -752572352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spikes_2-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c150b33c5086d99458e67c45ff9cb5e8
+      internalID: -1591894545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spikes_2-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fee035b34d4a95b46b7aeb729dbd94ff
+      internalID: -697471424
       vertices: []
       indices: 
       edges: []
@@ -162,8 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Spikes_2-Sheet_0: -569602119
-      Spikes_2-Sheet_1: -1959045192
+      Spikes_2-Sheet_0: 1567350272
+      Spikes_2-Sheet_1: -752572352
+      Spikes_2-Sheet_2: -1591894545
+      Spikes_2-Sheet_3: -697471424
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
