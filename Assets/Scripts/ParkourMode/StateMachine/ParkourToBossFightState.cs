@@ -12,7 +12,7 @@ namespace AIBERG.ParkourMode.States
             stateStartTime = Time.time;                                     // time at entering the state
             //t.TextEdit("Boss is Coming!!");                                 //calling fucntion from TextManager to edit the text to say Boss is Coming!!!
             ObstacleHandler(stateMachine, false);
-            ObstacleCleaner();
+            //ObstacleCleaner();
         }
         public override void UpdateState(GameStateMachineScript stateMachine)
         {
