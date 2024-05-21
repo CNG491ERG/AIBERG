@@ -1,6 +1,5 @@
 using AIBERG.Core;
 using AIBERG.Interfaces;
-using log4net.DateFormatter;
 using UnityEngine;
 
 namespace AIBERG.Factions.TheOrderOfTheFlesh
