@@ -151,8 +151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ffc4dc8b4e30764ebc2fabe68ad9d1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputSent: 0
   environment: {fileID: 4800491560179222902}
-  playerId: 1
 --- !u!1001 &5967896497780324580
 PrefabInstance:
   m_ObjectHideFlags: 0

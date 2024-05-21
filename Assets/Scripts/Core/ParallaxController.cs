@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace AIBERG.Core{
 public class ParallaxController : MonoBehaviour
 {
     [System.Serializable]
@@ -46,4 +47,6 @@ public class ParallaxController : MonoBehaviour
             }
         }
     }
+}
+
 }

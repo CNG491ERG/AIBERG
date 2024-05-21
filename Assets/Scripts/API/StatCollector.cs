@@ -12,20 +12,21 @@ public class StatCollector : MonoBehaviour
     [SerializeField] private GameEnvironment environment;
     [SerializeField] private Player player;
     [SerializeField] private Boss boss;
-    
+
     private char winner;
     private long gameLength;
     private float bossHealth;
     private float playerHealth;
-    
-    private void Start() {
+
+    private void Start()
+    {
         environment = ComponentFinder.FindComponentInParents<GameEnvironment>(this.transform);
         boss = environment.Boss;
         player = environment.Player;
         player.OnDamageableDeath += Player_OnDamageableDeath;
         boss.OnDamageableDeath += Boss_OnDamageableDeath;
         environment.OnMaxStepsReached += Environment_OnMaxStepsReached;
-		environment.collectStats = true;
+        environment.collectStats = true;
         environment.StartCountingSteps();
         environment.StartCountingMatches();
         bossHealth = boss.MaxHealth;
@@ -33,7 +34,8 @@ public class StatCollector : MonoBehaviour
         gameLength = 0;
     }
 
-    private void OnDestroy() {
+    private void OnDestroy()
+    {
         player.OnDamageableDeath -= Player_OnDamageableDeath;
         boss.OnDamageableDeath -= Boss_OnDamageableDeath;
         environment.OnMaxStepsReached -= Environment_OnMaxStepsReached;
@@ -45,7 +47,7 @@ public class StatCollector : MonoBehaviour
         playerHealth = player.Health < playerHealth ? player.Health : playerHealth;
         gameLength = environment.StepCounter > gameLength ? environment.StepCounter : gameLength;
     }
-    
+
     private void Player_OnDamageableDeath(object sender, EventArgs e)
     {
         winner = 'B';
@@ -68,25 +70,28 @@ public class StatCollector : MonoBehaviour
 
     private void WriteStats()
     {
-		if(environment.collectStats){
+        if (environment.collectStats)
+        {
             string envName = environment.gameObject.name;
-            string fileName = $"{envName}_Stats.txt";
+            string fileName = $"{envName}_Stats.csv";
             string folderPath = Path.Combine(Application.persistentDataPath, "Statistics");
 
             // Ensure the Statistics folder exists
-            if (!Directory.Exists(folderPath)) {
+            if (!Directory.Exists(folderPath))
+            {
                 Directory.CreateDirectory(folderPath);
             }
 
             string path = Path.Combine(folderPath, fileName);
-            string stats = $"Winner: {winner}, Game Length: {gameLength}, Boss Health: {bossHealth}, Player Health: {playerHealth}\n";
-
+            //string stats = $"Winner: {winner}, Game Length: {gameLength}, Boss Health: {bossHealth}, Player Health: {playerHealth}\n";
+            string stats = $"{winner},{gameLength},{bossHealth},{playerHealth}";
             // Check if the file exists, if not create it and set headers
             if (!File.Exists(path))
             {
                 using (StreamWriter sw = File.CreateText(path))
                 {
-                    sw.WriteLine("Winner, Game Length, Boss Health, Player Health");
+                    //sw.WriteLine("Winner, Game Length, Boss Health, Player Health");
+                    sw.WriteLine("Winner,Game Length,Boss Health,Player Health");
                 }
             }
 
@@ -100,7 +105,7 @@ public class StatCollector : MonoBehaviour
             playerHealth = player.MaxHealth;
             gameLength = 0;
             Debug.Log($"Stats written to {path}");
-		}
-        
+        }
+
     }
 }
