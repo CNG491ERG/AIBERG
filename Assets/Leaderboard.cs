@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
@@ -26,7 +25,12 @@ public class Leaderboard : MonoBehaviour
         [SerializeField] public GameObject leaderboardContentContainer;
         [SerializeField] private GameObject leaderboardItemPrefab;
         [SerializeField] public bool isForBossMode = true;
+        [SerializeField] public bool canBeClosed = true;
+        [SerializeField] public Button closeButton;
 
+        private void Start() {
+            closeButton.gameObject.SetActive(canBeClosed);
+        }
         private void OnEnable()
         {
             StartCoroutine(GetLeaderboardData());
@@ -69,6 +73,13 @@ public class Leaderboard : MonoBehaviour
                 leaderboardEntry.transform.Find("Text_Score").GetComponent<TextMeshProUGUI>().text = entry.score.ToString();
                 leaderboardEntry.transform.Find("Text_RunTime").GetComponent<TextMeshProUGUI>().text = entry.time_taken;
             }
+        }
+
+        public void ShowLeaderBoard(){
+            this.gameObject.SetActive(true);
+        }
+        public void CloseLeaderBoard(){
+            this.gameObject.SetActive(false);
         }
     }
 }
