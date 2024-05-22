@@ -48,7 +48,11 @@ namespace AIBERG.API
             DontDestroyOnLoad(this);
         }
 
-
+        public void ResetUserInformation(){
+            score = 0;
+            timetaken = 0;
+            win = false;
+        }
     }
 
 }
