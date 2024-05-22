@@ -6,6 +6,8 @@ using UnityEngine.UI;
 using TMPro;
 using System.Text;
 using System;
+using Codice.Client.Common;
+using System.Linq;
 
 namespace AIBERG.API
 {
@@ -71,6 +73,8 @@ namespace AIBERG.API
                     string response = request.downloadHandler.text;
                     LoginResponse loginResponse = JsonUtility.FromJson<LoginResponse>(response);
                     UserInformation.Instance.userID =loginResponse.userid;
+                    UserInformation.Instance.playerPlacementBossModeAddress+=UserInformation.Instance.userID.ToString();
+                    UserInformation.Instance.playerPlacementParkourModeAddress+=UserInformation.Instance.userID.ToString();
                     UserInformation.Instance.username = loginResponse.username;
                      
                     loggedInStatus = true;
