@@ -12,7 +12,8 @@ namespace AIBERG.BossMode
         private Player player;
         private Boss boss;
         private bool startMoving;
-        public override void EnterState(BossModeStateManager stateManager){
+        public override void EnterState(BossModeStateManager stateManager)
+        {
             stateManager.gameEnvironment.StopCountingSteps();
             startMoving = true;
             player = stateManager.gameEnvironment.Player;
@@ -22,27 +23,34 @@ namespace AIBERG.BossMode
             player.inputHandler.enabled = false;
             player.GetComponent<Rigidbody2D>().gravityScale = 0;
             stateTimer = 0f;
-
         }
 
-        public override void UpdateState(BossModeStateManager stateManager){
-            if(startMoving){
+        public override void UpdateState(BossModeStateManager stateManager)
+        {
+            if (startMoving)
+            {
                 player.transform.position = stateManager.gameEnvironment.playerOffScreenPosition.position;
                 boss.transform.position = stateManager.gameEnvironment.bossOffScreenPosition.position;
                 player.transform.DOLocalMove(stateManager.gameEnvironment.PlayerSpawnPosition.localPosition, 1.5f).SetEase(Ease.OutQuad);
                 boss.transform.DOLocalMove(stateManager.gameEnvironment.BossSpawnPosition.localPosition, 1.5f).SetEase(Ease.OutQuad);
+                stateManager.dangerSign.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0);
+                stateManager.dangerSign.GetComponent<SpriteRenderer>().DOColor(new Color(1f, 1f, 1f, 1f), 0.5f);
                 startMoving = false;
             }
-            if(stateTimer >= stateDuration){
+            if (stateTimer >= stateDuration)
+            {
                 stateManager.SwitchState(stateManager.bossFightState); //Switch to boss fight state
             }
-            else{
+            else
+            {
                 stateTimer += Time.deltaTime;
             }
-            if(player.bodyAnimator != null){
+            if (player.bodyAnimator != null)
+            {
                 player.bodyAnimator.SetBool("isFlying", true);
             }
-            if(player.thrustersAnimator != null){
+            if (player.thrustersAnimator != null)
+            {
                 player.thrustersAnimator.SetBool("isFlying", true);
             }
         }

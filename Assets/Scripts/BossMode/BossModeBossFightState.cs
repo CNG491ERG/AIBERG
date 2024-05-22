@@ -1,5 +1,6 @@
 using AIBERG.Core;
 using AIBERG.Interfaces;
+using DG.Tweening;
 using UnityEngine;
 
 namespace AIBERG.BossMode
@@ -16,6 +17,7 @@ namespace AIBERG.BossMode
 
             player.inputHandler.enabled = true;
             player.GetComponent<Rigidbody2D>().gravityScale = 1;
+            stateManager.dangerSign.GetComponent<SpriteRenderer>().DOColor(new Color(1f,1f, 1f, 0f), 0.5f);
         }
 
         public override void UpdateState(BossModeStateManager stateManager){
