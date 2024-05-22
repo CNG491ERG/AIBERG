@@ -11,6 +11,8 @@ namespace AIBERG.BossMode
         public BossModeDeathState deathState = new BossModeDeathState();
         public BossModeGameOverState gameOverState= new BossModeGameOverState();
         public GameObject dangerSign;
+        public GameObject gameOverSign;
+        public Leaderboard leaderboard;
         public GameEnvironment gameEnvironment{get; private set;}
         public InputRecorder inputRecorder;
         private void Awake() {

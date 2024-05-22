@@ -12,6 +12,7 @@ namespace AIBERG.BossMode
         private Boss boss;
         private bool playerMovementComplete = false;
         private bool bossMovementComplete = false;
+        float timer;
 
         public override void EnterState(BossModeStateManager stateManager)
         {
@@ -27,19 +28,31 @@ namespace AIBERG.BossMode
                 playerMovementComplete = true;
             });
 
+            timer = 0;
             boss.transform.DOLocalMove(stateManager.gameEnvironment.bossOffScreenPosition.position, 3.0f).SetEase(Ease.InBack).OnComplete(() => {
                 bossMovementComplete = true;
             });
 
             UserInformation.Instance.win = true;
             UserInformation.Instance.timetaken = stateManager.gameEnvironment.StepCounter;
+            stateManager.gameOverSign.gameObject.SetActive(true);
+            stateManager.gameOverSign.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
+            stateManager.gameOverSign.GetComponent<SpriteRenderer>().DOColor(new Color(1f, 1f, 1f, 1f), 0.5f);
             //UserInformation.Instance.score = ...; 
             stateManager.inputRecorder.SendInputData();
         }
+        
 
         public override void UpdateState(BossModeStateManager stateManager){
             if(playerMovementComplete && bossMovementComplete){
                 Debug.Log("Boss mode is complete - player won, do whatever is next!");
+            }
+            
+            if(timer >= 2.0f){
+                stateManager.leaderboard.ShowLeaderBoard();
+            }
+            else{
+                timer += Time.deltaTime;
             }
         }
     }
