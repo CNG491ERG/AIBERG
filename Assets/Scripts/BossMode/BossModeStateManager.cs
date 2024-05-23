@@ -13,6 +13,7 @@ namespace AIBERG.BossMode
         public GameObject dangerSign;
         public GameObject gameOverSign;
         public Leaderboard leaderboard;
+        public ParallaxController parallaxController;
         public GameEnvironment gameEnvironment{get; private set;}
         public InputRecorder inputRecorder;
         private void Awake() {

@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using AIBERG.API;
 using System;
+using Codice.Client.Common;
 
 namespace AIBERG.UI
 {
@@ -19,11 +20,18 @@ namespace AIBERG.UI
         private void Start() {
             loginController = loginMenuObject.GetComponent<LoginController>();
             loginController.OnSuccessfulLogin += LoginController_OnSuccessfulLogin;
-            currentMenu = mainMenuObject;
+            if(UserInformation.Instance.isLoggedIn){
+                currentMenu = gameModeSelectionMenuObject;
+            }
+            else{
+                currentMenu = mainMenuObject;
+            }
+            
             currentMenu.SetActive(true);
         }
 
         private void LoginController_OnSuccessfulLogin(object sender, EventArgs e){
+            UserInformation.Instance.isLoggedIn = true;
             previousMenu = currentMenu;
             currentMenu.SetActive(false);
             currentMenu = gameModeSelectionMenuObject;

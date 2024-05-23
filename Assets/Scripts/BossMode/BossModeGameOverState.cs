@@ -1,5 +1,6 @@
 using System.Linq;
 using AIBERG.API;
+using AIBERG.BossAbilities;
 using AIBERG.Core;
 using DG.Tweening;
 using UnityEngine;
@@ -13,24 +14,33 @@ namespace AIBERG.BossMode
         private bool playerMovementComplete = false;
         private bool bossMovementComplete = false;
         float timer;
-
+        bool leaderboardVisible = false;
         public override void EnterState(BossModeStateManager stateManager)
         {
             player = stateManager.gameEnvironment.Player;
-            boss = stateManager.gameEnvironment.Boss;  
+            boss = stateManager.gameEnvironment.Boss;
             player.inputHandler.enabled = false;
             stateManager.gameEnvironment.StopCountingSteps();
-            float groundY = stateManager.gameEnvironment.ForegroundObjects.Where(t => t.gameObject.name == "Ground").First().transform.position.y+1;
+            float groundY = stateManager.gameEnvironment.ForegroundObjects.Where(t => t.gameObject.name == "Ground").First().transform.position.y + 1;
             Sequence playerSequence = DOTween.Sequence();
             playerSequence.Append(player.transform.DOLocalMoveY(groundY, 0.5f).SetEase(Ease.InCubic));
             playerSequence.Append(player.transform.DOLocalMoveX(stateManager.gameEnvironment.bossOffScreenPosition.transform.position.x, 3.0f).SetEase(Ease.InCubic));
-            playerSequence.OnComplete(() => {
+            playerSequence.OnComplete(() =>
+            {
                 playerMovementComplete = true;
+                player.gameObject.SetActive(false);
             });
 
             timer = 0;
-            boss.transform.DOLocalMove(stateManager.gameEnvironment.bossOffScreenPosition.position, 3.0f).SetEase(Ease.InBack).OnComplete(() => {
+            boss.transform.DOLocalMove(stateManager.gameEnvironment.bossOffScreenPosition.position, 3.0f).SetEase(Ease.InBack).OnComplete(() =>
+            {
                 bossMovementComplete = true;
+                AttackDrone[] drones = GameObject.FindObjectsOfType<AttackDrone>();
+                foreach (AttackDrone d in drones)
+                {
+                    d.gameObject.SetActive(false);
+                }
+                boss.gameObject.SetActive(false);
             });
 
             UserInformation.Instance.win = true;
@@ -41,17 +51,27 @@ namespace AIBERG.BossMode
             //UserInformation.Instance.score = ...; 
             stateManager.inputRecorder.SendInputData();
         }
-        
 
-        public override void UpdateState(BossModeStateManager stateManager){
-            if(playerMovementComplete && bossMovementComplete){
+
+        public override void UpdateState(BossModeStateManager stateManager)
+        {
+            if (playerMovementComplete && bossMovementComplete)
+            {
                 Debug.Log("Boss mode is complete - player won, do whatever is next!");
             }
-            
-            if(timer >= 2.0f){
-                stateManager.leaderboard.ShowLeaderBoard();
+
+            if (timer >= 2.0f)
+            {
+                stateManager.parallaxController.backgroundSpeed = stateManager.parallaxController.backgroundSpeed > 0 ? stateManager.parallaxController.backgroundSpeed - Time.deltaTime*4.0f : 0;
+                if (!leaderboardVisible)
+                {
+                    leaderboardVisible = true;
+                    stateManager.leaderboard.ShowLeaderBoard();
+                }
+
             }
-            else{
+            else
+            {
                 timer += Time.deltaTime;
             }
         }

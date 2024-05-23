@@ -11,6 +11,7 @@ namespace AIBERG.API
         public int score = 0;
         public bool win;
         public bool isLocalMode = true;
+        public bool isLoggedIn = false;
         public long timetaken;
         public string loginAddress = "http://34.16.220.152:5000/login";
         public string registerAddress = "http://34.16.220.152:5000/register";

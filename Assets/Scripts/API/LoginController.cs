@@ -24,9 +24,7 @@ namespace AIBERG.API
         [SerializeField] public TMP_InputField emailField;
         [SerializeField] public TMP_InputField passwordField;
         [SerializeField] public Button loginButton;
-
         [SerializeField] public bool loggedInStatus;
-
         public event EventHandler OnSuccessfulLogin;
 
         void Start()
