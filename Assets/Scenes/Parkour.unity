@@ -784,13 +784,13 @@ MonoBehaviour:
   maxY1: 7
   minX1: 0
   minY1: -6
-  spawnInterval1: 1
+  spawnInterval1: 2
   canSpawn1: 1
   maxX2: 0
   maxY2: 8
   minX2: 0
   minY2: 5
-  spawnInterval2: 1
+  spawnInterval2: 3
   canSpawn2: 1
   speed: 5
 --- !u!1 &823003742
