@@ -21,9 +21,6 @@ namespace AIBERG.ParkourMode.States{
             else if (boss.Health <= 0) {                                                //if boss health is 0
                     stateMachine.SwitchState(stateMachine.BossFightToParkour);                  //switch to boss figt to parkour state
             }
-            else if(timed - Time.deltaTime >= 5f) {                                 //FOR TESTING   
-                stateMachine.SwitchState(stateMachine.BossFightToParkour);
-            }
                 
         }
      }

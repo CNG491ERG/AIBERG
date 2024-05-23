@@ -28,7 +28,8 @@ namespace AIBERG.ParkourMode.States
                 ObstacleSpawner obstacleSpawner = stateMachine.spawnPoint.GetComponent<ObstacleSpawner>();
                 if (obstacleSpawner != null)
                 {
-                    obstacleSpawner.canSpawn = canSpawn;
+                    obstacleSpawner.canSpawn1 = canSpawn;
+                    obstacleSpawner.canSpawn2 = canSpawn;
                 }
             }
         }

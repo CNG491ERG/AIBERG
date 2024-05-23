@@ -14,13 +14,15 @@ public class Obstacle : MonoBehaviour
     // Update is called once per frame
     void OnTriggerEnter2D(Collider2D collision)
     {
+            
         if(collision.tag == "ForegroundObject")
         {
             Destroy(this.gameObject);
         }
         else if(collision.tag == "Player")
         {
-            player.Health = 0;
+                Debug.Log("collision");
+                player.Health = 0;
         }
     }
 }
