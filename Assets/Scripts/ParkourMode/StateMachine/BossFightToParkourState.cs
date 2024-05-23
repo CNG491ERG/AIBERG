@@ -8,6 +8,7 @@ namespace AIBERG.ParkourMode.States
         public override void EnterState(GameStateMachineScript stateMachine)
         {
             stateStartTime = Time.time;//time entered the state
+            Debug.Log("entered bosstoparkour");
         }
         public override void UpdateState(GameStateMachineScript stateMachine)
         {
