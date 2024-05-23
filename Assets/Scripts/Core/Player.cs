@@ -107,11 +107,23 @@ namespace AIBERG.Core
         {
             float totalDamage = damageToTake * (1 - Defense);
             Health = Health - totalDamage <= 0 ? 0 : Health - totalDamage;
-            armsAnimator.GetComponent<SpriteRenderer>().material.color = Color.red;
-            armsAnimator.GetComponent<SpriteRenderer>().material.DOColor(Color.white, 0.2f);
-            bodyAnimator.GetComponent<SpriteRenderer>().material.color = Color.red;
-            bodyAnimator.GetComponent<SpriteRenderer>().material.DOColor(Color.white, 0.2f);
+            if (damageToTake > 0)
+            {
+                armsAnimator.GetComponent<SpriteRenderer>().material.color = Color.red;
+                armsAnimator.GetComponent<SpriteRenderer>().material.DOColor(Color.white, 0.2f);
+                bodyAnimator.GetComponent<SpriteRenderer>().material.color = Color.red;
+                bodyAnimator.GetComponent<SpriteRenderer>().material.DOColor(Color.white, 0.2f);
+            }
+            else if (damageToTake < 0)
+            {
+                armsAnimator.GetComponent<SpriteRenderer>().material.color = Color.green;
+                armsAnimator.GetComponent<SpriteRenderer>().material.DOColor(Color.white, 0.2f);
+                bodyAnimator.GetComponent<SpriteRenderer>().material.color = Color.green;
+                bodyAnimator.GetComponent<SpriteRenderer>().material.DOColor(Color.white, 0.2f);
+            }
+
             OnDamageableHurt?.Invoke(this, EventArgs.Empty);
+
             if (Health == 0)
             {
                 if (!isDead)
@@ -124,6 +136,7 @@ namespace AIBERG.Core
                     bodyAnimator.SetTrigger("death");
                     thrustersAnimator.SetTrigger("death");
                     OnDamageableDeath?.Invoke(this, EventArgs.Empty);
+                    Debug.Log("Player died");
                     isDead = true;
                 }
             }

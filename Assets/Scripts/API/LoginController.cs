@@ -6,8 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Text;
 using System;
-using Codice.Client.Common;
-using System.Linq;
+
 
 namespace AIBERG.API
 {
@@ -26,7 +25,11 @@ namespace AIBERG.API
         [SerializeField] public Button loginButton;
         [SerializeField] public bool loggedInStatus;
         public event EventHandler OnSuccessfulLogin;
-
+        [Header("Dialog Windows")]
+        [SerializeField] DialogWindow loggingInWindow;
+        [SerializeField] DialogWindow invalidEmailOrPasswordWindow;
+        [SerializeField] DialogWindow failedConnectionWindow;
+        [SerializeField] DialogWindow fieldsEmptyWindow;
         void Start()
         {
             loggedInStatus = false;
@@ -39,6 +42,11 @@ namespace AIBERG.API
 
         public void TryLogin()
         {
+            if(string.IsNullOrWhiteSpace(emailField.text) || string.IsNullOrWhiteSpace(passwordField.text)){
+                fieldsEmptyWindow.ShowDialogWindow();
+                return;
+            }
+            loggingInWindow.ShowDialogWindow();
             StartCoroutine(LoginRequest());
         }
 
@@ -62,7 +70,13 @@ namespace AIBERG.API
                 // Check for errors
                 if (request.result != UnityWebRequest.Result.Success)
                 {
-                    Debug.LogError("Error: " + request.error);
+                    if(request.downloadHandler.text.Contains("Invalid")){
+                        invalidEmailOrPasswordWindow.ShowDialogWindow();
+                    }
+                    else{
+                        failedConnectionWindow.ShowDialogWindow();
+                    }
+                    Debug.Log("Error: " + request.error);
                     loggedInStatus = false;
                 }
                 else
@@ -74,11 +88,10 @@ namespace AIBERG.API
                     UserInformation.Instance.playerPlacementBossModeAddress+=UserInformation.Instance.userID.ToString();
                     UserInformation.Instance.playerPlacementParkourModeAddress+=UserInformation.Instance.userID.ToString();
                     UserInformation.Instance.username = loginResponse.username;
-                     
                     loggedInStatus = true;
                     OnSuccessfulLogin?.Invoke(this, EventArgs.Empty);
-                    
                 }
+                loggingInWindow.CloseDialogWindow();
             }
         }
     }

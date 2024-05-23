@@ -7,12 +7,24 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
+namespace AIBERG{
 public class RegisterController : MonoBehaviour
 {
     [SerializeField] TMP_InputField usernameField;
     [SerializeField] TMP_InputField emailField;
     [SerializeField] TMP_InputField passwordField;
     [SerializeField] Button registerButton;
+    [Header("Dialog Windows")]
+    [SerializeField] DialogWindow emailRegisteredWindow;
+    [SerializeField] DialogWindow usernameTooShortWindow;
+    [SerializeField] DialogWindow usernameTooLongWindow;
+    [SerializeField] DialogWindow passwordTooShortWindow;
+    [SerializeField] DialogWindow passwordTooLongWindow;
+    [SerializeField] DialogWindow failedConnectionWindow;
+    [SerializeField] DialogWindow fieldsEmptyWindow;
+    [SerializeField] DialogWindow registrationSuccessWindow;
+    [SerializeField] DialogWindow registering;
+
 
     void Start()
     {
@@ -20,15 +32,36 @@ public class RegisterController : MonoBehaviour
         {
             Debug.LogWarning("Email or password field has no reference");
         }
-        registerButton.onClick.AddListener(TryRegister);
     }
-
     public void TryRegister()
     {
+        Debug.Log("hello");
         if(string.IsNullOrWhiteSpace(emailField.text) || string.IsNullOrWhiteSpace(usernameField.text) || string.IsNullOrWhiteSpace(passwordField.text)){
-            Debug.Log("Empty field!");
+            fieldsEmptyWindow.ShowDialogWindow();
+            Debug.Log("if1");
             return;
         }
+        if(usernameField.text.Length < 4){
+            usernameTooShortWindow.ShowDialogWindow();
+            Debug.Log("if2");
+            return;
+        }
+        if(usernameField.text.Length > 16){
+            usernameTooLongWindow.ShowDialogWindow();
+            Debug.Log("if3");
+            return;
+        }
+        if(passwordField.text.Length < 4){
+            passwordTooShortWindow.ShowDialogWindow();
+            Debug.Log("if4");
+            return;
+        }
+        if(passwordField.text.Length > 16){
+            passwordTooLongWindow.ShowDialogWindow();
+            Debug.Log("if5");
+            return;
+        }
+        registering.ShowDialogWindow();
         StartCoroutine(RegisterRequest());
     }
 
@@ -52,16 +85,25 @@ public class RegisterController : MonoBehaviour
 
         // Send the request and wait for the response
         yield return request.SendWebRequest();
-
+        registering.CloseDialogWindow();
         // Check for errors
         if (request.result != UnityWebRequest.Result.Success)
         {
-            Debug.LogError("Error: " + request.error);
+            if(request.downloadHandler.text.Contains("already exists")){
+                emailRegisteredWindow.ShowDialogWindow();
+            }
+            else{
+                failedConnectionWindow.ShowDialogWindow();
+            }
+            Debug.Log("Error: " + request.error);
         }
         else
         {
             // Print the response
+            registrationSuccessWindow.ShowDialogWindow();
             Debug.Log("Response: " + request.downloadHandler.text);
         }
     }
+}
+
 }

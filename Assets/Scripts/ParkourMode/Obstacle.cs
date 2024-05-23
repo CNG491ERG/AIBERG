@@ -1,4 +1,5 @@
 using AIBERG.Core;
+using AIBERG.Interfaces;
 using UnityEngine;
 
 namespace AIBERG.ParkourMode{
@@ -22,7 +23,7 @@ public class Obstacle : MonoBehaviour
         else if(collision.tag == "Player")
         {
                 Debug.Log("collision");
-                player.Health = 0;
+                (player.GetComponent<Player>() as IDamageable).TakeDamage(10000f);
         }
     }
 }

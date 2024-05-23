@@ -1399,7 +1399,7 @@ Transform:
   - {fileID: 685806686679713183}
   - {fileID: 9140139182854443882}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &488770469797912777
 MonoBehaviour:
@@ -1430,7 +1430,7 @@ GameObject:
   - component: {fileID: 639527699457218825}
   - component: {fileID: 149805365006340531}
   m_Layer: 5
-  m_Name: Text_Username (1)
+  m_Name: Text_Placement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1484,7 +1484,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Place
+  m_text: Rank
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9153fed934cbcb84c83da577f369cabb, type: 2}
   m_sharedMaterial: {fileID: 5535136977445280727, guid: 9153fed934cbcb84c83da577f369cabb, type: 2}
