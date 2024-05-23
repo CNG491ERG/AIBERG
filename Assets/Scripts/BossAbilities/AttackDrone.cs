@@ -95,8 +95,9 @@ namespace AIBERG.BossAbilities
             OnDamageableHurt?.Invoke(this, EventArgs.Empty);
             if (Health == 0)
             {
+                GetComponent<Collider2D>().enabled = false;
+                GetComponentInChildren<Animator>().SetTrigger("death");
                 OnDamageableDeath?.Invoke(this, EventArgs.Empty);
-                Destroy(this.gameObject);
             }
         }
 
