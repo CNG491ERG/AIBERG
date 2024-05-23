@@ -86,7 +86,7 @@ public class Player : MonoBehaviour, IDamageable{
             activeAbility2?.UseAbility(inputHandler.ActiveAbility2Input);
             jump?.UseAbility(inputHandler.JumpInput);
         }
-        RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y-1f), Vector2.down, 0.5f);
+        RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y-1f), Vector2.down, 0.75f);
         Debug.DrawRay(new Vector2(transform.position.x, transform.position.y-1f), Vector2.down);
         bodyAnimator.SetBool("isOnGround", hit.collider != null && hit.collider.tag.CompareTo("ForegroundObject") == 0);
     }

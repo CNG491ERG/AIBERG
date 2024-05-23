@@ -13,6 +13,8 @@ namespace AIBERG.BossMode
         public GameObject dangerSign;
         public GameObject gameOverSign;
         public Leaderboard leaderboard;
+        public GameObject retryButton;
+        public GameObject gameModesButton;
         public ParallaxController parallaxController;
         public GameEnvironment gameEnvironment{get; private set;}
         public InputRecorder inputRecorder;
@@ -21,6 +23,9 @@ namespace AIBERG.BossMode
             gameEnvironment.IsTrainingEnvironment = false;
         }
         void Start(){
+            leaderboard.CloseLeaderBoard();
+            retryButton.SetActive(false);
+            gameModesButton.SetActive(false);
             currentState = initialState;
             currentState.EnterState(this);
         }

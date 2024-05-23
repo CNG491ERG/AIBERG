@@ -38,7 +38,7 @@ namespace AIBERG.BossMode
                 AttackDrone[] drones = GameObject.FindObjectsOfType<AttackDrone>();
                 foreach (AttackDrone d in drones)
                 {
-                    d.gameObject.SetActive(false);
+                    d.TakeDamage(1000000f);
                 }
                 boss.gameObject.SetActive(false);
             });
@@ -66,6 +66,8 @@ namespace AIBERG.BossMode
                 if (!leaderboardVisible)
                 {
                     leaderboardVisible = true;
+                    stateManager.retryButton.SetActive(true);
+                    stateManager.gameModesButton.SetActive(true);
                     stateManager.leaderboard.ShowLeaderBoard();
                 }
 

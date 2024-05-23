@@ -20,6 +20,10 @@ namespace AIBERG.UI
         private void Start() {
             loginController = loginMenuObject.GetComponent<LoginController>();
             loginController.OnSuccessfulLogin += LoginController_OnSuccessfulLogin;
+            mainMenuObject.SetActive(false);
+            loginMenuObject.SetActive(false);
+            registerMenuObject.SetActive(false);
+            gameModeSelectionMenuObject.SetActive(false);
             if(UserInformation.Instance.isLoggedIn){
                 currentMenu = gameModeSelectionMenuObject;
             }
