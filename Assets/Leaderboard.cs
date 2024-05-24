@@ -20,7 +20,7 @@ namespace AIBERG
     {
         public LeaderboardEntry[] entries;
     }
-public class Leaderboard : MonoBehaviour
+    public class Leaderboard : MonoBehaviour
     {
         [SerializeField] public GameObject leaderboardContentContainer;
         [SerializeField] private GameObject leaderboardItemPrefab;
@@ -28,13 +28,9 @@ public class Leaderboard : MonoBehaviour
         [SerializeField] public bool canBeClosed = true;
         [SerializeField] public Button closeButton;
 
-        private void Start() {
-            closeButton.gameObject.SetActive(canBeClosed);
-        }
-        private void OnEnable()
+        private void Start()
         {
-            StartCoroutine(GetLeaderboardData());
-            leaderboardContentContainer.GetComponent<ContentSizeFitter>().verticalFit = ContentSizeFitter.FitMode.MinSize;
+            closeButton.gameObject.SetActive(canBeClosed);
         }
 
         IEnumerator GetLeaderboardData()
@@ -68,17 +64,21 @@ public class Leaderboard : MonoBehaviour
             {
                 i++;
                 GameObject leaderboardEntry = Instantiate(leaderboardItemPrefab, leaderboardContentContainer.transform);
-                leaderboardEntry.transform.Find("Text_Placement").GetComponent<TextMeshProUGUI>().text = "#"+i.ToString();
+                leaderboardEntry.transform.Find("Text_Placement").GetComponent<TextMeshProUGUI>().text = "#" + i.ToString();
                 leaderboardEntry.transform.Find("Text_Username").GetComponent<TextMeshProUGUI>().text = entry.username;
                 leaderboardEntry.transform.Find("Text_Score").GetComponent<TextMeshProUGUI>().text = entry.score.ToString();
                 leaderboardEntry.transform.Find("Text_RunTime").GetComponent<TextMeshProUGUI>().text = entry.time_taken;
             }
         }
 
-        public void ShowLeaderBoard(){
+        public void ShowLeaderBoard()
+        {
             this.gameObject.SetActive(true);
+            StartCoroutine(GetLeaderboardData());
+            leaderboardContentContainer.GetComponent<ContentSizeFitter>().verticalFit = ContentSizeFitter.FitMode.MinSize;
         }
-        public void CloseLeaderBoard(){
+        public void CloseLeaderBoard()
+        {
             this.gameObject.SetActive(false);
         }
     }
