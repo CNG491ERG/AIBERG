@@ -13,13 +13,13 @@ namespace AIBERG.API
         public bool isLocalMode = true;
         public bool isLoggedIn = false;
         public long timetaken;
-        public string loginAddress = "http://34.16.220.152:5000/login";
-        public string registerAddress = "http://34.16.220.152:5000/register";
-        public string storeMovementAddress = "http://34.16.220.152:5000/storeMovements";
-        public string leaderboardBossModeAddress = "http://34.16.220.152:5000/leaderboard/bossmode";
-        public string leaderboardParkourModeAddress = "http://34.16.220.152:5000/leaderboard/parkourmode";
-        public string playerPlacementBossModeAddress = "http://34.16.220.152:5000/leaderboard/bossmode/";
-        public string playerPlacementParkourModeAddress = "http://34.16.220.152:5000/leaderboard/parkourmode/";
+        public string loginAddress = "https://aiberg.ew.r.appspot.com/login";
+        public string registerAddress = "https://aiberg.ew.r.appspot.com/register";
+        public string storeMovementAddress = "https://aiberg.ew.r.appspot.com/storeMovements";
+        public string leaderboardBossModeAddress = "https://aiberg.ew.r.appspot.com/leaderboard/bossmode";
+        public string leaderboardParkourModeAddress = "https://aiberg.ew.r.appspot.com/leaderboard/parkourmode";
+        public string playerPlacementBossModeAddress = "https://aiberg.ew.r.appspot.com/leaderboard/bossmode/";
+        public string playerPlacementParkourModeAddress = "https://aiberg.ew.r.appspot.com/leaderboard/parkourmode/";
         public static UserInformation Instance;
         private void Awake()
         {
@@ -42,6 +42,16 @@ namespace AIBERG.API
                 playerPlacementBossModeAddress = "http://127.0.0.1:5000/leaderboard/bossmode/";
                 playerPlacementParkourModeAddress = "http://127.0.0.1:5000/leaderboard/parkourmode/";
             }
+            else
+            {
+                loginAddress = "https://aiberg.ew.r.appspot.com/login";
+                registerAddress = "https://aiberg.ew.r.appspot.com/register";
+                storeMovementAddress = "https://aiberg.ew.r.appspot.com/storeMovements";
+                leaderboardBossModeAddress = "https://aiberg.ew.r.appspot.com/leaderboard/bossmode";
+                leaderboardParkourModeAddress = "https://aiberg.ew.r.appspot.com/leaderboard/parkourmode";
+                playerPlacementBossModeAddress = "https://aiberg.ew.r.appspot.com/leaderboard/bossmode/";
+                playerPlacementParkourModeAddress = "https://aiberg.ew.r.appspot.com/leaderboard/parkourmode/";
+            }
         }
 
         void Start()
@@ -49,7 +59,8 @@ namespace AIBERG.API
             DontDestroyOnLoad(this);
         }
 
-        public void ResetUserInformation(){
+        public void ResetUserInformation()
+        {
             score = 0;
             timetaken = 0;
             win = false;

@@ -8,7 +8,6 @@ namespace AIBERG
     public class DialogWindow : MonoBehaviour
     {
         public void ShowDialogWindow(){
-            Debug.Log("hello from dialog show");
             this.gameObject.SetActive(true);
         }
         public void CloseDialogWindow(){

@@ -1,8 +1,6 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using AIBERG.API;
 using System;
-using Codice.Client.Common;
 
 namespace AIBERG.UI
 {
@@ -42,16 +40,17 @@ namespace AIBERG.UI
             currentMenu.SetActive(true);
         }
 
+        /*
         public void LoadScene(string sceneName)
         {
-            SceneManager.LoadScene(sceneName);
-        }
+            LevelLoader.Instance.LoadScene(sceneName);
+        }*/
 
         public void LoadBossModeScene(){
-            SceneManager.LoadScene(1);
+            LevelLoader.Instance.LoadScene(1);
         }
         public void LoadParkourModeScene(){
-            SceneManager.LoadScene(2);
+            LevelLoader.Instance.LoadScene(2);
         }
         public void SwitchToLoginMenu(){
             previousMenu = currentMenu;

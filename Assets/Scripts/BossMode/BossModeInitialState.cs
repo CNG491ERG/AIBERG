@@ -18,7 +18,7 @@ namespace AIBERG.BossMode
             startMoving = true;
             player = stateManager.gameEnvironment.Player;
             boss = stateManager.gameEnvironment.Boss;
-
+            UserInformation.Instance.ResetUserInformation();
             UserInformation.Instance.playMode = true;
             player.inputHandler.enabled = false;
             player.GetComponent<Rigidbody2D>().gravityScale = 0;
