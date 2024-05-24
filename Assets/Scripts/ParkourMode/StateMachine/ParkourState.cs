@@ -18,7 +18,7 @@ public class ParkourState : BaseState
     {
         if (player.Health <=0)                                              //if player health is <=0
             stateMachine.SwitchState(stateMachine.GameOver);                //go to game over state
-        else if ((Time.time - stateStartTime)>=120)                         //after 2 minutes boss arrives
+        else if ((Time.time - stateStartTime)>=30)                         //after 30 seconds boss arrives
             stateMachine.SwitchState(stateMachine.ParkourToBossFight);      //when player survives 2 minutes go boss fight mode
     }
 

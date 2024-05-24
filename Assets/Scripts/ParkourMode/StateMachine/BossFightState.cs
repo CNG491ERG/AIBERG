@@ -16,9 +16,11 @@ namespace AIBERG.ParkourMode.States{
             boss.gameObject.SetActive(true);
         }
         public override void UpdateState(GameStateMachineScript stateMachine){
+            Debug.Log(boss.Health);
             if (player.Health <= 0)                                                          //if player health is 0
                 stateMachine.SwitchState(stateMachine.GameOver);                            //go to game over state
-            else if (boss.Health <= 0) {                                                //if boss health is 0
+            else if (boss.Health <= 0) {                                                        //if boss health is 0
+                Debug.Log("should switch to parkour");
                     stateMachine.SwitchState(stateMachine.BossFightToParkour);                  //switch to boss figt to parkour state
             }
                 
