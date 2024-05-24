@@ -15,6 +15,7 @@ namespace AIBERG.BossMode
         public Leaderboard leaderboard;
         public GameObject retryButton;
         public GameObject gameModesButton;
+        public CanvasGroup hudCanvasGroup;
         public ParallaxController parallaxController;
         public GameEnvironment gameEnvironment{get; private set;}
         public InputRecorder inputRecorder;

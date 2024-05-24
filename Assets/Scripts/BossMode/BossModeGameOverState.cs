@@ -14,7 +14,7 @@ namespace AIBERG.BossMode
         private bool playerMovementComplete = false;
         private bool bossMovementComplete = false;
         float timer;
-        bool leaderboardVisible = false;
+        bool showLeaderboard = false;
         public override void EnterState(BossModeStateManager stateManager)
         {
             player = stateManager.gameEnvironment.Player;
@@ -47,8 +47,14 @@ namespace AIBERG.BossMode
             UserInformation.Instance.timetaken = stateManager.gameEnvironment.StepCounter;
             stateManager.gameOverSign.gameObject.SetActive(true);
             stateManager.gameOverSign.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
-            stateManager.gameOverSign.GetComponent<SpriteRenderer>().DOColor(new Color(1f, 1f, 1f, 1f), 0.5f);
-            //UserInformation.Instance.score = ...; 
+            stateManager.gameOverSign.GetComponent<SpriteRenderer>().DOColor(new Color(1f, 1f, 1f, 1f), 0.5f).OnComplete(()=>{
+                stateManager.gameOverSign.GetComponent<SpriteRenderer>().DOColor(new Color(1f, 1f, 1f, 1f), 3f).OnComplete(()=>{
+                    stateManager.gameOverSign.GetComponent<SpriteRenderer>().DOColor(new Color(1f, 1f, 1f, 0f), 0.5f).OnComplete(()=>{
+                        showLeaderboard = true;
+                    }); 
+                });
+            });
+            UserInformation.Instance.score = stateManager.gameEnvironment.scoreCounter.Score;
             stateManager.inputRecorder.SendInputData();
         }
 
@@ -63,9 +69,9 @@ namespace AIBERG.BossMode
             if (timer >= 2.0f)
             {
                 stateManager.parallaxController.backgroundSpeed = stateManager.parallaxController.backgroundSpeed > 0 ? stateManager.parallaxController.backgroundSpeed - Time.deltaTime*4.0f : 0;
-                if (!leaderboardVisible)
+                if (showLeaderboard)
                 {
-                    leaderboardVisible = true;
+                    showLeaderboard = false;
                     stateManager.retryButton.SetActive(true);
                     stateManager.gameModesButton.SetActive(true);
                     stateManager.leaderboard.ShowLeaderBoard();

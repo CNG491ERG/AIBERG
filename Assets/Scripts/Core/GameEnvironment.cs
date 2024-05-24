@@ -39,6 +39,7 @@ namespace AIBERG.Core{
     public bool IsTrainingEnvironment{get => isTrainingEnvironment; set => isTrainingEnvironment = value;}
     public bool IsCountingSteps{get => countStep;}
     public event EventHandler OnMaxStepsReached;
+    public ScoreCounter scoreCounter;
     public void Awake() {
         if(player == null){
             player = ComponentFinder.FindComponentInChildren<Player>(this.transform);
@@ -47,6 +48,7 @@ namespace AIBERG.Core{
             boss = ComponentFinder.FindComponentInChildren<Boss>(this.transform);
         }
         foregroundObjects = ComponentFinder.FindGameObjectsWithTagInChildren("ForegroundObject", this.transform);
+        scoreCounter = new ScoreCounter();
     }
 
     public void Start() {

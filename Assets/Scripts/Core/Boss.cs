@@ -36,7 +36,7 @@ namespace AIBERG.Core{
     [SerializeField] private float defense;
     
     public event EventHandler OnDamageableDeath;
-    public event EventHandler OnDamageableHurt;
+    public event EventHandler<IDamageable.DamageEventArgs> OnDamageableHurt;
     
     public GameEnvironment Environment{get=>environment; private set => environment = value;}
     public float Health { get => health; set => health = value;}
@@ -79,8 +79,9 @@ namespace AIBERG.Core{
         GetComponentInChildren<SpriteRenderer>().material.DOColor(Color.white, 0.2f);
         float totalDamage = damageToTake * (1 - Defense);
         Health = Health - totalDamage <= 0 ? 0 : Health - totalDamage;
-        OnDamageableHurt?.Invoke(this, EventArgs.Empty);
-
+        
+        OnDamageableHurt?.Invoke(this, new IDamageable.DamageEventArgs(totalDamage));
+        
         if(Health == 0){
             GetComponentInChildren<Animator>().SetBool("isDead", true);
             OnDamageableDeath?.Invoke(this, EventArgs.Empty);

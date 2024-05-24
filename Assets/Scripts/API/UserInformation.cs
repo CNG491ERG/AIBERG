@@ -8,7 +8,7 @@ namespace AIBERG.API
         public string username;
         public int userID;
         public bool playMode;
-        public int score = 0;
+        public long score = 0;
         public bool win;
         public bool isLocalMode = true;
         public bool isLoggedIn = false;

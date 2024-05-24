@@ -33,6 +33,7 @@ namespace AIBERG.BossMode
                 boss.transform.position = stateManager.gameEnvironment.bossOffScreenPosition.position;
                 player.transform.DOLocalMove(stateManager.gameEnvironment.PlayerSpawnPosition.localPosition, 1.5f).SetEase(Ease.OutQuad);
                 boss.transform.DOLocalMove(stateManager.gameEnvironment.BossSpawnPosition.localPosition, 1.5f).SetEase(Ease.OutQuad);
+                stateManager.dangerSign.SetActive(true);
                 stateManager.dangerSign.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0);
                 stateManager.dangerSign.GetComponent<SpriteRenderer>().DOColor(new Color(1f, 1f, 1f, 1f), 0.5f);
                 startMoving = false;

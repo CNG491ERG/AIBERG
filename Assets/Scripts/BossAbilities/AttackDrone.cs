@@ -44,7 +44,7 @@ namespace AIBERG.BossAbilities
         #endregion
 
         public event EventHandler OnDamageableDeath;
-        public event EventHandler OnDamageableHurt;
+        public event EventHandler<IDamageable.DamageEventArgs> OnDamageableHurt;
 
         void Start()
         {
@@ -92,7 +92,7 @@ namespace AIBERG.BossAbilities
             Health = Health - totalDamage <= 0 ? 0 : Health - totalDamage;
             GetComponentInChildren<SpriteRenderer>().material.color = Color.red;
             GetComponentInChildren<SpriteRenderer>().material.DOColor(Color.white, 0.2f);
-            OnDamageableHurt?.Invoke(this, EventArgs.Empty);
+            OnDamageableHurt?.Invoke(this, new IDamageable.DamageEventArgs(totalDamage));
             if (Health == 0)
             {
                 GetComponent<Collider2D>().enabled = false;

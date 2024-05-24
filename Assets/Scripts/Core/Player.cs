@@ -49,7 +49,7 @@ namespace AIBERG.Core
         [SerializeField] private Boss boss;
         [SerializeField] public Transform shootPoint;
         public event EventHandler OnDamageableDeath;
-        public event EventHandler OnDamageableHurt;
+        public event EventHandler<IDamageable.DamageEventArgs> OnDamageableHurt;
 
         private void Awake()
         {
@@ -122,7 +122,7 @@ namespace AIBERG.Core
                 bodyAnimator.GetComponent<SpriteRenderer>().material.DOColor(Color.white, 0.2f);
             }
 
-            OnDamageableHurt?.Invoke(this, EventArgs.Empty);
+            OnDamageableHurt?.Invoke(this, new IDamageable.DamageEventArgs(totalDamage));
 
             if (Health == 0)
             {

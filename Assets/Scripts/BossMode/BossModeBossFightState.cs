@@ -1,3 +1,4 @@
+using System;
 using AIBERG.Core;
 using AIBERG.Interfaces;
 using DG.Tweening;
@@ -9,15 +10,23 @@ namespace AIBERG.BossMode
     {   
         private Player player;
         private Boss boss;
-
+        private GameEnvironment environment;
         public override void EnterState(BossModeStateManager stateManager){
-            stateManager.gameEnvironment.StartCountingSteps();
+            environment = stateManager.gameEnvironment;
+            environment.StartCountingSteps();
             player = stateManager.gameEnvironment.Player;
             boss = stateManager.gameEnvironment.Boss;
 
             player.inputHandler.enabled = true;
             player.GetComponent<Rigidbody2D>().gravityScale = 1;
             stateManager.dangerSign.GetComponent<SpriteRenderer>().DOColor(new Color(1f,1f, 1f, 0f), 0.5f);
+            
+            boss.OnDamageableHurt += Boss_OnDamageableHurt;
+        }
+
+        private void Boss_OnDamageableHurt(object sender, IDamageable.DamageEventArgs e)
+        {
+            environment.scoreCounter.AddScore(1000*(long)e.Damage);
         }
 
         public override void UpdateState(BossModeStateManager stateManager){
@@ -27,7 +36,10 @@ namespace AIBERG.BossMode
             if(Input.GetKeyDown(KeyCode.F1)){
                 (boss as IDamageable).TakeDamage(100000f);
             }
-            if(stateManager.gameEnvironment.StepCounter == stateManager.gameEnvironment.MaxSteps){
+
+            environment.scoreCounter?.AddScore((long)(2500 * Time.deltaTime));
+
+            if(environment.StepCounter == environment.MaxSteps){
                 Debug.Log("Max steps reached");
                 stateManager.SwitchState(stateManager.gameOverState);
             }
