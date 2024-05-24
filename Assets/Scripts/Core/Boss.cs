@@ -73,14 +73,19 @@ namespace AIBERG.Core{
             speed = bossAbilities.Speed;
         }
     }
-
+    
     public void TakeDamage(float damageToTake) {
         GetComponentInChildren<SpriteRenderer>().material.color = Color.red;
         GetComponentInChildren<SpriteRenderer>().material.DOColor(Color.white, 0.2f);
         float totalDamage = damageToTake * (1 - Defense);
         Health = Health - totalDamage <= 0 ? 0 : Health - totalDamage;
         OnDamageableHurt?.Invoke(this, EventArgs.Empty);
-
+        if(environment.gameMode == GameEnvironment.GameMode.BossMode){
+            environment.scoreCounter.AddScore((long)(1000*damageToTake));
+        }
+        else if(environment.gameMode == GameEnvironment.GameMode.ParkourMode){
+            environment.scoreCounter.AddScore((long)(1000*damageToTake)); //PROBABLY NEED TO MOVE THIS INTO STATE MACHINE, USE THE EVENT
+        }
         if(Health == 0){
             GetComponentInChildren<Animator>().SetBool("isDead", true);
             OnDamageableDeath?.Invoke(this, EventArgs.Empty);
