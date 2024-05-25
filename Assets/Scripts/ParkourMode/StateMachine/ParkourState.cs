@@ -11,7 +11,11 @@ namespace AIBERG.ParkourMode.States
         private GameEnvironment environment;
         private float stateDuration = 30f;
         private float stateDurationTimer;
+
+        // Scoring system for the parkour state
         private int parkourStateCounter = 0;
+        private int parkourBonusPerSecond = 100;
+        // ---------------------------------
         public override void EnterState(GameStateMachineScript stateMachine)
         {
             stateDurationTimer = 0f;
@@ -28,7 +32,7 @@ namespace AIBERG.ParkourMode.States
         public override void UpdateState(GameStateMachineScript stateMachine)
         {
             stateMachine.remainingParkourUI.GetComponent<Image>().fillAmount = stateDurationTimer/stateDuration;
-            environment.scoreCounter?.AddScore((long)(250 * Time.deltaTime * parkourStateCounter));
+            environment.scoreCounter?.AddScore((long)(parkourBonusPerSecond * Time.deltaTime * parkourStateCounter));
             if (player.Health <= 0)
             {
                 stateMachine.SwitchState(stateMachine.GameOver);

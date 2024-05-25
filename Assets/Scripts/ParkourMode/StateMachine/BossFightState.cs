@@ -7,7 +7,12 @@ namespace AIBERG.ParkourMode.States
 {
     public class BossFightState : BaseState
     {
+        // Scoring system for the boss fight
         private int bossStateCounter = 0;
+        private int bossDefeatBonus = 10000;
+        private int timeAliveBonusPerSecond = 50;
+        private int damageBonusPerHit = 100;
+        // ---------------------------------
         private GameEnvironment environment;
         public override void EnterState(GameStateMachineScript stateMachine)
         {
@@ -20,16 +25,25 @@ namespace AIBERG.ParkourMode.States
 
         private void Boss_OnDamageableHurt(object sender, IDamageable.DamageEventArgs e)
         {
-            environment.scoreCounter?.AddScore(1000*(long)e.Damage*bossStateCounter*bossStateCounter);
+            // Damage Bonus
+            environment.scoreCounter?.AddScore(damageBonusPerHit*(long)e.Damage*bossStateCounter);
         }
 
         public override void UpdateState(GameStateMachineScript stateMachine)
         {
-            stateMachine.gameEnvironment.scoreCounter?.AddScore((long)(250 * Time.deltaTime * bossStateCounter));
+            // Time Alive Bonus
+            stateMachine.gameEnvironment.scoreCounter?.AddScore((long)(timeAliveBonusPerSecond * Time.deltaTime * bossStateCounter));
             if (stateMachine.gameEnvironment.Player.Health <= 0){
                 stateMachine.SwitchState(stateMachine.GameOver);
             }                                                        
-            else if (stateMachine.gameEnvironment.Boss.Health <= 0) {                                                        
+            else if (stateMachine.gameEnvironment.Boss.Health <= 0) {
+                // Boss Deafeat Bonus
+                stateMachine.gameEnvironment.scoreCounter?.AddScore((long)(bossDefeatBonus * bossStateCounter));
+                // Time Efficiency Bonus
+                stateMachine.gameEnvironment.scoreCounter?.AddScore((long)(bossDefeatBonus * (stateMachine.gameEnvironment.MaxSteps - stateMachine.gameEnvironment.StepCounter) / stateMachine.gameEnvironment.MaxSteps * bossStateCounter));
+                // Player Health Bonus
+                stateMachine.gameEnvironment.scoreCounter?.AddScore((long)(stateMachine.gameEnvironment.Player.Health * bossStateCounter));
+
                 stateMachine.SwitchState(stateMachine.BossFightToParkour);
             }
 

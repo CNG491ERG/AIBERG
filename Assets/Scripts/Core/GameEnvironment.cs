@@ -11,7 +11,7 @@ namespace AIBERG.Core
         [Header("Step Information")]
         [SerializeField] private const int maxSteps = 6000;
         [SerializeField] private long stepCounter;
-        [SerializeField] private bool countStep = false;
+        [SerializeField] private bool countStep = true;
         [SerializeField] private bool isTrainingEnvironment = true;
 
         [Header("References")]
