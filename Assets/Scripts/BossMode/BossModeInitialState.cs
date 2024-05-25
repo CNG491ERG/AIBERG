@@ -15,6 +15,7 @@ namespace AIBERG.BossMode
         public override void EnterState(BossModeStateManager stateManager)
         {
             stateManager.gameEnvironment.StopCountingSteps();
+            stateManager.gameEnvironment.scoreCounter.canAddScore = true;
             startMoving = true;
             player = stateManager.gameEnvironment.Player;
             boss = stateManager.gameEnvironment.Boss;

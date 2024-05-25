@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace AIBERG.Core{
+namespace AIBERG.Core
+{
     public class ParallaxController : MonoBehaviour
     {
-        public static bool parallaxStopper = true;
-    
+
         [System.Serializable]
         public class ParallaxLayer
         {
@@ -30,27 +30,24 @@ namespace AIBERG.Core{
 
         void Update()
         {
-            if(parallaxStopper){
-                foreach (ParallaxLayer layer in parallaxLayers)
+            foreach (ParallaxLayer layer in parallaxLayers)
+            {
+                for (int i = 0; i < layer.layerTransforms.Length; i++)
                 {
-                    for (int i = 0; i < layer.layerTransforms.Length; i++)
-                    {
-                        Transform layerTransform = layer.layerTransforms[i];
-                        // Move the layer to the left
-                        float newPositionX = layerTransform.position.x - backgroundSpeed * layer.parallaxFactor * Time.deltaTime;
-                        layerTransform.position = new Vector3(newPositionX, layerTransform.position.y, layerTransform.position.z);
+                    Transform layerTransform = layer.layerTransforms[i];
+                    // Move the layer to the left
+                    float newPositionX = layerTransform.position.x - backgroundSpeed * layer.parallaxFactor * Time.deltaTime;
+                    layerTransform.position = new Vector3(newPositionX, layerTransform.position.y, layerTransform.position.z);
 
-                        // Check if the layer has moved off-screen and reposition it
-                        if (layerTransform.position.x <= -layer.spriteWidth)
-                        {
-                            // Move it to the right of the other instance with a bit of overlap
-                            Transform otherTransform = layer.layerTransforms[(i + 1) % layer.layerTransforms.Length];
-                            layerTransform.position = new Vector3(otherTransform.position.x + layer.spriteWidth - overlapAmount, layerTransform.position.y, layerTransform.position.z);
-                        }
+                    // Check if the layer has moved off-screen and reposition it
+                    if (layerTransform.position.x <= -layer.spriteWidth)
+                    {
+                        // Move it to the right of the other instance with a bit of overlap
+                        Transform otherTransform = layer.layerTransforms[(i + 1) % layer.layerTransforms.Length];
+                        layerTransform.position = new Vector3(otherTransform.position.x + layer.spriteWidth - overlapAmount, layerTransform.position.y, layerTransform.position.z);
                     }
-                } 
+                }
             }
-            
         }
     }
 

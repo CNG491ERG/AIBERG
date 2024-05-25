@@ -2,26 +2,44 @@
 using UnityEngine;
 
 
-namespace AIBERG.ParkourMode.States{
-public class ParkourState : BaseState
+namespace AIBERG.ParkourMode.States
 {
-    [SerializeField] Player player;
-    public override void EnterState(GameStateMachineScript stateMachine)
+    public class ParkourState : BaseState
     {
-        ObstacleHandler(stateMachine, true);
-        stateStartTime = Time.deltaTime;
-        parkourCounter++;                                                   
-        stateStartTime = Time.time;                                         
-        player = stateMachine.GetPlayer();                        
-    }       
-    public override void UpdateState(GameStateMachineScript stateMachine)
-    {
-        if (player.Health <=0)                                              //if player health is <=0
-            stateMachine.SwitchState(stateMachine.GameOver);                //go to game over state
-        else if ((Time.time - stateStartTime)>=30)                         //after 30 seconds boss arrives
-            stateMachine.SwitchState(stateMachine.ParkourToBossFight);      //when player survives 2 minutes go boss fight mode
-    }
+        private Player player;
+        private GameEnvironment environment;
+        private float stateDuration = 30f;
+        private float stateDurationTimer;
+        private int parkourStateCounter = 0;
+        public override void EnterState(GameStateMachineScript stateMachine)
+        {
+            stateDurationTimer = 0f;
+            parkourStateCounter++;
+            Debug.Log("ParkourStateCounter: " + parkourStateCounter);
+            environment = stateMachine.gameEnvironment;
+            player = environment.Player;
+            environment.StartCountingSteps();
+            stateMachine.obstacleSpawner.StartSpawningObstacles();
+            player.inputHandler.enabled = true;
+            player.GetComponent<Rigidbody2D>().gravityScale = 1;
+        }
+        public override void UpdateState(GameStateMachineScript stateMachine)
+        {
+            environment.scoreCounter?.AddScore((long)(250 * Time.deltaTime * parkourStateCounter));
+            if (player.Health <= 0)
+            {
+                stateMachine.SwitchState(stateMachine.GameOver);
+            }
+            if (stateDurationTimer >= stateDuration)
+            {
+                stateMachine.SwitchState(stateMachine.ParkourToBossFight);
+            }
+            else
+            {
+                stateDurationTimer += Time.deltaTime;
+            }
+        }
 
-}
+    }
 
 }

@@ -1,65 +1,94 @@
 using AIBERG.Core;
 using UnityEngine;
 
-
-namespace AIBERG.ParkourMode{
+namespace AIBERG.ParkourMode
+{
     public class ObstacleSpawner : MonoBehaviour
     {
-        public GameObject obstacle1;
-        public GameObject obstacle2;
-        public float maxX1;
-        public float maxY1;
-        public float minX1;
-        public float minY1;
-        public float spawnInterval1;
-        private float spawnTime1;
-        public bool canSpawn1 = false;
+        public GameEnvironment environment;
+        public GameObject[] obstaclePrefabs;
+        public ParallaxController parallaxController;
+        public float spawnYMin;
+        public float spawnYMax;
+        public float spawnX;
+        public float spawnInterval = 0.5f; // Decrease the interval for more frequent spawning
+        public int minObstaclesPerSpawn = 1; // Minimum number of obstacles to spawn at once
+        public int maxObstaclesPerSpawn = 3; // Maximum number of obstacles to spawn at once
+        public float obstacleMovementSpeedX = 10f;
+        public float spawnRadiusCheck = 1f; // Radius to check for nearby obstacles
+        private float timer;
+        private bool canSpawnObstacles = false;
 
-        public float maxX2;
-        public float maxY2;
-        public float minX2;
-        public float minY2;
-        public float spawnInterval2;
-        private float spawnTime2;
-        public bool canSpawn2 = false;
-        public float speed = -15.0f;
+        void Start()
+        {
+            timer = spawnInterval;
+            environment = Utilities.ComponentFinder.FindComponentInParents<GameEnvironment>(this.transform);
+        }
 
-
-        // Update is called once per frame
         void Update()
         {
-            if (canSpawn1 && Time.time > spawnTime1) // Check if canSpawn is true
+            if (canSpawnObstacles)
             {
-                //Debug.Log(canSpawn);
-                Spawn1();
-                spawnTime1 = Time.time + spawnInterval1;
-            }
-            if(canSpawn2 && Time.time > spawnTime2)
-            {
-                Spawn2();
-                spawnTime2 = Time.time + spawnInterval2;
+                timer -= Time.deltaTime;
+                if (timer <= 0f)
+                {
+                    SpawnObstacles();
+                    timer = Random.Range(spawnInterval, spawnInterval+0.5f);
+                }
             }
         }
-        void Spawn1()
+
+        void SpawnObstacles()
         {
-            float randomX = Random.Range(minX1, maxX1);
-            float randomY = Random.Range(minY1, maxY1);
+            int obstaclesToSpawn = Random.Range(minObstaclesPerSpawn, maxObstaclesPerSpawn + 1);
 
-            GameObject newObstacle = Instantiate(obstacle1, transform.position + new Vector3(randomX, randomY, 0), transform.rotation);//MIGHT FACE ISSUES ON COLLISION WITH Z AXIS
-            Rigidbody2D obstacleRigidbody = newObstacle.GetComponent<Rigidbody2D>();
-            obstacleRigidbody.velocity = transform.right * -speed;
+            for (int i = 0; i < obstaclesToSpawn; i++)
+            {
+                Vector2 spawnPosition;
+                int attempts = 0;
+                bool positionFound = false;
 
+                do
+                {
+                    // Generate a random Y position within the confined area
+                    float y = Random.Range(spawnYMin, spawnYMax);
+                    spawnPosition = new Vector2(spawnX, y);
+
+                    // Check for nearby obstacles
+                    Collider2D[] colliders = Physics2D.OverlapCircleAll(spawnPosition, spawnRadiusCheck);
+                    if (colliders.Length == 0)
+                    {
+                        positionFound = true;
+                    }
+
+                    attempts++;
+                } while (!positionFound && attempts < 10);
+
+                if (positionFound)
+                {
+                    // Randomly select an obstacle prefab
+                    int randomIndex = Random.Range(0, obstaclePrefabs.Length);
+                    GameObject selectedObstaclePrefab = obstaclePrefabs[randomIndex];
+
+                    GameObject newObstacle = Instantiate(selectedObstaclePrefab, spawnPosition, Quaternion.identity);
+                    newObstacle.GetComponent<Obstacle>().parallaxController = parallaxController;
+                    environment.AddObjectToEnvironmentList(newObstacle);
+                }
+                else
+                {
+                    Debug.LogWarning("Failed to find a suitable position to spawn an obstacle.");
+                }
+            }
         }
-        void Spawn2()
+
+        public void StartSpawningObstacles()
         {
-            float randomX = Random.Range(minX2, maxX2);
-            float randomY = Random.Range(minY2, maxY2);
+            canSpawnObstacles = true;
+        }
 
-            GameObject newObstacle = Instantiate(obstacle2, transform.position + new Vector3(randomX, randomY, 0), transform.rotation);//MIGHT FACE ISSUES ON COLLISION WITH Z AXIS
-            Rigidbody2D obstacleRigidbody = newObstacle.GetComponent<Rigidbody2D>();
-            obstacleRigidbody.velocity = transform.right * -speed;
-
+        public void StopSpawningObstacles()
+        {
+            canSpawnObstacles = false;
         }
     }
-
 }

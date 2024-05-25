@@ -26,7 +26,7 @@ namespace AIBERG.BossMode
 
         private void Boss_OnDamageableHurt(object sender, IDamageable.DamageEventArgs e)
         {
-            environment.scoreCounter.AddScore(1000*(long)e.Damage);
+            environment.scoreCounter?.AddScore(1000*(long)e.Damage);
         }
 
         public override void UpdateState(BossModeStateManager stateManager){

@@ -76,7 +76,13 @@ public class LastResort : MonoBehaviour, IAttackAbility
         Rigidbody2D projectileRb = Instantiate(projectilePrefab, player.Environment.transform).GetComponent<Rigidbody2D>();
         player.Environment.AddObjectToEnvironmentList(projectileRb.gameObject);
         if(projectileRb != null){
-            projectileRb.transform.position = new Vector3(player.transform.position.x - 5, player.Environment.Boss.transform.position.y);
+            if(player.Environment.Boss != null){
+                projectileRb.transform.position = new Vector3(player.transform.position.x - 5, player.Environment.Boss.transform.position.y);
+            }
+            else{
+                projectileRb.transform.position = new Vector3(player.transform.position.x-5, player.transform.position.y, 0f);  
+            }
+            
             projectileRb.gameObject.GetComponent<DamagingProjectile>().projectileVelocity = new Vector2(projectileVelocityX, 0);
         }
     }

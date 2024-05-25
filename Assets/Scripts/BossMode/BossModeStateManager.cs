@@ -12,6 +12,7 @@ namespace AIBERG.BossMode
         public BossModeGameOverState gameOverState= new BossModeGameOverState();
         public GameObject dangerSign;
         public GameObject gameOverSign;
+        public GameObject bossDefeatedSign;
         public Leaderboard leaderboard;
         public GameObject retryButton;
         public GameObject gameModesButton;

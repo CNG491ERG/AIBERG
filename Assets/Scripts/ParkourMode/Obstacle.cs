@@ -2,30 +2,26 @@ using AIBERG.Core;
 using AIBERG.Interfaces;
 using UnityEngine;
 
-namespace AIBERG.ParkourMode{
-public class Obstacle : MonoBehaviour
+namespace AIBERG.ParkourMode
 {
-    [SerializeField] Player player;
-    // Start is called before the first frame update
-    void Start()
+    public class Obstacle : MonoBehaviour
     {
-         player = GameObject.Find("Player_Game").GetComponent<Player>();
-    }
-
-    // Update is called once per frame
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-            
-        if(collision.tag == "ForegroundObject")
-        {
-            Destroy(this.gameObject);
+        [SerializeField] public ParallaxController parallaxController;
+        private void FixedUpdate() {
+            if (parallaxController != null) {
+                GetComponent<Rigidbody2D>().velocity = new Vector2(-parallaxController.backgroundSpeed/1.5f, 0);
+            }
+            else{
+                GetComponent<Rigidbody2D>().velocity = new Vector2(-2f,0f);
+            }
         }
-        else if(collision.tag == "Player")
+        void OnTriggerEnter2D(Collider2D collision)
         {
-                Debug.Log("collision");
-                (player.GetComponent<Player>() as IDamageable).TakeDamage(10000f);
+            if (collision.tag == "Player")
+            {
+                (collision.gameObject.GetComponent<Player>() as IDamageable).TakeDamage(10000f);
+            }
         }
     }
-}
 
 }

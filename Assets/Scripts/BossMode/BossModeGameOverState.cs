@@ -45,16 +45,19 @@ namespace AIBERG.BossMode
 
             UserInformation.Instance.win = true;
             UserInformation.Instance.timetaken = stateManager.gameEnvironment.StepCounter;
-            stateManager.gameOverSign.gameObject.SetActive(true);
-            stateManager.gameOverSign.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
-            stateManager.gameOverSign.GetComponent<SpriteRenderer>().DOColor(new Color(1f, 1f, 1f, 1f), 0.5f).OnComplete(()=>{
-                stateManager.gameOverSign.GetComponent<SpriteRenderer>().DOColor(new Color(1f, 1f, 1f, 1f), 3f).OnComplete(()=>{
-                    stateManager.gameOverSign.GetComponent<SpriteRenderer>().DOColor(new Color(1f, 1f, 1f, 0f), 0.5f).OnComplete(()=>{
+            stateManager.bossDefeatedSign.gameObject.SetActive(true);
+            stateManager.bossDefeatedSign.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
+            stateManager.bossDefeatedSign.GetComponent<SpriteRenderer>().DOColor(new Color(1f, 1f, 1f, 1f), 0.5f).OnComplete(() =>
+            {
+                stateManager.bossDefeatedSign.GetComponent<SpriteRenderer>().DOColor(new Color(1f, 1f, 1f, 1f), 3f).OnComplete(() =>
+                {
+                    stateManager.bossDefeatedSign.GetComponent<SpriteRenderer>().DOColor(new Color(1f, 1f, 1f, 0f), 0.5f).OnComplete(()=>{
                         showLeaderboard = true;
-                    }); 
+                    });
                 });
             });
             UserInformation.Instance.score = stateManager.gameEnvironment.scoreCounter.Score;
+            stateManager.gameEnvironment.scoreCounter.canAddScore = false;
             stateManager.inputRecorder.SendInputData();
         }
 

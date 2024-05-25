@@ -39,6 +39,7 @@ namespace AIBERG.BossMode
             UserInformation.Instance.win = false;
             UserInformation.Instance.timetaken = stateManager.gameEnvironment.StepCounter;
             UserInformation.Instance.score = stateManager.gameEnvironment.scoreCounter.Score; 
+            stateManager.gameEnvironment.scoreCounter.canAddScore = false;
             stateManager.gameOverSign.gameObject.SetActive(true);
             stateManager.gameOverSign.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
             stateManager.gameOverSign.GetComponent<SpriteRenderer>().DOColor(new Color(1f, 1f, 1f, 1f), 0.5f).OnComplete(()=>{

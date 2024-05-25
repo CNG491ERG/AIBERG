@@ -1,4 +1,7 @@
+using System.Collections;
+using System.Text;
 using UnityEngine;
+using UnityEngine.Networking;
 
 
 namespace AIBERG.API
@@ -64,6 +67,37 @@ namespace AIBERG.API
             score = 0;
             timetaken = 0;
             win = false;
+        }
+
+        public void SendData()
+        {
+            StartCoroutine(SendInputDataCoroutine());
+        }
+
+        private IEnumerator SendInputDataCoroutine()
+        {
+            string jsonData = $"{{\"user_id\":{Instance.userID}, \"inputs\":\"\", \"timestamp\":\"{System.DateTime.UtcNow:yyyy-MM-ddTHH:mm:ssZ}\", \"playmode\":\"{Instance.playMode}\", \"score\":\"{Instance.score}\", \"winlose\":{Instance.win.ToString().ToLower()}, \"timetaken\":\"{Instance.timetaken}\"}}";
+
+            Debug.Log("Sending JSON: " + jsonData);
+
+            using (UnityWebRequest request = new UnityWebRequest(Instance.storeMovementAddress, "POST"))
+            {
+                byte[] jsonToSend = new UTF8Encoding().GetBytes(jsonData);
+                request.uploadHandler = new UploadHandlerRaw(jsonToSend);
+                request.downloadHandler = new DownloadHandlerBuffer();
+                request.SetRequestHeader("Content-Type", "application/json");
+
+                yield return request.SendWebRequest();
+
+                if (request.result != UnityWebRequest.Result.Success)
+                {
+                    Debug.LogError("Error: " + request.error);
+                }
+                else
+                {
+                    Debug.Log("Response: " + request.downloadHandler.text);
+                }
+            }
         }
     }
 

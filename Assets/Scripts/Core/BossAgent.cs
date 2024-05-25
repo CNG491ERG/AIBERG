@@ -11,8 +11,8 @@ namespace AIBERG.Core
     {
         [Header("References")]
         [SerializeField] private GameEnvironment environment;
-        [SerializeField] private Player player;
-        [SerializeField] private Boss boss;
+        [SerializeField] public Player player;
+        [SerializeField] public Boss boss;
         [SerializeField] public bool basicAttackInput;
         [SerializeField] public bool attackDroneInput;
         [SerializeField] public bool moveUpInput;
@@ -21,10 +21,14 @@ namespace AIBERG.Core
         public override void Initialize()
         {
             environment = ComponentFinder.FindComponentInParents<GameEnvironment>(this.transform);
-            boss = environment.Boss;
-            player = environment.Player;
-            environment.Player.OnDamageableDeath += Player_OnDamageableDeath;
-            boss.OnDamageableDeath += Boss_OnDamageableDeath;
+            if(environment.Boss != null){
+                boss = environment.Boss;
+                boss.OnDamageableDeath += Boss_OnDamageableDeath;
+            }
+            if(environment.Player != null){
+                player = environment.Player;
+                player.OnDamageableDeath += Player_OnDamageableDeath;
+            }
             environment.OnMaxStepsReached += Environment_OnMaxStepsReached;
         }
 
