@@ -4,6 +4,7 @@ using UnityEngine.Networking;
 using UnityEngine.UI;
 using TMPro;
 using AIBERG.API;
+using System.Collections.Generic;
 
 namespace AIBERG
 {
@@ -29,6 +30,7 @@ namespace AIBERG
         [SerializeField] public bool showYouPlacedText = false;
         [SerializeField] public TextMeshProUGUI youPlacedText;
         [SerializeField] public Button closeButton;
+        [SerializeField] List<GameObject> entries = new List<GameObject>();
 
         private void Start()
         {
@@ -41,6 +43,17 @@ namespace AIBERG
                     UserInformation.Instance.GetPlayerPlacement();
                 }
                 else{
+                    if(UserInformation.Instance.placement <= entries.Count){
+                        if(isForBossMode){
+                            var entry = entries[UserInformation.Instance.placement-1];
+                            entry.transform.Find("Image (1)").GetComponent<Image>().color = new Color(201.0f / 255.0f, 35.0f/255.0f, 32.0f/255.0f);
+                            
+                        }
+                        else{
+                            var entry = entries[UserInformation.Instance.placement-1];
+                            entry.transform.Find("Image (1)").GetComponent<Image>().color = new Color(233.0f/255.0f, 179.0f/255.0f, 91.0f/255.0f);
+                        }
+                    }
                     youPlacedText.text = "You ranked " + GetOrdinalString(UserInformation.Instance.placement) + " place.";
                 }
             }    
@@ -85,6 +98,7 @@ namespace AIBERG
             {
                 i++;
                 GameObject leaderboardEntry = Instantiate(leaderboardItemPrefab, leaderboardContentContainer.transform);
+                entries.Add(leaderboardEntry);
                 leaderboardEntry.transform.Find("Text_Placement").GetComponent<TextMeshProUGUI>().text = "#" + i.ToString();
                 leaderboardEntry.transform.Find("Text_Username").GetComponent<TextMeshProUGUI>().text = entry.username;
                 leaderboardEntry.transform.Find("Text_Score").GetComponent<TextMeshProUGUI>().text = entry.score.ToString();
