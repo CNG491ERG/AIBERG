@@ -1,5 +1,6 @@
 ﻿using AIBERG.Core;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 namespace AIBERG.ParkourMode.States
@@ -22,9 +23,11 @@ namespace AIBERG.ParkourMode.States
             stateMachine.obstacleSpawner.StartSpawningObstacles();
             player.inputHandler.enabled = true;
             player.GetComponent<Rigidbody2D>().gravityScale = 1;
+            stateMachine.remainingParkourUI.GetComponent<Image>().fillAmount = 0;
         }
         public override void UpdateState(GameStateMachineScript stateMachine)
         {
+            stateMachine.remainingParkourUI.GetComponent<Image>().fillAmount = stateDurationTimer/stateDuration;
             environment.scoreCounter?.AddScore((long)(250 * Time.deltaTime * parkourStateCounter));
             if (player.Health <= 0)
             {

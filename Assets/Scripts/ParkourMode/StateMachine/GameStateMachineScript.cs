@@ -2,6 +2,7 @@ using AIBERG.Core;
 using AIBERG.Utilities;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UI;
 
 namespace AIBERG.ParkourMode.States
 {
@@ -24,9 +25,11 @@ namespace AIBERG.ParkourMode.States
         public GameObject retryButton;
         public GameObject gameModesButton;
         public ParallaxController parallaxController;
+        public RemainingParkourUI remainingParkourUI;
         
         void Start()
         {
+            remainingParkourUI.GetComponent<Image>().fillAmount = 0;
             gameEnvironment = ComponentFinder.FindComponentInParents<GameEnvironment>(this.transform);
             gameEnvironment.IsTrainingEnvironment = false;
             currentState = initialState;
