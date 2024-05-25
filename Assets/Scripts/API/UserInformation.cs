@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Text;
 using UnityEngine;
@@ -23,6 +24,7 @@ namespace AIBERG.API
         public string leaderboardParkourModeAddress = "https://aiberg.ew.r.appspot.com/leaderboard/parkourmode";
         public string playerPlacementBossModeAddress = "https://aiberg.ew.r.appspot.com/leaderboard/bossmode/";
         public string playerPlacementParkourModeAddress = "https://aiberg.ew.r.appspot.com/leaderboard/parkourmode/";
+        public int placement;
         public static UserInformation Instance;
         private void Awake()
         {
@@ -99,6 +101,70 @@ namespace AIBERG.API
                 }
             }
         }
+
+        public void GetPlayerPlacement()
+        {
+            StartCoroutine(TryGetPlayerPlacement());
+        }
+
+        private IEnumerator TryGetPlayerPlacement()
+        {
+            PlayerPlacementResponse response;
+            if (Instance.playMode == false)
+            {
+                using (UnityWebRequest request = UnityWebRequest.Get(Instance.playerPlacementParkourModeAddress))
+                {
+                    request.downloadHandler = new DownloadHandlerBuffer();
+
+                    yield return request.SendWebRequest();
+
+                    if (request.result != UnityWebRequest.Result.Success)
+                    {
+                        Debug.Log("Error: " + request.error);
+                    }
+                    else
+                    {
+                        Debug.Log("Response: " + request.downloadHandler.text);
+                        // Parse the JSON response
+                        response = JsonUtility.FromJson<PlayerPlacementResponse>(request.downloadHandler.text);
+                        placement = response.placement;
+                        // Access the placement value
+                        Debug.Log("Placement: " + response.placement);
+                    }
+                }
+            }
+            else
+            {
+                using (UnityWebRequest request = UnityWebRequest.Get(Instance.playerPlacementBossModeAddress))
+                {
+                    request.downloadHandler = new DownloadHandlerBuffer();
+
+                    yield return request.SendWebRequest();
+
+                    if (request.result != UnityWebRequest.Result.Success)
+                    {
+                        Debug.Log("Error: " + request.error);
+                    }
+                    else
+                    {
+                        Debug.Log("Response: " + request.downloadHandler.text);
+                        // Parse the JSON response
+                        response = JsonUtility.FromJson<PlayerPlacementResponse>(request.downloadHandler.text);
+                        placement = response.placement;
+                        // Access the placement value
+                        Debug.Log("Placement: " + response.placement);
+                    }
+                }
+            }
+            
+        }
+    }
+
+    [System.Serializable]
+    public class PlayerPlacementResponse
+    {
+        public int placement;
+        public int user_id;
     }
 
 }

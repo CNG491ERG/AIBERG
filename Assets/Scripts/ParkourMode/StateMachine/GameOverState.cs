@@ -67,6 +67,7 @@ namespace AIBERG.ParkourMode.States
                     stateMachine.retryButton.SetActive(true);
                     stateMachine.gameModesButton.SetActive(true);
                     stateMachine.leaderboard.ShowLeaderBoard();
+                    UserInformation.Instance.GetPlayerPlacement();
                 }
             }
             else

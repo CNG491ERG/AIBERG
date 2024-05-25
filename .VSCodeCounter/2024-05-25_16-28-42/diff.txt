@@ -1,0 +1,81 @@
+Date : 2024-05-25 16:28:42
+Directory : d:\CNG491ERG\EndlessRunnerGame
+Total : 40 files,  410 codes, -26 comments, 21 blanks, all 405 lines
+
+Languages
++-------------------------+------------+------------+------------+------------+------------+
+| language                | files      | code       | comment    | blank      | total      |
++-------------------------+------------+------------+------------+------------+------------+
+| C#                      |         37 |        426 |        -26 |         21 |        421 |
+| JSON                    |          2 |          2 |          0 |          0 |          2 |
+| UnityAssemblyDefinition |          1 |        -18 |          0 |          0 |        -18 |
++-------------------------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                              | files      | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                 |         40 |        410 |        -26 |         21 |        405 |
+| Assets                                                                                            |         40 |        410 |        -26 |         21 |        405 |
+| Assets (Files)                                                                                    |          6 |         46 |          7 |         11 |         64 |
+| Assets\ML-Agents                                                                                  |          2 |          2 |          0 |          0 |          2 |
+| Assets\ML-Agents\Timers                                                                           |          2 |          2 |          0 |          0 |          2 |
+| Assets\Scripts                                                                                    |         32 |        362 |        -33 |         10 |        339 |
+| Assets\Scripts\API                                                                                |          4 |        143 |          0 |         12 |        155 |
+| Assets\Scripts\BossMode                                                                           |          5 |         35 |         -2 |          2 |         35 |
+| Assets\Scripts\Core                                                                               |          5 |         53 |          0 |          3 |         56 |
+| Assets\Scripts\Factions                                                                           |          1 |          5 |          0 |          1 |          6 |
+| Assets\Scripts\Factions\The Order of the Flesh                                                    |          1 |          5 |          0 |          1 |          6 |
+| Assets\Scripts\Interfaces                                                                         |          1 |         13 |          0 |          0 |         13 |
+| Assets\Scripts\ParkourMode                                                                        |         14 |         68 |        -44 |        -17 |          7 |
+| Assets\Scripts\ParkourMode (Files)                                                                |          6 |        -48 |        -39 |        -13 |       -100 |
+| Assets\Scripts\ParkourMode\StateMachine                                                           |          8 |        116 |         -5 |         -4 |        107 |
+| Assets\Scripts\UI                                                                                 |          2 |         45 |         13 |          9 |         67 |
++---------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------------------------------------------------------+-------------------------+------------+------------+------------+------------+
+| filename                                                                                          | language                | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------+-------------------------+------------+------------+------------+------------+
+| d:\CNG491ERG\EndlessRunnerGame\Assets\DialogWindow.cs                                             | C#                      |        -19 |          0 |         -2 |        -21 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\GoBackToMainMenu.cs                                         | C#                      |         -3 |          0 |          0 |         -3 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\ML-Agents\Timers\MainMenu_timers.json                       | JSON                    |          1 |          0 |          0 |          1 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\ML-Agents\Timers\ParkourMode_timers.json                    | JSON                    |          1 |          0 |          0 |          1 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\RemainingParkourUI.cs                                       | C#                      |         23 |          5 |          7 |         35 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\RetryMode.cs                                                | C#                      |         -2 |          0 |          0 |         -2 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\ScoreUI.cs                                                  | C#                      |         21 |          0 |          2 |         23 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\API\DialogWindow.cs                                 | C#                      |         16 |          0 |          2 |         18 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\API\LoginController.cs                              | C#                      |         15 |          0 |         -2 |         13 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\API\RegisterController.cs                           | C#                      |         42 |          0 |          0 |         42 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\API\UserInformation.cs                              | C#                      |         70 |          0 |         12 |         82 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\BossMode\BossModeBossFightState.cs                  | C#                      |          9 |          0 |          3 |         12 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\BossMode\BossModeDeathState.cs                      | C#                      |         10 |         -1 |          0 |          9 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\BossMode\BossModeGameOverState.cs                   | C#                      |         11 |         -1 |          0 |         10 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\BossMode\BossModeInitialState.cs                    | C#                      |          3 |          0 |         -1 |          2 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\BossMode\BossModeStateManager.cs                    | C#                      |          2 |          0 |          0 |          2 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Core\Boss.cs                                        | C#                      |          0 |          0 |          1 |          1 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Core\BossAgent.cs                                   | C#                      |          4 |          0 |          0 |          4 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Core\GameEnvironment.cs                             | C#                      |         26 |          0 |         -1 |         25 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Core\ParallaxController.cs                          | C#                      |         -2 |          0 |         -1 |         -3 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Core\ScoreCounter.cs                                | C#                      |         25 |          0 |          4 |         29 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Factions\The Order of the Flesh\LastResort.cs       | C#                      |          5 |          0 |          1 |          6 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\Interfaces\IDamageable.cs                           | C#                      |         13 |          0 |          0 |         13 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\ParkourMode\AIBERG.ParkourMode.asmdef               | UnityAssemblyDefinition |        -18 |          0 |          0 |        -18 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\ParkourMode\CameraMovement.cs                       | C#                      |        -28 |         -1 |         -5 |        -34 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\ParkourMode\FloatingOrigin.cs                       | C#                      |          0 |        -35 |         -1 |        -36 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\ParkourMode\Obstacle.cs                             | C#                      |          0 |         -2 |         -2 |         -4 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\ParkourMode\ObstacleSpawner.cs                      | C#                      |         24 |          1 |          2 |         27 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\ParkourMode\Parallax.cs                             | C#                      |        -26 |         -2 |         -7 |        -35 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\ParkourMode\StateMachine\BaseState.cs               | C#                      |        -31 |          0 |         -5 |        -36 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\ParkourMode\StateMachine\BossFightState.cs          | C#                      |          9 |          0 |          2 |         11 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\ParkourMode\StateMachine\BossFightToParkourState.cs | C#                      |         24 |          0 |          4 |         28 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\ParkourMode\StateMachine\GameOverState.cs           | C#                      |         56 |         -2 |          1 |         55 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\ParkourMode\StateMachine\GameStateMachineScript.cs  | C#                      |        -17 |         -1 |         -4 |        -22 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\ParkourMode\StateMachine\InitialState.cs            | C#                      |         26 |          0 |         -1 |         25 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\ParkourMode\StateMachine\ParkourState.cs            | C#                      |         21 |          0 |          0 |         21 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\ParkourMode\StateMachine\ParkourToBossFightState.cs | C#                      |         28 |         -2 |         -1 |         25 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\UI\LevelLoader.cs                                   | C#                      |         51 |          8 |          9 |         68 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\Scripts\UI\MenuManager.cs                                   | C#                      |         -6 |          5 |          0 |         -1 |
+| d:\CNG491ERG\EndlessRunnerGame\Assets\TimeUI.cs                                                   | C#                      |         26 |          2 |          4 |         32 |
+| Total                                                                                             |                         |        410 |        -26 |         21 |        405 |
++---------------------------------------------------------------------------------------------------+-------------------------+------------+------------+------------+------------+

@@ -78,6 +78,7 @@ namespace AIBERG.BossMode
                     stateManager.retryButton.SetActive(true);
                     stateManager.gameModesButton.SetActive(true);
                     stateManager.leaderboard.ShowLeaderBoard();
+                    UserInformation.Instance.GetPlayerPlacement();
                 }
 
             }

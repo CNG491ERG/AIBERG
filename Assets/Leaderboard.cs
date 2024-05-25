@@ -26,6 +26,8 @@ namespace AIBERG
         [SerializeField] private GameObject leaderboardItemPrefab;
         [SerializeField] public bool isForBossMode = true;
         [SerializeField] public bool canBeClosed = true;
+        [SerializeField] public bool showYouPlacedText = false;
+        [SerializeField] public TextMeshProUGUI youPlacedText;
         [SerializeField] public Button closeButton;
 
         private void Start()
@@ -33,8 +35,27 @@ namespace AIBERG
             closeButton.gameObject.SetActive(canBeClosed);
         }
 
+        private void FixedUpdate() {
+            if(showYouPlacedText && this.isActiveAndEnabled){
+                if(UserInformation.Instance.placement == 0){
+                    UserInformation.Instance.GetPlayerPlacement();
+                }
+                else{
+                    youPlacedText.text = "You ranked " + GetOrdinalString(UserInformation.Instance.placement) + " place.";
+                }
+            }    
+        }
+
         IEnumerator GetLeaderboardData()
         {
+            if (showYouPlacedText)
+            {
+                youPlacedText.gameObject.SetActive(true);
+                youPlacedText.text = "";
+            }
+            else{
+                youPlacedText.gameObject.SetActive(false);
+            }
             string apiUrl = isForBossMode ? UserInformation.Instance.leaderboardBossModeAddress : UserInformation.Instance.leaderboardParkourModeAddress;
             UnityWebRequest request = UnityWebRequest.Get(apiUrl);
             yield return request.SendWebRequest();
@@ -69,6 +90,41 @@ namespace AIBERG
                 leaderboardEntry.transform.Find("Text_Score").GetComponent<TextMeshProUGUI>().text = entry.score.ToString();
                 leaderboardEntry.transform.Find("Text_RunTime").GetComponent<TextMeshProUGUI>().text = entry.time_taken;
             }
+        }
+        public string GetOrdinalString(int number)
+        {
+            if (number <= 0) return number.ToString(); // Handle non-positive numbers if needed
+
+            // Determine the suffix
+            string suffix;
+            int lastDigit = number % 10;
+            int lastTwoDigits = number % 100;
+
+            if (lastTwoDigits >= 11 && lastTwoDigits <= 13)
+            {
+                suffix = "th";
+            }
+            else
+            {
+                switch (lastDigit)
+                {
+                    case 1:
+                        suffix = "st";
+                        break;
+                    case 2:
+                        suffix = "nd";
+                        break;
+                    case 3:
+                        suffix = "rd";
+                        break;
+                    default:
+                        suffix = "th";
+                        break;
+                }
+            }
+
+            // Return the number with its suffix
+            return number.ToString() + suffix;
         }
 
         public void ShowLeaderBoard()
