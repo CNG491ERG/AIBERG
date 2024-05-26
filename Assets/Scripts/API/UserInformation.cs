@@ -109,6 +109,7 @@ namespace AIBERG.API
 
         private IEnumerator TryGetPlayerPlacement()
         {
+            Instance.placement = 0;
             PlayerPlacementResponse response;
             if (Instance.playMode == false)
             {

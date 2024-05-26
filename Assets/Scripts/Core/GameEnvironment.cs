@@ -9,6 +9,7 @@ namespace AIBERG.Core
     public class GameEnvironment : MonoBehaviour
     {
         [Header("Step Information")]
+        [SerializeField] private float timeScale=1f;
         [SerializeField] private const int maxSteps = 6000;
         [SerializeField] private long stepCounter;
         [SerializeField] private bool countStep = false;
@@ -74,6 +75,7 @@ namespace AIBERG.Core
                     OnMaxStepsReached?.Invoke(this, EventArgs.Empty);
                 }
             }
+            Time.timeScale = timeScale;
         }
 
         public void AddObjectToEnvironmentList(GameObject obj)
