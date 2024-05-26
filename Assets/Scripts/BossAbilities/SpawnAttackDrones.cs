@@ -31,6 +31,7 @@ namespace AIBERG.BossAbilities{
 
     #region interface properties
     public float Cooldown => abilityCooldown;
+    public float CooldownTimer => cooldownTimer;
     public float Damage => projectileDamage;
     public float AbilityDuration =>0f;
     public bool CanBeUsed => canBeUsed;

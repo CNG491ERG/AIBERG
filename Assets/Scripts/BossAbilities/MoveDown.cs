@@ -15,6 +15,7 @@ public class MoveDown : MonoBehaviour, IAbility{
     #region interface properties
     public GameObject AbilityOwner => boss.gameObject;
     public float Cooldown => 0;
+    public float CooldownTimer => 0;
     public float AbilityDuration => 0;
     public bool CanBeUsed => canBeUsed;
     public IAbility AbilityLock { 

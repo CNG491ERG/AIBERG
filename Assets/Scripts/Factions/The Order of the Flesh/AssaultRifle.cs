@@ -25,6 +25,7 @@ namespace AIBERG.Factions.TheOrderOfTheFlesh
 
         #region interface properties
         public float Cooldown => abilityCooldown;
+        public float CooldownTimer => cooldownTimer;
         public float AbilityDuration => abilityDuration;
         public float Damage => projectileDamage;
         public bool CanBeUsed => canBeUsed;

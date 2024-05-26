@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 22222b667cb948649928e6b8bf84cd3c
+guid: 90e89b696ee21874db98776fc914c7bd
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,49 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: AIBERG HUD Boss distance bar-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 21
+        width: 128
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1afa4190494dcfd47a32e9a00691181b
+      internalID: 1541057210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AIBERG HUD Boss distance bar-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 26
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8035bbe741d07745b20a8c781cad267
+      internalID: -348235536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +174,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      AIBERG HUD Boss distance bar-Sheet_0: 1541057210
+      AIBERG HUD Boss distance bar-Sheet_1: -348235536
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

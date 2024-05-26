@@ -30,6 +30,7 @@ namespace AIBERG
         [SerializeField] public bool showYouPlacedText = false;
         [SerializeField] public TextMeshProUGUI youPlacedText;
         [SerializeField] public Button closeButton;
+        [SerializeField] public GameObject skillContainerUI;
         [SerializeField] List<GameObject> entries = new List<GameObject>();
 
         private void Start()
@@ -144,6 +145,9 @@ namespace AIBERG
         public void ShowLeaderBoard()
         {
             this.gameObject.SetActive(true);
+            if(skillContainerUI != null){
+                skillContainerUI.SetActive(false);
+            }
             StartCoroutine(GetLeaderboardData());
             leaderboardContentContainer.GetComponent<ContentSizeFitter>().verticalFit = ContentSizeFitter.FitMode.MinSize;
         }

@@ -17,6 +17,7 @@ namespace AIBERG.Factions.TheOrderOfTheFlesh
         #region interface properties
         public GameObject AbilityOwner => player.gameObject;
         public float Cooldown => 0;
+        public float CooldownTimer => 0;
         public float AbilityDuration => 0;
         public bool CanBeUsed => canBeUsed;
         public IAbility AbilityLock

@@ -8,6 +8,9 @@ public interface IAbility{
     public float Cooldown{
         get;
     }
+    public float CooldownTimer{
+        get;
+    }
     public bool CanBeUsed{
         get;
     }
