@@ -11,7 +11,7 @@ namespace AIBERG.ParkourMode.States
         private GameEnvironment environment;
         private float stateDuration = 30f;
         private float stateDurationTimer;
-        private int parkourStateCounter = 0;
+        public int parkourStateCounter = 0;
         public override void EnterState(GameStateMachineScript stateMachine)
         {
             stateDurationTimer = 0f;

@@ -47,7 +47,6 @@ namespace AIBERG.Utilities{
             // Return null if the component is not found in any child
             return null;
         }
-
         public static List<GameObject> FindGameObjectsWithTagInChildren(string tag, Transform currentTransform){
             List<GameObject> foundObjects = new List<GameObject>();
 

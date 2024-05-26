@@ -107,6 +107,7 @@ namespace AIBERG.Core
         {
             float totalDamage = damageToTake * (1 - Defense);
             Health = Health - totalDamage <= 0 ? 0 : Health - totalDamage;
+            Health = Health > MaxHealth ? MaxHealth : Health;
             if (damageToTake > 0)
             {
                 armsAnimator.GetComponent<SpriteRenderer>().material.color = Color.red;

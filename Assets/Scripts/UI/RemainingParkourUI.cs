@@ -24,11 +24,6 @@ public class RemainingParkourUI : MonoBehaviour
 
             // Update the anchored position of the head image
             headImage.anchoredPosition = newAnchoredPosition;
-
-            // Debug information
-            Debug.Log($"Fill Amount: {fillAmount}");
-            Debug.Log($"Bar Width: {barWidth}");
-            Debug.Log($"New Anchored Position: {newAnchoredPosition}");
         }
     }
 }
