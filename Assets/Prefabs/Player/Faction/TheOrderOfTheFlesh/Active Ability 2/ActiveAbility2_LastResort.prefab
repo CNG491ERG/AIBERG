@@ -57,6 +57,9 @@ MonoBehaviour:
   projectilesPerSecond: 2.5
   projectileVelocityX: 20
   projectileDamage: 15
+  lastResortAudioSources: []
+  lastResortAudioClip: {fileID: 8300000, guid: 2e8aea92e6b26b84bb794b6374c8dccb, type: 3}
+  currentAudioSourceIndex: 0
 --- !u!82 &6806198206266887644
 AudioSource:
   m_ObjectHideFlags: 0

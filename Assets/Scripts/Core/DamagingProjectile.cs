@@ -10,6 +10,8 @@ namespace AIBERG.Core{
     public Vector2 projectileVelocity;
     private Rigidbody2D rb;
     private bool hasImpacted = false;
+    [SerializeField] private AudioClip hitSound;
+    [SerializeField] private AudioSource audioSource;
     void Start()
     {
         GetComponent<Collider2D>().isTrigger = true;
@@ -38,6 +40,7 @@ namespace AIBERG.Core{
         // Check if the collider's tag is in the list of tags to damage
         if (objectToDamage != null && tagsToDamage.Contains(other.tag))
         {
+            SoundManager.Instance.PlaySound(audioSource, hitSound);
             hasImpacted = true;
             objectToDamage.TakeDamage(damage);
             GetComponentInChildren<Animator>().SetTrigger("impact");

@@ -45,12 +45,14 @@ public class LastResort : MonoBehaviour, IAttackAbility
     #endregion
     [SerializeField] private List<AudioSource> lastResortAudioSources;
     [SerializeField] private AudioClip lastResortAudioClip;
+    [SerializeField] private int currentAudioSourceIndex;
  
     void Start(){
         AudioSource[] audioSources = GetComponents<AudioSource>();
         foreach(AudioSource audioSource in audioSources){
             lastResortAudioSources.Add(audioSource);
         }
+        currentAudioSourceIndex = 0;
         player = Utilities.ComponentFinder.FindComponentInParents<Player>(this.transform);
         ResetCooldown();
         durationTimer = 0;
@@ -81,6 +83,12 @@ public class LastResort : MonoBehaviour, IAttackAbility
     }
 
     private void ShootBullet(){
+        if(SoundManager.Instance != null){
+            SoundManager.Instance.PlaySound(lastResortAudioSources[currentAudioSourceIndex++], lastResortAudioClip);
+            if(currentAudioSourceIndex == lastResortAudioSources.Count){
+                currentAudioSourceIndex = 0;
+            }
+        }
         Rigidbody2D projectileRb = Instantiate(projectilePrefab, player.Environment.transform).GetComponent<Rigidbody2D>();
         player.Environment.AddObjectToEnvironmentList(projectileRb.gameObject);
         if(projectileRb != null){
