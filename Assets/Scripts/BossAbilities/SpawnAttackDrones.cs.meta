@@ -3,7 +3,12 @@ guid: 5a0585b9b44fd344a8aa4f4003d9e786
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - boss: {instanceID: 0}
+  - attackDronePrefab: {instanceID: 0}
+  - projectilePrefab: {instanceID: 0}
+  - droneSpawnAudioSource: {instanceID: 0}
+  - droneSpawnAudioClip: {fileID: 8300000, guid: 1fd1177f0f0364749bef9bb3ce4f71b0, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

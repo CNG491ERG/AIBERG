@@ -29,7 +29,11 @@ namespace AIBERG.BossAbilities{
     [SerializeField] private float projectileSpeed = 8f;
     [SerializeField] private string tagToDamage = "Player";
 
-    #region interface properties
+    [Header("Sound")]
+    [SerializeField] private AudioSource droneSpawnAudioSource;
+    [SerializeField] private AudioClip droneSpawnAudioClip;
+
+        #region interface properties
     public float Cooldown => abilityCooldown;
     public float CooldownTimer => cooldownTimer;
     public float Damage => projectileDamage;
@@ -52,6 +56,8 @@ namespace AIBERG.BossAbilities{
         SetupAttackDronePrefab();
     }
     void Start(){
+        droneSpawnAudioSource = GetComponent<AudioSource>();
+        SoundManager.Instance.PlaySound(droneSpawnAudioSource, droneSpawnAudioClip);
         boss = Utilities.ComponentFinder.FindComponentInParents<Boss>(this.transform);
         attackDroneSpawnPositions = boss.DroneTargetPositions;
         ResetCooldown();

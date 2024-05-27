@@ -2,6 +2,7 @@ using System;
 using AIBERG.Interfaces;
 using AIBERG.Core;
 using UnityEngine;
+using System.Collections.Generic;
 using DG.Tweening;
 
 namespace AIBERG.BossAbilities
@@ -31,6 +32,10 @@ namespace AIBERG.BossAbilities
         [Header("Projectile Prefab")]
         [SerializeField] private GameObject projectilePrefab;
 
+        [Header("Sound")]
+        [SerializeField] private AudioSource droneAttackAudioSource;
+        [SerializeField] private List<AudioClip> droneAttackAudioClips;
+
         #region Attack Drone Properties
         public float MaxVelocity { get => maxVelocity; set => maxVelocity = value; }
         public float MovementForce { get => movementForce; set => movementForce = value; }
@@ -48,6 +53,7 @@ namespace AIBERG.BossAbilities
 
         void Start()
         {
+            droneAttackAudioSource = GetComponent<AudioSource>();
             Health = MaxHealth;
             GameEnvironment e = Utilities.ComponentFinder.FindComponentInParents<GameEnvironment>(this.transform);
             boss = e.Boss;
@@ -74,6 +80,7 @@ namespace AIBERG.BossAbilities
 
         private void ShootBullet()
         {
+            SoundManager.Instance.PlaySound(droneAttackAudioSource, droneAttackAudioClips[UnityEngine.Random.Range(0, droneAttackAudioClips.Count)]);
             Rigidbody2D projectileRb = Instantiate(projectilePrefab, boss.Environment.transform).GetComponent<Rigidbody2D>();
             boss.Environment.AddObjectToEnvironmentList(projectileRb.gameObject);
             if (projectileRb != null)
