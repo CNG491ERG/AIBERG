@@ -3511,7 +3511,7 @@ MonoBehaviour:
   collectiblePickupAudioSource: {fileID: 1609265178}
   scoreCollectiblePickupSound: {fileID: 8300000, guid: e92992f7d6beabd4595c2eecd48b3832, type: 3}
   healthCollectiblePickupSound: {fileID: 8300000, guid: 29a8ac6ef873bd748b3914a1e08161c7, type: 3}
-  cooldownCollectiblePickupSound: {fileID: 0}
+  cooldownCollectiblePickupSound: {fileID: 8300000, guid: ae271723d84b8cc4eb60c164dcf7aadd, type: 3}
   healthSpawnInterval: 30
   cooldownSpawnInterval: 45
   scoreSpawnInterval: 3
