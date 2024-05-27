@@ -16,6 +16,7 @@ namespace AIBERG.Core{
     {
         GetComponent<Collider2D>().isTrigger = true;
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
