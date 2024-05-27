@@ -199,8 +199,10 @@ MonoBehaviour:
   - Boss
   - AttackDrone
   projectileVelocity: {x: 0, y: 0}
-  hitSound: {fileID: 8300000, guid: 37106879d027026469fee3cba536683b, type: 3}
+  hitSound: {fileID: 8300000, guid: 8e9d6f2eee7675e46baeec987592a75c, type: 3}
   audioSource: {fileID: 0}
+  pitchLowerBound: 1
+  pitchUpperBound: 2
 --- !u!58 &1514981125335683834
 CircleCollider2D:
   m_ObjectHideFlags: 0

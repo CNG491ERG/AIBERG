@@ -12,6 +12,8 @@ namespace AIBERG.Core{
     private bool hasImpacted = false;
     [SerializeField] private AudioClip hitSound;
     [SerializeField] private AudioSource audioSource;
+    [SerializeField] private float pitchLowerBound = 1f;
+    [SerializeField] private float pitchUpperBound = 1f;
     void Start()
     {
         GetComponent<Collider2D>().isTrigger = true;
@@ -41,7 +43,7 @@ namespace AIBERG.Core{
         // Check if the collider's tag is in the list of tags to damage
         if (objectToDamage != null && tagsToDamage.Contains(other.tag))
         {
-            SoundManager.Instance.PlaySound(audioSource, hitSound);
+            SoundManager.Instance.PlaySound(audioSource, hitSound, pitchLowerBound, pitchUpperBound);
             hasImpacted = true;
             objectToDamage.TakeDamage(damage);
             GetComponentInChildren<Animator>().SetTrigger("impact");

@@ -14,7 +14,10 @@ namespace AIBERG.ParkourMode.States
             environment = stateMachine.gameEnvironment;
             bossStateCounter++;
             Debug.Log("BossStateCounter: " + bossStateCounter);
-            stateMachine.dangerSign.GetComponent<SpriteRenderer>().DOColor(new Color(1f,1f, 1f, 0f), 0.5f);
+            stateMachine.dangerSign.GetComponent<SpriteRenderer>().DOColor(new Color(1f,1f, 1f, 0f), 0.5f)
+            .OnComplete(()=>{
+                stateMachine.dangerSign.gameObject.SetActive(false);
+            });
             stateMachine.gameEnvironment.Boss.OnDamageableHurt += Boss_OnDamageableHurt;
         }
 
