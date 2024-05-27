@@ -37,6 +37,9 @@ namespace AIBERG.Core{
     
     public event EventHandler OnDamageableDeath;
     public event EventHandler<IDamageable.DamageEventArgs> OnDamageableHurt;
+
+    [SerializeField] private AudioClip deathSound;
+    [SerializeField] private AudioSource audioSource;
     
     public GameEnvironment Environment{get=>environment; private set => environment = value;}
     public float Health { get => health; set => health = value;}
@@ -48,6 +51,7 @@ namespace AIBERG.Core{
     public float DamageMultiplier { get => damageMultiplier; set => damageMultiplier = value;}
     public List<Transform> DroneTargetPositions{get => droneTargetPositions;}
     private void Start() {
+        audioSource = GetComponent<AudioSource>();
         environment = ComponentFinder.FindComponentInParents<GameEnvironment>(this.transform);
         droneTargetPositions = ComponentFinder.FindGameObjectsWithTagInChildren("DroneTarget",this.transform).ConvertAll(obj=>obj.transform);
         if(bossAbilities != null){
@@ -83,6 +87,7 @@ namespace AIBERG.Core{
         OnDamageableHurt?.Invoke(this, new IDamageable.DamageEventArgs(totalDamage));
         
         if(Health == 0){
+            SoundManager.Instance.PlayLoopingSound(audioSource, deathSound, 0.8f, 1.2f);
             GetComponentInChildren<Animator>().SetBool("isDead", true);
             OnDamageableDeath?.Invoke(this, EventArgs.Empty);
             Debug.Log("Boss died");
@@ -94,6 +99,9 @@ namespace AIBERG.Core{
         moveUpAbility?.ResetCooldown();
         moveDownAbility?.ResetCooldown();
         spawnAttackDroneAbility?.ResetCooldown();
+    }
+    private void OnDestroy() {
+        SoundManager.Instance.StopLoopingSound(audioSource);
     }
 }
     
