@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using AIBERG.Core;
 using AIBERG.Interfaces;
@@ -37,7 +38,7 @@ namespace AIBERG.Factions.TheOrderOfTheFlesh
             get => abilityLock;
             set
             {
-                if ((Object)value == (Object)this || value == null)
+                if ((UnityEngine.Object)value == (UnityEngine.Object)this || value == null)
                 {
                     abilityLock = value;
                 }
@@ -47,6 +48,7 @@ namespace AIBERG.Factions.TheOrderOfTheFlesh
         private IAbility abilityLock;
         #endregion
 
+        public event EventHandler OnProjectileShot;
         void Start()
         {
             player = Utilities.ComponentFinder.FindComponentInParents<Player>(this.transform);
@@ -85,6 +87,7 @@ namespace AIBERG.Factions.TheOrderOfTheFlesh
         }
         private void ShootBullet()
         {
+            OnProjectileShot?.Invoke(this, EventArgs.Empty);
             Rigidbody2D projectileRb = Instantiate(projectilePrefab, player.Environment.transform).GetComponent<Rigidbody2D>();
             player.Environment.AddObjectToEnvironmentList(projectileRb.gameObject);
             if (projectileRb != null)
