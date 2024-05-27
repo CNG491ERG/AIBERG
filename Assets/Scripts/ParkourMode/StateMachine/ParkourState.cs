@@ -14,7 +14,7 @@ namespace AIBERG.ParkourMode.States
 
         // Scoring system for the parkour state
         private int parkourStateCounter = 0;
-        private int parkourBonusPerSecond = 100;
+        private int parkourBonusPerSecond = 1;
         // ---------------------------------
         public override void EnterState(GameStateMachineScript stateMachine)
         {

@@ -10,7 +10,7 @@ namespace AIBERG.ParkourMode.States
         // Scoring system for the boss fight
         private int bossStateCounter = 0;
         private int bossDefeatBonus = 10000;
-        private int timeAliveBonusPerSecond = 50;
+        private int timeAliveBonusPerSecond = 1;
         private int damageBonusPerHit = 100;
         // ---------------------------------
         private GameEnvironment environment;
@@ -33,6 +33,7 @@ namespace AIBERG.ParkourMode.States
         {
             // Time Alive Bonus
             stateMachine.gameEnvironment.scoreCounter?.AddScore((long)(timeAliveBonusPerSecond * Time.deltaTime * bossStateCounter));
+            Debug.Log($"Adding score: {(long)timeAliveBonusPerSecond * Time.deltaTime * bossStateCounter}");
             if (stateMachine.gameEnvironment.Player.Health <= 0){
                 stateMachine.SwitchState(stateMachine.GameOver);
             }                                                        
