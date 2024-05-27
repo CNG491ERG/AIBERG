@@ -31,17 +31,17 @@ namespace AIBERG
             if (healthSpawnTimer <= 0)
             {
                 SpawnHealthCollectible();
-                healthSpawnTimer = healthSpawnInterval;
+                healthSpawnTimer = healthSpawnInterval + Random.Range(-5f, 2f);
             }
             if (cooldownSpawnTimer <= 0)
             {
                 SpawnCooldownCollectible();
-                cooldownSpawnTimer = cooldownSpawnInterval;
+                cooldownSpawnTimer = cooldownSpawnInterval + Random.Range(-5f, 5f);
             }
             if (scoreSpawnTimer <= 0)
             {
                 SpawnScoreCollectible();
-                scoreSpawnTimer = scoreSpawnInterval;
+                scoreSpawnTimer = scoreSpawnInterval + Random.Range(-1.5f, 1.0f);
             }
         }
 
