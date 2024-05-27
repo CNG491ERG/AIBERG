@@ -50,6 +50,9 @@ namespace AIBERG.Core
         [SerializeField] public Transform shootPoint;
         public event EventHandler OnDamageableDeath;
         public event EventHandler<IDamageable.DamageEventArgs> OnDamageableHurt;
+        [SerializeField] private AudioClip hurtSound;
+        [SerializeField] private AudioClip deathSound;
+        [SerializeField] private AudioSource audioSource;
 
         private void Awake()
         {
@@ -57,6 +60,7 @@ namespace AIBERG.Core
         }
         void Start()
         {
+            audioSource = GetComponent<AudioSource>();
             environment = ComponentFinder.FindComponentInParents<GameEnvironment>(this.transform);
             if (faction.BasicAbility != null)
             {
@@ -108,8 +112,9 @@ namespace AIBERG.Core
             float totalDamage = damageToTake * (1 - Defense);
             Health = Health - totalDamage <= 0 ? 0 : Health - totalDamage;
             Health = Health > MaxHealth ? MaxHealth : Health;
-            if (damageToTake > 0)
+            if (damageToTake > 0 && !isDead)
             {
+                SoundManager.Instance.PlaySound(audioSource, hurtSound, 0.8f, 1.2f);
                 armsAnimator.GetComponent<SpriteRenderer>().material.color = Color.red;
                 armsAnimator.GetComponent<SpriteRenderer>().material.DOColor(Color.white, 0.2f);
                 bodyAnimator.GetComponent<SpriteRenderer>().material.color = Color.red;
@@ -129,6 +134,7 @@ namespace AIBERG.Core
             {
                 if (!isDead)
                 {
+                    SoundManager.Instance.PlaySound(audioSource, deathSound);
                     basicAbilityObject.SetActive(false);
                     activeAbility1Object.SetActive(false);
                     activeAbility2Object.SetActive(false);
