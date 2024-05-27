@@ -34,8 +34,12 @@ namespace AIBERG.Factions.TheOrderOfTheFlesh
         private IAbility abilityLock;
         #endregion
 
+        [SerializeField] private AudioSource audioSource;
+        [SerializeField] private AudioClip thrusterSound;
+        [SerializeField] private bool thrusterSoundLoopActive = false;
         private void Start()
         {
+            audioSource = GetComponent<AudioSource>();
             player = Utilities.ComponentFinder.FindComponentInParents<Player>(this.transform);
             playerRb = player.GetComponent<Rigidbody2D>();
             AbilityLock = this;
@@ -47,6 +51,19 @@ namespace AIBERG.Factions.TheOrderOfTheFlesh
             if (inputReceived)
             {
                 playerRb.AddForce(new Vector2(0, jumpForce));
+                if (!thrusterSoundLoopActive)
+                {
+                    SoundManager.Instance.PlayLoopingSound(audioSource, thrusterSound);
+                    thrusterSoundLoopActive = true;
+                }
+            }
+            else
+            {
+                if (thrusterSoundLoopActive && (!(playerRb.velocity.y > 0.001f || inputReceived)))
+                {
+                    SoundManager.Instance.StopLoopingSound(audioSource);
+                    thrusterSoundLoopActive = false;
+                }
             }
             if (player != null)
             {

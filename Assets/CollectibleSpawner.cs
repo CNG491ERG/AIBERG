@@ -79,6 +79,8 @@ namespace AIBERG
         {
             Vector3 spawnPosition = new Vector3(15f, Random.Range(minY, maxY), transform.position.z);
             GameObject spawnedCollectible = Instantiate(cooldownCollectible, this.transform.parent);
+            spawnedCollectible.GetComponent<CooldownResetCollectible>().pickupSoundAudioSource = collectiblePickupAudioSource;
+            spawnedCollectible.GetComponent<CooldownResetCollectible>().pickupSound = cooldownCollectiblePickupSound;
             spawnedCollectible.transform.localPosition = spawnPosition;
         }
 

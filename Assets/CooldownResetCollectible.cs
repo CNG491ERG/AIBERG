@@ -7,6 +7,9 @@ namespace AIBERG
     {
         private Rigidbody2D rb;
         private GameEnvironment environment;
+        public AudioSource pickupSoundAudioSource;
+        public AudioClip pickupSound;
+
         private void Start() {
             rb = GetComponent<Rigidbody2D>();
             environment = Utilities.ComponentFinder.FindComponentInParents<GameEnvironment>(this.transform);
@@ -18,6 +21,7 @@ namespace AIBERG
         private void OnTriggerEnter2D(Collider2D other)
         {
             if(other.gameObject.CompareTag("Player")){ 
+                SoundManager.Instance.PlaySound(pickupSoundAudioSource, pickupSound);
                 environment.Player.ResetAllCooldowns();
                 Destroy(this.gameObject);
             }
