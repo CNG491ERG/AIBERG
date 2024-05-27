@@ -199,7 +199,7 @@ MonoBehaviour:
   - Boss
   - AttackDrone
   projectileVelocity: {x: 0, y: 0}
-  hitSound: {fileID: 8300000, guid: 37106879d027026469fee3cba536683b, type: 3}
+  hitSound: {fileID: 8300000, guid: 2e8aea92e6b26b84bb794b6374c8dccb, type: 3}
   audioSource: {fileID: 0}
 --- !u!70 &3638068416293148722
 CapsuleCollider2D:
@@ -247,7 +247,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
