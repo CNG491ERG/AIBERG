@@ -42,12 +42,14 @@ namespace AIBERG.Factions.TheOrderOfTheFlesh
             }
         }
         public GameObject AbilityOwner => player.gameObject;
-
         public bool ownsLock;
         #endregion
 
+        [SerializeField] private AudioSource assaultRifleAudioSource;
+        [SerializeField] private AudioClip assaultRifleAudioClip;
         private void Start()
-        {
+        {   
+            assaultRifleAudioSource = GetComponent<AudioSource>();
             player = Utilities.ComponentFinder.FindComponentInParents<Player>(this.transform);
             ResetCooldown();
             projectilePrefab.GetComponent<DamagingProjectile>().damage = Damage;
@@ -74,6 +76,7 @@ namespace AIBERG.Factions.TheOrderOfTheFlesh
 
         private void ShootBullet()
         {
+            SoundManager.Instance.PlaySound(assaultRifleAudioSource, assaultRifleAudioClip, 1.0f, 2.0f);
             Rigidbody2D projectileRb = Instantiate(projectilePrefab, player.Environment.transform).GetComponent<Rigidbody2D>();
             player.Environment.AddObjectToEnvironmentList(projectileRb.gameObject);
             if (projectileRb != null)

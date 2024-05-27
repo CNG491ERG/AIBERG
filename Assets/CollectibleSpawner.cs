@@ -8,6 +8,11 @@ namespace AIBERG
         public List<GameObject> healthCollectibles;
         public GameObject cooldownCollectible;
         public List<GameObject> scoreCollectibles;
+        [SerializeField] private AudioSource collectiblePickupAudioSource;
+        [SerializeField] private AudioClip scoreCollectiblePickupSound;
+        [SerializeField] private AudioClip healthCollectiblePickupSound;
+        [SerializeField] private AudioClip cooldownCollectiblePickupSound;
+        
         public float healthSpawnInterval = 30f;
         public float cooldownSpawnInterval = 45f;
         public float scoreSpawnInterval = 3f;
@@ -52,6 +57,8 @@ namespace AIBERG
             {
                 Vector3 spawnPosition = new Vector3(15f, Random.Range(minY, maxY), transform.position.z);
                 GameObject spawnedCollectible = Instantiate(collectibleToSpawn, this.transform.parent);
+                spawnedCollectible.GetComponent<HealthRecoveryCollectible>().pickupSoundAudioSource = collectiblePickupAudioSource;
+                spawnedCollectible.GetComponent<HealthRecoveryCollectible>().pickupSound = healthCollectiblePickupSound;
                 spawnedCollectible.transform.localPosition = spawnPosition;
             }
         }
@@ -62,6 +69,8 @@ namespace AIBERG
             {
                 Vector3 spawnPosition = new Vector3(15f, Random.Range(minY, maxY), transform.position.z);
                 GameObject spawnedCollectible = Instantiate(collectibleToSpawn, this.transform.parent);
+                spawnedCollectible.GetComponent<ScoreCollectible>().pickupSoundAudioSource = collectiblePickupAudioSource;
+                spawnedCollectible.GetComponent<ScoreCollectible>().pickupSound = scoreCollectiblePickupSound;
                 spawnedCollectible.transform.localPosition = spawnPosition;
             }
         }

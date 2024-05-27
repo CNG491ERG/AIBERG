@@ -9,6 +9,8 @@ namespace AIBERG
         public long scoreToAdd;
         private Rigidbody2D rb;
         private GameEnvironment environment;
+        [SerializeField] public AudioClip pickupSound;
+        [SerializeField] public AudioSource pickupSoundAudioSource;
         private void Start()
         {
             rb = GetComponent<Rigidbody2D>();
@@ -23,6 +25,7 @@ namespace AIBERG
         {
             if (other.gameObject.CompareTag("Player"))
             {
+                SoundManager.Instance.PlaySound(pickupSoundAudioSource, pickupSound, 1.0f, 2.0f);
                 var parkourStateMachine = Utilities.ComponentFinder.FindComponentInChildren<GameStateMachineScript>(environment.transform);
                 long scoreMultiplier = parkourStateMachine.Parkour.parkourStateCounter * parkourStateMachine.Parkour.parkourStateCounter;
                 environment.scoreCounter.AddScore(scoreToAdd * scoreMultiplier);

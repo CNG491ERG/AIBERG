@@ -9,6 +9,8 @@ namespace AIBERG
         public float healthToRecoverNormalized;
         private Rigidbody2D rb;
         private GameEnvironment environment;
+        [SerializeField] public AudioClip pickupSound;
+        [SerializeField] public AudioSource pickupSoundAudioSource;
         private void Start()
         {
             rb = GetComponent<Rigidbody2D>();
@@ -23,6 +25,7 @@ namespace AIBERG
         {
             if (other.gameObject.CompareTag("Player"))
             {
+                SoundManager.Instance.PlaySound(pickupSoundAudioSource, pickupSound, 1.0f, 2.0f);
                 var player = environment.Player;
                 (environment.Player as IDamageable).TakeDamage(-(player.MaxHealth * healthToRecoverNormalized));
                 Destroy(this.gameObject);

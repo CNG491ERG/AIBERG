@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using AIBERG.Core;
 using AIBERG.Interfaces;
 using UnityEngine;
@@ -42,8 +43,14 @@ public class LastResort : MonoBehaviour, IAttackAbility
     }
     public GameObject AbilityOwner => player.gameObject;
     #endregion
+    [SerializeField] private List<AudioSource> lastResortAudioSources;
+    [SerializeField] private AudioClip lastResortAudioClip;
  
     void Start(){
+        AudioSource[] audioSources = GetComponents<AudioSource>();
+        foreach(AudioSource audioSource in audioSources){
+            lastResortAudioSources.Add(audioSource);
+        }
         player = Utilities.ComponentFinder.FindComponentInParents<Player>(this.transform);
         ResetCooldown();
         durationTimer = 0;
