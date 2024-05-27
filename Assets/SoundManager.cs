@@ -8,9 +8,6 @@ public class SoundManager : MonoBehaviour
     // Singleton instance
     public static SoundManager Instance;
 
-    // Reference to the Audio Mixer
-    public AudioMixer audioMixer;
-
     void Awake()
     {
         if (Instance == null)
@@ -27,7 +24,7 @@ public class SoundManager : MonoBehaviour
     // Method to set the volume
     public void SetVolume(float volume)
     {
-        audioMixer.SetFloat("MasterVolume", Mathf.Log10(volume) * 20);
+        //audioMixer.SetFloat("MasterVolume", Mathf.Log10(volume) * 20);
     }
 
     // Method to play a sound from a specified AudioSource with optional pitch range
