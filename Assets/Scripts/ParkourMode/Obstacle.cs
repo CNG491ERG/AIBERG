@@ -19,7 +19,8 @@ namespace AIBERG.ParkourMode
         {
             if (collision.tag == "Player")
             {
-                (collision.gameObject.GetComponent<Player>() as IDamageable).TakeDamage(10000f);
+                var damagableComponent = collision.gameObject.GetComponent<Player>() as IDamageable;
+                damagableComponent.TakeDamage(damagableComponent.MaxHealth * 0.3f);
             }
         }
     }
