@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 namespace AIBERG
 {
+    /// \class DialogWindow
+    /// \brief DialogWindow class for handling dialog windows in UI.
     public class DialogWindow : MonoBehaviour
     {
         public bool isMultipleWindow = false;
@@ -30,6 +32,8 @@ namespace AIBERG
                 }
             }
         }
+
+        /// \brief Opens up the dialog window upon calling
         public void ShowDialogWindow()
         {
             this.gameObject.SetActive(true);
